@@ -1,0 +1,353 @@
+<!doctype html><html lang=en class="js csstransforms3d">
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name=generator content="Hugo 0.91.0">
+<meta name=description content>
+<link rel="shortcut icon" href=../images/favicon.png type=image/x-icon>
+<link rel=icon href=../images/favicon.png type=image/x-icon>
+<title>Video Options :: Mesen Documentation</title>
+<link href=../css/nucleus.css?1640054941 rel=stylesheet>
+<link href=../css/font-awesome.min.css?1640054941 rel=stylesheet>
+<link href=../css/hybrid.css?1640054941 rel=stylesheet>
+<link href=../css/featherlight.min.css?1640054941 rel=stylesheet>
+<link href=../css/perfect-scrollbar.min.css?1640054941 rel=stylesheet>
+<link href=../css/horsey.css?1640054941 rel=stylesheet>
+<link href=../css/theme.css?1640054941 rel=stylesheet>
+<link href=../css/hugo-theme.css?1640054941 rel=stylesheet>
+<link href=../css/custom.css?1640054941 rel=stylesheet>
+<link href=../css/theme-green.css?1640054941 rel=stylesheet>
+<script src=../js/jquery-2.x.min.js?1640054941></script>
+<style type=text/css>:root #header+#content>#left>#rlblock_left{display:none!important}</style>
+</head>
+<body data-url=../configuration/video.html>
+<nav id=sidebar>
+<div id=header-wrapper>
+<div id=header>
+<a id=logo href=../index.html>
+<img src=../images/MesenIcon.png>
+</a>
+</div>
+<div class=searchbox>
+<label for=search-by><i class="fa fa-search"></i></label>
+<input data-search-input id=search-by type=text placeholder=Search...>
+<span data-search-clear><i class="fa fa-close"></i></span>
+</div>
+<script type=text/javascript src=../js/lunr.min.js?1640054941></script>
+<script type=text/javascript src=../js/horsey.js?1640054941></script>
+<script type=text/javascript>var baseurl=""</script>
+<script type=text/javascript src=../js/searchjson.js?1640054941></script>
+<script type=text/javascript src=../js/search.js?1640054941></script>
+</div>
+<div class=highlightable>
+<ul class=topics>
+<li data-nav-id=/gettingstarted.html title="Getting Started" class=dd-item>
+<a href=../gettingstarted.html>
+Getting Started
+</a>
+</li>
+<li data-nav-id=/configuration.html title=Configuration class="dd-item
+parent">
+<a href=../configuration.html>
+Configuration
+</a>
+<ul>
+<li data-nav-id=/configuration/audio.html title="Audio Options" class=dd-item>
+<a href=../configuration/audio.html>
+Audio Options
+</a>
+</li>
+<li data-nav-id=/configuration/input.html title="Input Options" class=dd-item>
+<a href=../configuration/input.html>
+Input Options
+</a>
+</li>
+<li data-nav-id=/configuration/video.html title="Video Options" class="dd-item active">
+<a href=../configuration/video.html>
+Video Options
+</a>
+</li>
+<li data-nav-id=/configuration/emulation.html title="Emulation Options" class=dd-item>
+<a href=../configuration/emulation.html>
+Emulation Options
+</a>
+</li>
+<li data-nav-id=/configuration/preferences.html title=Preferences class=dd-item>
+<a href=../configuration/preferences.html>
+Preferences
+</a>
+</li>
+</ul>
+</li>
+<li data-nav-id=/tools.html title=Tools class=dd-item>
+<a href=../tools.html>
+Tools
+</a>
+</li>
+<li data-nav-id=/debugging.html title="Debugging Tools" class=dd-item>
+<a href=../debugging.html>
+Debugging Tools
+</a>
+<ul>
+<li data-nav-id=/debugging/debugger.html title=Debugger class=dd-item>
+<a href=../debugging/debugger.html>
+Debugger
+</a>
+</li>
+<li data-nav-id=/debugging/apuviewer.html title="APU Viewer" class=dd-item>
+<a href=../debugging/apuviewer.html>
+APU Viewer
+</a>
+</li>
+<li data-nav-id=/debugging/assembler.html title=Assembler class=dd-item>
+<a href=../debugging/assembler.html>
+Assembler
+</a>
+</li>
+<li data-nav-id=/debugging/eventviewer.html title="Event Viewer" class=dd-item>
+<a href=../debugging/eventviewer.html>
+Event Viewer
+</a>
+</li>
+<li data-nav-id=/debugging/memorytools.html title="Memory Tools" class=dd-item>
+<a href=../debugging/memorytools.html>
+Memory Tools
+</a>
+</li>
+<li data-nav-id=/debugging/performanceprofiler.html title="Performance Profiler" class=dd-item>
+<a href=../debugging/performanceprofiler.html>
+Performance Profiler
+</a>
+</li>
+<li data-nav-id=/debugging/ppuviewer.html title="PPU Viewer" class=dd-item>
+<a href=../debugging/ppuviewer.html>
+PPU Viewer
+</a>
+</li>
+<li data-nav-id=/debugging/scriptwindow.html title="Script Window" class=dd-item>
+<a href=../debugging/scriptwindow.html>
+Script Window
+</a>
+</li>
+<li data-nav-id=/debugging/texthooker.html title="Text Hooker" class=dd-item>
+<a href=../debugging/texthooker.html>
+Text Hooker
+</a>
+</li>
+<li data-nav-id=/debugging/tracelogger.html title="Trace Logger" class=dd-item>
+<a href=../debugging/tracelogger.html>
+Trace Logger
+</a>
+</li>
+<li data-nav-id=/debugging/debuggerintegration.html title="Integration with compilers" class=dd-item>
+<a href=../debugging/debuggerintegration.html>
+Integration with compilers
+</a>
+</li>
+</ul>
+</li>
+<li data-nav-id=/hdpacks.html title="HD Packs" class=dd-item>
+<a href=../hdpacks.html>
+HD Packs
+</a>
+</li>
+<li data-nav-id=/apireference.html title="Lua API reference" class=dd-item>
+<a href=../apireference.html>
+Lua API reference
+</a>
+<ul>
+<li data-nav-id=/apireference/changelog.html title=Changelog class=dd-item>
+<a href=../apireference/changelog.html>
+Changelog
+</a>
+</li>
+<li data-nav-id=/apireference/callbacks.html title=Callbacks class=dd-item>
+<a href=../apireference/callbacks.html>
+Callbacks
+</a>
+</li>
+<li data-nav-id=/apireference/drawing.html title=Drawing class=dd-item>
+<a href=../apireference/drawing.html>
+Drawing
+</a>
+</li>
+<li data-nav-id=/apireference/emulation.html title=Emulation class=dd-item>
+<a href=../apireference/emulation.html>
+Emulation
+</a>
+</li>
+<li data-nav-id=/apireference/input.html title=Input class=dd-item>
+<a href=../apireference/input.html>
+Input
+</a>
+</li>
+<li data-nav-id=/apireference/logging.html title=Logging class=dd-item>
+<a href=../apireference/logging.html>
+Logging
+</a>
+</li>
+<li data-nav-id=/apireference/memoryaccess.html title="Memory Access" class=dd-item>
+<a href=../apireference/memoryaccess.html>
+Memory Access
+</a>
+</li>
+<li data-nav-id=/apireference/misc.html title=Miscellaneous class=dd-item>
+<a href=../apireference/misc.html>
+Miscellaneous
+</a>
+</li>
+<li data-nav-id=/apireference/enums.html title=Enums class=dd-item>
+<a href=../apireference/enums.html>
+Enums
+</a>
+</li>
+</ul>
+</li>
+</ul>
+<section id=shortcuts>
+<h3>More</h3>
+<ul>
+<li role>
+<a class=padding href=https://www.mesen.ca><img style=vertical-align:middle src=../images/favicon.png> <span style=display:inline;vertical-align:middle>Website</span></a>
+</li>
+<li role>
+<a class=padding href=https://github.com/SourMesen/Mesen><i class="fa fa-github"></i> GitHub</a>
+</li>
+</ul>
+</section>
+<div id=menuspacer></div>
+<section id=footer>
+<div class=menuFooter>
+<div class=donateButton><a href=https://www.mesen.ca/Donate.php><img src=../images/patreon.png alt="Become a Patron!" width=66% height=66%></a></div>
+<div class=donateButton><a class=bmc-button target=_blank href=https://www.mesen.ca/BuyCoffee.php><img src=../images/BMC-btn-logo.svg alt=Donate><span style=margin-left:5px>Donate</span></a></div>
+Version: <b>0.9.9</b><br>
+Last Updated: <b>2021-12-21</b>
+</div>
+</section>
+</div>
+</nav>
+<section id=body>
+<div id=overlay></div>
+<div class="padding highlightable sticky-parent">
+<div class=sticky-spacer>
+<div id=top-bar>
+<div id=breadcrumbs itemscope itemtype=http://data-vocabulary.org/Breadcrumb>
+<span id=sidebar-toggle-span>
+<a href=# id=sidebar-toggle data-sidebar-toggle>
+<i class="fa fa-bars"></i>
+</a>
+</span>
+<span id=toc-menu><i class="fa fa-list-alt"></i></span>
+<span class=links>
+<a href=../>Home</a> > <a href=../configuration.html>Configuration</a> > Video Options
+</span>
+</div>
+<div class=progress>
+<div class=wrapper>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#general-options>General Options</a></li>
+<li><a href=#picture>Picture</a>
+<ul>
+<li><a href=#common-options>Common Options</a></li>
+<li><a href=#ntsc-filter-options>NTSC Filter Options</a></li>
+</ul>
+</li>
+<li><a href=#overscan>Overscan</a></li>
+<li><a href=#palette>Palette</a></li>
+<li><a href=#advanced-options>Advanced Options</a></li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+</div>
+<div id=body-inner>
+<h1>Video Options</h1>
+<div class=toc>
+<div><nav id=TableOfContents>
+<ul>
+<li><a href=#general-options>General Options</a></li>
+<li><a href=#picture>Picture</a>
+<ul>
+<li><a href=#common-options>Common Options</a></li>
+<li><a href=#ntsc-filter-options>NTSC Filter Options</a></li>
+</ul>
+</li>
+<li><a href=#overscan>Overscan</a></li>
+<li><a href=#palette>Palette</a></li>
+<li><a href=#advanced-options>Advanced Options</a></li>
+</ul>
+</nav></div>
+</div>
+<h2 id=general-options>General Options</h2>
+<p><strong>Scale</strong>: The scale determines the emulator window&rsquo;s size - use integer factors (e.g: 2x, 3x, 4x) for best results.</p>
+<p><strong>Aspect Ratio</strong>: The NES' internal aspect ratio is almost square (<code>Default (No Stretching)</code>), but it used to be displayed on CRT TVs that had a rectangular picture. To simulate a CRT TV, you can use the <code>Auto</code> option - it will switch between NTSC and PAL aspect ratios depending on the game you are playing. Using anything other than the <code>Default (No Stretching)</code> option may cause pixels to have irregular sizes. You can reduce this effect by using a combination of video filters and the bilinear filtering option.</p>
+<p><strong>Enable integer FPS mode</strong>: Under normal conditions, the NTSC NES runs at 60.1 fps. When playing a 60hz LCD, this causes a lot of dropped frames. This option slows down the emulation by a tiny amount to produce 60 frames per second instead, which reduces the number of dropped frames.</p>
+<p><strong>Enable vertical sync</strong>: Turns on vertical sync &ndash; can help prevent screen tearing on some hardware configurations.</p>
+<p><strong>Use exclusive fullscreen mode</strong>: Turns on exclusive fullscreen mode. This may be useful if you are experiencing screen tearing issues in regular fullscreen despite vertical sync being turned on.</p>
+<p><strong>Fulscreen Resolution</strong>: This option is shown only when exclusive fullsceen mode is enabled. It allows you to select the screen resolution that should be used when in exclusive fullscreen mode. The default resolution is the current Windows screen resolution.</p>
+<p><strong>Requested Refresh Rate</strong>: This option is shown only when exclusive fullsceen mode is enabled. It allows you to select your preferred refresh rate for NTSC and PAL/Dendy when running in exclusive fullscreen mode.</p>
+<p><strong>Use integer scale values when entering fullscreen mode</strong>: By default, fullscreen mode fills the entire screen. However, this can cause non-integer scaling values to be used &ndash; for example, in 1080p resolution, the scale becomes 4.5x. Since this can cause irregularly shaped pixels, you can use this option to use the nearest integer scale value instead (e.g 4x in this example).</p>
+<p><strong>Use HDNes HD packs</strong>: Enables the use of <a href=../hdpacks.html>HD packs</a>.</p>
+<p><strong>Show FPS</strong>: Displays an FPS counter on the screen. The first number is the number of frames emulated, the second number is the number of frames displayed on the screen. These values are usually identical, except when vertical sync is enabled.</p>
+<h2 id=picture>Picture</h2>
+<p><strong>Filter</strong>: Allows you to select a video filter. Selecting NTSC filters will cause additional configuration options to appear below.</p>
+<h3 id=common-options>Common Options</h3>
+<p>The <code>Brightness</code>, <code>Contrast</code>, <code>Hue</code>, <code>Saturation</code>, <code>Scanline</code> settings are common to all filters and can even be used without a filter.</p>
+<p><strong>Use bilinear interpolation when scaling</strong>: When enabled, bilinear interpolation is used when stretching (due to scale or aspect ratio). When disabled, nearest neighbor scaling is used. An easy way to get a slightly-softened screen, for example, is to use the <code>Prescale</code> filters (which use nearest neighbor scaling), use a bigger scale and enable bilinear filtering. For example, try this configuration:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text>  Filter: Prescale 3x
+  Scale: 4x
+  Use bilinear interpolation when scaling: Enabled
+</code></pre></div><p><strong>Scanlines</strong>: Simulates the scanlines on a CRT TV - the higher the value, the deeper the scanlines appear on the screen.</p>
+<h3 id=ntsc-filter-options>NTSC Filter Options</h3>
+<p>There are 2 separate NTSC filters implemented in Mesen. The <code>NTSC</code> filter is blargg&rsquo;s implementation - this filter is very fast, and available in various other emulators. The <code>NTSC (bisqwit)</code> filter is an implementation of bisqwit&rsquo;s NTSC filter &ndash; it is slower and produces a different output.</p>
+<p>The 2 filters have a different set of options:</p>
+<p><strong>NTSC (blargg)</strong>: <code>Artifacts</code>, <code>Bleed</code>, <code>Fringing</code>, <code>Gamma</code>, <code>Resolution</code>, <code>Sharpness</code><br>
+<strong>NTSC (bisqwit)</strong>: <code>Y Filter (Horizontal Blur)</code>, <code>I Filter (Horizontal Blur)</code>, <code>Q Filter (Horizontal Bleed)</code></p>
+<p>Feel free to experiment with the settings and choose what you feel looks best.</p>
+<h2 id=overscan>Overscan</h2>
+<p>The overscan settings allow you to cut out pixels on any edge of the screen. On a CRT TV, a few pixels on each side of the screen was usually invisible to the player. Because of this, games often have glitches or incorrect palette colors on the edges of the screen &ndash; this is normal and caused by the game itself. Setting a value of 8 or so on each side of the overscan configuration will usually hide most glitches.</p>
+<p>It is possible to configure the overscan settings on a per-game basis in the <em>Game-Specific</em> tab. All games without specific settings will automatically use the overscan parameters shown in the <em>Global</em> tab.</p>
+<h2 id=palette>Palette</h2>
+<p>This tab allows you to customize the palette used by all games.</p>
+<p><strong>Load Preset Palette</strong>: Mesen comes with a number of built-in palette options - you can select them from here.</p>
+<p><strong>Load Palette File</strong>: Use this to load a .pal file into the emulator. Mesen supports both 64-color (192 bytes) and 512-color (1536 bytes) palette files. The 512-color palette files can be used to control the colors used when the PPU&rsquo;s R/G/B emphasis bits are turned on.</p>
+<p><strong>Export Palette</strong>: Use this to export your current palette into a .pal file.</p>
+<p><strong>Use this palette for VS System games</strong>: By default, VS System games have their own predefined RGB palettes and don&rsquo;t use the palette defined here. When enabled, this option forces VS System games to ignore their default palette and use this one instead.</p>
+<h2 id=advanced-options>Advanced Options</h2>
+<p><strong>Remove sprite limit</strong>: The NES can normally only draw up to 8 sprites per line &ndash; this limitation is indirectly responsible for <em>some</em> of the flickering seen in games at times. When this option is enabled, the limit is disabled, allowing up to 64 sprites to be drawn on the same line.</p>
+<p><strong>Automatically re-enable sprite limit as needed to prevent graphical glitches when possible</strong>: Some games rely on the sprite limit to hide objects from view. These games will have graphical glitches when the <code>Remove sprite limit</code> option is enabled. By enabling this option, Mesen will try to detect when games are attempting to hit the sprite limit on purpose and temporarely re-enable the limit in these specific cases. This option is not perfect and may not work in certain games, but it helps reduce the potential negative impacts of the <code>Remove sprite limit</code> option.</p>
+<p><strong>Disable background</strong>: Disables rendering of the background layer.</p>
+<p><strong>Disable sprite</strong>: Disables rendering of all sprites.</p>
+<p><strong>Force background display in first column</strong>: The NES has a flag that prevents the background from rendering in the first 8 pixels on the left of the screen. When enabled, this option forces the background to be rendered in the first 8 pixels, no matter what the flag&rsquo;s value is.</p>
+<p><strong>Force sprite display in first column</strong>: The NES has a flag that prevents sprites from rendering in the first 8 pixels on the left of the screen. When enabled, this option forces the sprites to be rendered in the first 8 pixels, no matter what the flag&rsquo;s value is.</p>
+<p><strong>Screen Rotation</strong>: Rotates the display by the specified angle. This is useful to play games (generally homebrew games) designed for a vertical display.</p>
+<footer class=footline>
+</footer>
+</div>
+</div>
+<div id=navigation>
+<a class="nav nav-prev" href=../configuration/input.html title="Input Options"> <i class="fa fa-chevron-left"></i></a>
+<a class="nav nav-next" href=../configuration/emulation.html title="Emulation Options" style=margin-right:0><i class="fa fa-chevron-right"></i></a>
+</div>
+</section>
+<div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px>
+<div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div>
+</div>
+<script src=../js/clipboard.min.js?1640054941></script>
+<script src=../js/perfect-scrollbar.min.js?1640054941></script>
+<script src=../js/perfect-scrollbar.jquery.min.js?1640054941></script>
+<script src=../js/jquery.sticky-kit.min.js?1640054941></script>
+<script src=../js/featherlight.min.js?1640054941></script>
+<script src=../js/html5shiv-printshiv.min.js?1640054941></script>
+<script src=../js/highlight.pack.js?1640054941></script>
+<script>hljs.initHighlightingOnLoad()</script>
+<script src=../js/modernizr.custom.71422.js?1640054941></script>
+<script src=../js/learn.js?1640054941></script>
+<script src=../js/hugo-learn.js?1640054941></script>
+<link href=../mermaid/mermaid.css?1640054941 type=text/css rel=stylesheet>
+<script src=../mermaid/mermaid.js?1640054941></script>
+<script>mermaid.initialize({startOnLoad:!0})</script>
+</body>
+</html>

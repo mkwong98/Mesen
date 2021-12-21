@@ -1,0 +1,386 @@
+<!doctype html><html lang=en class="js csstransforms3d">
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name=generator content="Hugo 0.91.0">
+<meta name=description content>
+<link rel="shortcut icon" href=../images/favicon.png type=image/x-icon>
+<link rel=icon href=../images/favicon.png type=image/x-icon>
+<title>Memory Tools :: Mesen Documentation</title>
+<link href=../css/nucleus.css?1640054941 rel=stylesheet>
+<link href=../css/font-awesome.min.css?1640054941 rel=stylesheet>
+<link href=../css/hybrid.css?1640054941 rel=stylesheet>
+<link href=../css/featherlight.min.css?1640054941 rel=stylesheet>
+<link href=../css/perfect-scrollbar.min.css?1640054941 rel=stylesheet>
+<link href=../css/horsey.css?1640054941 rel=stylesheet>
+<link href=../css/theme.css?1640054941 rel=stylesheet>
+<link href=../css/hugo-theme.css?1640054941 rel=stylesheet>
+<link href=../css/custom.css?1640054941 rel=stylesheet>
+<link href=../css/theme-green.css?1640054941 rel=stylesheet>
+<script src=../js/jquery-2.x.min.js?1640054941></script>
+<style type=text/css>:root #header+#content>#left>#rlblock_left{display:none!important}</style>
+</head>
+<body data-url=../debugging/memorytools.html>
+<nav id=sidebar>
+<div id=header-wrapper>
+<div id=header>
+<a id=logo href=../index.html>
+<img src=../images/MesenIcon.png>
+</a>
+</div>
+<div class=searchbox>
+<label for=search-by><i class="fa fa-search"></i></label>
+<input data-search-input id=search-by type=text placeholder=Search...>
+<span data-search-clear><i class="fa fa-close"></i></span>
+</div>
+<script type=text/javascript src=../js/lunr.min.js?1640054941></script>
+<script type=text/javascript src=../js/horsey.js?1640054941></script>
+<script type=text/javascript>var baseurl=""</script>
+<script type=text/javascript src=../js/searchjson.js?1640054941></script>
+<script type=text/javascript src=../js/search.js?1640054941></script>
+</div>
+<div class=highlightable>
+<ul class=topics>
+<li data-nav-id=/gettingstarted.html title="Getting Started" class=dd-item>
+<a href=../gettingstarted.html>
+Getting Started
+</a>
+</li>
+<li data-nav-id=/configuration.html title=Configuration class=dd-item>
+<a href=../configuration.html>
+Configuration
+</a>
+<ul>
+<li data-nav-id=/configuration/audio.html title="Audio Options" class=dd-item>
+<a href=../configuration/audio.html>
+Audio Options
+</a>
+</li>
+<li data-nav-id=/configuration/input.html title="Input Options" class=dd-item>
+<a href=../configuration/input.html>
+Input Options
+</a>
+</li>
+<li data-nav-id=/configuration/video.html title="Video Options" class=dd-item>
+<a href=../configuration/video.html>
+Video Options
+</a>
+</li>
+<li data-nav-id=/configuration/emulation.html title="Emulation Options" class=dd-item>
+<a href=../configuration/emulation.html>
+Emulation Options
+</a>
+</li>
+<li data-nav-id=/configuration/preferences.html title=Preferences class=dd-item>
+<a href=../configuration/preferences.html>
+Preferences
+</a>
+</li>
+</ul>
+</li>
+<li data-nav-id=/tools.html title=Tools class=dd-item>
+<a href=../tools.html>
+Tools
+</a>
+</li>
+<li data-nav-id=/debugging.html title="Debugging Tools" class="dd-item
+parent">
+<a href=../debugging.html>
+Debugging Tools
+</a>
+<ul>
+<li data-nav-id=/debugging/debugger.html title=Debugger class=dd-item>
+<a href=../debugging/debugger.html>
+Debugger
+</a>
+</li>
+<li data-nav-id=/debugging/apuviewer.html title="APU Viewer" class=dd-item>
+<a href=../debugging/apuviewer.html>
+APU Viewer
+</a>
+</li>
+<li data-nav-id=/debugging/assembler.html title=Assembler class=dd-item>
+<a href=../debugging/assembler.html>
+Assembler
+</a>
+</li>
+<li data-nav-id=/debugging/eventviewer.html title="Event Viewer" class=dd-item>
+<a href=../debugging/eventviewer.html>
+Event Viewer
+</a>
+</li>
+<li data-nav-id=/debugging/memorytools.html title="Memory Tools" class="dd-item active">
+<a href=../debugging/memorytools.html>
+Memory Tools
+</a>
+</li>
+<li data-nav-id=/debugging/performanceprofiler.html title="Performance Profiler" class=dd-item>
+<a href=../debugging/performanceprofiler.html>
+Performance Profiler
+</a>
+</li>
+<li data-nav-id=/debugging/ppuviewer.html title="PPU Viewer" class=dd-item>
+<a href=../debugging/ppuviewer.html>
+PPU Viewer
+</a>
+</li>
+<li data-nav-id=/debugging/scriptwindow.html title="Script Window" class=dd-item>
+<a href=../debugging/scriptwindow.html>
+Script Window
+</a>
+</li>
+<li data-nav-id=/debugging/texthooker.html title="Text Hooker" class=dd-item>
+<a href=../debugging/texthooker.html>
+Text Hooker
+</a>
+</li>
+<li data-nav-id=/debugging/tracelogger.html title="Trace Logger" class=dd-item>
+<a href=../debugging/tracelogger.html>
+Trace Logger
+</a>
+</li>
+<li data-nav-id=/debugging/debuggerintegration.html title="Integration with compilers" class=dd-item>
+<a href=../debugging/debuggerintegration.html>
+Integration with compilers
+</a>
+</li>
+</ul>
+</li>
+<li data-nav-id=/hdpacks.html title="HD Packs" class=dd-item>
+<a href=../hdpacks.html>
+HD Packs
+</a>
+</li>
+<li data-nav-id=/apireference.html title="Lua API reference" class=dd-item>
+<a href=../apireference.html>
+Lua API reference
+</a>
+<ul>
+<li data-nav-id=/apireference/changelog.html title=Changelog class=dd-item>
+<a href=../apireference/changelog.html>
+Changelog
+</a>
+</li>
+<li data-nav-id=/apireference/callbacks.html title=Callbacks class=dd-item>
+<a href=../apireference/callbacks.html>
+Callbacks
+</a>
+</li>
+<li data-nav-id=/apireference/drawing.html title=Drawing class=dd-item>
+<a href=../apireference/drawing.html>
+Drawing
+</a>
+</li>
+<li data-nav-id=/apireference/emulation.html title=Emulation class=dd-item>
+<a href=../apireference/emulation.html>
+Emulation
+</a>
+</li>
+<li data-nav-id=/apireference/input.html title=Input class=dd-item>
+<a href=../apireference/input.html>
+Input
+</a>
+</li>
+<li data-nav-id=/apireference/logging.html title=Logging class=dd-item>
+<a href=../apireference/logging.html>
+Logging
+</a>
+</li>
+<li data-nav-id=/apireference/memoryaccess.html title="Memory Access" class=dd-item>
+<a href=../apireference/memoryaccess.html>
+Memory Access
+</a>
+</li>
+<li data-nav-id=/apireference/misc.html title=Miscellaneous class=dd-item>
+<a href=../apireference/misc.html>
+Miscellaneous
+</a>
+</li>
+<li data-nav-id=/apireference/enums.html title=Enums class=dd-item>
+<a href=../apireference/enums.html>
+Enums
+</a>
+</li>
+</ul>
+</li>
+</ul>
+<section id=shortcuts>
+<h3>More</h3>
+<ul>
+<li role>
+<a class=padding href=https://www.mesen.ca><img style=vertical-align:middle src=../images/favicon.png> <span style=display:inline;vertical-align:middle>Website</span></a>
+</li>
+<li role>
+<a class=padding href=https://github.com/SourMesen/Mesen><i class="fa fa-github"></i> GitHub</a>
+</li>
+</ul>
+</section>
+<div id=menuspacer></div>
+<section id=footer>
+<div class=menuFooter>
+<div class=donateButton><a href=https://www.mesen.ca/Donate.php><img src=../images/patreon.png alt="Become a Patron!" width=66% height=66%></a></div>
+<div class=donateButton><a class=bmc-button target=_blank href=https://www.mesen.ca/BuyCoffee.php><img src=../images/BMC-btn-logo.svg alt=Donate><span style=margin-left:5px>Donate</span></a></div>
+Version: <b>0.9.9</b><br>
+Last Updated: <b>2021-12-21</b>
+</div>
+</section>
+</div>
+</nav>
+<section id=body>
+<div id=overlay></div>
+<div class="padding highlightable sticky-parent">
+<div class=sticky-spacer>
+<div id=top-bar>
+<div id=breadcrumbs itemscope itemtype=http://data-vocabulary.org/Breadcrumb>
+<span id=sidebar-toggle-span>
+<a href=# id=sidebar-toggle data-sidebar-toggle>
+<i class="fa fa-bars"></i>
+</a>
+</span>
+<span id=toc-menu><i class="fa fa-list-alt"></i></span>
+<span class=links>
+<a href=../>Home</a> > <a href=../debugging.html>Debugging Tools</a> > Memory Tools
+</span>
+</div>
+<div class=progress>
+<div class=wrapper>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#memory-viewer>Memory Viewer</a>
+<ul>
+<li><a href=#highlighting>Highlighting</a></li>
+<li><a href=#options>Options</a></li>
+<li><a href=#editing-memory-values>Editing Memory Values</a></li>
+<li><a href=#importing--exporting>Importing / Exporting</a></li>
+<li><a href=#freezing-values>Freezing values</a></li>
+<li><a href=#using-tbl-files>Using TBL Files</a></li>
+</ul>
+</li>
+<li><a href=#memory-access-counters>Memory Access Counters</a></li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+</div>
+<div id=body-inner>
+<h1>Memory Tools</h1>
+<div class=toc>
+<div><nav id=TableOfContents>
+<ul>
+<li><a href=#memory-viewer>Memory Viewer</a>
+<ul>
+<li><a href=#highlighting>Highlighting</a></li>
+<li><a href=#options>Options</a></li>
+<li><a href=#editing-memory-values>Editing Memory Values</a></li>
+<li><a href=#importing--exporting>Importing / Exporting</a></li>
+<li><a href=#freezing-values>Freezing values</a></li>
+<li><a href=#using-tbl-files>Using TBL Files</a></li>
+</ul>
+</li>
+<li><a href=#memory-access-counters>Memory Access Counters</a></li>
+</ul>
+</nav></div>
+</div>
+<h2 id=memory-viewer>Memory Viewer</h2>
+<p>The memory viewer offers read and write access to all types of ROM and RAM:</p>
+<ul>
+<li>CPU Memory</li>
+<li>PPU Memory</li>
+</ul>
+<ul>
+<li>PRG ROM</li>
+<li>Work RAM</li>
+<li>Save RAM</li>
+</ul>
+<ul>
+<li>CHR ROM</li>
+<li>CHR RAM</li>
+<li>Nametable RAM</li>
+<li>Palette RAM</li>
+<li>Sprite / OAM RAM</li>
+<li>Secondary OAM RAM</li>
+</ul>
+<p><strong>Note:</strong> Only memory types that are available for the currently loaded ROM will be shown in the dropdown.</p>
+<h3 id=highlighting>Highlighting</h3>
+<p>There are a number of highlighting/coloring options in the memory viewer.</p>
+<p><strong>View→Memory Access Highlighting</strong> has coloring options for addresses that were recently read, written or executed (colored in blue, red and green, respectively). A fade-out period can also be configured, after which the byte will revert to its normal black color.</p>
+<p><strong>View→Data Type Highlighting</strong> offers options to change the background color of specific bytes based on their type:</p>
+<ul>
+<li>Labeled bytes</li>
+<li>Breakpoints</li>
+<li>Code bytes <em>(PRG ROM only)</em></li>
+<li>Data bytes <em>(PRG ROM only)</em></li>
+<li>DMC sample bytes <em>(PRG ROM only)</em></li>
+<li>Drawn bytes <em>(CHR ROM only)</em></li>
+<li>Read bytes <em>(CHR ROM only)</em></li>
+</ul>
+<p><strong>View→De-emphasize</strong> offers options to display bytes matching certain conditions (unused, read, written or executed) in gray.</p>
+<p>The <code>Ignore writes that do not alter data</code> option prevents CPU writes from being highlighted when the value being written matches the one already present in memory.</p>
+<p><strong>Note:</strong> It is possible to customize the colors used by the memory viewer in <strong>View→Configure Colors</strong></p>
+<h3 id=options>Options</h3>
+<h4 id=display-options>Display Options</h4>
+<ul>
+<li><strong>Auto-refresh speed:</strong> Configures the speed at which the memory view refreshes.</li>
+<li><strong>Select Font:</strong> Allows you to select which font to use in the memory view.</li>
+<li><strong>Use high text density mode:</strong> When enabled, the vertical space between every row is reduced, allowing more bytes to be shown on the screen at once.</li>
+<li><strong>Show characters:</strong> When enabled, a character representation of the binary data is shown on the right. This can be combined with TBL files to find/edit in-game dialog in the memory tools.</li>
+<li><strong>Show label tooltip on mouseover:</strong> When enabled, bytes for which a label exists will have a tooltip with the label&rsquo;s information.</li>
+</ul>
+<h4 id=other-options>Other Options</h4>
+<ul>
+<li><strong>Use per-byte left/right navigation</strong>: When enabled, pressing the left or right arrows more directly to the next byte, instead of the next nibble.</li>
+<li><strong>Use per-byte editing mode</strong>: When enabled, it is no longer possible to select individual nibbles and a full byte&rsquo;s value must be written before it takes effect. (Normally, edits are applied immediately once either nibble is modified)</li>
+</ul>
+<h3 id=editing-memory-values>Editing Memory Values</h3>
+<p>There are 2 ways to edit memory values:</p>
+<ul>
+<li>
+<p><strong>Using the hex view</strong>: Click on the byte you want to change in the hex view (on the left), and type hexadecimal values to replace it.</p>
+</li>
+<li>
+<p><strong>Using the text view</strong>: Click on the section you want to change in the text view (on the right), and type ASCII text to replace. This method is rather limited and usually not very useful unless the ROM uses ASCII values for its text.</p>
+</li>
+</ul>
+<h3 id=importing--exporting>Importing / Exporting</h3>
+<p>For most types of memory, it is possible to export its contents to a binary file as well as import it back from a file. Use the <code>Import</code> and <code>Export</code> commands to do this.</p>
+<h3 id=freezing-values>Freezing values</h3>
+<p>Using the right-click menu, you can <code>Freeze</code> values in CPU Memory. Frozen addresses are shown in magenta.<br>
+Frozen addresses will no longer be affected by write operations - effectively making those addresses read-only for the CPU. It is still possible to manually edit the value of frozen addresses using the memory viewer.</p>
+<h3 id=using-tbl-files>Using TBL Files</h3>
+<p>TBL files are text files that define mappings between sequences of bytes and text characters. For example, it might define the byte $95 as the character &lsquo;A&rsquo;.</p>
+<p>Normally, when no TBL file is loaded, the memory viewer will display each byte&rsquo;s standard ASCII representation on the right-hand side.
+Once a TBL file is loaded, the text representation of the data will be updated to reflect the TBL mappings. This is useful, for example, when translating text.</p>
+<h2 id=memory-access-counters>Memory Access Counters</h2>
+<p>When active, the debugger keeps track of all CPU and PPU memory reads, writes and executions. It is possible to view these counters here.</p>
+<p>Use the <code>Sort By</code> option to sort the list based on different criteria.</p>
+<p>The <code>Reset</code> button allows you to reset all counters back to 0 &ndash; this is useful when you are trying to gather data for a specific portion of the execution.</p>
+<p>Use the <code>Highlight uninitialized memory reads</code> option to track down any reads done to RAM memory before the RAM memory has been initialized after a power cycle &ndash; reading from uninitialized memory can produce random behavior, which is usually unwanted.</p>
+<footer class=footline>
+</footer>
+</div>
+</div>
+<div id=navigation>
+<a class="nav nav-prev" href=../debugging/eventviewer.html title="Event Viewer"> <i class="fa fa-chevron-left"></i></a>
+<a class="nav nav-next" href=../debugging/performanceprofiler.html title="Performance Profiler" style=margin-right:0><i class="fa fa-chevron-right"></i></a>
+</div>
+</section>
+<div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px>
+<div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div>
+</div>
+<script src=../js/clipboard.min.js?1640054941></script>
+<script src=../js/perfect-scrollbar.min.js?1640054941></script>
+<script src=../js/perfect-scrollbar.jquery.min.js?1640054941></script>
+<script src=../js/jquery.sticky-kit.min.js?1640054941></script>
+<script src=../js/featherlight.min.js?1640054941></script>
+<script src=../js/html5shiv-printshiv.min.js?1640054941></script>
+<script src=../js/highlight.pack.js?1640054941></script>
+<script>hljs.initHighlightingOnLoad()</script>
+<script src=../js/modernizr.custom.71422.js?1640054941></script>
+<script src=../js/learn.js?1640054941></script>
+<script src=../js/hugo-learn.js?1640054941></script>
+<link href=../mermaid/mermaid.css?1640054941 type=text/css rel=stylesheet>
+<script src=../mermaid/mermaid.js?1640054941></script>
+<script>mermaid.initialize({startOnLoad:!0})</script>
+</body>
+</html>

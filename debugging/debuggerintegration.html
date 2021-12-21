@@ -1,0 +1,354 @@
+<!doctype html><html lang=en class="js csstransforms3d">
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name=generator content="Hugo 0.91.0">
+<meta name=description content>
+<link rel="shortcut icon" href=../images/favicon.png type=image/x-icon>
+<link rel=icon href=../images/favicon.png type=image/x-icon>
+<title>Integration with compilers :: Mesen Documentation</title>
+<link href=../css/nucleus.css?1640054941 rel=stylesheet>
+<link href=../css/font-awesome.min.css?1640054941 rel=stylesheet>
+<link href=../css/hybrid.css?1640054941 rel=stylesheet>
+<link href=../css/featherlight.min.css?1640054941 rel=stylesheet>
+<link href=../css/perfect-scrollbar.min.css?1640054941 rel=stylesheet>
+<link href=../css/horsey.css?1640054941 rel=stylesheet>
+<link href=../css/theme.css?1640054941 rel=stylesheet>
+<link href=../css/hugo-theme.css?1640054941 rel=stylesheet>
+<link href=../css/custom.css?1640054941 rel=stylesheet>
+<link href=../css/theme-green.css?1640054941 rel=stylesheet>
+<script src=../js/jquery-2.x.min.js?1640054941></script>
+<style type=text/css>:root #header+#content>#left>#rlblock_left{display:none!important}</style>
+</head>
+<body data-url=../debugging/debuggerintegration.html>
+<nav id=sidebar>
+<div id=header-wrapper>
+<div id=header>
+<a id=logo href=../index.html>
+<img src=../images/MesenIcon.png>
+</a>
+</div>
+<div class=searchbox>
+<label for=search-by><i class="fa fa-search"></i></label>
+<input data-search-input id=search-by type=text placeholder=Search...>
+<span data-search-clear><i class="fa fa-close"></i></span>
+</div>
+<script type=text/javascript src=../js/lunr.min.js?1640054941></script>
+<script type=text/javascript src=../js/horsey.js?1640054941></script>
+<script type=text/javascript>var baseurl=""</script>
+<script type=text/javascript src=../js/searchjson.js?1640054941></script>
+<script type=text/javascript src=../js/search.js?1640054941></script>
+</div>
+<div class=highlightable>
+<ul class=topics>
+<li data-nav-id=/gettingstarted.html title="Getting Started" class=dd-item>
+<a href=../gettingstarted.html>
+Getting Started
+</a>
+</li>
+<li data-nav-id=/configuration.html title=Configuration class=dd-item>
+<a href=../configuration.html>
+Configuration
+</a>
+<ul>
+<li data-nav-id=/configuration/audio.html title="Audio Options" class=dd-item>
+<a href=../configuration/audio.html>
+Audio Options
+</a>
+</li>
+<li data-nav-id=/configuration/input.html title="Input Options" class=dd-item>
+<a href=../configuration/input.html>
+Input Options
+</a>
+</li>
+<li data-nav-id=/configuration/video.html title="Video Options" class=dd-item>
+<a href=../configuration/video.html>
+Video Options
+</a>
+</li>
+<li data-nav-id=/configuration/emulation.html title="Emulation Options" class=dd-item>
+<a href=../configuration/emulation.html>
+Emulation Options
+</a>
+</li>
+<li data-nav-id=/configuration/preferences.html title=Preferences class=dd-item>
+<a href=../configuration/preferences.html>
+Preferences
+</a>
+</li>
+</ul>
+</li>
+<li data-nav-id=/tools.html title=Tools class=dd-item>
+<a href=../tools.html>
+Tools
+</a>
+</li>
+<li data-nav-id=/debugging.html title="Debugging Tools" class="dd-item
+parent">
+<a href=../debugging.html>
+Debugging Tools
+</a>
+<ul>
+<li data-nav-id=/debugging/debugger.html title=Debugger class=dd-item>
+<a href=../debugging/debugger.html>
+Debugger
+</a>
+</li>
+<li data-nav-id=/debugging/apuviewer.html title="APU Viewer" class=dd-item>
+<a href=../debugging/apuviewer.html>
+APU Viewer
+</a>
+</li>
+<li data-nav-id=/debugging/assembler.html title=Assembler class=dd-item>
+<a href=../debugging/assembler.html>
+Assembler
+</a>
+</li>
+<li data-nav-id=/debugging/eventviewer.html title="Event Viewer" class=dd-item>
+<a href=../debugging/eventviewer.html>
+Event Viewer
+</a>
+</li>
+<li data-nav-id=/debugging/memorytools.html title="Memory Tools" class=dd-item>
+<a href=../debugging/memorytools.html>
+Memory Tools
+</a>
+</li>
+<li data-nav-id=/debugging/performanceprofiler.html title="Performance Profiler" class=dd-item>
+<a href=../debugging/performanceprofiler.html>
+Performance Profiler
+</a>
+</li>
+<li data-nav-id=/debugging/ppuviewer.html title="PPU Viewer" class=dd-item>
+<a href=../debugging/ppuviewer.html>
+PPU Viewer
+</a>
+</li>
+<li data-nav-id=/debugging/scriptwindow.html title="Script Window" class=dd-item>
+<a href=../debugging/scriptwindow.html>
+Script Window
+</a>
+</li>
+<li data-nav-id=/debugging/texthooker.html title="Text Hooker" class=dd-item>
+<a href=../debugging/texthooker.html>
+Text Hooker
+</a>
+</li>
+<li data-nav-id=/debugging/tracelogger.html title="Trace Logger" class=dd-item>
+<a href=../debugging/tracelogger.html>
+Trace Logger
+</a>
+</li>
+<li data-nav-id=/debugging/debuggerintegration.html title="Integration with compilers" class="dd-item active">
+<a href=../debugging/debuggerintegration.html>
+Integration with compilers
+</a>
+</li>
+</ul>
+</li>
+<li data-nav-id=/hdpacks.html title="HD Packs" class=dd-item>
+<a href=../hdpacks.html>
+HD Packs
+</a>
+</li>
+<li data-nav-id=/apireference.html title="Lua API reference" class=dd-item>
+<a href=../apireference.html>
+Lua API reference
+</a>
+<ul>
+<li data-nav-id=/apireference/changelog.html title=Changelog class=dd-item>
+<a href=../apireference/changelog.html>
+Changelog
+</a>
+</li>
+<li data-nav-id=/apireference/callbacks.html title=Callbacks class=dd-item>
+<a href=../apireference/callbacks.html>
+Callbacks
+</a>
+</li>
+<li data-nav-id=/apireference/drawing.html title=Drawing class=dd-item>
+<a href=../apireference/drawing.html>
+Drawing
+</a>
+</li>
+<li data-nav-id=/apireference/emulation.html title=Emulation class=dd-item>
+<a href=../apireference/emulation.html>
+Emulation
+</a>
+</li>
+<li data-nav-id=/apireference/input.html title=Input class=dd-item>
+<a href=../apireference/input.html>
+Input
+</a>
+</li>
+<li data-nav-id=/apireference/logging.html title=Logging class=dd-item>
+<a href=../apireference/logging.html>
+Logging
+</a>
+</li>
+<li data-nav-id=/apireference/memoryaccess.html title="Memory Access" class=dd-item>
+<a href=../apireference/memoryaccess.html>
+Memory Access
+</a>
+</li>
+<li data-nav-id=/apireference/misc.html title=Miscellaneous class=dd-item>
+<a href=../apireference/misc.html>
+Miscellaneous
+</a>
+</li>
+<li data-nav-id=/apireference/enums.html title=Enums class=dd-item>
+<a href=../apireference/enums.html>
+Enums
+</a>
+</li>
+</ul>
+</li>
+</ul>
+<section id=shortcuts>
+<h3>More</h3>
+<ul>
+<li role>
+<a class=padding href=https://www.mesen.ca><img style=vertical-align:middle src=../images/favicon.png> <span style=display:inline;vertical-align:middle>Website</span></a>
+</li>
+<li role>
+<a class=padding href=https://github.com/SourMesen/Mesen><i class="fa fa-github"></i> GitHub</a>
+</li>
+</ul>
+</section>
+<div id=menuspacer></div>
+<section id=footer>
+<div class=menuFooter>
+<div class=donateButton><a href=https://www.mesen.ca/Donate.php><img src=../images/patreon.png alt="Become a Patron!" width=66% height=66%></a></div>
+<div class=donateButton><a class=bmc-button target=_blank href=https://www.mesen.ca/BuyCoffee.php><img src=../images/BMC-btn-logo.svg alt=Donate><span style=margin-left:5px>Donate</span></a></div>
+Version: <b>0.9.9</b><br>
+Last Updated: <b>2021-12-21</b>
+</div>
+</section>
+</div>
+</nav>
+<section id=body>
+<div id=overlay></div>
+<div class="padding highlightable sticky-parent">
+<div class=sticky-spacer>
+<div id=top-bar>
+<div id=breadcrumbs itemscope itemtype=http://data-vocabulary.org/Breadcrumb>
+<span id=sidebar-toggle-span>
+<a href=# id=sidebar-toggle data-sidebar-toggle>
+<i class="fa fa-bars"></i>
+</a>
+</span>
+<span id=toc-menu><i class="fa fa-list-alt"></i></span>
+<span class=links>
+<a href=../>Home</a> > <a href=../debugging.html>Debugging Tools</a> > Integration with compilers
+</span>
+</div>
+<div class=progress>
+<div class=wrapper>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#integration-with-compilers>Integration with compilers</a>
+<ul>
+<li><a href=#cc65--ca65>CC65 / CA65</a></li>
+<li><a href=#asm6f>ASM6f</a></li>
+<li><a href=#nesasm>NESASM</a></li>
+</ul>
+</li>
+<li><a href=#importing-and-exporting-labels>Importing and exporting labels</a>
+<ul>
+<li><a href=#mesen-label-files-mlb>Mesen Label Files (.mlb)</a></li>
+<li><a href=#import-settings>Import Settings</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+</div>
+<div id=body-inner>
+<h1>Integration with compilers</h1>
+<div class=toc>
+<div><nav id=TableOfContents>
+<ul>
+<li><a href=#integration-with-compilers>Integration with compilers</a>
+<ul>
+<li><a href=#cc65--ca65>CC65 / CA65</a></li>
+<li><a href=#asm6f>ASM6f</a></li>
+<li><a href=#nesasm>NESASM</a></li>
+</ul>
+</li>
+<li><a href=#importing-and-exporting-labels>Importing and exporting labels</a>
+<ul>
+<li><a href=#mesen-label-files-mlb>Mesen Label Files (.mlb)</a></li>
+<li><a href=#import-settings>Import Settings</a></li>
+</ul>
+</li>
+</ul>
+</nav></div>
+</div>
+<p>When building homebrew software in assembly or C, it is possible to export the labels used in your code and import them into Mesen to simplify the debugging process. This allows the debugger to know which portions of the ROM correspond to which functions in your code, as well as display your code&rsquo;s comments inside the debugger itself.</p>
+<h2 id=integration-with-compilers>Integration with compilers</h2>
+<h3 id=cc65--ca65>CC65 / CA65</h3>
+<p>CC65/CA65 are able to produce .DBG files which can be imported into Mesen&rsquo;s debugger.<br>
+To make CC65/CA65 create a .DBG file during the compilation, use the <code>--dbgfile</code> command line option.</p>
+<p>To import the .DBG file, use the <strong>File→Workspace→Import Labels</strong> command in the debugger window.</p>
+<p>You can also enable the <code>Auto-load DBG/MLB files</code> to make Mesen load any .DBG file it finds next to the ROM whenever the debugger is opened or the power cycle button is used.<br>
+<strong>Note:</strong> For this option to work, the ROM file must have the same name as the DBG file (e.g <code>MyRom.nes</code> and <code>MyRom.dbg</code>) and be inside the same folder.</p>
+<h4 id=source-view>Source View</h4>
+<p>When a .DBG file is loaded, 2 additional options appear in the code window&rsquo;s right-click menu:</p>
+<ul>
+<li><strong>Switch to Source View</strong>: This turns on <code>Source View</code> mode, which allows you to debug the game using the original code files, rather than the disassembly. This can be used for both assembly and C projects.</li>
+<li><strong>Show source code as comments</strong>: When enabled, the debugger will show the original source code to the right of the disassembly, as comments.</li>
+</ul>
+<h3 id=asm6f>ASM6f</h3>
+<p>Integration with ASM6 is possible by using freem&rsquo;s branch of ASM6 named <a href=https://github.com/freem/asm6f>ASM6f</a>.<br>
+This fork contains 2 additional command line options that are useful when using Mesen: <code>-m</code> and <code>-c</code></p>
+<p><code>-m</code> produces a .mlb (Mesen labels) file that can be imported manually using the <strong>File→Workspace→Import Labels</strong> command.<br>
+<code>-c</code> produces a .cdl (Code Data Logger) file which can be imported manually using the <strong>Tools→Code/Data Logger→Load CDL file</strong> command.</p>
+<p>Additionally, you can use the <code>Auto-load DBG/MLB files</code> and <code>Auto-load CDL files</code> options in the <strong>File→Workspace</strong> menu to automatically load MLB and CDL files present in the same folder as the current ROM, with the same filename (e.g <code>MyRom.nes</code>, <code>MyRom.mlb</code>, <code>MyRom.cdl</code>).</p>
+<h3 id=nesasm>NESASM</h3>
+<p>Mesen can also import the <code>.fns</code> symbol files that NESASM produces. However, due to limitations in the <code>.fns</code> format, these labels can only be reliably imported for games containing exactly 32kB of PRG ROM. If you are creating a larger game, CC65/CA65 offers the best integration features at the moment.</p>
+<h2 id=importing-and-exporting-labels>Importing and exporting labels</h2>
+<p>Mesen can also import and export labels in <code>.mlb</code> format. This is the same format as the label files produced by ASM6f. The ability to import labels can be used to integrate the debugger with your own workflow (e.g by creating your own scripts that produce <code>.mlb</code> files)</p>
+<h3 id=mesen-label-files-mlb>Mesen Label Files (.mlb)</h3>
+<p>The <code>.mlb</code> files used by Mesen to import/export labels is a simple text format. For example, this defines a label and comment on byte $100 of PRG ROM:</p>
+<pre tabindex=0><code>P:100:MyLabel:This is a comment
+</code></pre><p>The format also supports multi-byte labels, defined by giving specifying an address range:</p>
+<pre tabindex=0><code>R:200-2FF:ShadowOam
+</code></pre><p>The first letter on each row is used to specify the label&rsquo;s type:</p>
+<pre tabindex=0><code>P: PRG ROM labels
+R: RAM labels (for the NES' internal 2kb RAM)
+S: Save RAM labels
+W: Work RAM labels
+G: Register labels (these are used to define PPU/APU/Mapper registers, etc.)
+</code></pre><h3 id=import-settings>Import Settings</h3>
+<p>For fine-grain control over the DBG/MLB file imports, the <code>Import Settings</code> window can be used.<br>
+This allows you to configure which types of labels/comments should be imported, as well as choosing whether or not Mesen should delete all existing labels before importing DBG/MLB files.</p>
+<footer class=footline>
+</footer>
+</div>
+</div>
+<div id=navigation>
+<a class="nav nav-prev" href=../debugging/tracelogger.html title="Trace Logger"> <i class="fa fa-chevron-left"></i></a>
+<a class="nav nav-next" href=../hdpacks.html title="HD Packs" style=margin-right:0><i class="fa fa-chevron-right"></i></a>
+</div>
+</section>
+<div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px>
+<div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div>
+</div>
+<script src=../js/clipboard.min.js?1640054941></script>
+<script src=../js/perfect-scrollbar.min.js?1640054941></script>
+<script src=../js/perfect-scrollbar.jquery.min.js?1640054941></script>
+<script src=../js/jquery.sticky-kit.min.js?1640054941></script>
+<script src=../js/featherlight.min.js?1640054941></script>
+<script src=../js/html5shiv-printshiv.min.js?1640054941></script>
+<script src=../js/highlight.pack.js?1640054941></script>
+<script>hljs.initHighlightingOnLoad()</script>
+<script src=../js/modernizr.custom.71422.js?1640054941></script>
+<script src=../js/learn.js?1640054941></script>
+<script src=../js/hugo-learn.js?1640054941></script>
+<link href=../mermaid/mermaid.css?1640054941 type=text/css rel=stylesheet>
+<script src=../mermaid/mermaid.js?1640054941></script>
+<script>mermaid.initialize({startOnLoad:!0})</script>
+</body>
+</html>

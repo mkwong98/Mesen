@@ -1,0 +1,680 @@
+<!doctype html><html lang=en class="js csstransforms3d">
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name=generator content="Hugo 0.91.0">
+<meta name=description content>
+<link rel="shortcut icon" href=../images/favicon.png type=image/x-icon>
+<link rel=icon href=../images/favicon.png type=image/x-icon>
+<title>Debugger :: Mesen Documentation</title>
+<link href=../css/nucleus.css?1640054941 rel=stylesheet>
+<link href=../css/font-awesome.min.css?1640054941 rel=stylesheet>
+<link href=../css/hybrid.css?1640054941 rel=stylesheet>
+<link href=../css/featherlight.min.css?1640054941 rel=stylesheet>
+<link href=../css/perfect-scrollbar.min.css?1640054941 rel=stylesheet>
+<link href=../css/horsey.css?1640054941 rel=stylesheet>
+<link href=../css/theme.css?1640054941 rel=stylesheet>
+<link href=../css/hugo-theme.css?1640054941 rel=stylesheet>
+<link href=../css/custom.css?1640054941 rel=stylesheet>
+<link href=../css/theme-green.css?1640054941 rel=stylesheet>
+<script src=../js/jquery-2.x.min.js?1640054941></script>
+<style type=text/css>:root #header+#content>#left>#rlblock_left{display:none!important}</style>
+</head>
+<body data-url=../debugging/debugger.html>
+<nav id=sidebar>
+<div id=header-wrapper>
+<div id=header>
+<a id=logo href=../index.html>
+<img src=../images/MesenIcon.png>
+</a>
+</div>
+<div class=searchbox>
+<label for=search-by><i class="fa fa-search"></i></label>
+<input data-search-input id=search-by type=text placeholder=Search...>
+<span data-search-clear><i class="fa fa-close"></i></span>
+</div>
+<script type=text/javascript src=../js/lunr.min.js?1640054941></script>
+<script type=text/javascript src=../js/horsey.js?1640054941></script>
+<script type=text/javascript>var baseurl=""</script>
+<script type=text/javascript src=../js/searchjson.js?1640054941></script>
+<script type=text/javascript src=../js/search.js?1640054941></script>
+</div>
+<div class=highlightable>
+<ul class=topics>
+<li data-nav-id=/gettingstarted.html title="Getting Started" class=dd-item>
+<a href=../gettingstarted.html>
+Getting Started
+</a>
+</li>
+<li data-nav-id=/configuration.html title=Configuration class=dd-item>
+<a href=../configuration.html>
+Configuration
+</a>
+<ul>
+<li data-nav-id=/configuration/audio.html title="Audio Options" class=dd-item>
+<a href=../configuration/audio.html>
+Audio Options
+</a>
+</li>
+<li data-nav-id=/configuration/input.html title="Input Options" class=dd-item>
+<a href=../configuration/input.html>
+Input Options
+</a>
+</li>
+<li data-nav-id=/configuration/video.html title="Video Options" class=dd-item>
+<a href=../configuration/video.html>
+Video Options
+</a>
+</li>
+<li data-nav-id=/configuration/emulation.html title="Emulation Options" class=dd-item>
+<a href=../configuration/emulation.html>
+Emulation Options
+</a>
+</li>
+<li data-nav-id=/configuration/preferences.html title=Preferences class=dd-item>
+<a href=../configuration/preferences.html>
+Preferences
+</a>
+</li>
+</ul>
+</li>
+<li data-nav-id=/tools.html title=Tools class=dd-item>
+<a href=../tools.html>
+Tools
+</a>
+</li>
+<li data-nav-id=/debugging.html title="Debugging Tools" class="dd-item
+parent">
+<a href=../debugging.html>
+Debugging Tools
+</a>
+<ul>
+<li data-nav-id=/debugging/debugger.html title=Debugger class="dd-item active">
+<a href=../debugging/debugger.html>
+Debugger
+</a>
+</li>
+<li data-nav-id=/debugging/apuviewer.html title="APU Viewer" class=dd-item>
+<a href=../debugging/apuviewer.html>
+APU Viewer
+</a>
+</li>
+<li data-nav-id=/debugging/assembler.html title=Assembler class=dd-item>
+<a href=../debugging/assembler.html>
+Assembler
+</a>
+</li>
+<li data-nav-id=/debugging/eventviewer.html title="Event Viewer" class=dd-item>
+<a href=../debugging/eventviewer.html>
+Event Viewer
+</a>
+</li>
+<li data-nav-id=/debugging/memorytools.html title="Memory Tools" class=dd-item>
+<a href=../debugging/memorytools.html>
+Memory Tools
+</a>
+</li>
+<li data-nav-id=/debugging/performanceprofiler.html title="Performance Profiler" class=dd-item>
+<a href=../debugging/performanceprofiler.html>
+Performance Profiler
+</a>
+</li>
+<li data-nav-id=/debugging/ppuviewer.html title="PPU Viewer" class=dd-item>
+<a href=../debugging/ppuviewer.html>
+PPU Viewer
+</a>
+</li>
+<li data-nav-id=/debugging/scriptwindow.html title="Script Window" class=dd-item>
+<a href=../debugging/scriptwindow.html>
+Script Window
+</a>
+</li>
+<li data-nav-id=/debugging/texthooker.html title="Text Hooker" class=dd-item>
+<a href=../debugging/texthooker.html>
+Text Hooker
+</a>
+</li>
+<li data-nav-id=/debugging/tracelogger.html title="Trace Logger" class=dd-item>
+<a href=../debugging/tracelogger.html>
+Trace Logger
+</a>
+</li>
+<li data-nav-id=/debugging/debuggerintegration.html title="Integration with compilers" class=dd-item>
+<a href=../debugging/debuggerintegration.html>
+Integration with compilers
+</a>
+</li>
+</ul>
+</li>
+<li data-nav-id=/hdpacks.html title="HD Packs" class=dd-item>
+<a href=../hdpacks.html>
+HD Packs
+</a>
+</li>
+<li data-nav-id=/apireference.html title="Lua API reference" class=dd-item>
+<a href=../apireference.html>
+Lua API reference
+</a>
+<ul>
+<li data-nav-id=/apireference/changelog.html title=Changelog class=dd-item>
+<a href=../apireference/changelog.html>
+Changelog
+</a>
+</li>
+<li data-nav-id=/apireference/callbacks.html title=Callbacks class=dd-item>
+<a href=../apireference/callbacks.html>
+Callbacks
+</a>
+</li>
+<li data-nav-id=/apireference/drawing.html title=Drawing class=dd-item>
+<a href=../apireference/drawing.html>
+Drawing
+</a>
+</li>
+<li data-nav-id=/apireference/emulation.html title=Emulation class=dd-item>
+<a href=../apireference/emulation.html>
+Emulation
+</a>
+</li>
+<li data-nav-id=/apireference/input.html title=Input class=dd-item>
+<a href=../apireference/input.html>
+Input
+</a>
+</li>
+<li data-nav-id=/apireference/logging.html title=Logging class=dd-item>
+<a href=../apireference/logging.html>
+Logging
+</a>
+</li>
+<li data-nav-id=/apireference/memoryaccess.html title="Memory Access" class=dd-item>
+<a href=../apireference/memoryaccess.html>
+Memory Access
+</a>
+</li>
+<li data-nav-id=/apireference/misc.html title=Miscellaneous class=dd-item>
+<a href=../apireference/misc.html>
+Miscellaneous
+</a>
+</li>
+<li data-nav-id=/apireference/enums.html title=Enums class=dd-item>
+<a href=../apireference/enums.html>
+Enums
+</a>
+</li>
+</ul>
+</li>
+</ul>
+<section id=shortcuts>
+<h3>More</h3>
+<ul>
+<li role>
+<a class=padding href=https://www.mesen.ca><img style=vertical-align:middle src=../images/favicon.png> <span style=display:inline;vertical-align:middle>Website</span></a>
+</li>
+<li role>
+<a class=padding href=https://github.com/SourMesen/Mesen><i class="fa fa-github"></i> GitHub</a>
+</li>
+</ul>
+</section>
+<div id=menuspacer></div>
+<section id=footer>
+<div class=menuFooter>
+<div class=donateButton><a href=https://www.mesen.ca/Donate.php><img src=../images/patreon.png alt="Become a Patron!" width=66% height=66%></a></div>
+<div class=donateButton><a class=bmc-button target=_blank href=https://www.mesen.ca/BuyCoffee.php><img src=../images/BMC-btn-logo.svg alt=Donate><span style=margin-left:5px>Donate</span></a></div>
+Version: <b>0.9.9</b><br>
+Last Updated: <b>2021-12-21</b>
+</div>
+</section>
+</div>
+</nav>
+<section id=body>
+<div id=overlay></div>
+<div class="padding highlightable sticky-parent">
+<div class=sticky-spacer>
+<div id=top-bar>
+<div id=breadcrumbs itemscope itemtype=http://data-vocabulary.org/Breadcrumb>
+<span id=sidebar-toggle-span>
+<a href=# id=sidebar-toggle data-sidebar-toggle>
+<i class="fa fa-bars"></i>
+</a>
+</span>
+<span id=toc-menu><i class="fa fa-list-alt"></i></span>
+<span class=links>
+<a href=../>Home</a> > <a href=../debugging.html>Debugging Tools</a> > Debugger
+</span>
+</div>
+<div class=progress>
+<div class=wrapper>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#general-usage-tips>General Usage Tips</a></li>
+<li><a href=#search-tools>Search Tools</a></li>
+<li><a href=#customizing-the-debugger>Customizing the debugger</a></li>
+<li><a href=#code-window>Code Window</a>
+<ul>
+<li><a href=#general-information>General information</a></li>
+<li><a href=#disassembly-options>Disassembly Options</a></li>
+</ul>
+</li>
+<li><a href=#emulation-status>Emulation Status</a></li>
+<li><a href=#input-button-setup>Input Button Setup</a></li>
+<li><a href=#watch-listwindow>Watch List/Window</a>
+<ul>
+<li><a href=#syntax>Syntax</a></li>
+</ul>
+</li>
+<li><a href=#breakpoints>Breakpoints</a>
+<ul>
+<li><a href=#breakpoint-configuration>Breakpoint configuration</a></li>
+</ul>
+</li>
+<li><a href=#call-stack>Call Stack</a></li>
+<li><a href=#labels>Labels</a>
+<ul>
+<li><a href=#editing-labels>Editing Labels</a></li>
+</ul>
+</li>
+<li><a href=#function-list>Function List</a></li>
+<li><a href=#cpuppu-memory-mappings>CPU/PPU Memory Mappings</a></li>
+<li><a href=#other-options>Other Options</a>
+<ul>
+<li><a href=#display-options>Display Options</a></li>
+<li><a href=#tooltip-options>Tooltip Options</a></li>
+<li><a href=#break-options>Break Options</a></li>
+<li><a href=#copy-options>Copy Options</a></li>
+<li><a href=#layout-options>Layout Options</a></li>
+<li><a href=#misc-options>Misc. Options</a></li>
+</ul>
+</li>
+<li><a href=#workspaces>Workspaces</a>
+<ul>
+<li><a href=#default-workspace-labels>Default Workspace Labels</a></li>
+</ul>
+</li>
+<li><a href=#performance-tracker>Performance Tracker</a></li>
+<li><a href=#how-to-edit-code>How To: Edit Code</a></li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+</div>
+<div id=body-inner>
+<h1>Debugger</h1>
+<div class=toc>
+<div><nav id=TableOfContents>
+<ul>
+<li><a href=#general-usage-tips>General Usage Tips</a></li>
+<li><a href=#search-tools>Search Tools</a></li>
+<li><a href=#customizing-the-debugger>Customizing the debugger</a></li>
+<li><a href=#code-window>Code Window</a>
+<ul>
+<li><a href=#general-information>General information</a></li>
+<li><a href=#disassembly-options>Disassembly Options</a></li>
+</ul>
+</li>
+<li><a href=#emulation-status>Emulation Status</a></li>
+<li><a href=#input-button-setup>Input Button Setup</a></li>
+<li><a href=#watch-listwindow>Watch List/Window</a>
+<ul>
+<li><a href=#syntax>Syntax</a></li>
+</ul>
+</li>
+<li><a href=#breakpoints>Breakpoints</a>
+<ul>
+<li><a href=#breakpoint-configuration>Breakpoint configuration</a></li>
+</ul>
+</li>
+<li><a href=#call-stack>Call Stack</a></li>
+<li><a href=#labels>Labels</a>
+<ul>
+<li><a href=#editing-labels>Editing Labels</a></li>
+</ul>
+</li>
+<li><a href=#function-list>Function List</a></li>
+<li><a href=#cpuppu-memory-mappings>CPU/PPU Memory Mappings</a></li>
+<li><a href=#other-options>Other Options</a>
+<ul>
+<li><a href=#display-options>Display Options</a></li>
+<li><a href=#tooltip-options>Tooltip Options</a></li>
+<li><a href=#break-options>Break Options</a></li>
+<li><a href=#copy-options>Copy Options</a></li>
+<li><a href=#layout-options>Layout Options</a></li>
+<li><a href=#misc-options>Misc. Options</a></li>
+</ul>
+</li>
+<li><a href=#workspaces>Workspaces</a>
+<ul>
+<li><a href=#default-workspace-labels>Default Workspace Labels</a></li>
+</ul>
+</li>
+<li><a href=#performance-tracker>Performance Tracker</a></li>
+<li><a href=#how-to-edit-code>How To: Edit Code</a></li>
+</ul>
+</nav></div>
+</div>
+<p>The debugger is the main part of the debugging tools available in Mesen. This window displays the disassembled code, allows you to configure breakpoints, labels and watch values. It also contains a large number of options and smaller features &ndash; all of which are described below.</p>
+<h2 id=general-usage-tips>General Usage Tips</h2>
+<p>Most elements in the debugger&rsquo;s interface have right-click menu options - make sure you explore the right-click options available in each list and window.</p>
+<p>Watch expressions, breakpoints and labels are automatically saved on a per-rom basis in a <strong>Workspace</strong>.<br>
+You can completely reset the workspace for a specific rom by using the <strong>File→Workspace→Reset Workspace</strong> command.</p>
+<h2 id=search-tools>Search Tools</h2>
+<p>There are a number of different tools that can be used to search/navigate the code:</p>
+<ul>
+<li><strong>Go To All</strong>: The <em>Go To All</em> feature allows you to search for any label by its name and navigate to it. It also works with CA/CC65 and displays the location of the labels in the original source code. (<strong>Ctrl+,</strong>)</li>
+<li><strong>Find/Find Next/Find Previous</strong>: Incremental search that can be used to search through any text shown in the code window (<strong>Ctrl+F</strong>)</li>
+<li><strong>Find All Occurrences</strong>: Search the code for a specific string or label and return all the results in a list. (<strong>Ctrl+Shift+F</strong>)</li>
+<li><strong>Go To&mldr;</strong>: These options allow you to quickly reach the NMI, IRQ or Reset handlers or a specific address (<strong>Ctrl+G</strong>)</li>
+</ul>
+<h2 id=customizing-the-debugger>Customizing the debugger</h2>
+<p>All keyboard shortcuts can be customized in <strong>Options→Customize Shortcut Keys</strong></p>
+<p>The font used in the code window can be customized in <strong>Options→Font Options→Select Font</strong><br>
+The colors used for syntax highlighting can be changed in <strong>Options→Configure Colors</strong></p>
+<p>Various portions of the debugger can be hidden/shown via <strong>Options→Show</strong></p>
+<h2 id=code-window>Code Window</h2>
+<p>The code window displays the disassembled code and contains a number of features and options.</p>
+<h3 id=general-information>General information</h3>
+<ul>
+<li>Several options control what is shown in the code window, and how it is shown - see <a href=#display-options>Display Options</a> below.</li>
+<li>Labels and comments defined in the label list are shown in the code.</li>
+<li>Single-line comments appear on the right, multi-line comments appear on top.</li>
+<li>The instruction that&rsquo;s currently executing is highlighted in yellow.</li>
+<li>Mouse-hovering any label or address will display a tooltip giving additional information (label, comment, current value in memory, etc.)</li>
+<li>You can alter the flow of execution by using the <code>Set Next Statement</code> command to change the next instruction to be executed.</li>
+</ul>
+<h3 id=disassembly-options>Disassembly Options</h3>
+<p><strong>Disassemble&mldr;</strong>:</p>
+<ul>
+<li><strong>Verified Code</strong>: (Always enabled) Bytes that are known by the debugger to be valid code will be disassembled as code.</li>
+<li><strong>Verified Data</strong>: Bytes that are known to be data will be disassembled as code (enabling this is not recommended).</li>
+<li><strong>Unidentified Code/Data</strong>: Bytes that have not been used yet by the CPU will be disassembled as code.</li>
+</ul>
+<p><strong>Show&mldr;</strong>:</p>
+<ul>
+<li><strong>Verified Code</strong>: (Always enabled) All verified code will be disassembled and shown in the code window.</li>
+<li><strong>Verified Data</strong>: Verified data blocks will be shown. If the option to disassemble verified data is enabled, a disassembly of the data will be shown.</li>
+<li><strong>Unidentified Code/Data</strong>: Blocks that are not marked as data nor code will be shown. If the option to disassemble unidentified data/code is enabled, a disassembly of the bytes will be shown.</li>
+</ul>
+<p><strong>Display OP codes in lower case</strong>: When enabled, OP codes are displayed in lowercase letters</p>
+<p><strong>Show Effective Addresses</strong>: When enabled, the resulting address of indirect addressing modes (e.g <code>LDA $3321, Y</code>) will be displayed next to the instruction in blue. e.g: <code>@ $3323</code></p>
+<p><strong>Show Memory Values</strong>: When enabled, every line of code that refers to a specific address in memory will display that address' current value on the right.</p>
+<p><strong>Byte Code Display</strong>: When enabled, the byte code matching the instructions will be displayed next to them (either on the left, or on the line below based on your selection)</p>
+<p><strong>PRG Address Display</strong>: When enabled, the address matching the actual position of an instructions in PRG ROM will be displayed next to the CPU address (or replace it entirely, based on your selection)</p>
+<h2 id=emulation-status>Emulation Status</h2>
+<p>This section of the debugger window displays the CPU and PPU&rsquo;s current state.<br>
+While execution is paused, most fields are editable. Altering the value of any field will change its corresponding value in the emulation core. To undo any edits you have done by mistake, click the &ldquo;Undo Changes&rdquo; button.</p>
+<h2 id=input-button-setup>Input Button Setup</h2>
+<p>This section lets you force certain buttons to be held down on the NES' controller. This is often useful when trying to debug input-related code.<br>
+Clicking on a button on the mini NES controllers will toggle its state - green buttons are currently being held down.</p>
+<h2 id=watch-listwindow>Watch List/Window</h2>
+<p>The watch window and watch list allow you to evaluate expression and see their value. The <code>Watch Window</code> is a standalone window that can be resized and moved independently from everything else, whereas the <code>Watch List</code> is a part of the main debugger window for quick access to watch expressions.</p>
+<p><strong>To add a new watch expression</strong>, click on the last empty line in the list to enter edit mode.<br>
+<strong>To edit a watch expression</strong>, double-click on it to enter edit mode.</p>
+<p>You can use the right-click context menu to delete or move entries, as well as select formatting options.<br>
+An import and export feature is also available to save/load watch expressions from a plain text file.</p>
+<h3 id=syntax>Syntax</h3>
+<p>The syntax is identical to C/C++ (e.g <code>&&</code> for AND, <code>||</code> for OR) and uses the same operator precedence as well.</p>
+<h4 id=operators>Operators</h4>
+<p>The following operators are supported (same usage/precedence as C):<br>
+<code>*</code>, <code>/</code>, <code>%</code>, <code>+</code>, <code>-</code>, <code>&lt;&lt;</code>, <code>>></code>, <code>&lt;</code>, <code>&lt;=</code>, <code>></code>, <code>>=</code>, <code>==</code>, <code>!=</code>, <code>&</code>, <code>^</code>, <code>|</code>, <code>&&</code>, <code>||</code>, <code>~</code>, <code>!</code>, <code>(</code>, <code>)</code></p>
+<p>Additionally, the following special operators exist:</p>
+<ul>
+<li><strong>[<em>address/label</em>]</strong>: Surrounding a value/expression with brackets will read the corresponding memory address and return its value (1 byte).
+<ul>
+<li>e.g: <code>[$8000]</code> will read the value at address $8000 and return it.</li>
+</ul>
+</li>
+<li><strong>{<em>address/label</em>}</strong>: Surrounding a value/expression with curly brackets will read the corresponding memory address and return its value (2 byte).
+<ul>
+<li>e.g: <code>{myLabel}</code> will read 2 bytes of memory at the address represented by the <code>myLabel</code> label and return its value</li>
+</ul>
+</li>
+<li><strong>:address/label</strong>: Prepending a <code>:</code> before an address/label will return the offset of the corresponding address within that memory type. If an address is not mapped to any type of memory, <code>-1</code> will be returned.
+<ul>
+<li>e.g: <code>:$8000</code> will return the offset in PRG ROM of the byte currently mapped at the CPU address $8000.</li>
+</ul>
+</li>
+</ul>
+<h4 id=special-values>Special values</h4>
+<p>The following &ldquo;variables&rdquo; can be used in both the watch window and contional breakpoints to check the state of specific portions of the emulation core.</p>
+<p><strong>Numeric values</strong></p>
+<ul>
+<li><strong>A/X/Y/PS/SP</strong>: Value of corresponding registers</li>
+<li><strong>PC</strong>: Program Counter</li>
+<li><strong>OpPC</strong>: Address of the current instruction&rsquo;s first byte</li>
+<li><strong>PreviousOpPC</strong>: Address of the previous instruction&rsquo;s first byte</li>
+<li><strong>Cycle/Scanline</strong>: Current cycle (0-340)/scanline(-1 to 260) of the PPU</li>
+<li><strong>Frame</strong>: PPU frame number (since power on/reset)</li>
+<li><strong>Value</strong>: Current value being read/written from/to memory</li>
+<li><strong>Address</strong>: Current CPU memory address being read/written</li>
+</ul>
+<p><strong>Flags</strong></p>
+<ul>
+<li><strong>Branched</strong>: true if the current instruction was reached by a branch/jump instruction</li>
+<li><strong>IsRead</strong>: true if the CPU is reading from a memory address</li>
+<li><strong>IsWrite</strong>: true if the CPU is writing to a memory address</li>
+<li><strong>IRQ</strong>: true if the IRQ flag is set</li>
+<li><strong>NMI</strong>: true if the NMI flag is set</li>
+<li><strong>Sprite0Hit</strong>: true if the PPU&rsquo;s &ldquo;Sprite 0 Hit&rdquo; flag is set</li>
+<li><strong>SpriteOverflow</strong>: true if the PPU&rsquo;s &ldquo;Sprite Overflow&rdquo; flag is set</li>
+<li><strong>VerticalBlank</strong>: true if the PPU&rsquo;s &ldquo;Vertical Blank&rdquo; flag is set</li>
+</ul>
+<h4 id=formatting>Formatting</h4>
+<p>It is possible to customize the format of each entry by adding a suffix to the expression.
+Suffixes contain a single letter and are optionally followed by a number indicating the number of bytes expected in the return value (up to 4).</p>
+<p>The available suffixes are:</p>
+<ul>
+<li><code>S</code> - Signed decimal value</li>
+<li><code>U</code> - Unsigned decimal value</li>
+<li><code>H</code> - Hexadecimal</li>
+<li><code>B</code> - Binary</li>
+</ul>
+<p>For example, suffixing an expression with:</p>
+<ul>
+<li><code>, H2</code> will display the result as a 2-byte hexadecimal value (e.g: <code>26, H2</code> will display as <code>$001A</code>)</li>
+<li><code>, B</code> will display the result as a binary value (e.g: <code>141,B</code> will display as <code>%10001101</code>)</li>
+<li><code>, S2</code> will display the result as a 16-bit signed decimal value (e.g: <code>$FE4F, S2</code> will display as <code>-433</code>)</li>
+<li><code>, U</code> will display the result as an unsigned decimal value (e.g: <code>180, U</code> will display as <code>180</code>)</li>
+</ul>
+<p>You can select the default format to use for entries without prefixes by right-clicking and choosing between:</p>
+<ul>
+<li><strong>Decimal Display</strong> (equivalent to <code>S4</code> to all entries - displays the result as 32-bit signed decimal values)</li>
+<li><strong>Hexadecimal Display</strong> (equivalent to <code>H1</code> to all entries)</li>
+<li><strong>Binary Display</strong> (equivalent to <code>B1</code> to all entries)</li>
+</ul>
+<h4 id=usage-examples>Usage Examples</h4>
+<pre tabindex=0><code>[$10] //Displays the value of memory at address $10 (CPU)
+a == 10 || x == $23
+scanline == 10 &amp;&amp; (cycle &gt;= 55 &amp;&amp; cycle &lt;= 100)
+x == [$150] || y == [10]
+[[$15] + y]   //Reads the value at address $15, adds Y to it and reads the value at the resulting address.
+{$FFFA}  //Returns the NMI handler's address.
+[$14] | ([$15] &lt;&lt; 8), H2  //Display the value of the 2-byte variable stored at $14 in hexadecimal format.
+</code></pre><p><strong>Using labels</strong></p>
+<p>Any label defined in the debugger can be used in watch expressions (their value will match the label&rsquo;s address in CPU memory).<br>
+For example, if you have a label called &ldquo;velocity&rdquo; that points to 1-byte value at address $30 in the CPU&rsquo;s memory, you can display its value in the watch using the following syntax: <code>[velocity]</code></p>
+<p><strong>Displaying arrays</strong></p>
+<p>The watch window allows you display several consecutive memory values on the same row using a special syntax. e.g:</p>
+<pre tabindex=0><code>[$30, 16]      //This will display the values of addresses $30 to $3F
+[MyLabel, 10]  //This syntax can also be used with labels
+</code></pre><h2 id=breakpoints>Breakpoints</h2>
+<p>Breakpoints define conditions under which the execution of the game&rsquo;s code will be suspended. Any number of breakpoints can be defined.
+You can also make a breakpoint appear as a mark on the <a href=../debugging/eventviewer.html>Event Viewer</a> by checking the <code>M</code> column.</p>
+<p><strong>To add a breakpoint</strong>, right-click the breakpoint list and select <strong>Add</strong>.<br>
+<strong>To edit a breakpoint</strong>, double-click on it in the list.<br>
+<strong>To disable a breakpoint</strong>, uncheck it.<br>
+<strong>To delete a breakpoint</strong>, right-click on it and select <strong>Delete</strong><br>
+<strong>To view the breakpoint in the code</strong>, right-click on it and select <strong>Go to location</strong></p>
+<h3 id=breakpoint-configuration>Breakpoint configuration</h3>
+<p>Breakpoints can be set to trigger based on CPU/PPU memory accesses at specific memory addresses.</p>
+<p><strong>Breakpoint Type</strong><br>
+Select the type of memory for which you want to set a breakpoint. The valid range of addresses for the breakpoint will vary based on the selected memory type.</p>
+<p><strong>Break On</strong><br>
+Select which types of accesses (read, write or execute) should trigger the breakpoint.</p>
+<p><strong>Address</strong><br>
+Select which address or address range this breakpoint should apply to.<br>
+It is also possible to specify no address at all by selecting <strong>Any</strong> - in this case, breakpoints will be evaluated on every CPU cycle.</p>
+<p><strong>Condition</strong> (optional)<br>
+Conditions allow you to use the same expression syntax as the one used in the <a href=#watch-window>Watch Window</a> to cause a breakpoint to trigger under specific conditions.</p>
+<p><strong>Process breakpoint on dummy reads/writes</strong><br>
+When enabled, the breakpoint will be processed for dummy reads and writes (only available for read or write breakpoints). When disabled, the debugger will never break on a dummy read or write for this breakpoint.</p>
+<p><strong>Mark on Event Viewer</strong><br>
+When enabled, a mark will be visible on the <a href=../debugging/eventviewer.html>Event Viewer</a> whenever this breakpoint&rsquo;s conditions are met. This can be used to add marks to the event viewer based on a variety of conditions by using conditional breakpoints.</p>
+<p><strong>Break Execution</strong><br>
+This enables the breakpoint - if this is disabled, the execution will not break when the breakpoint is hit.</p>
+<p><strong>Examples</strong><br>
+To break when the sum of the X and Y registers is 5:</p>
+<pre><code>x + y == 5
+</code></pre>
+<p>To break when the value at memory address $10 is smaller or equal to $40:</p>
+<pre><code>[$10] &lt;= $40
+</code></pre>
+<p>To break when the CPU writes the value $60 to any address:</p>
+<pre><code>IsWrite &amp;&amp; Value == $60  
+</code></pre>
+<h2 id=call-stack>Call Stack</h2>
+<p>The call stack displays the currently executing function, and all functions that are below it on the stack.
+The top of the list is the current function, while the row below it is the location that the code will return to once the current function executes the RTS instruction. The call stack also displays NMI and IRQ routine handlers and processes calls to RTI in the same manner as calls to JSR and RTS.</p>
+<p><strong>Note:</strong> Rows shown in gray and italic represent portions of the call stack that are currently not inside the CPU&rsquo;s memory (e.g because the PRG banks were changed since that point in the execution).</p>
+<p><strong>Labels:</strong> When labels are defined for the PRG ROM offset matching the function&rsquo;s entry point, that label is shown as the function&rsquo;s name in the call stack.</p>
+<p><strong>To view the code</strong> at any location in the call stack, double-click on the row.</p>
+<h2 id=labels>Labels</h2>
+<p>Labels can be used to simplify debugging. They allow you to give names to variables and functions which will be used instead of numeric addresses when viewing the code in the debugger. Labels can also be used to display single and multi-line comments to the code.<br>
+The label list displays every label defined in alphabetical order.</p>
+<p><strong>To add a label</strong>, right-click in the label list and select <code>Add</code>.<br>
+<strong>To edit a label</strong>, right-click in the label list and select <code>Edit</code>.<br>
+<strong>To delete a label</strong>, right-click in the label list and select <code>Delete</code>.</p>
+<p><strong>To add a breakpoint to a label</strong>, right-click in the label list and select <code>Add breakpoint</code>.<br>
+<strong>To add the label to the watch</strong>, right-click in the label list and select <code>Add to watch</code>.<br>
+<strong>To find where a label is used</strong>, right-click in the label list and select <code>Find Occurrences</code>.<br>
+<strong>To view the code</strong> at the label&rsquo;s location, double-click on the label in the list.</p>
+<p><strong>To view the label in the hex editor</strong>, use any of the <code>View in CPU memory</code>/<code>View in PRG ROM</code>/<code>View in Save RAM</code>/<code>View in Work RAM</code> options.</p>
+<p><code>Show Comments</code> controls wheter or not code comments that are not labelled are shown in the label list.
+<code>Show Automatic Jump Labels</code> determines whether or not the labels that are automatically generated by the <code>Auto-create jump labels</code> option are shown in the label list.</p>
+<p><strong>Note:</strong> Labels shown in gray color and italic font are currently not mapped in CPU memory.</p>
+<h3 id=editing-labels>Editing Labels</h3>
+<p>Various types of labels can be defined:</p>
+<ul>
+<li><strong>NES RAM (2 KB)</strong>: Used for labels residing in the $0000-$1FFF memory range (the NES' built-in RAM)</li>
+<li><strong>PRG ROM</strong>: Used for constants, data, code labels and functions in PRG ROM - the address value represents the offset from the start of PRG ROM (which can exceed $FFFF)</li>
+<li><strong>Work RAM</strong>: Used for variables in work ram (also called PRG RAM without battery backup) - the address value represents the offset from the start of the ram chip.</li>
+<li><strong>Save RAM</strong>: Used for variables in work ram (also called battery-backed PRG RAM) - the address value represents the offset from the start of the ram chip.</li>
+<li><strong>Register</strong>: These are used to give name to built-in or mapper-specific registers. For example, the $2000 PPU register could be renamed to &ldquo;PpuControl&rdquo;. Essentially, they are CPU memory labels ($0000-$FFFF) that ignore all banking, etc. The rules for them to be used in the disassembly window are slightly different.</li>
+</ul>
+<p>There are some restrictions on what a label can contain &ndash; in general, they must begin with a letter or an underscore and cannot contain spaces or most non-alphanumeric characters.
+Labels can also contain a comment which is shown in the code window as well as in the tooltips that are displayed when putting your cursor over a label in the code window.</p>
+<p>Multi-byte labels can be defined using the <code>Length</code> setting. This can be used to define multi-byte values, arrays or pointers in the code. Multi-byte labels will be shown with a +X offset modifier when referred to in the code window (e.g: <code>MyArrayLabel+2</code>)</p>
+<h2 id=function-list>Function List</h2>
+<p>The function list is similar to the label list and allows you to easily add or edit the name of functions (which are also labels).</p>
+<p>Unlike the label list, which only displays labels, the function list displays all known functions, including those with no labels. This is useful to quickly check an unnamed function&rsquo;s code (by double-clicking on it) and give it a name. This can help when attempting to reverse-engineer code.</p>
+<h2 id=cpuppu-memory-mappings>CPU/PPU Memory Mappings</h2>
+<p>The CPU and PPU memory mappings are visual aids that display information about the currently selected PRG/CHR banks and the nametable configuration.</p>
+<p>The banking configuration represents Mesen&rsquo;s internal representation of the mapper in use, which may not exactly match the mapper&rsquo;s specs.
+For example, a mapper with 2x 8 KB + 1x 16 KB PRG banking is emulated as 4x 8 KB internally, so it will appear as four 8 KB banks.</p>
+<h2 id=other-options>Other Options</h2>
+<h3 id=display-options>Display Options</h3>
+<p>The <code>Show...</code> submenu contains a number of options to show/hide various elements on the UI.
+Specifically, the toolbar, CPU/PPU memory mappings, function/label lists, watch list, breakpoint list and the call stack window.</p>
+<h3 id=tooltip-options>Tooltip Options</h3>
+<p>A number of tooltip-related options are available here:</p>
+<ul>
+<li><strong>Show Code Preview in Tooltips</strong>: When enabled, label/address tooltips will now show a preview of the code at the target location.</li>
+<li><strong>Show OP Code Info Tooltips</strong>: When enabled, putting the mouse over an OP code will display a tooltip containing information about the OP code and which CPU flags are affected by it.</li>
+<li><strong>Only show tooltips when Shift key is pressed</strong>: When enabled, no tooltips will be shown unless the shift key is held down.</li>
+</ul>
+<h3 id=break-options>Break Options</h3>
+<p>The <code>Break Options</code> submenu contains a number of options to configure under which conditions the debugger will break (even when no breakpoint is hit):</p>
+<ul>
+<li><strong>Break on power/reset</strong>: Break the emulation whenever a reset or power cycle occurs.</li>
+<li><strong>Break on unofficial opcodes</strong>: Break the emulation whenever an unofficial opcode is about to execute.</li>
+<li><strong>Break on BRK</strong>: Break the emulation whenever a BRK instruction is about to execute.</li>
+<li><strong>Break on CPU crash</strong>: Break the emulation whenever an instruction that will cause the CPU to freeze is about to execute.</li>
+<li><strong>Break on unlogged code</strong>: Break the emulation whenever an instruction that haven&rsquo;t been logged is about to execute.</li>
+</ul>
+<ul>
+<li><strong>Break on bus conflict</strong>: Break whenever a bus conflict is detected. This option only causes a break when using mappers that have bus conflicts enabled.</li>
+<li><strong>Break on decayed OAM read</strong>: Break whenever the code a read is performed on decayed OAM memory. <strong>Note</strong>: <em>This option is only available when the <code>Enable OAM RAM decay</code> option is enabled in the <code>Emulation Settings</code>.</em></li>
+<li><strong>Break on $2006 scroll glitch</strong>: Break whenever the $2006 scroll glitch is triggered by a write to $2006. <strong>Note</strong>: <em>This option will only trigger a breakpoint if the option to emulate the glitch is turned on</em></li>
+<li><strong>Break on uninitialized memory read</strong>: Break whenever the code reads from a memory address containing an uninitialized value. <strong>Note</strong>: <em>This option only works if the debugger has been opened since the last reset or power cycle.</em></li>
+</ul>
+<ul>
+<li><strong>Break when debugger is opened</strong>: The emulation will break when you first open the debugger.</li>
+<li><strong>Break on debugger focus</strong>: Whenever the debugger&rsquo;s window gains focus (e.g by clicking on it), the emulation will break.</li>
+<li><strong>Break on Init (NSF)</strong>: Break when the NSF&rsquo;s Init routine is called.</li>
+<li><strong>Break on Play (NSF)</strong>: Break when the NSF&rsquo;s Play routine is called.</li>
+</ul>
+<p><strong>Enable sub-instruction breakpoints</strong>: This option allows Mesen to process breakpoints in the middle of CPU instructions. This was the default up to version 0.9.7. When this option is disabled, the debugger will break at the beginning of CPU instructions only (and will only break once per instruction). This option is disabled by default as of 0.9.8.</p>
+<p>Additionally, you can configure whether or not the debugger window gets focused when a break or pause occurs.</p>
+<h3 id=copy-options>Copy Options</h3>
+<p>These options configure which portions of the code is copied into the clipboard when copying code from the code window.</p>
+<h3 id=layout-options>Layout Options</h3>
+<ul>
+<li><strong>Split View</strong>: Displays 2 separate code windows side-by-side.</li>
+<li><strong>Vertical Layout</strong>: Moves the location of the label and function lists to improve space utilization on larger screens.</li>
+</ul>
+<h3 id=misc-options>Misc. Options</h3>
+<ul>
+<li><strong>Auto-create jump labels</strong>: When enabled, the debugger will automatically generate labels for all jumps/branches in PRG ROM (when it executes the branch instruction). These are labelled <code>L#####</code>, where <code>#####</code> is the label&rsquo;s location in PRG ROM.</li>
+</ul>
+<ul>
+<li><strong>Hide Pause Icon</strong>: When enabled, the pause icon that is normally shown whenever execution is paused will be hidden.</li>
+<li><strong>Draw Partial Frame</strong>: When enabled, the emulator&rsquo;s main window will display the current partially-drawn frame instead of the last complete frame.</li>
+<li><strong>Show previous frame behind current</strong>: When enabled along with <code>Draw Partial Frame</code>, the previous frame&rsquo;s data will be shown behind the current frame.</li>
+</ul>
+<ul>
+<li><strong>Show break notifications</strong>: When enabled, a &ldquo;notification&rdquo; will be shown over the disassembly window indicating what caused the debugger to break the execution (e.g: a CPU/PPU read/write, a decayed OAM read, etc.)</li>
+<li><strong>Show instruction progression</strong>: When enabled, the code window will display an indicator showing how far along into the current instruction the execution is. This also shows an estimate of how many cycles the instruction will take to complete (this estimate may increase for various reasons such as a page being crossed, etc.). <code>R</code> is read, <code>W</code> is write, <code>X</code> is execution, <code>DR</code> is a dummy read, and <code>DMC</code> is an APU DMC read</li>
+<li><strong>Show selection length</strong>: When enabled, the code window will display the current selection&rsquo;s length in bytes (when more than 1 line is selected)</li>
+</ul>
+<ul>
+<li><strong>Keep active statement in the center</strong>: When enabled, the code window will always put the current statement in the center whenever it updates (causing it to scroll on every step). When disabled, the code window will only scroll the code when necessary.</li>
+</ul>
+<ul>
+<li><strong>Refresh UI while running</strong>: When enabled, the watch window and the CPU/PPU status will be updated continuously while the emulation is running (instead of only updating when the execution breaks)</li>
+</ul>
+<ul>
+<li><strong>Reload ROM on Power Cycle</strong>: When enabled, the ROM will be loaded again if the Power Cycle is triggered and changes made to the ROM since it is last loaded will take effect.</li>
+</ul>
+<h2 id=workspaces>Workspaces</h2>
+<p>Debugger &ldquo;workspaces&rdquo; are used to store information specific to each ROM you debug. This includes watch expressions, breakpoints and labels.</p>
+<h3 id=default-workspace-labels>Default Workspace Labels</h3>
+<p>By default, Mesen setups labels for the NES' PPU and APU registers. These can be disabled using the <code>Disable default labels</code> option.</p>
+<p>Additionally, it&rsquo;s possible to setup your own set of default labels by creating a file called <code>DefaultLabels.Global.mlb</code> in the <code>Debugger</code> folder (where the workspace and CDL files are stored). When Mesen finds this file, it will ignore the its own default labels and use the ones contained in that file instead, for all ROMs.</p>
+<p>You can also setup default labels for specific mappers by creating a file called <code>DefaultLabels.[mapper number].mlb</code> (e.g, for MMC3 games: <code>DefaultLabels.4.mlb</code>).<br>
+For FDS and NSF ROMs, <code>DefaultLabels.FDS.mlb</code> and <code>DefaultLabels.NSF.mlb</code> can be used, respectively.</p>
+<p>If both a global and mapper-specific <code>mlb</code> is found, both of them will be used (with the mapper-specific file having priority in case of conflicting labels).</p>
+<h2 id=performance-tracker>Performance Tracker</h2>
+<p>From the code window, you can right-click on an address and activate the &ldquo;performance tracker&rdquo;.
+This feature will track when the selected address is executed by the CPU on each frame, and display a CPU/FPS chart overlay based on those statistics.</p>
+<p>By setting the performance tracker to the part of the code that most games use to wait for vertical blank after the next frame&rsquo;s logic is done processing, you can get an estimate of how much extra CPU time remains on each frame.</p>
+<h2 id=how-to-edit-code>How To: Edit Code</h2>
+<p>From the code window, you can select code (via click and drag, or shift+arrow keys) and use the &ldquo;Edit Selected Code&rdquo; command to open the <a href=../debugging/assembler.html>Assembler</a> and edit that section of code.
+The assembler recognizes labels and allows you to define temporary labels as well. If the new code is smaller (in terms of bytes) than the original code, the extra bytes will be replaced by NOPs. If the new code is larger, it will override whatever comes next in the code &ndash; a warning will be shown beforehand in this case.
+When you&rsquo;re ready to apply your modifications, press the Apply button.</p>
+<footer class=footline>
+</footer>
+</div>
+</div>
+<div id=navigation>
+<a class="nav nav-prev" href=../debugging.html title="Debugging Tools"> <i class="fa fa-chevron-left"></i></a>
+<a class="nav nav-next" href=../debugging/apuviewer.html title="APU Viewer" style=margin-right:0><i class="fa fa-chevron-right"></i></a>
+</div>
+</section>
+<div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px>
+<div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div>
+</div>
+<script src=../js/clipboard.min.js?1640054941></script>
+<script src=../js/perfect-scrollbar.min.js?1640054941></script>
+<script src=../js/perfect-scrollbar.jquery.min.js?1640054941></script>
+<script src=../js/jquery.sticky-kit.min.js?1640054941></script>
+<script src=../js/featherlight.min.js?1640054941></script>
+<script src=../js/html5shiv-printshiv.min.js?1640054941></script>
+<script src=../js/highlight.pack.js?1640054941></script>
+<script>hljs.initHighlightingOnLoad()</script>
+<script src=../js/modernizr.custom.71422.js?1640054941></script>
+<script src=../js/learn.js?1640054941></script>
+<script src=../js/hugo-learn.js?1640054941></script>
+<link href=../mermaid/mermaid.css?1640054941 type=text/css rel=stylesheet>
+<script src=../mermaid/mermaid.js?1640054941></script>
+<script>mermaid.initialize({startOnLoad:!0})</script>
+</body>
+</html>

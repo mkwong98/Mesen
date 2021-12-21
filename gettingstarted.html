@@ -1,0 +1,395 @@
+<!doctype html><html lang=en class="js csstransforms3d">
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name=generator content="Hugo 0.91.0">
+<meta name=description content>
+<link rel="shortcut icon" href=./images/favicon.png type=image/x-icon>
+<link rel=icon href=./images/favicon.png type=image/x-icon>
+<title>Getting Started :: Mesen Documentation</title>
+<link href=./css/nucleus.css?1640054941 rel=stylesheet>
+<link href=./css/font-awesome.min.css?1640054941 rel=stylesheet>
+<link href=./css/hybrid.css?1640054941 rel=stylesheet>
+<link href=./css/featherlight.min.css?1640054941 rel=stylesheet>
+<link href=./css/perfect-scrollbar.min.css?1640054941 rel=stylesheet>
+<link href=./css/horsey.css?1640054941 rel=stylesheet>
+<link href=./css/theme.css?1640054941 rel=stylesheet>
+<link href=./css/hugo-theme.css?1640054941 rel=stylesheet>
+<link href=./css/custom.css?1640054941 rel=stylesheet>
+<link href=./css/theme-green.css?1640054941 rel=stylesheet>
+<script src=./js/jquery-2.x.min.js?1640054941></script>
+<style type=text/css>:root #header+#content>#left>#rlblock_left{display:none!important}</style>
+</head>
+<body data-url=./gettingstarted.html>
+<nav id=sidebar>
+<div id=header-wrapper>
+<div id=header>
+<a id=logo href=./index.html>
+<img src=./images/MesenIcon.png>
+</a>
+</div>
+<div class=searchbox>
+<label for=search-by><i class="fa fa-search"></i></label>
+<input data-search-input id=search-by type=text placeholder=Search...>
+<span data-search-clear><i class="fa fa-close"></i></span>
+</div>
+<script type=text/javascript src=./js/lunr.min.js?1640054941></script>
+<script type=text/javascript src=./js/horsey.js?1640054941></script>
+<script type=text/javascript>var baseurl=""</script>
+<script type=text/javascript src=./js/searchjson.js?1640054941></script>
+<script type=text/javascript src=./js/search.js?1640054941></script>
+</div>
+<div class=highlightable>
+<ul class=topics>
+<li data-nav-id=/gettingstarted.html title="Getting Started" class="dd-item
+parent
+active">
+<a href=./gettingstarted.html>
+Getting Started
+</a>
+</li>
+<li data-nav-id=/configuration.html title=Configuration class=dd-item>
+<a href=./configuration.html>
+Configuration
+</a>
+<ul>
+<li data-nav-id=/configuration/audio.html title="Audio Options" class=dd-item>
+<a href=./configuration/audio.html>
+Audio Options
+</a>
+</li>
+<li data-nav-id=/configuration/input.html title="Input Options" class=dd-item>
+<a href=./configuration/input.html>
+Input Options
+</a>
+</li>
+<li data-nav-id=/configuration/video.html title="Video Options" class=dd-item>
+<a href=./configuration/video.html>
+Video Options
+</a>
+</li>
+<li data-nav-id=/configuration/emulation.html title="Emulation Options" class=dd-item>
+<a href=./configuration/emulation.html>
+Emulation Options
+</a>
+</li>
+<li data-nav-id=/configuration/preferences.html title=Preferences class=dd-item>
+<a href=./configuration/preferences.html>
+Preferences
+</a>
+</li>
+</ul>
+</li>
+<li data-nav-id=/tools.html title=Tools class=dd-item>
+<a href=./tools.html>
+Tools
+</a>
+</li>
+<li data-nav-id=/debugging.html title="Debugging Tools" class=dd-item>
+<a href=./debugging.html>
+Debugging Tools
+</a>
+<ul>
+<li data-nav-id=/debugging/debugger.html title=Debugger class=dd-item>
+<a href=./debugging/debugger.html>
+Debugger
+</a>
+</li>
+<li data-nav-id=/debugging/apuviewer.html title="APU Viewer" class=dd-item>
+<a href=./debugging/apuviewer.html>
+APU Viewer
+</a>
+</li>
+<li data-nav-id=/debugging/assembler.html title=Assembler class=dd-item>
+<a href=./debugging/assembler.html>
+Assembler
+</a>
+</li>
+<li data-nav-id=/debugging/eventviewer.html title="Event Viewer" class=dd-item>
+<a href=./debugging/eventviewer.html>
+Event Viewer
+</a>
+</li>
+<li data-nav-id=/debugging/memorytools.html title="Memory Tools" class=dd-item>
+<a href=./debugging/memorytools.html>
+Memory Tools
+</a>
+</li>
+<li data-nav-id=/debugging/performanceprofiler.html title="Performance Profiler" class=dd-item>
+<a href=./debugging/performanceprofiler.html>
+Performance Profiler
+</a>
+</li>
+<li data-nav-id=/debugging/ppuviewer.html title="PPU Viewer" class=dd-item>
+<a href=./debugging/ppuviewer.html>
+PPU Viewer
+</a>
+</li>
+<li data-nav-id=/debugging/scriptwindow.html title="Script Window" class=dd-item>
+<a href=./debugging/scriptwindow.html>
+Script Window
+</a>
+</li>
+<li data-nav-id=/debugging/texthooker.html title="Text Hooker" class=dd-item>
+<a href=./debugging/texthooker.html>
+Text Hooker
+</a>
+</li>
+<li data-nav-id=/debugging/tracelogger.html title="Trace Logger" class=dd-item>
+<a href=./debugging/tracelogger.html>
+Trace Logger
+</a>
+</li>
+<li data-nav-id=/debugging/debuggerintegration.html title="Integration with compilers" class=dd-item>
+<a href=./debugging/debuggerintegration.html>
+Integration with compilers
+</a>
+</li>
+</ul>
+</li>
+<li data-nav-id=/hdpacks.html title="HD Packs" class=dd-item>
+<a href=./hdpacks.html>
+HD Packs
+</a>
+</li>
+<li data-nav-id=/apireference.html title="Lua API reference" class=dd-item>
+<a href=./apireference.html>
+Lua API reference
+</a>
+<ul>
+<li data-nav-id=/apireference/changelog.html title=Changelog class=dd-item>
+<a href=./apireference/changelog.html>
+Changelog
+</a>
+</li>
+<li data-nav-id=/apireference/callbacks.html title=Callbacks class=dd-item>
+<a href=./apireference/callbacks.html>
+Callbacks
+</a>
+</li>
+<li data-nav-id=/apireference/drawing.html title=Drawing class=dd-item>
+<a href=./apireference/drawing.html>
+Drawing
+</a>
+</li>
+<li data-nav-id=/apireference/emulation.html title=Emulation class=dd-item>
+<a href=./apireference/emulation.html>
+Emulation
+</a>
+</li>
+<li data-nav-id=/apireference/input.html title=Input class=dd-item>
+<a href=./apireference/input.html>
+Input
+</a>
+</li>
+<li data-nav-id=/apireference/logging.html title=Logging class=dd-item>
+<a href=./apireference/logging.html>
+Logging
+</a>
+</li>
+<li data-nav-id=/apireference/memoryaccess.html title="Memory Access" class=dd-item>
+<a href=./apireference/memoryaccess.html>
+Memory Access
+</a>
+</li>
+<li data-nav-id=/apireference/misc.html title=Miscellaneous class=dd-item>
+<a href=./apireference/misc.html>
+Miscellaneous
+</a>
+</li>
+<li data-nav-id=/apireference/enums.html title=Enums class=dd-item>
+<a href=./apireference/enums.html>
+Enums
+</a>
+</li>
+</ul>
+</li>
+</ul>
+<section id=shortcuts>
+<h3>More</h3>
+<ul>
+<li role>
+<a class=padding href=https://www.mesen.ca><img style=vertical-align:middle src=./images/favicon.png> <span style=display:inline;vertical-align:middle>Website</span></a>
+</li>
+<li role>
+<a class=padding href=https://github.com/SourMesen/Mesen><i class="fa fa-github"></i> GitHub</a>
+</li>
+</ul>
+</section>
+<div id=menuspacer></div>
+<section id=footer>
+<div class=menuFooter>
+<div class=donateButton><a href=https://www.mesen.ca/Donate.php><img src=./images/patreon.png alt="Become a Patron!" width=66% height=66%></a></div>
+<div class=donateButton><a class=bmc-button target=_blank href=https://www.mesen.ca/BuyCoffee.php><img src=./images/BMC-btn-logo.svg alt=Donate><span style=margin-left:5px>Donate</span></a></div>
+Version: <b>0.9.9</b><br>
+Last Updated: <b>2021-12-21</b>
+</div>
+</section>
+</div>
+</nav>
+<section id=body>
+<div id=overlay></div>
+<div class="padding highlightable sticky-parent">
+<div class=sticky-spacer>
+<div id=top-bar>
+<div id=breadcrumbs itemscope itemtype=http://data-vocabulary.org/Breadcrumb>
+<span id=sidebar-toggle-span>
+<a href=# id=sidebar-toggle data-sidebar-toggle>
+<i class="fa fa-bars"></i>
+</a>
+</span>
+<span id=toc-menu><i class="fa fa-list-alt"></i></span>
+<span class=links>
+<a href=./>Home</a> > Getting Started
+</span>
+</div>
+<div class=progress>
+<div class=wrapper>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#system-requirements>System Requirements</a>
+<ul>
+<li><a href=#windows>Windows</a></li>
+<li><a href=#linux>Linux</a></li>
+</ul>
+</li>
+<li><a href=#installation>Installation</a></li>
+<li><a href=#using-mesen>Using Mesen</a>
+<ul>
+<li><a href=#famicom-disk-system-fds-games>Famicom Disk System (FDS) games</a></li>
+<li><a href=#vs-system-games>VS System games</a></li>
+<li><a href=#nsf-player>NSF Player</a></li>
+<li><a href=#game-selection-screen>Game Selection Screen</a></li>
+<li><a href=#shortcut-keys>Shortcut Keys</a></li>
+<li><a href=#command-line-options>Command-line Options</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+</div>
+<div id=body-inner>
+<h1>Getting Started</h1>
+<div class=toc>
+<div><nav id=TableOfContents>
+<ul>
+<li><a href=#system-requirements>System Requirements</a>
+<ul>
+<li><a href=#windows>Windows</a></li>
+<li><a href=#linux>Linux</a></li>
+</ul>
+</li>
+<li><a href=#installation>Installation</a></li>
+<li><a href=#using-mesen>Using Mesen</a>
+<ul>
+<li><a href=#famicom-disk-system-fds-games>Famicom Disk System (FDS) games</a></li>
+<li><a href=#vs-system-games>VS System games</a></li>
+<li><a href=#nsf-player>NSF Player</a></li>
+<li><a href=#game-selection-screen>Game Selection Screen</a></li>
+<li><a href=#shortcut-keys>Shortcut Keys</a></li>
+<li><a href=#command-line-options>Command-line Options</a></li>
+</ul>
+</li>
+</ul>
+</nav></div>
+</div>
+<h2 id=system-requirements>System Requirements</h2>
+<h3 id=windows>Windows</h3>
+<ul>
+<li>Windows Vista, 7, 8, 8.1 and 10 are supported</li>
+<li>DirectX 11</li>
+<li>.NET Framework 4.5+</li>
+</ul>
+<h3 id=linux>Linux</h3>
+<ul>
+<li>glibc 2.24+</li>
+<li>Mono 5.18+</li>
+<li>SDL 2</li>
+</ul>
+<h2 id=installation>Installation</h2>
+<p>There is no actual installer for Mesen &ndash; run the Mesen.exe application and a first-run configuration wizard will be shown.</p>
+<p><strong>Data Storage Location</strong>: This section of the wizard allows you to select where you prefer to keep Mesen&rsquo;s files.</p>
+<p><strong>Input Mappings</strong>: Select which input types you want to use to play games. There are built-in presets for:</p>
+<ul>
+<li>Xbox controllers</li>
+<li>PS4 controllers</li>
+<li>WASD keyboard layout</li>
+<li>Arrow keyboard layout</li>
+</ul>
+<p>You can select multiple presets at once, but only a single keyboard layout.</p>
+<p><strong>Create a shortcut on my desktop</strong>: Check this option if you want to add a Mesen shortcut to your desktop.</p>
+<h2 id=using-mesen>Using Mesen</h2>
+<p>Mesen&rsquo;s default configuration should work out of the box and allow you to get right into playing games.</p>
+<p>To load a game, use the <strong>File→Open</strong> command and select any supported file (<code>.nes</code>, <code>.fds</code>, <code>.nsf</code>, <code>.nsfe</code>, <code>.unf</code>) you want to load.</p>
+<p>Once a game is loaded, you can pause, reset or stop the game via the <code>Game</code> menu.<br>
+The game menu also contains additional options for <a href=#famicom-disk-system-fds-games>Famicom Disk System (FDS)</a> games and <a href=#vs-system-games>VS System</a> games.</p>
+<h3 id=famicom-disk-system-fds-games>Famicom Disk System (FDS) games</h3>
+<p>FDS games were originally stored on floppy disks - sometimes split across multiple disks and disk sides. The <code>Game</code> menu contains a number of additional shortcuts for FDS games to handle these:</p>
+<ul>
+<li><strong>Switch Disk Side</strong>: Switches between sides A and B of the current disk.</li>
+<li><strong>Select Disk</strong>: Allows you to select any disk and side combination availble for the current game.</li>
+<li><strong>Eject Disk</strong>: Ejects the current disk. <em>Ejecting the disk is usually unnecessary and only available for the sake of completeness.</em></li>
+</ul>
+<h3 id=vs-system-games>VS System games</h3>
+<p>VS System games were originally in the form of arcade cabinets &ndash; unlike FDS games, playing them does not require any special BIOS.</p>
+<p>Being arcade cabinets, VS System games typically require the player to insert coins before the game can be played. Additionally, the arcade cabinets could often be configured via a number of physical DIP switches &ndash; for example, to select how much money needs to be inserted to play, or to alter a game&rsquo;s difficulty. The <code>Game</code> menu offers additional options when playing VS System games to handle these:</p>
+<ul>
+<li><strong>Game Configuration</strong>: Displays a configuration dialog containing the DIP switch options available for this game.</li>
+<li><strong>Insert Coin 1</strong>: Inserts a coin into the first coin slot.</li>
+<li><strong>Insert Coin 2</strong>: Inserts a coin into the second coin slot.</li>
+</ul>
+<h3 id=nsf-player>NSF Player</h3>
+<p>NSF and NSFe files are used to store music from NES and Famicom games.</p>
+<p>When loading NSF files into Mesen, the UI will change into a media player style UI. From this UI, you can control the volume, select the track, pause the music or fast forward by holding down the mouse button.</p>
+<p>Additionally, the two icons at the top right allow you to toggle the repeat and shuffle playback modes.</p>
+<h3 id=game-selection-screen>Game Selection Screen</h3>
+<p>The game selection screen is shown when no game is currently loaded &ndash; it will display the last games you&rsquo;ve played, along with a screenshot of the game at the point where you left off playing. The number of games shown depends on the window&rsquo;s size.</p>
+<p>You can use this screen via the key bindings for player 1 - e.g press the d-pad to change selection, and the <code>A</code> button to start the game. You can also navigate the screen with your mouse &ndash; use the arrows on each side of the screen to change game, and click on the game&rsquo;s screenshot to start playing.</p>
+<h3 id=shortcut-keys>Shortcut Keys</h3>
+<p>Mesen has a number of shortcut keys that you may find useful:</p>
+<ul>
+<li><strong>Ctrl-O</strong>: Open a file</li>
+<li><strong>Ctrl-R</strong>: Reset the game</li>
+<li><strong>Escape</strong>: Pause/resume the game</li>
+<li><strong>Alt-1 to Alt-6</strong>: Change the video scale.</li>
+<li><strong>F1 to F8</strong>: Load save state in the corresponding slot.</li>
+<li><strong>Shift-F1 to Shift-F7</strong>: Save a save state in the corresponding slot.</li>
+<li><strong>Ctrl-S</strong>: Manually save a save state to a file.</li>
+<li><strong>Ctrl-L</strong>: Manually load a save state from a file.</li>
+<li><strong>Tab</strong>: Hold the tab key to fast forward the emulation (defaults to 300% speed)</li>
+<li><strong>Backspace</strong>: Hold the backspace key to rewind the emulation, frame-by-frame.</li>
+</ul>
+<p>The <a href=./configuration/preferences.html#shortcut-keys>shortcut keys</a> can be customized in the <a href=./configuration/preferences.html>preferences</a>.</p>
+<h3 id=command-line-options>Command-line Options</h3>
+<p>Mesen supports a large number of command-line options.<br>
+To see a full list and some examples, click on the <strong>Help→Command-line Options</strong> menu option.</p>
+<footer class=footline>
+</footer>
+</div>
+</div>
+<div id=navigation>
+<a class="nav nav-prev" href=./ title=Home> <i class="fa fa-chevron-left"></i></a>
+<a class="nav nav-next" href=./configuration.html title=Configuration style=margin-right:0><i class="fa fa-chevron-right"></i></a>
+</div>
+</section>
+<div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px>
+<div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div>
+</div>
+<script src=./js/clipboard.min.js?1640054941></script>
+<script src=./js/perfect-scrollbar.min.js?1640054941></script>
+<script src=./js/perfect-scrollbar.jquery.min.js?1640054941></script>
+<script src=./js/jquery.sticky-kit.min.js?1640054941></script>
+<script src=./js/featherlight.min.js?1640054941></script>
+<script src=./js/html5shiv-printshiv.min.js?1640054941></script>
+<script src=./js/highlight.pack.js?1640054941></script>
+<script>hljs.initHighlightingOnLoad()</script>
+<script src=./js/modernizr.custom.71422.js?1640054941></script>
+<script src=./js/learn.js?1640054941></script>
+<script src=./js/hugo-learn.js?1640054941></script>
+<link href=./mermaid/mermaid.css?1640054941 type=text/css rel=stylesheet>
+<script src=./mermaid/mermaid.js?1640054941></script>
+<script>mermaid.initialize({startOnLoad:!0})</script>
+</body>
+</html>

@@ -1,0 +1,310 @@
+<!doctype html><html lang=en class="js csstransforms3d">
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name=generator content="Hugo 0.91.0">
+<meta name=description content>
+<link rel="shortcut icon" href=./images/favicon.png type=image/x-icon>
+<link rel=icon href=./images/favicon.png type=image/x-icon>
+<title>Configuration :: Mesen Documentation</title>
+<link href=./css/nucleus.css?1640054941 rel=stylesheet>
+<link href=./css/font-awesome.min.css?1640054941 rel=stylesheet>
+<link href=./css/hybrid.css?1640054941 rel=stylesheet>
+<link href=./css/featherlight.min.css?1640054941 rel=stylesheet>
+<link href=./css/perfect-scrollbar.min.css?1640054941 rel=stylesheet>
+<link href=./css/horsey.css?1640054941 rel=stylesheet>
+<link href=./css/theme.css?1640054941 rel=stylesheet>
+<link href=./css/hugo-theme.css?1640054941 rel=stylesheet>
+<link href=./css/custom.css?1640054941 rel=stylesheet>
+<link href=./css/theme-green.css?1640054941 rel=stylesheet>
+<script src=./js/jquery-2.x.min.js?1640054941></script>
+<style type=text/css>:root #header+#content>#left>#rlblock_left{display:none!important}</style>
+</head>
+<body data-url=./configuration.html>
+<nav id=sidebar>
+<div id=header-wrapper>
+<div id=header>
+<a id=logo href=./index.html>
+<img src=./images/MesenIcon.png>
+</a>
+</div>
+<div class=searchbox>
+<label for=search-by><i class="fa fa-search"></i></label>
+<input data-search-input id=search-by type=text placeholder=Search...>
+<span data-search-clear><i class="fa fa-close"></i></span>
+</div>
+<script type=text/javascript src=./js/lunr.min.js?1640054941></script>
+<script type=text/javascript src=./js/horsey.js?1640054941></script>
+<script type=text/javascript>var baseurl=""</script>
+<script type=text/javascript src=./js/searchjson.js?1640054941></script>
+<script type=text/javascript src=./js/search.js?1640054941></script>
+</div>
+<div class=highlightable>
+<ul class=topics>
+<li data-nav-id=/gettingstarted.html title="Getting Started" class=dd-item>
+<a href=./gettingstarted.html>
+Getting Started
+</a>
+</li>
+<li data-nav-id=/configuration.html title=Configuration class="dd-item
+parent
+active">
+<a href=./configuration.html>
+Configuration
+</a>
+<ul>
+<li data-nav-id=/configuration/audio.html title="Audio Options" class=dd-item>
+<a href=./configuration/audio.html>
+Audio Options
+</a>
+</li>
+<li data-nav-id=/configuration/input.html title="Input Options" class=dd-item>
+<a href=./configuration/input.html>
+Input Options
+</a>
+</li>
+<li data-nav-id=/configuration/video.html title="Video Options" class=dd-item>
+<a href=./configuration/video.html>
+Video Options
+</a>
+</li>
+<li data-nav-id=/configuration/emulation.html title="Emulation Options" class=dd-item>
+<a href=./configuration/emulation.html>
+Emulation Options
+</a>
+</li>
+<li data-nav-id=/configuration/preferences.html title=Preferences class=dd-item>
+<a href=./configuration/preferences.html>
+Preferences
+</a>
+</li>
+</ul>
+</li>
+<li data-nav-id=/tools.html title=Tools class=dd-item>
+<a href=./tools.html>
+Tools
+</a>
+</li>
+<li data-nav-id=/debugging.html title="Debugging Tools" class=dd-item>
+<a href=./debugging.html>
+Debugging Tools
+</a>
+<ul>
+<li data-nav-id=/debugging/debugger.html title=Debugger class=dd-item>
+<a href=./debugging/debugger.html>
+Debugger
+</a>
+</li>
+<li data-nav-id=/debugging/apuviewer.html title="APU Viewer" class=dd-item>
+<a href=./debugging/apuviewer.html>
+APU Viewer
+</a>
+</li>
+<li data-nav-id=/debugging/assembler.html title=Assembler class=dd-item>
+<a href=./debugging/assembler.html>
+Assembler
+</a>
+</li>
+<li data-nav-id=/debugging/eventviewer.html title="Event Viewer" class=dd-item>
+<a href=./debugging/eventviewer.html>
+Event Viewer
+</a>
+</li>
+<li data-nav-id=/debugging/memorytools.html title="Memory Tools" class=dd-item>
+<a href=./debugging/memorytools.html>
+Memory Tools
+</a>
+</li>
+<li data-nav-id=/debugging/performanceprofiler.html title="Performance Profiler" class=dd-item>
+<a href=./debugging/performanceprofiler.html>
+Performance Profiler
+</a>
+</li>
+<li data-nav-id=/debugging/ppuviewer.html title="PPU Viewer" class=dd-item>
+<a href=./debugging/ppuviewer.html>
+PPU Viewer
+</a>
+</li>
+<li data-nav-id=/debugging/scriptwindow.html title="Script Window" class=dd-item>
+<a href=./debugging/scriptwindow.html>
+Script Window
+</a>
+</li>
+<li data-nav-id=/debugging/texthooker.html title="Text Hooker" class=dd-item>
+<a href=./debugging/texthooker.html>
+Text Hooker
+</a>
+</li>
+<li data-nav-id=/debugging/tracelogger.html title="Trace Logger" class=dd-item>
+<a href=./debugging/tracelogger.html>
+Trace Logger
+</a>
+</li>
+<li data-nav-id=/debugging/debuggerintegration.html title="Integration with compilers" class=dd-item>
+<a href=./debugging/debuggerintegration.html>
+Integration with compilers
+</a>
+</li>
+</ul>
+</li>
+<li data-nav-id=/hdpacks.html title="HD Packs" class=dd-item>
+<a href=./hdpacks.html>
+HD Packs
+</a>
+</li>
+<li data-nav-id=/apireference.html title="Lua API reference" class=dd-item>
+<a href=./apireference.html>
+Lua API reference
+</a>
+<ul>
+<li data-nav-id=/apireference/changelog.html title=Changelog class=dd-item>
+<a href=./apireference/changelog.html>
+Changelog
+</a>
+</li>
+<li data-nav-id=/apireference/callbacks.html title=Callbacks class=dd-item>
+<a href=./apireference/callbacks.html>
+Callbacks
+</a>
+</li>
+<li data-nav-id=/apireference/drawing.html title=Drawing class=dd-item>
+<a href=./apireference/drawing.html>
+Drawing
+</a>
+</li>
+<li data-nav-id=/apireference/emulation.html title=Emulation class=dd-item>
+<a href=./apireference/emulation.html>
+Emulation
+</a>
+</li>
+<li data-nav-id=/apireference/input.html title=Input class=dd-item>
+<a href=./apireference/input.html>
+Input
+</a>
+</li>
+<li data-nav-id=/apireference/logging.html title=Logging class=dd-item>
+<a href=./apireference/logging.html>
+Logging
+</a>
+</li>
+<li data-nav-id=/apireference/memoryaccess.html title="Memory Access" class=dd-item>
+<a href=./apireference/memoryaccess.html>
+Memory Access
+</a>
+</li>
+<li data-nav-id=/apireference/misc.html title=Miscellaneous class=dd-item>
+<a href=./apireference/misc.html>
+Miscellaneous
+</a>
+</li>
+<li data-nav-id=/apireference/enums.html title=Enums class=dd-item>
+<a href=./apireference/enums.html>
+Enums
+</a>
+</li>
+</ul>
+</li>
+</ul>
+<section id=shortcuts>
+<h3>More</h3>
+<ul>
+<li role>
+<a class=padding href=https://www.mesen.ca><img style=vertical-align:middle src=./images/favicon.png> <span style=display:inline;vertical-align:middle>Website</span></a>
+</li>
+<li role>
+<a class=padding href=https://github.com/SourMesen/Mesen><i class="fa fa-github"></i> GitHub</a>
+</li>
+</ul>
+</section>
+<div id=menuspacer></div>
+<section id=footer>
+<div class=menuFooter>
+<div class=donateButton><a href=https://www.mesen.ca/Donate.php><img src=./images/patreon.png alt="Become a Patron!" width=66% height=66%></a></div>
+<div class=donateButton><a class=bmc-button target=_blank href=https://www.mesen.ca/BuyCoffee.php><img src=./images/BMC-btn-logo.svg alt=Donate><span style=margin-left:5px>Donate</span></a></div>
+Version: <b>0.9.9</b><br>
+Last Updated: <b>2021-12-21</b>
+</div>
+</section>
+</div>
+</nav>
+<section id=body>
+<div id=overlay></div>
+<div class="padding highlightable sticky-parent">
+<div class=sticky-spacer>
+<div id=top-bar>
+<div id=breadcrumbs itemscope itemtype=http://data-vocabulary.org/Breadcrumb>
+<span id=sidebar-toggle-span>
+<a href=# id=sidebar-toggle data-sidebar-toggle>
+<i class="fa fa-bars"></i>
+</a>
+</span>
+<span id=toc-menu><i class="fa fa-list-alt"></i></span>
+<span class=links>
+<a href=./>Home</a> > Configuration
+</span>
+</div>
+<div class=progress>
+<div class=wrapper>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#options-menu>Options Menu</a></li>
+<li><a href=#configuration-dialogs>Configuration Dialogs</a></li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+</div>
+<div id=body-inner>
+<h1>Configuration</h1>
+<div class=toc>
+<div><nav id=TableOfContents>
+<ul>
+<li><a href=#options-menu>Options Menu</a></li>
+<li><a href=#configuration-dialogs>Configuration Dialogs</a></li>
+</ul>
+</nav></div>
+</div>
+<h2 id=options-menu>Options Menu</h2>
+<p>The options menu contains a number of shortcuts to change some popular settings:</p>
+<p><strong>Speed</strong>: Selects the emulation&rsquo;s current speed. Also see the <a href=./configuration/preferences.html#shortcut-keys>Rewind and Fast Forward shortcut keys</a>.</p>
+<p><strong>Video Size</strong>: Selects the picture&rsquo;s size &ndash; when fullscreen is selected, the picture will automatically fill the screen. Additionally, you can also manually resize the window to select any size you prefer.</p>
+<p><strong>Video Filter</strong>: Selects a filter to apply to the picture. The <code>NTSC</code> filters attempt to reproduce the feeling of old CRT screens, while the other filters are a variety of different techniques used to scale up pixel art. Additional NTSC filter specific settings are available in the <a href=./configuration/video.html#picture>video options</a>.</p>
+<p><strong>Region</strong>: When set to <code>Auto</code>, the emulator will try to detect the game&rsquo;s region (NTSC or PAL) - however, this is not always possible. When there is nothing to suggest a game is for the <code>PAL</code> region (Australia & Europe), the <code>NTSC</code> region (North America & Japan) will be used by default. <code>Dendy</code> is used to mimic a number of different NES clones, in particular, the Dendy, which was a popular clone in Russia.</p>
+<h2 id=configuration-dialogs>Configuration Dialogs</h2>
+<p>Additional settings can be found in each of the available menu options:</p>
+<ul>
+<li><a href=./configuration/audio.html>Audio Options</a></li>
+<li><a href=./configuration/input.html>Input Options</a></li>
+<li><a href=./configuration/video.html>Video Options</a></li>
+<li><a href=./configuration/emulation.html>Emulation Options</a></li>
+<li><a href=./configuration/preferences.html>Preferences</a></li>
+</ul>
+<footer class=footline>
+</footer>
+</div>
+</div>
+<div id=navigation>
+<a class="nav nav-prev" href=./gettingstarted.html title="Getting Started"> <i class="fa fa-chevron-left"></i></a>
+<a class="nav nav-next" href=./configuration/audio.html title="Audio Options" style=margin-right:0><i class="fa fa-chevron-right"></i></a>
+</div>
+</section>
+<div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px>
+<div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div>
+</div>
+<script src=./js/clipboard.min.js?1640054941></script>
+<script src=./js/perfect-scrollbar.min.js?1640054941></script>
+<script src=./js/perfect-scrollbar.jquery.min.js?1640054941></script>
+<script src=./js/jquery.sticky-kit.min.js?1640054941></script>
+<script src=./js/featherlight.min.js?1640054941></script>
+<script src=./js/html5shiv-printshiv.min.js?1640054941></script>
+<script src=./js/highlight.pack.js?1640054941></script>
+<script>hljs.initHighlightingOnLoad()</script>
+<script src=./js/modernizr.custom.71422.js?1640054941></script>
+<script src=./js/learn.js?1640054941></script>
+<script src=./js/hugo-learn.js?1640054941></script>
+<link href=./mermaid/mermaid.css?1640054941 type=text/css rel=stylesheet>
+<script src=./mermaid/mermaid.js?1640054941></script>
+<script>mermaid.initialize({startOnLoad:!0})</script>
+</body>
+</html>

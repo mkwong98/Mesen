@@ -1,0 +1,602 @@
+<!doctype html><html lang=en class="js csstransforms3d">
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name=generator content="Hugo 0.91.0">
+<meta name=description content>
+<link rel="shortcut icon" href=./images/favicon.png type=image/x-icon>
+<link rel=icon href=./images/favicon.png type=image/x-icon>
+<title>HD Packs :: Mesen Documentation</title>
+<link href=./css/nucleus.css?1640054941 rel=stylesheet>
+<link href=./css/font-awesome.min.css?1640054941 rel=stylesheet>
+<link href=./css/hybrid.css?1640054941 rel=stylesheet>
+<link href=./css/featherlight.min.css?1640054941 rel=stylesheet>
+<link href=./css/perfect-scrollbar.min.css?1640054941 rel=stylesheet>
+<link href=./css/horsey.css?1640054941 rel=stylesheet>
+<link href=./css/theme.css?1640054941 rel=stylesheet>
+<link href=./css/hugo-theme.css?1640054941 rel=stylesheet>
+<link href=./css/custom.css?1640054941 rel=stylesheet>
+<link href=./css/theme-green.css?1640054941 rel=stylesheet>
+<script src=./js/jquery-2.x.min.js?1640054941></script>
+<style type=text/css>:root #header+#content>#left>#rlblock_left{display:none!important}</style>
+</head>
+<body data-url=./hdpacks.html>
+<nav id=sidebar>
+<div id=header-wrapper>
+<div id=header>
+<a id=logo href=./index.html>
+<img src=./images/MesenIcon.png>
+</a>
+</div>
+<div class=searchbox>
+<label for=search-by><i class="fa fa-search"></i></label>
+<input data-search-input id=search-by type=text placeholder=Search...>
+<span data-search-clear><i class="fa fa-close"></i></span>
+</div>
+<script type=text/javascript src=./js/lunr.min.js?1640054941></script>
+<script type=text/javascript src=./js/horsey.js?1640054941></script>
+<script type=text/javascript>var baseurl=""</script>
+<script type=text/javascript src=./js/searchjson.js?1640054941></script>
+<script type=text/javascript src=./js/search.js?1640054941></script>
+</div>
+<div class=highlightable>
+<ul class=topics>
+<li data-nav-id=/gettingstarted.html title="Getting Started" class=dd-item>
+<a href=./gettingstarted.html>
+Getting Started
+</a>
+</li>
+<li data-nav-id=/configuration.html title=Configuration class=dd-item>
+<a href=./configuration.html>
+Configuration
+</a>
+<ul>
+<li data-nav-id=/configuration/audio.html title="Audio Options" class=dd-item>
+<a href=./configuration/audio.html>
+Audio Options
+</a>
+</li>
+<li data-nav-id=/configuration/input.html title="Input Options" class=dd-item>
+<a href=./configuration/input.html>
+Input Options
+</a>
+</li>
+<li data-nav-id=/configuration/video.html title="Video Options" class=dd-item>
+<a href=./configuration/video.html>
+Video Options
+</a>
+</li>
+<li data-nav-id=/configuration/emulation.html title="Emulation Options" class=dd-item>
+<a href=./configuration/emulation.html>
+Emulation Options
+</a>
+</li>
+<li data-nav-id=/configuration/preferences.html title=Preferences class=dd-item>
+<a href=./configuration/preferences.html>
+Preferences
+</a>
+</li>
+</ul>
+</li>
+<li data-nav-id=/tools.html title=Tools class=dd-item>
+<a href=./tools.html>
+Tools
+</a>
+</li>
+<li data-nav-id=/debugging.html title="Debugging Tools" class=dd-item>
+<a href=./debugging.html>
+Debugging Tools
+</a>
+<ul>
+<li data-nav-id=/debugging/debugger.html title=Debugger class=dd-item>
+<a href=./debugging/debugger.html>
+Debugger
+</a>
+</li>
+<li data-nav-id=/debugging/apuviewer.html title="APU Viewer" class=dd-item>
+<a href=./debugging/apuviewer.html>
+APU Viewer
+</a>
+</li>
+<li data-nav-id=/debugging/assembler.html title=Assembler class=dd-item>
+<a href=./debugging/assembler.html>
+Assembler
+</a>
+</li>
+<li data-nav-id=/debugging/eventviewer.html title="Event Viewer" class=dd-item>
+<a href=./debugging/eventviewer.html>
+Event Viewer
+</a>
+</li>
+<li data-nav-id=/debugging/memorytools.html title="Memory Tools" class=dd-item>
+<a href=./debugging/memorytools.html>
+Memory Tools
+</a>
+</li>
+<li data-nav-id=/debugging/performanceprofiler.html title="Performance Profiler" class=dd-item>
+<a href=./debugging/performanceprofiler.html>
+Performance Profiler
+</a>
+</li>
+<li data-nav-id=/debugging/ppuviewer.html title="PPU Viewer" class=dd-item>
+<a href=./debugging/ppuviewer.html>
+PPU Viewer
+</a>
+</li>
+<li data-nav-id=/debugging/scriptwindow.html title="Script Window" class=dd-item>
+<a href=./debugging/scriptwindow.html>
+Script Window
+</a>
+</li>
+<li data-nav-id=/debugging/texthooker.html title="Text Hooker" class=dd-item>
+<a href=./debugging/texthooker.html>
+Text Hooker
+</a>
+</li>
+<li data-nav-id=/debugging/tracelogger.html title="Trace Logger" class=dd-item>
+<a href=./debugging/tracelogger.html>
+Trace Logger
+</a>
+</li>
+<li data-nav-id=/debugging/debuggerintegration.html title="Integration with compilers" class=dd-item>
+<a href=./debugging/debuggerintegration.html>
+Integration with compilers
+</a>
+</li>
+</ul>
+</li>
+<li data-nav-id=/hdpacks.html title="HD Packs" class="dd-item
+parent
+active">
+<a href=./hdpacks.html>
+HD Packs
+</a>
+</li>
+<li data-nav-id=/apireference.html title="Lua API reference" class=dd-item>
+<a href=./apireference.html>
+Lua API reference
+</a>
+<ul>
+<li data-nav-id=/apireference/changelog.html title=Changelog class=dd-item>
+<a href=./apireference/changelog.html>
+Changelog
+</a>
+</li>
+<li data-nav-id=/apireference/callbacks.html title=Callbacks class=dd-item>
+<a href=./apireference/callbacks.html>
+Callbacks
+</a>
+</li>
+<li data-nav-id=/apireference/drawing.html title=Drawing class=dd-item>
+<a href=./apireference/drawing.html>
+Drawing
+</a>
+</li>
+<li data-nav-id=/apireference/emulation.html title=Emulation class=dd-item>
+<a href=./apireference/emulation.html>
+Emulation
+</a>
+</li>
+<li data-nav-id=/apireference/input.html title=Input class=dd-item>
+<a href=./apireference/input.html>
+Input
+</a>
+</li>
+<li data-nav-id=/apireference/logging.html title=Logging class=dd-item>
+<a href=./apireference/logging.html>
+Logging
+</a>
+</li>
+<li data-nav-id=/apireference/memoryaccess.html title="Memory Access" class=dd-item>
+<a href=./apireference/memoryaccess.html>
+Memory Access
+</a>
+</li>
+<li data-nav-id=/apireference/misc.html title=Miscellaneous class=dd-item>
+<a href=./apireference/misc.html>
+Miscellaneous
+</a>
+</li>
+<li data-nav-id=/apireference/enums.html title=Enums class=dd-item>
+<a href=./apireference/enums.html>
+Enums
+</a>
+</li>
+</ul>
+</li>
+</ul>
+<section id=shortcuts>
+<h3>More</h3>
+<ul>
+<li role>
+<a class=padding href=https://www.mesen.ca><img style=vertical-align:middle src=./images/favicon.png> <span style=display:inline;vertical-align:middle>Website</span></a>
+</li>
+<li role>
+<a class=padding href=https://github.com/SourMesen/Mesen><i class="fa fa-github"></i> GitHub</a>
+</li>
+</ul>
+</section>
+<div id=menuspacer></div>
+<section id=footer>
+<div class=menuFooter>
+<div class=donateButton><a href=https://www.mesen.ca/Donate.php><img src=./images/patreon.png alt="Become a Patron!" width=66% height=66%></a></div>
+<div class=donateButton><a class=bmc-button target=_blank href=https://www.mesen.ca/BuyCoffee.php><img src=./images/BMC-btn-logo.svg alt=Donate><span style=margin-left:5px>Donate</span></a></div>
+Version: <b>0.9.9</b><br>
+Last Updated: <b>2021-12-21</b>
+</div>
+</section>
+</div>
+</nav>
+<section id=body>
+<div id=overlay></div>
+<div class="padding highlightable sticky-parent">
+<div class=sticky-spacer>
+<div id=top-bar>
+<div id=breadcrumbs itemscope itemtype=http://data-vocabulary.org/Breadcrumb>
+<span id=sidebar-toggle-span>
+<a href=# id=sidebar-toggle data-sidebar-toggle>
+<i class="fa fa-bars"></i>
+</a>
+</span>
+<span id=toc-menu><i class="fa fa-list-alt"></i></span>
+<span class=links>
+<a href=./>Home</a> > HD Packs
+</span>
+</div>
+<div class=progress>
+<div class=wrapper>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#using-hd-packs>Using HD packs</a>
+<ul>
+<li><a href=#installing-hd-packs>Installing HD Packs</a></li>
+<li><a href=#manual-installation>Manual installation</a></li>
+</ul>
+</li>
+<li><a href=#using-the-hd-pack-builder>Using the HD Pack Builder</a></li>
+<li><a href=#file-format-hirestxt>File Format (hires.txt)</a>
+<ul>
+<li><a href=#ltvergt-tag>&lt;ver> tag</a></li>
+<li><a href=#ltscalegt-tag>&lt;scale> tag</a></li>
+<li><a href=#ltoverscangt-tag>&lt;overscan> tag</a></li>
+<li><a href=#ltpatchgt-tag>&lt;patch> tag</a></li>
+<li><a href=#ltimggt-tag>&lt;img> tag</a></li>
+<li><a href=#ltconditiongt-tag>&lt;condition> tag</a></li>
+<li><a href=#lttilegt-tag>&lt;tile> tag</a></li>
+<li><a href=#ltbackgroundgt-tag>&lt;background> tag</a></li>
+<li><a href=#ltoptionsgt-tag>&lt;options> tag</a></li>
+<li><a href=#ltbgmgt-tag>&lt;bgm> tag</a></li>
+<li><a href=#ltsfxgt-tag>&lt;sfx> tag</a></li>
+</ul>
+</li>
+<li><a href=#using-conditions>Using conditions</a></li>
+<li><a href=#replacing-audio-in-games>Replacing audio in games</a>
+<ul>
+<li><a href=#register-write-operations>Register Write Operations</a></li>
+<li><a href=#register-read-operations>Register Read Operations</a></li>
+</ul>
+</li>
+<li><a href=#file-format-changelog>File Format Changelog</a>
+<ul>
+<li><a href=#version-106>Version 106</a></li>
+<li><a href=#version-105>Version 105</a></li>
+<li><a href=#version-104>Version 104</a></li>
+<li><a href=#version-103>Version 103</a></li>
+<li><a href=#version-102>Version 102</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+</div>
+<div id=body-inner>
+<h1>HD Packs</h1>
+<div class=toc>
+<div><nav id=TableOfContents>
+<ul>
+<li><a href=#using-hd-packs>Using HD packs</a>
+<ul>
+<li><a href=#installing-hd-packs>Installing HD Packs</a></li>
+<li><a href=#manual-installation>Manual installation</a></li>
+</ul>
+</li>
+<li><a href=#using-the-hd-pack-builder>Using the HD Pack Builder</a></li>
+<li><a href=#file-format-hirestxt>File Format (hires.txt)</a>
+<ul>
+<li><a href=#ltvergt-tag>&lt;ver> tag</a></li>
+<li><a href=#ltscalegt-tag>&lt;scale> tag</a></li>
+<li><a href=#ltoverscangt-tag>&lt;overscan> tag</a></li>
+<li><a href=#ltpatchgt-tag>&lt;patch> tag</a></li>
+<li><a href=#ltimggt-tag>&lt;img> tag</a></li>
+<li><a href=#ltconditiongt-tag>&lt;condition> tag</a></li>
+<li><a href=#lttilegt-tag>&lt;tile> tag</a></li>
+<li><a href=#ltbackgroundgt-tag>&lt;background> tag</a></li>
+<li><a href=#ltoptionsgt-tag>&lt;options> tag</a></li>
+<li><a href=#ltbgmgt-tag>&lt;bgm> tag</a></li>
+<li><a href=#ltsfxgt-tag>&lt;sfx> tag</a></li>
+</ul>
+</li>
+<li><a href=#using-conditions>Using conditions</a></li>
+<li><a href=#replacing-audio-in-games>Replacing audio in games</a>
+<ul>
+<li><a href=#register-write-operations>Register Write Operations</a></li>
+<li><a href=#register-read-operations>Register Read Operations</a></li>
+</ul>
+</li>
+<li><a href=#file-format-changelog>File Format Changelog</a>
+<ul>
+<li><a href=#version-106>Version 106</a></li>
+<li><a href=#version-105>Version 105</a></li>
+<li><a href=#version-104>Version 104</a></li>
+<li><a href=#version-103>Version 103</a></li>
+<li><a href=#version-102>Version 102</a></li>
+</ul>
+</li>
+</ul>
+</nav></div>
+</div>
+<p>HD Packs make it possible to replace a game&rsquo;s graphics and audio with high definition alternatives. This can be used in many ways, for example, one could keep the game&rsquo;s original resolution and simply improve its graphics by adding more colors and shading.</p>
+<h2 id=using-hd-packs>Using HD packs</h2>
+<h3 id=installing-hd-packs>Installing HD Packs</h3>
+<p>To install an HD Pack:</p>
+<ul>
+<li>First, load the game for which you want to install the HD Pack.</li>
+<li>Then, click on the <strong>Tools→Install HD Pack</strong> menu and select the <code>.zip</code> file that contains the HD Pack you want to install.</li>
+<li>A message will be shown indicating whether the installation succeeded or failed.</li>
+</ul>
+<h3 id=manual-installation>Manual installation</h3>
+<p>If the HD Pack installation tool fails to install the HD Pack, you can try to install it manually with these instructions:</p>
+<p>To use HD packs, first make sure to turn on the <a href=./configuration/video.html#general-options>Enable HDNes HD Packs</a> option.<br>
+To install a HD Pack, you should extract it in a subfolder inside the <code>HdPacks</code> folder in Mesen&rsquo;s data folder. You can open this folder by clicking on the <code>Open Mesen Folder</code> button in the <a href=./configuration/preferences.html#general-options>Preferences</a> window.
+The subfolder should have the same name as the rom file itself.</p>
+<p>For HD packs created with Mesen&rsquo;s <a href=#using-the-hd-pack-builder>HD Pack Builder</a>, you can also put them in <code>.zip</code> format in the <code>HdPacks</code> folder, without unzipping them nor worrying about renaming the file.</p>
+<h2 id=using-the-hd-pack-builder>Using the HD Pack Builder</h2>
+<p>The HD Pack Builder can be used to record a game&rsquo;s graphics into PNG image files and build a matching <code>hires.txt</code> file. These are the 2 basic elements needed for HD Packs: a tile map (the PNG files) and a definition file that specifies where each tile is on the tile map (the <code>hires.txt</code> file).</p>
+<p>The basic concept of this tool is to use it to record gameplay of a game from start to finish, attempting to trigger every possible animation or graphics during gameplay. This will create a complete set of tiles (saved in PNG files) and a single hires.txt file that contains all that is needed to replace the tiles with HD tiles. Once this is done, the only thing left to do, in most cases, is to replace the graphics in the PNG files with better alternatives (e.g higher resolution, more colors, etc.).</p>
+<p>A number of options exist to control the way the PNG files are generated:</p>
+<p><strong>Scale/Filter</strong>: Selects the scale and video filter to use when generating the PNG files for the HD Pack. Use the &ldquo;Prescale&rdquo; filters to generate the tiles at a larger scale without applying any transformation to the pixels.</p>
+<p><strong>CHR Bank Size</strong>: This option is only available for CHR RAM games. CHR RAM games have no fixed &ldquo;banks&rdquo; - they are dynamically created by the game&rsquo;s code. This option alters the HD Pack Builder&rsquo;s behavior when grouping the tiles into the PNG files - a smaller bank size will usually result in less PNG files (but depending on the game&rsquo;s code, larger values may produce better results).</p>
+<p><strong>Group blank tiles</strong>: This option groups all the blank tiles sequentially into the same PNG files - this helps reduce the number of PNG files produced by removing almost-empty PNG files containing only blank tiles.</p>
+<p><strong>Sort pages by usage frequency</strong>: When this option is enabled, the tiles in PNG files are sorted by the frequency at which they are shown on the screen while recording (more common palettes will be grouped together in the first PNG for a specific bank number. If this option is unchecked, the PNGs will be sorted by palette - each PNG will only contain up to 4 different colors in this case.</p>
+<p><strong>Use 8x16 sprite display mode</strong>: When enabled, this option will alter the display order of CHR banks that contain only sprites to make the sprites easier to edit in the PNG file.</p>
+<p><strong>Ignore tiles at the edges of the screen (overscan)</strong>: When enabled, this will make the builder ignore any pixels in the overscan area. This is useful in games that contain glitches on the outer edge of the screen. Incorrect palette combinations due to these glitches will be ignored and won&rsquo;t be shown in the PNG files.</p>
+<p><strong>Save frames which the tiles are first shown</strong>: When enabled, the builder will save a screenshot and the composition of the screen in the pack folder when it encounters new tile in a frame. This is useful for checking where that tile is used. These files are not needed in the pack and should be deleted when sharing the pack.</p>
+<p><strong>Tile Type</strong>: This option controls whether only BG tiles or sprite tiles or both are added to the HD Pack.</p>
+<p>Before you start recording, select the options you want to use and the location to which you want to save the HD Pack, then press the <code>Start Recording</code> button.</p>
+<h2 id=file-format-hirestxt>File Format (hires.txt)</h2>
+<p>The following are the specifications for the hires.txt file, as of version &ldquo;106&rdquo;.</p>
+<h3 id=ltvergt-tag>&lt;ver> tag</h3>
+<p><strong>Syntax</strong>: <code>&lt;ver>[integer]</code><br>
+<strong>Example</strong>: <code>&lt;ver>106</code></p>
+<p>The format&rsquo;s version number (currently 106).</p>
+<h3 id=ltscalegt-tag>&lt;scale> tag</h3>
+<p><strong>Syntax</strong>: <code>&lt;scale>[integer]</code><br>
+<strong>Example</strong>: <code>&lt;scale>4</code></p>
+<p>The scale used for the replacement graphics &ndash; this can be any integer number (minimum: 1). Anything above 8-10x will probably have a very hard time running on any computer. It is suggested to use scales between 1x and 4x.</p>
+<h3 id=ltoverscangt-tag>&lt;overscan> tag</h3>
+<p><strong>Syntax</strong>: <code>&lt;overscan>[top],[right],[bottom],[left]</code><br>
+<strong>Example</strong>: <code>&lt;overscan>8,8,8,8</code></p>
+<p>The overscan values to use when the HD Pack is loaded - this is useful for games that produce glitches on the edges of the screen.<br>
+<strong>Note:</strong> This feature is only available for HD Packs that contain tile replacement rules. HD Packs that only replace audio cannot use the overscan setting.</p>
+<h3 id=ltpatchgt-tag>&lt;patch> tag</h3>
+<p><strong>Syntax</strong>: <code>&lt;patch>[filename],[sha1 hash]</code><br>
+<strong>Example</strong>: <code>&lt;patch>MyPatch.ips,26aec27ef0fc1a6fd282937b918ebdd1fb480891</code></p>
+<p>Specifies a patch file to apply if the loaded ROM matches the specified SHA1 hash.<br>
+The patches can be in either <code>.ips</code> or <code>.bps</code> format.
+Multiple <code>&lt;patch></code> tags with different SHA1 hashes can be present in the same <code>hires.txt</code> file.</p>
+<h3 id=ltimggt-tag>&lt;img> tag</h3>
+<p><strong>Syntax</strong>: <code>&lt;img>[filename]</code><br>
+<strong>Example</strong>: <code>&lt;img>Tileset01.png</code></p>
+<p>Specifies a PNG file that contains tile graphics &ndash; each <code>&lt;img></code> tag is indexed (starting from 0) according to the order it appears in the <code>hires.txt</code> file, the tag&rsquo;s index must be used when using <code>&lt;tile></code> tags.</p>
+<h3 id=ltconditiongt-tag>&lt;condition> tag</h3>
+<p>HD Packs support a number of conditionals that can be used to replace graphics when certain conditions are met.<br>
+This is useful to resolve conflicts that can occur in some games (where the same tile & palette can be reused in multiple distinct objects), etc.<br>
+The sections below describe every available condition type.</p>
+<h4 id=built-in-conditions>Built-in Conditions</h4>
+<p>A number of built-in conditions can be used to check the value of some flags:</p>
+<ul>
+<li><code>hmirror</code>: True if the current pixel is a sprite pixel, and the sprite is mirrored horizontally.</li>
+<li><code>vmirror</code>: True if the current pixel is a sprite pixel, and the sprite is mirrored vertically.</li>
+<li><code>bgpriority</code>: True if the current pixel is a sprite pixel, and the sprite is marked as a background priority sprite.</li>
+<li><code>sppalette0</code>: True if the current pixel is a sprite pixel, and the sprite is using the palette at address $3F10.</li>
+<li><code>sppalette1</code>: True if the current pixel is a sprite pixel, and the sprite is using the palette at address $3F14.</li>
+<li><code>sppalette2</code>: True if the current pixel is a sprite pixel, and the sprite is using the palette at address $3F18.</li>
+<li><code>sppalette3</code>: True if the current pixel is a sprite pixel, and the sprite is using the palette at address $3F1C.</li>
+</ul>
+<p><strong>Example:</strong> <code>[hmirror]&lt;tile>...</code></p>
+<h4 id=tilenearby--spritenearby>tileNearby / spriteNearby</h4>
+<p>The tileNearby and spriteNearby conditions are used to check whether a specific tile or sprite exists in the vicinity of the current pixel. If a matching tile/sprite is found, the condition will be true.</p>
+<p><strong>Syntax</strong>: <code>&lt;condition>[name - text], [conditionType - text], [x value - integer], [y value - integer], [tile data], [palette data - hex]</code><br>
+<strong>Example (CHR ROM)</strong>: <code>&lt;condition>myCondition,tileNearby,8,0,10,0F100017</code><br>
+<strong>Example (CHR RAM)</strong>: <code>&lt;condition>myCondition,tileNearby,8,0,D2C2C2C7CF2FFEFC2C3C3C3830D00000,0F100017</code></p>
+<p><strong>Notes</strong>:<br>
+<code>tileNearby</code> and <code>spriteNearby</code> use positive or negative X/Y offsets to the current position. e.g:<br>
+<code>&lt;condition>myCondition2,tileNearby,-8,0,[tile data],[palette data]</code><br>
+In this case, <code>myCondition2</code> will be true if the tile 8 pixels to the left of the current tile matches the tile+palette data specified.</p>
+<p>For CHR ROM games, <code>tile data</code> is an integer (in hexadecimal) representing the position of the original tile in CHR ROM.<br>
+For CHR RAM games, <code>tile data</code> is a 32-character hexadecimal string representing all 16 bytes of the tile.<br>
+<code>palette data</code> is always an 8-character hexadecimal string representing all 4 bytes of the palette used for the tile. For sprites, the first byte is always &ldquo;FF&rdquo;.</p>
+<h4 id=tileatposition--spriteatposition>tileAtPosition / spriteAtPosition</h4>
+<p>The tileAtPosition and spriteAtPosition conditions are used to check whether a specific tile or sprite exists at the specified coordinates. If a matching tile/sprite is found, the condition will be true.</p>
+<p><strong>Syntax</strong>: <code>&lt;condition>[name - text], [conditionType - text], [x value - integer], [y value - integer], [tile data], [palette data - hex]</code><br>
+<strong>Example (CHR ROM)</strong>: <code>&lt;condition>myCondition,tileAtPosition,8,0,10,0F100017</code><br>
+<strong>Example (CHR RAM)</strong>: <code>&lt;condition>myCondition,tileAtPosition,8,0,D2C2C2C7CF2FFEFC2C3C3C3830D00000,0F100017</code></p>
+<p><strong>Notes</strong>:<br>
+<code>tileAtPosition</code> and <code>spriteAtPosition</code> use the X/Y parameters as screen coordinates. e.g:<br>
+<code>&lt;condition>myCondition,tileAtPosition,10,10,[tile data],[palette data]</code><br>
+In this case, <code>myCondition</code> will be true if the tile at position 10,10 on the NES' screen (256x240 resolution) matches the tile+palette data given.</p>
+<p>For CHR ROM games, <code>tile data</code> is an integer (in hexadecimal) representing the position of the original tile in CHR ROM.<br>
+For CHR RAM games, <code>tile data</code> is a 32-character hexadecimal string representing all 16 bytes of the tile.<br>
+<code>palette data</code> is always an 8-character hexadecimal string representing all 4 bytes of the palette used for the tile. For sprites, the first byte is always &ldquo;FF&rdquo;.</p>
+<h4 id=memorycheck--ppumemorycheck>memoryCheck / ppuMemoryCheck</h4>
+<p>The memoryCheck and ppuMemoryCheck conditions are used to compare the value stored at 2 different memory addresses together. (Use the <code>ppuMemoryCheck</code> variant to check PPU memory)</p>
+<p><strong>Syntax</strong>: <code>&lt;condition>[name - text], [conditionType - text], [memory address 1 - hex], [operator - string], [memory address 2 - hex], [mask - hex (optional)]</code><br>
+<strong>Supported operators</strong>: <code>==</code>, <code>!=</code>, <code>></code>, <code>&lt;</code>, <code>>=</code>, <code>&lt;=</code><br>
+<strong>Example</strong>: <code>&lt;condition>myCondition,memoryCheck,8FFF,>,8000</code> (If the value stored at $8FFF is greater than the value stored at $8000, the condition will be true)<br>
+<strong>Example (with mask)</strong>: <code>&lt;condition>myCondition,memoryCheck,8FFF,==,8000,10</code> (If the bit 4 of the value stored at $8FFF is equal to bit 4 of the value at $8000, the condition will be true. i.e: <code>([$8FFF] & $10) == ([$8000] & $10)</code>)</p>
+<h4 id=memorycheckconstant--ppumemorycheckconstant>memoryCheckConstant / ppuMemoryCheckConstant</h4>
+<p>The memoryCheck and ppuMemoryCheck conditions are used to compare the value stored at a memory address with a constant. (Use the <code>ppuMemoryCheckConstant</code> variant to check PPU memory)</p>
+<p><strong>Syntax</strong>: <code>&lt;condition>[name - text], [conditionType - text], [memory address - hex], [operator - string], [constant - hex], [mask - hex (optional)]</code><br>
+<strong>Supported operators</strong>: <code>==</code>, <code>!=</code>, <code>></code>, <code>&lt;</code>, <code>>=</code>, <code>&lt;=</code><br>
+<strong>Example</strong>: <code>&lt;condition>myCondition,memoryCheckConstant,8FFF,==,3F</code> (If the value stored at $8FFF is equal to $3F, the condition will be true)<br>
+<strong>Example (with mask)</strong>: <code>&lt;condition>myCondition,memoryCheckConstant,8FFF,==,1F,3F</code> (If the value stored at $8FFF ANDed with $3F is equal to $1F then the condition will be true. i.e: <code>([$8FFF] & $3F) == $1F</code>)</p>
+<h4 id=framerange>frameRange</h4>
+<p>The frameRange conditions can be used to conditionally replace tiles based on the current frame number.
+The condition is true when the following expression is true:<br>
+<code>[current frame number] % [divisorValue] >= [compareValue]</code></p>
+<p><strong>Syntax</strong>: <code>&lt;condition>[name - text], frameRange, [divisorValue - integer], [compareValue - integer]</code><br>
+<strong>Example</strong>: <code>&lt;condition>myCondition,frameRange,8,10</code> (This condition will be true for the last 2 frames out of every 10 frames)</p>
+<h3 id=lttilegt-tag>&lt;tile> tag</h3>
+<p><strong>Syntax</strong>: <code>&lt;tile>[img index - integer], [tile data], [palette data], [x - integer], [y - integer], [brightness - float (default: 1.0)], [default tile - Y or N]</code><br>
+<strong>Example (CHR ROM)</strong>: <code>&lt;tile>0,2E,FF16360F,0,0,1,N</code><br>
+<strong>Example (CHR RAM)</strong>: <code>&lt;tile>0,0E0E079C1E3EA7076101586121010000,0F100017,176,1168,1,N</code></p>
+<p>For CHR ROM games, <code>tile data</code> is an integer (in hexadecimal) representing the position of the original tile in CHR ROM.<br>
+For CHR RAM games, <code>tile data</code> is a 32-character hexadecimal string representing all 16 bytes of the tile.<br>
+<code>palette data</code> is always an 8-character hexadecimal string representing all 4 bytes of the palette used for the tile. For sprites, the first byte is always &ldquo;FF&rdquo;.</p>
+<p><code>&lt;tile></code> define mappings between the original game&rsquo;s tile data and their replacements in the PNG file.
+The <code>tile data</code> and <code>palette data</code> are used to identify the original tile, while the <code>img index</code>, <code>x</code> and <code>y</code> fields are used to specify in which PNG file the replacement can be found, and at what x,y coordinates in that PNG file.</p>
+<p><code>brightness</code> can be used to reuse the same HD tile for multiple original tiles &ndash; this can be useful when a game has fade in and out effects (the brightness can be set to values above 1.0 to increase the PNG&rsquo;s normal brightness level).<br>
+When <code>default tile</code> is enabled (with <code>Y</code>), the tile is marked as the <code>default tile</code> for all palettes. Whenever a tile appears on the screen that matches the tile data, but has no rules matching its palette data, the default tile will be used instead.</p>
+<h3 id=ltbackgroundgt-tag>&lt;background> tag</h3>
+<p><strong>Syntax</strong>: <code>&lt;background>[name - text], [brightness level - float (default: 1.0)], [horizontal scroll ratio (optional) - float], [vertical scroll ratio (optional) - float], [priority level (optional) - int, 0 to 39 (default 10)], [image left offset (optional) - int], [image top offset (optional) - int]</code><br>
+<strong>Example</strong>: <code>&lt;background>myBackground.png,1.0,0,0,10,0,0</code></p>
+<p><code>&lt;background></code> tags are meant to be used alongside conditions to add a background image under certain conditions (e.g on a specific screen, for example).</p>
+<p>The <code>Horizontal Scroll Ratio</code> and <code>Vertical Scroll Ratio</code> parameters are optional (their default value is <code>0.0</code>) and can be used to specify at what speed the background picture should scroll compared to the NES' scrolling.<br>
+This can be used to create simple parallax scrolling effects.</p>
+<p>The <code>Image Left Offset</code> and <code>Image Top Offset</code> parameters are optional (their default value is <code>0</code>) and can be used to offset the position of the background image within the PNG file. e.g: Specifying 100 for the left offset will cause the background to be scrolled 100 pixels to the left by default.
+With conditions, this can be used to create scrolling effects that are based on something other than the PPU&rsquo;s current scroll offset.</p>
+<p>The <code>Priority Level</code> parameter determines where the background is inserted compared to the NES' 3 &ldquo;layers&rdquo; (background sprites -> background tiles -> foreground sprites).<br>
+The screen is drawn in this order:</p>
+<ul>
+<li>Priority 0 to 9 HD backgrounds (priority 0 is below priority 1, etc.)</li>
+<li>Background-priority sprites</li>
+<li>Priority 10 to 19 HD backgrounds</li>
+<li>Background tiles</li>
+<li>Priority 20 to 29 HD backgrounds</li>
+<li>Foreground-priority sprites</li>
+<li>Priority 30 to 39 HD backgrounds</li>
+</ul>
+<p>Note: Only a single background can be active per priority level.</p>
+<p>Backgrounds can use a PNG&rsquo;s alpha channel to allow the graphics below to show through them (this can be used to add a fog effect to the screen, etc.)</p>
+<h3 id=ltoptionsgt-tag>&lt;options> tag</h3>
+<p><strong>Syntax</strong>: <code>&lt;options>[option1 - text], [option2 - text], [...]</code><br>
+<strong>Example</strong>: <code>&lt;options>disableSpriteLimit</code></p>
+<p><strong>Available options</strong>:<br>
+<code>disableSpriteLimit</code>: Forces the emulator to disable the sprite limit when the HD pack is loaded.<br>
+<code>disableOriginalTiles</code>: Normally, when a replacement for a tile is not found, the original tile is drawn. When this option is enabled, the original tiles are never drawn, only their HD replacements.</p>
+<h3 id=ltbgmgt-tag>&lt;bgm> tag</h3>
+<p><strong>Syntax</strong>: <code>&lt;bgm>[album - integer],[track - integer],[filename - ogg],[loop point (optional) - integer],[playback option (optional) - integer],[volume (optional) - integer]</code><br>
+<strong>Example</strong>: <code>&lt;bgm>0,0,myBgm.ogg</code><br>
+<strong>Example (with optional values)</strong>: <code>&lt;bgm>0,0,myBgm.ogg,40000,1,-1</code></p>
+<p><code>Loop point</code>: The sample number in the ogg file where the track will loop back to.
+<code>Playback option</code>: Use 1 for looping playback, 0 for single playback, -1 for keeping the current value.
+<code>Volume</code>: Use 0 to 128 for changing the volume, -1 for keeping the current volume.</p>
+<p>Used to assign a background music track (<code>.ogg</code> audio file) to a specific album and track number.
+Album and track numbers are used to form a unique ID for each bgm, allowing up to 64k different bgm tracks.</p>
+<h3 id=ltsfxgt-tag>&lt;sfx> tag</h3>
+<p><strong>Syntax</strong>: <code>&lt;sfx>[album - integer],[track - integer],[filename - ogg]</code><br>
+<strong>Example</strong>: <code>&lt;sfx>0,0,myBgm.ogg</code></p>
+<p>Used to assign a sound effect (<code>.ogg</code> audio file) to a specific album and track number.
+Album and track numbers are used to form a unique ID for each sound effect, allowing up to 64k different sound effects.</p>
+<h2 id=using-conditions>Using conditions</h2>
+<p>To use conditions, add the condition&rsquo;s name at the start of the line. e.g:<br>
+<code>[myConditionName]&lt;tile>...</code></p>
+<p>Conditions can only be applied to <code>&lt;tile></code> or <code>&lt;background></code> tags. When a condition is applied to a <code>&lt;tile></code> or <code>&lt;background></code> tag, that rule will only be used if the condition is met.</p>
+<p>The first matching rule (in the order they are written in the <code>hires.txt</code> file) will be used. So conditional tiles MUST be placed before tiles with no conditions (for the same <code>tile data</code>+<code>palette data</code>) to have any effect.</p>
+<p>You can also make it so multiple conditions must be met for a rule to be used by joining each condition name with a &:<br>
+<code>[cond1&cond2]&lt;tile>...</code></p>
+<p>It is also possible to invert the result of a condition by prepending a an exclamation mark (<code>!</code>) to it:<br>
+<code>[!myCondition]&lt;tile>...</code></p>
+<h2 id=replacing-audio-in-games>Replacing audio in games</h2>
+<p>Audio replacement in HD packs in Mesen works in a similar fashion to the MSU-1 for the SNES. It adds a number of read/write registers in memory and they can be used to play OGG files specified via <code>&lt;bgm></code> and <code>&lt;sfx></code> tags.</p>
+<h3 id=register-write-operations>Register Write Operations</h3>
+<h4 id=4100-playback-options>$4100: Playback Options</h4>
+<p>This register allows you to set the BGM loop flag (bit 0) on or off.</p>
+<h4 id=4101-playback-control>$4101: Playback Control</h4>
+<p>This register allows you to pause/resume or stop sounds.</p>
+<p><strong>Bit 0</strong>: When set, pauses/resumes the BGM track.<br>
+<strong>Bit 1</strong>: When set, the BGM track is stopped.<br>
+<strong>Bit 2</strong>: When set, all SFX tracks are stopped.</p>
+<h4 id=4102-bgm-volume>$4102: BGM Volume</h4>
+<p>Sets the current volume for the BGM tracks (0: Muted, 255: Maximum volume).<br>
+Setting this register affects the currently playing BGM track - this can be used for fade in/out effects.</p>
+<h4 id=4103-sfx-volume>$4103: SFX Volume</h4>
+<p>Sets the current volume for the SFX tracks (0: Muted, 255: Maximum volume).<br>
+Setting this register affects all currently playing SFX - this can be used for fade in/out effects.</p>
+<h4 id=4104-album-number>$4104: Album Number</h4>
+<p>Selects the current album (0 - 255).<br>
+This allows up to 65536 BGM and SFX tracks to be defined.<br>
+Writing to this register has no immediate effect - only subsequent writes to the <code>Play BGM Track</code> and <code>Play SFX Track</code> registers will be affected.</p>
+<h4 id=4105-play-bgm-track>$4105: Play BGM Track</h4>
+<p>Starts playback of the specified BGM track from the specified album (based on the <code>Album Number</code> register).<br>
+Only a single BGM track can be playing at any given time.</p>
+<h4 id=4106-play-sfx-track>$4106: Play SFX Track</h4>
+<p>Starts playback of the specified SFX track from the specified album (based on the <code>Album Number</code> register).<br>
+Any number of SFX tracks can be played at once.</p>
+<h3 id=register-read-operations>Register Read Operations</h3>
+<h4 id=4100-status>$4100: Status</h4>
+<p>This register returns the current playback status.</p>
+<p><strong>Bit 0</strong>: Set when a BGM track is currently playing.<br>
+<strong>Bit 1</strong>: Set when at least one SFX track is currently playing.<br>
+<strong>Bit 2</strong>: Set if an error occurred (e.g the last play BGM/SFX failed because the specified Album+Track number combination was invalid)</p>
+<h4 id=4101-revision-number>$4101: Revision Number</h4>
+<p>Returns the current revision of the HD Audio API. This value is currently set to <code>1</code>.</p>
+<h4 id=410241034104-signature>$4102/$4103/$4104: Signature</h4>
+<p>These registers return the ASCII string <code>NEA</code> (NES Enhanced Audio) - this can be used to detect whether or not the audio API is available.</p>
+<h2 id=file-format-changelog>File Format Changelog</h2>
+<h3 id=version-106>Version 106</h3>
+<ul>
+<li>Replaced <code>Show Behind Background Priority Sprites</code> flag for <code>&lt;background></code> tags by a 0 to 39 priority level value.</li>
+<li>Removed contour feature for backgrounds, and removed <code>disableContours</code> option.</li>
+</ul>
+<h3 id=version-105>Version 105</h3>
+<ul>
+<li>Brightness values above 1.0 are now allowed.</li>
+<li>Added <code>disableOriginalTiles</code> option</li>
+<li>Background tags can now specify <code>left</code> and <code>top</code> values.</li>
+<li>Added <code>loopback point</code>, <code>playback option</code>, <code>volume</code> to <code>&lt;bgm></code> tag.</li>
+</ul>
+<h3 id=version-104>Version 104</h3>
+<ul>
+<li>Tile indexes for the <code>&lt;condition></code> tag (tileNearby/spriteNearby/tileAtPosition/spriteAtPosition) are now in hex instead of decimal (affects CHR ROM games only)</li>
+</ul>
+<h3 id=version-103>Version 103</h3>
+<ul>
+<li>Added a <code>Mask</code> parameter to the memoryCheck and memoryCheckConstant conditions</li>
+<li>Tile indexes for the <code>&lt;tile></code> tag are now in hex instead of decimal (affects CHR ROM games only)</li>
+</ul>
+<h3 id=version-102>Version 102</h3>
+<ul>
+<li>Operands for memoryCheck/memoryCheckConstant conditions must now be specified in hex (used to be decimal)</li>
+<li>Added the <code>Show Behind Background Priority Sprites</code> option to the <code>&lt;background></code> tag</li>
+</ul>
+<footer class=footline>
+</footer>
+</div>
+</div>
+<div id=navigation>
+<a class="nav nav-prev" href=./debugging/debuggerintegration.html title="Integration with compilers"> <i class="fa fa-chevron-left"></i></a>
+<a class="nav nav-next" href=./apireference.html title="Lua API reference" style=margin-right:0><i class="fa fa-chevron-right"></i></a>
+</div>
+</section>
+<div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px>
+<div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div>
+</div>
+<script src=./js/clipboard.min.js?1640054942></script>
+<script src=./js/perfect-scrollbar.min.js?1640054942></script>
+<script src=./js/perfect-scrollbar.jquery.min.js?1640054942></script>
+<script src=./js/jquery.sticky-kit.min.js?1640054942></script>
+<script src=./js/featherlight.min.js?1640054942></script>
+<script src=./js/html5shiv-printshiv.min.js?1640054942></script>
+<script src=./js/highlight.pack.js?1640054942></script>
+<script>hljs.initHighlightingOnLoad()</script>
+<script src=./js/modernizr.custom.71422.js?1640054942></script>
+<script src=./js/learn.js?1640054942></script>
+<script src=./js/hugo-learn.js?1640054942></script>
+<link href=./mermaid/mermaid.css?1640054942 type=text/css rel=stylesheet>
+<script src=./mermaid/mermaid.js?1640054942></script>
+<script>mermaid.initialize({startOnLoad:!0})</script>
+</body>
+</html>

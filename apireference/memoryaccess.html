@@ -1,0 +1,373 @@
+<!doctype html><html lang=en class="js csstransforms3d">
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name=generator content="Hugo 0.91.0">
+<meta name=description content>
+<link rel="shortcut icon" href=../images/favicon.png type=image/x-icon>
+<link rel=icon href=../images/favicon.png type=image/x-icon>
+<title>Memory Access :: Mesen Documentation</title>
+<link href=../css/nucleus.css?1640054941 rel=stylesheet>
+<link href=../css/font-awesome.min.css?1640054941 rel=stylesheet>
+<link href=../css/hybrid.css?1640054941 rel=stylesheet>
+<link href=../css/featherlight.min.css?1640054941 rel=stylesheet>
+<link href=../css/perfect-scrollbar.min.css?1640054941 rel=stylesheet>
+<link href=../css/horsey.css?1640054941 rel=stylesheet>
+<link href=../css/theme.css?1640054941 rel=stylesheet>
+<link href=../css/hugo-theme.css?1640054941 rel=stylesheet>
+<link href=../css/custom.css?1640054941 rel=stylesheet>
+<link href=../css/theme-green.css?1640054941 rel=stylesheet>
+<script src=../js/jquery-2.x.min.js?1640054941></script>
+<style type=text/css>:root #header+#content>#left>#rlblock_left{display:none!important}</style>
+</head>
+<body data-url=../apireference/memoryaccess.html>
+<nav id=sidebar>
+<div id=header-wrapper>
+<div id=header>
+<a id=logo href=../index.html>
+<img src=../images/MesenIcon.png>
+</a>
+</div>
+<div class=searchbox>
+<label for=search-by><i class="fa fa-search"></i></label>
+<input data-search-input id=search-by type=text placeholder=Search...>
+<span data-search-clear><i class="fa fa-close"></i></span>
+</div>
+<script type=text/javascript src=../js/lunr.min.js?1640054941></script>
+<script type=text/javascript src=../js/horsey.js?1640054941></script>
+<script type=text/javascript>var baseurl=""</script>
+<script type=text/javascript src=../js/searchjson.js?1640054941></script>
+<script type=text/javascript src=../js/search.js?1640054941></script>
+</div>
+<div class=highlightable>
+<ul class=topics>
+<li data-nav-id=/gettingstarted.html title="Getting Started" class=dd-item>
+<a href=../gettingstarted.html>
+Getting Started
+</a>
+</li>
+<li data-nav-id=/configuration.html title=Configuration class=dd-item>
+<a href=../configuration.html>
+Configuration
+</a>
+<ul>
+<li data-nav-id=/configuration/audio.html title="Audio Options" class=dd-item>
+<a href=../configuration/audio.html>
+Audio Options
+</a>
+</li>
+<li data-nav-id=/configuration/input.html title="Input Options" class=dd-item>
+<a href=../configuration/input.html>
+Input Options
+</a>
+</li>
+<li data-nav-id=/configuration/video.html title="Video Options" class=dd-item>
+<a href=../configuration/video.html>
+Video Options
+</a>
+</li>
+<li data-nav-id=/configuration/emulation.html title="Emulation Options" class=dd-item>
+<a href=../configuration/emulation.html>
+Emulation Options
+</a>
+</li>
+<li data-nav-id=/configuration/preferences.html title=Preferences class=dd-item>
+<a href=../configuration/preferences.html>
+Preferences
+</a>
+</li>
+</ul>
+</li>
+<li data-nav-id=/tools.html title=Tools class=dd-item>
+<a href=../tools.html>
+Tools
+</a>
+</li>
+<li data-nav-id=/debugging.html title="Debugging Tools" class=dd-item>
+<a href=../debugging.html>
+Debugging Tools
+</a>
+<ul>
+<li data-nav-id=/debugging/debugger.html title=Debugger class=dd-item>
+<a href=../debugging/debugger.html>
+Debugger
+</a>
+</li>
+<li data-nav-id=/debugging/apuviewer.html title="APU Viewer" class=dd-item>
+<a href=../debugging/apuviewer.html>
+APU Viewer
+</a>
+</li>
+<li data-nav-id=/debugging/assembler.html title=Assembler class=dd-item>
+<a href=../debugging/assembler.html>
+Assembler
+</a>
+</li>
+<li data-nav-id=/debugging/eventviewer.html title="Event Viewer" class=dd-item>
+<a href=../debugging/eventviewer.html>
+Event Viewer
+</a>
+</li>
+<li data-nav-id=/debugging/memorytools.html title="Memory Tools" class=dd-item>
+<a href=../debugging/memorytools.html>
+Memory Tools
+</a>
+</li>
+<li data-nav-id=/debugging/performanceprofiler.html title="Performance Profiler" class=dd-item>
+<a href=../debugging/performanceprofiler.html>
+Performance Profiler
+</a>
+</li>
+<li data-nav-id=/debugging/ppuviewer.html title="PPU Viewer" class=dd-item>
+<a href=../debugging/ppuviewer.html>
+PPU Viewer
+</a>
+</li>
+<li data-nav-id=/debugging/scriptwindow.html title="Script Window" class=dd-item>
+<a href=../debugging/scriptwindow.html>
+Script Window
+</a>
+</li>
+<li data-nav-id=/debugging/texthooker.html title="Text Hooker" class=dd-item>
+<a href=../debugging/texthooker.html>
+Text Hooker
+</a>
+</li>
+<li data-nav-id=/debugging/tracelogger.html title="Trace Logger" class=dd-item>
+<a href=../debugging/tracelogger.html>
+Trace Logger
+</a>
+</li>
+<li data-nav-id=/debugging/debuggerintegration.html title="Integration with compilers" class=dd-item>
+<a href=../debugging/debuggerintegration.html>
+Integration with compilers
+</a>
+</li>
+</ul>
+</li>
+<li data-nav-id=/hdpacks.html title="HD Packs" class=dd-item>
+<a href=../hdpacks.html>
+HD Packs
+</a>
+</li>
+<li data-nav-id=/apireference.html title="Lua API reference" class="dd-item
+parent">
+<a href=../apireference.html>
+Lua API reference
+</a>
+<ul>
+<li data-nav-id=/apireference/changelog.html title=Changelog class=dd-item>
+<a href=../apireference/changelog.html>
+Changelog
+</a>
+</li>
+<li data-nav-id=/apireference/callbacks.html title=Callbacks class=dd-item>
+<a href=../apireference/callbacks.html>
+Callbacks
+</a>
+</li>
+<li data-nav-id=/apireference/drawing.html title=Drawing class=dd-item>
+<a href=../apireference/drawing.html>
+Drawing
+</a>
+</li>
+<li data-nav-id=/apireference/emulation.html title=Emulation class=dd-item>
+<a href=../apireference/emulation.html>
+Emulation
+</a>
+</li>
+<li data-nav-id=/apireference/input.html title=Input class=dd-item>
+<a href=../apireference/input.html>
+Input
+</a>
+</li>
+<li data-nav-id=/apireference/logging.html title=Logging class=dd-item>
+<a href=../apireference/logging.html>
+Logging
+</a>
+</li>
+<li data-nav-id=/apireference/memoryaccess.html title="Memory Access" class="dd-item active">
+<a href=../apireference/memoryaccess.html>
+Memory Access
+</a>
+</li>
+<li data-nav-id=/apireference/misc.html title=Miscellaneous class=dd-item>
+<a href=../apireference/misc.html>
+Miscellaneous
+</a>
+</li>
+<li data-nav-id=/apireference/enums.html title=Enums class=dd-item>
+<a href=../apireference/enums.html>
+Enums
+</a>
+</li>
+</ul>
+</li>
+</ul>
+<section id=shortcuts>
+<h3>More</h3>
+<ul>
+<li role>
+<a class=padding href=https://www.mesen.ca><img style=vertical-align:middle src=../images/favicon.png> <span style=display:inline;vertical-align:middle>Website</span></a>
+</li>
+<li role>
+<a class=padding href=https://github.com/SourMesen/Mesen><i class="fa fa-github"></i> GitHub</a>
+</li>
+</ul>
+</section>
+<div id=menuspacer></div>
+<section id=footer>
+<div class=menuFooter>
+<div class=donateButton><a href=https://www.mesen.ca/Donate.php><img src=../images/patreon.png alt="Become a Patron!" width=66% height=66%></a></div>
+<div class=donateButton><a class=bmc-button target=_blank href=https://www.mesen.ca/BuyCoffee.php><img src=../images/BMC-btn-logo.svg alt=Donate><span style=margin-left:5px>Donate</span></a></div>
+Version: <b>0.9.9</b><br>
+Last Updated: <b>2021-12-21</b>
+</div>
+</section>
+</div>
+</nav>
+<section id=body>
+<div id=overlay></div>
+<div class="padding highlightable sticky-parent">
+<div class=sticky-spacer>
+<div id=top-bar>
+<div id=breadcrumbs itemscope itemtype=http://data-vocabulary.org/Breadcrumb>
+<span id=sidebar-toggle-span>
+<a href=# id=sidebar-toggle data-sidebar-toggle>
+<i class="fa fa-bars"></i>
+</a>
+</span>
+<span id=toc-menu><i class="fa fa-list-alt"></i></span>
+<span class=links>
+<a href=../>Home</a> > <a href=../apireference.html>Lua API reference</a> > Memory Access
+</span>
+</div>
+<div class=progress>
+<div class=wrapper>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#read--readword>read / readWord</a></li>
+<li><a href=#write--writeword>write / writeWord</a></li>
+<li><a href=#revertprgchrchanges>revertPrgChrChanges</a></li>
+<li><a href=#getprgromoffset>getPrgRomOffset</a></li>
+<li><a href=#getchrromoffset>getChrRomOffset</a></li>
+<li><a href=#getlabeladdress>getLabelAddress</a></li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+</div>
+<div id=body-inner>
+<h1>Memory Access</h1>
+<div class=toc>
+<div><nav id=TableOfContents>
+<ul>
+<li><a href=#read--readword>read / readWord</a></li>
+<li><a href=#write--writeword>write / writeWord</a></li>
+<li><a href=#revertprgchrchanges>revertPrgChrChanges</a></li>
+<li><a href=#getprgromoffset>getPrgRomOffset</a></li>
+<li><a href=#getchrromoffset>getChrRomOffset</a></li>
+<li><a href=#getlabeladdress>getLabelAddress</a></li>
+</ul>
+</nav></div>
+</div>
+<h2 id=read--readword>read / readWord</h2>
+<p><strong>Syntax</strong></p>
+<pre><code>emu.read(address, type, signed = false)
+emu.readWord(address, type, signed = false)
+</code></pre>
+<p><strong>Parameters</strong><br>
+address - <em>Integer</em> The address/offset to read from.<br>
+type - <em>Enum</em> The type of memory to read from. See <a href=../apireference/enums.html#memtype>memType</a>.<br>
+signed - (optional) <em>Boolean</em> If true, the value returned will be interpreted as a signed value.</p>
+<p><strong>Return value</strong><br>
+An 8-bit (read) or 16-bit (readWord) value.</p>
+<p><strong>Description</strong><br>
+Reads a value from the specified <a href=../apireference/enums.html#memtype>memory type</a>.</p>
+<p>When calling read / readWord with the <a href=../apireference/enums.html#memtype>memType.cpu</a> or <a href=../apireference/enums.html#memtype>memType.ppu</a> memory types, emulation side-effects may occur.<br>
+To avoid triggering side-effects, use the <a href=../apireference/enums.html#memtype>memType.cpuDebug</a> or <a href=../apireference/enums.html#memtype>memType.ppuDebug</a> types, which will not cause side-effects.</p>
+<h2 id=write--writeword>write / writeWord</h2>
+<p><strong>Syntax</strong></p>
+<pre><code>emu.write(address, value, type)
+emu.writeWord(address, value, type)
+</code></pre>
+<p><strong>Parameters</strong><br>
+address - <em>Integer</em> The address/offset to write to. <br>
+value - <em>Integer</em> The value to write.<br>
+type - <em>Enum</em> The type of memory to write to. See <a href=../apireference/enums.html#memtype>memType</a>.</p>
+<p><strong>Return value</strong><br>
+<em>None</em></p>
+<p><strong>Description</strong><br>
+Writes an 8-bit or 16-bit value to the specified <a href=../apireference/enums.html#memtype>memory type</a>.</p>
+<p>Normally read-only types such as PRG-ROM or CHR-ROM can be written to when using <a href=../apireference/enums.html#memtype>memType.prgRom</a> or <a href=../apireference/enums.html#memtype>memType.chrRom</a>.<br>
+Changes will remain in effect until a power cycle occurs.<br>
+To revert changes done to ROM, see <a href=#revertprgchrchanges>revertPrgChrChanges</a>.</p>
+<p>When calling write / writeWord with the <a href=../apireference/enums.html#memtype>memType.cpu</a> or <a href=../apireference/enums.html#memtype>memType.ppu</a> memory types, emulation side-effects may occur.<br>
+To avoid triggering side-effects, use the <a href=../apireference/enums.html#memtype>memType.cpuDebug</a> or <a href=../apireference/enums.html#memtype>memType.ppuDebug</a> types, which will not cause side-effects.</p>
+<h2 id=revertprgchrchanges>revertPrgChrChanges</h2>
+<p><strong>Syntax</strong></p>
+<pre><code>emu.revertPrgChrChanges()
+</code></pre>
+<p><strong>Return value</strong><br>
+<em>None</em></p>
+<p><strong>Description</strong><br>
+Reverts all modifications done to PRG-ROM and CHR-ROM via write/writeWord calls.</p>
+<h2 id=getprgromoffset>getPrgRomOffset</h2>
+<p><strong>Syntax</strong></p>
+<pre><code>emu.getPrgRomOffset(address)
+</code></pre>
+<p><strong>Parameters</strong><br>
+address - <em>Integer</em> A CPU address (Valid range: $0000-$FFFF)</p>
+<p><strong>Return value</strong><br>
+<em>Integer</em> The corresponding byte offset in PRG ROM</p>
+<p><strong>Description</strong><br>
+Returns an integer representing the byte offset of the specified CPU address in PRG ROM based on the mapper&rsquo;s current configuration. Returns -1 when the specified address is not mapped to PRG ROM.</p>
+<h2 id=getchrromoffset>getChrRomOffset</h2>
+<p><strong>Syntax</strong></p>
+<pre><code>emu.getChrRomOffset(address)
+</code></pre>
+<p><strong>Parameters</strong><br>
+address - <em>Integer</em> A PPU address (Valid range: $0000-$3FFF)</p>
+<p><strong>Return value</strong><br>
+<em>Integer</em> The corresponding byte offset in CHR ROM</p>
+<p><strong>Description</strong><br>
+Returns an integer representing the byte offset of the specified PPU address in CHR ROM based on the mapper&rsquo;s current configuration. Returns -1 when the specified address is not mapped to CHR ROM.</p>
+<h2 id=getlabeladdress>getLabelAddress</h2>
+<p><strong>Syntax</strong></p>
+<pre><code>emu.getLabelAddress(label)
+</code></pre>
+<p><strong>Parameters</strong><br>
+label - <em>String</em> The label to look up</p>
+<p><strong>Return value</strong><br>
+<em>Integer</em> The corresponding CPU address</p>
+<p><strong>Description</strong><br>
+Returns the address of the specified label. This address can be used with the memory read/write functions (<code>read()</code>, <code>readWord()</code>, <code>write()</code>, <code>writeWord()</code>) using the <code>emu.memType.cpu</code> or <code>emu.memType.cpuDebug</code> memory types.</p>
+<footer class=footline>
+</footer>
+</div>
+</div>
+<div id=navigation>
+<a class="nav nav-prev" href=../apireference/logging.html title=Logging> <i class="fa fa-chevron-left"></i></a>
+<a class="nav nav-next" href=../apireference/misc.html title=Miscellaneous style=margin-right:0><i class="fa fa-chevron-right"></i></a>
+</div>
+</section>
+<div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px>
+<div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div>
+</div>
+<script src=../js/clipboard.min.js?1640054941></script>
+<script src=../js/perfect-scrollbar.min.js?1640054941></script>
+<script src=../js/perfect-scrollbar.jquery.min.js?1640054941></script>
+<script src=../js/jquery.sticky-kit.min.js?1640054941></script>
+<script src=../js/featherlight.min.js?1640054941></script>
+<script src=../js/html5shiv-printshiv.min.js?1640054941></script>
+<script src=../js/highlight.pack.js?1640054941></script>
+<script>hljs.initHighlightingOnLoad()</script>
+<script src=../js/modernizr.custom.71422.js?1640054941></script>
+<script src=../js/learn.js?1640054941></script>
+<script src=../js/hugo-learn.js?1640054941></script>
+<link href=../mermaid/mermaid.css?1640054941 type=text/css rel=stylesheet>
+<script src=../mermaid/mermaid.js?1640054941></script>
+<script>mermaid.initialize({startOnLoad:!0})</script>
+</body>
+</html>

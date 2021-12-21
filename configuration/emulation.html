@@ -1,0 +1,335 @@
+<!doctype html><html lang=en class="js csstransforms3d">
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name=generator content="Hugo 0.91.0">
+<meta name=description content>
+<link rel="shortcut icon" href=../images/favicon.png type=image/x-icon>
+<link rel=icon href=../images/favicon.png type=image/x-icon>
+<title>Emulation Options :: Mesen Documentation</title>
+<link href=../css/nucleus.css?1640054941 rel=stylesheet>
+<link href=../css/font-awesome.min.css?1640054941 rel=stylesheet>
+<link href=../css/hybrid.css?1640054941 rel=stylesheet>
+<link href=../css/featherlight.min.css?1640054941 rel=stylesheet>
+<link href=../css/perfect-scrollbar.min.css?1640054941 rel=stylesheet>
+<link href=../css/horsey.css?1640054941 rel=stylesheet>
+<link href=../css/theme.css?1640054941 rel=stylesheet>
+<link href=../css/hugo-theme.css?1640054941 rel=stylesheet>
+<link href=../css/custom.css?1640054941 rel=stylesheet>
+<link href=../css/theme-green.css?1640054941 rel=stylesheet>
+<script src=../js/jquery-2.x.min.js?1640054941></script>
+<style type=text/css>:root #header+#content>#left>#rlblock_left{display:none!important}</style>
+</head>
+<body data-url=../configuration/emulation.html>
+<nav id=sidebar>
+<div id=header-wrapper>
+<div id=header>
+<a id=logo href=../index.html>
+<img src=../images/MesenIcon.png>
+</a>
+</div>
+<div class=searchbox>
+<label for=search-by><i class="fa fa-search"></i></label>
+<input data-search-input id=search-by type=text placeholder=Search...>
+<span data-search-clear><i class="fa fa-close"></i></span>
+</div>
+<script type=text/javascript src=../js/lunr.min.js?1640054941></script>
+<script type=text/javascript src=../js/horsey.js?1640054941></script>
+<script type=text/javascript>var baseurl=""</script>
+<script type=text/javascript src=../js/searchjson.js?1640054941></script>
+<script type=text/javascript src=../js/search.js?1640054941></script>
+</div>
+<div class=highlightable>
+<ul class=topics>
+<li data-nav-id=/gettingstarted.html title="Getting Started" class=dd-item>
+<a href=../gettingstarted.html>
+Getting Started
+</a>
+</li>
+<li data-nav-id=/configuration.html title=Configuration class="dd-item
+parent">
+<a href=../configuration.html>
+Configuration
+</a>
+<ul>
+<li data-nav-id=/configuration/audio.html title="Audio Options" class=dd-item>
+<a href=../configuration/audio.html>
+Audio Options
+</a>
+</li>
+<li data-nav-id=/configuration/input.html title="Input Options" class=dd-item>
+<a href=../configuration/input.html>
+Input Options
+</a>
+</li>
+<li data-nav-id=/configuration/video.html title="Video Options" class=dd-item>
+<a href=../configuration/video.html>
+Video Options
+</a>
+</li>
+<li data-nav-id=/configuration/emulation.html title="Emulation Options" class="dd-item active">
+<a href=../configuration/emulation.html>
+Emulation Options
+</a>
+</li>
+<li data-nav-id=/configuration/preferences.html title=Preferences class=dd-item>
+<a href=../configuration/preferences.html>
+Preferences
+</a>
+</li>
+</ul>
+</li>
+<li data-nav-id=/tools.html title=Tools class=dd-item>
+<a href=../tools.html>
+Tools
+</a>
+</li>
+<li data-nav-id=/debugging.html title="Debugging Tools" class=dd-item>
+<a href=../debugging.html>
+Debugging Tools
+</a>
+<ul>
+<li data-nav-id=/debugging/debugger.html title=Debugger class=dd-item>
+<a href=../debugging/debugger.html>
+Debugger
+</a>
+</li>
+<li data-nav-id=/debugging/apuviewer.html title="APU Viewer" class=dd-item>
+<a href=../debugging/apuviewer.html>
+APU Viewer
+</a>
+</li>
+<li data-nav-id=/debugging/assembler.html title=Assembler class=dd-item>
+<a href=../debugging/assembler.html>
+Assembler
+</a>
+</li>
+<li data-nav-id=/debugging/eventviewer.html title="Event Viewer" class=dd-item>
+<a href=../debugging/eventviewer.html>
+Event Viewer
+</a>
+</li>
+<li data-nav-id=/debugging/memorytools.html title="Memory Tools" class=dd-item>
+<a href=../debugging/memorytools.html>
+Memory Tools
+</a>
+</li>
+<li data-nav-id=/debugging/performanceprofiler.html title="Performance Profiler" class=dd-item>
+<a href=../debugging/performanceprofiler.html>
+Performance Profiler
+</a>
+</li>
+<li data-nav-id=/debugging/ppuviewer.html title="PPU Viewer" class=dd-item>
+<a href=../debugging/ppuviewer.html>
+PPU Viewer
+</a>
+</li>
+<li data-nav-id=/debugging/scriptwindow.html title="Script Window" class=dd-item>
+<a href=../debugging/scriptwindow.html>
+Script Window
+</a>
+</li>
+<li data-nav-id=/debugging/texthooker.html title="Text Hooker" class=dd-item>
+<a href=../debugging/texthooker.html>
+Text Hooker
+</a>
+</li>
+<li data-nav-id=/debugging/tracelogger.html title="Trace Logger" class=dd-item>
+<a href=../debugging/tracelogger.html>
+Trace Logger
+</a>
+</li>
+<li data-nav-id=/debugging/debuggerintegration.html title="Integration with compilers" class=dd-item>
+<a href=../debugging/debuggerintegration.html>
+Integration with compilers
+</a>
+</li>
+</ul>
+</li>
+<li data-nav-id=/hdpacks.html title="HD Packs" class=dd-item>
+<a href=../hdpacks.html>
+HD Packs
+</a>
+</li>
+<li data-nav-id=/apireference.html title="Lua API reference" class=dd-item>
+<a href=../apireference.html>
+Lua API reference
+</a>
+<ul>
+<li data-nav-id=/apireference/changelog.html title=Changelog class=dd-item>
+<a href=../apireference/changelog.html>
+Changelog
+</a>
+</li>
+<li data-nav-id=/apireference/callbacks.html title=Callbacks class=dd-item>
+<a href=../apireference/callbacks.html>
+Callbacks
+</a>
+</li>
+<li data-nav-id=/apireference/drawing.html title=Drawing class=dd-item>
+<a href=../apireference/drawing.html>
+Drawing
+</a>
+</li>
+<li data-nav-id=/apireference/emulation.html title=Emulation class=dd-item>
+<a href=../apireference/emulation.html>
+Emulation
+</a>
+</li>
+<li data-nav-id=/apireference/input.html title=Input class=dd-item>
+<a href=../apireference/input.html>
+Input
+</a>
+</li>
+<li data-nav-id=/apireference/logging.html title=Logging class=dd-item>
+<a href=../apireference/logging.html>
+Logging
+</a>
+</li>
+<li data-nav-id=/apireference/memoryaccess.html title="Memory Access" class=dd-item>
+<a href=../apireference/memoryaccess.html>
+Memory Access
+</a>
+</li>
+<li data-nav-id=/apireference/misc.html title=Miscellaneous class=dd-item>
+<a href=../apireference/misc.html>
+Miscellaneous
+</a>
+</li>
+<li data-nav-id=/apireference/enums.html title=Enums class=dd-item>
+<a href=../apireference/enums.html>
+Enums
+</a>
+</li>
+</ul>
+</li>
+</ul>
+<section id=shortcuts>
+<h3>More</h3>
+<ul>
+<li role>
+<a class=padding href=https://www.mesen.ca><img style=vertical-align:middle src=../images/favicon.png> <span style=display:inline;vertical-align:middle>Website</span></a>
+</li>
+<li role>
+<a class=padding href=https://github.com/SourMesen/Mesen><i class="fa fa-github"></i> GitHub</a>
+</li>
+</ul>
+</section>
+<div id=menuspacer></div>
+<section id=footer>
+<div class=menuFooter>
+<div class=donateButton><a href=https://www.mesen.ca/Donate.php><img src=../images/patreon.png alt="Become a Patron!" width=66% height=66%></a></div>
+<div class=donateButton><a class=bmc-button target=_blank href=https://www.mesen.ca/BuyCoffee.php><img src=../images/BMC-btn-logo.svg alt=Donate><span style=margin-left:5px>Donate</span></a></div>
+Version: <b>0.9.9</b><br>
+Last Updated: <b>2021-12-21</b>
+</div>
+</section>
+</div>
+</nav>
+<section id=body>
+<div id=overlay></div>
+<div class="padding highlightable sticky-parent">
+<div class=sticky-spacer>
+<div id=top-bar>
+<div id=breadcrumbs itemscope itemtype=http://data-vocabulary.org/Breadcrumb>
+<span id=sidebar-toggle-span>
+<a href=# id=sidebar-toggle data-sidebar-toggle>
+<i class="fa fa-bars"></i>
+</a>
+</span>
+<span id=toc-menu><i class="fa fa-list-alt"></i></span>
+<span class=links>
+<a href=../>Home</a> > <a href=../configuration.html>Configuration</a> > Emulation Options
+</span>
+</div>
+<div class=progress>
+<div class=wrapper>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#general-options>General Options</a></li>
+<li><a href=#advanced-options>Advanced Options</a>
+<ul>
+<li><a href=#recommended-settings-for-developers-homebrew--rom-hacking>Recommended settings for developers (homebrew / ROM hacking)</a></li>
+<li><a href=#miscellaneous-settings>Miscellaneous settings</a></li>
+</ul>
+</li>
+<li><a href=#overclocking>Overclocking</a></li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+</div>
+<div id=body-inner>
+<h1>Emulation Options</h1>
+<div class=toc>
+<div><nav id=TableOfContents>
+<ul>
+<li><a href=#general-options>General Options</a></li>
+<li><a href=#advanced-options>Advanced Options</a>
+<ul>
+<li><a href=#recommended-settings-for-developers-homebrew--rom-hacking>Recommended settings for developers (homebrew / ROM hacking)</a></li>
+<li><a href=#miscellaneous-settings>Miscellaneous settings</a></li>
+</ul>
+</li>
+<li><a href=#overclocking>Overclocking</a></li>
+</ul>
+</nav></div>
+</div>
+<h2 id=general-options>General Options</h2>
+<p><strong>Emulation Speed</strong>: This configures the regular speed to use when emulating. This should normally be set to <code>100%</code>.</p>
+<p><strong>Fast Forward Speed</strong>: This is the alternate speed that is used when the <a href=../configuration/preferences.html#shortcut-keys>Fast Forward button</a> is held down.</p>
+<p><strong>Rewind Speed</strong>: This configures the speed at which to rewind the gameplay when the <a href=../configuration/preferences.html#shortcut-keys>Rewind button</a> is held down.</p>
+<p><strong>Run Ahead</strong>: Run ahead allows the reduction of input lag by the number of frames specified. CPU requirements increase proportionally with the number of run ahead frames specified.</p>
+<ul>
+<li>Run ahead is currently not compatible with movies or netplay - the movies and netplay menus will be disabled if runahead is turned on.</li>
+<li><strong>Note for speedrunners:</strong> Using features such as run ahead to reduce lag typically counts as cheating for the purposes of speed running.</li>
+</ul>
+<h2 id=advanced-options>Advanced Options</h2>
+<h3 id=recommended-settings-for-developers-homebrew--rom-hacking>Recommended settings for developers (homebrew / ROM hacking)</h3>
+<p><strong>Enable OAM RAM decay</strong>: On all models, OAM RAM decays whenever rendering is disabled. This causes the values in OAM RAM to decay to a specific value after a certain amount of time has elapsed since the last time the value was read or written (which may cause sprite-related glitches to appear on the screen). No known game relies on this &ndash; the option is offered here mostly for the sake of homebrew software testing. There is a corresponding option to break on decayed OAM reads available in the debugger to help find and debug OAM decay-related bugs.</p>
+<p><strong>Randomize power-on state for mappers</strong>: Cartridges often have a random state at power-on and need to be fully initialized before being used. This option causes Mesen to randomize the power-on state of the most common mappers. This is useful when developing homebrew software.</p>
+<p><strong>Randomize power-on/reset CPU/PPU alignment</strong>: Each time the NES is reset, the CPU and PPU run with a slightly different and random alignment. This option simulates that behavior. When enabled, some test roms may randomily fail from one reset to another, because of the different alignments (this can also happen on the NES.)</p>
+<p><strong>Enable PPU $2006 scroll glitch emulation</strong>: When enabled, a known hardware bug that occurs when the $2006 register is written at specific cycles during rendering. This glitch is known to occur in some licensed NES games and usually results in a single frame displaying with an incorrect scroll position.</p>
+<p><strong>Enable PPU $2000/$2005/$2006 first-write scroll glitch emulation</strong>: When enabled, a known hardware bug that occurs on the first write to the $2005/$2006 registers (or any write to the $2000 register) when the write occurs at cycle during rendering. This glitch is known to occur in some licensed NES games and usually results in a single scanline displaying incorrectly.</p>
+<p><strong>Default power on state for RAM</strong>: On a console, the RAM&rsquo;s state at power on is undetermined and relatively random. This option lets you select Mesen&rsquo;s behavior when initializing RAM - set all bits to 0, set all bits to 1, or randomize the value of each bit.</p>
+<h3 id=miscellaneous-settings>Miscellaneous settings</h3>
+<p><strong>Use alternative MMC3 IRQ behavior</strong>: The MMC3 has a number of different variants (A, B and C). By default, Mesen uses the IRQ behavior for versions B and C. By turning this option on, Mesen will default to using the MMC3A&rsquo;s IRQ behavior instead. There is usually no reason to enable this.</p>
+<p><strong>Use NES/HVC-101 (Top-loader / AV Famicom) behavior</strong>: The NES and Famicom both had 2 different releases - their original model and the &ldquo;top loader&rdquo; model. Both of these have slightly different behavior when it comes to their input ports. When enabled, this option causes Mesen to simulate the top loader models. No games are known to rely on this behavior.</p>
+<p><strong>Do not reset PPU when resetting console</strong>: On the Famicom and top loader NES, the PPU does not reset when pressing the reset button (only the CPU is reset). When enabled, only the CPU resets when the reset button is pressed.</p>
+<p><strong>Disable PPU $2004 reads</strong>: On some early models, the OAM RAM cannot be read via the $2004 register (in this case, $2004 becomes a write-only register). When enabled, this option emulates this behavior.</p>
+<p><strong>Disable PPU OAMADDR bug emulation</strong>: On some models, a bug occurs that corrupts OAM RAM under certain circumstances. When this option is enabled, the bug is no longer emulated. This bug is required for at least 1 game to work properly.</p>
+<p><strong>Disable PPU palette reads</strong>: On some early models, it is not possible to read the palette RAM via $2007 &ndash; when enabled, this option emulates this behavior, making reads to palette RAM return corresponding values in the PPU&rsquo;s memory instead.</p>
+<p><strong>Allow invalid input</strong>: On a NES controller, it is impossible to press both left and right or up and down at the same time on the controller&rsquo;s D-pad. Some games rely on this and pressing both buttons at once can cause glitches. When enabled, this option makes it possible to press opposite directional buttons at the same time.</p>
+<h2 id=overclocking>Overclocking</h2>
+<p><strong>Additional scanlines before NMI</strong>: Increases the number of scanlines in the PPU, <em>before</em> the NMI signal is triggered at the end of the visible frame. This effectively gives more time for games to perform calculations, which can reduce slowdowns in games. <strong>This is the preferred option for overclocking.</strong></p>
+<p><strong>Additional scanlines after NMI</strong>: Increases the number of scanlines in the PPU, <em>after</em> the NMI signal is triggered at the end of the visible frame. This effectively gives more time for games to perform calculations, which can reduce slowdowns in games. <strong>This option is less compatible and should only be used if the <code>before NMI</code> variation does not work as expected.</strong></p>
+<p><strong>Show Lag Counter</strong>: When enabled, the lag counter is displayed on the screen. The lag counter keeps track of frames where the game does not attempt to read the input ports &ndash; this is usually an indication of the game running out of time to perform calculations, which usually causes slowdowns.</p>
+<footer class=footline>
+</footer>
+</div>
+</div>
+<div id=navigation>
+<a class="nav nav-prev" href=../configuration/video.html title="Video Options"> <i class="fa fa-chevron-left"></i></a>
+<a class="nav nav-next" href=../configuration/preferences.html title=Preferences style=margin-right:0><i class="fa fa-chevron-right"></i></a>
+</div>
+</section>
+<div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px>
+<div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div>
+</div>
+<script src=../js/clipboard.min.js?1640054941></script>
+<script src=../js/perfect-scrollbar.min.js?1640054941></script>
+<script src=../js/perfect-scrollbar.jquery.min.js?1640054941></script>
+<script src=../js/jquery.sticky-kit.min.js?1640054941></script>
+<script src=../js/featherlight.min.js?1640054941></script>
+<script src=../js/html5shiv-printshiv.min.js?1640054941></script>
+<script src=../js/highlight.pack.js?1640054941></script>
+<script>hljs.initHighlightingOnLoad()</script>
+<script src=../js/modernizr.custom.71422.js?1640054941></script>
+<script src=../js/learn.js?1640054941></script>
+<script src=../js/hugo-learn.js?1640054941></script>
+<link href=../mermaid/mermaid.css?1640054941 type=text/css rel=stylesheet>
+<script src=../mermaid/mermaid.js?1640054941></script>
+<script>mermaid.initialize({startOnLoad:!0})</script>
+</body>
+</html>

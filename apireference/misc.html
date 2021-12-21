@@ -1,0 +1,502 @@
+<!doctype html><html lang=en class="js csstransforms3d">
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name=generator content="Hugo 0.91.0">
+<meta name=description content>
+<link rel="shortcut icon" href=../images/favicon.png type=image/x-icon>
+<link rel=icon href=../images/favicon.png type=image/x-icon>
+<title>Miscellaneous :: Mesen Documentation</title>
+<link href=../css/nucleus.css?1640054941 rel=stylesheet>
+<link href=../css/font-awesome.min.css?1640054941 rel=stylesheet>
+<link href=../css/hybrid.css?1640054941 rel=stylesheet>
+<link href=../css/featherlight.min.css?1640054941 rel=stylesheet>
+<link href=../css/perfect-scrollbar.min.css?1640054941 rel=stylesheet>
+<link href=../css/horsey.css?1640054941 rel=stylesheet>
+<link href=../css/theme.css?1640054941 rel=stylesheet>
+<link href=../css/hugo-theme.css?1640054941 rel=stylesheet>
+<link href=../css/custom.css?1640054941 rel=stylesheet>
+<link href=../css/theme-green.css?1640054941 rel=stylesheet>
+<script src=../js/jquery-2.x.min.js?1640054941></script>
+<style type=text/css>:root #header+#content>#left>#rlblock_left{display:none!important}</style>
+</head>
+<body data-url=../apireference/misc.html>
+<nav id=sidebar>
+<div id=header-wrapper>
+<div id=header>
+<a id=logo href=../index.html>
+<img src=../images/MesenIcon.png>
+</a>
+</div>
+<div class=searchbox>
+<label for=search-by><i class="fa fa-search"></i></label>
+<input data-search-input id=search-by type=text placeholder=Search...>
+<span data-search-clear><i class="fa fa-close"></i></span>
+</div>
+<script type=text/javascript src=../js/lunr.min.js?1640054941></script>
+<script type=text/javascript src=../js/horsey.js?1640054941></script>
+<script type=text/javascript>var baseurl=""</script>
+<script type=text/javascript src=../js/searchjson.js?1640054941></script>
+<script type=text/javascript src=../js/search.js?1640054941></script>
+</div>
+<div class=highlightable>
+<ul class=topics>
+<li data-nav-id=/gettingstarted.html title="Getting Started" class=dd-item>
+<a href=../gettingstarted.html>
+Getting Started
+</a>
+</li>
+<li data-nav-id=/configuration.html title=Configuration class=dd-item>
+<a href=../configuration.html>
+Configuration
+</a>
+<ul>
+<li data-nav-id=/configuration/audio.html title="Audio Options" class=dd-item>
+<a href=../configuration/audio.html>
+Audio Options
+</a>
+</li>
+<li data-nav-id=/configuration/input.html title="Input Options" class=dd-item>
+<a href=../configuration/input.html>
+Input Options
+</a>
+</li>
+<li data-nav-id=/configuration/video.html title="Video Options" class=dd-item>
+<a href=../configuration/video.html>
+Video Options
+</a>
+</li>
+<li data-nav-id=/configuration/emulation.html title="Emulation Options" class=dd-item>
+<a href=../configuration/emulation.html>
+Emulation Options
+</a>
+</li>
+<li data-nav-id=/configuration/preferences.html title=Preferences class=dd-item>
+<a href=../configuration/preferences.html>
+Preferences
+</a>
+</li>
+</ul>
+</li>
+<li data-nav-id=/tools.html title=Tools class=dd-item>
+<a href=../tools.html>
+Tools
+</a>
+</li>
+<li data-nav-id=/debugging.html title="Debugging Tools" class=dd-item>
+<a href=../debugging.html>
+Debugging Tools
+</a>
+<ul>
+<li data-nav-id=/debugging/debugger.html title=Debugger class=dd-item>
+<a href=../debugging/debugger.html>
+Debugger
+</a>
+</li>
+<li data-nav-id=/debugging/apuviewer.html title="APU Viewer" class=dd-item>
+<a href=../debugging/apuviewer.html>
+APU Viewer
+</a>
+</li>
+<li data-nav-id=/debugging/assembler.html title=Assembler class=dd-item>
+<a href=../debugging/assembler.html>
+Assembler
+</a>
+</li>
+<li data-nav-id=/debugging/eventviewer.html title="Event Viewer" class=dd-item>
+<a href=../debugging/eventviewer.html>
+Event Viewer
+</a>
+</li>
+<li data-nav-id=/debugging/memorytools.html title="Memory Tools" class=dd-item>
+<a href=../debugging/memorytools.html>
+Memory Tools
+</a>
+</li>
+<li data-nav-id=/debugging/performanceprofiler.html title="Performance Profiler" class=dd-item>
+<a href=../debugging/performanceprofiler.html>
+Performance Profiler
+</a>
+</li>
+<li data-nav-id=/debugging/ppuviewer.html title="PPU Viewer" class=dd-item>
+<a href=../debugging/ppuviewer.html>
+PPU Viewer
+</a>
+</li>
+<li data-nav-id=/debugging/scriptwindow.html title="Script Window" class=dd-item>
+<a href=../debugging/scriptwindow.html>
+Script Window
+</a>
+</li>
+<li data-nav-id=/debugging/texthooker.html title="Text Hooker" class=dd-item>
+<a href=../debugging/texthooker.html>
+Text Hooker
+</a>
+</li>
+<li data-nav-id=/debugging/tracelogger.html title="Trace Logger" class=dd-item>
+<a href=../debugging/tracelogger.html>
+Trace Logger
+</a>
+</li>
+<li data-nav-id=/debugging/debuggerintegration.html title="Integration with compilers" class=dd-item>
+<a href=../debugging/debuggerintegration.html>
+Integration with compilers
+</a>
+</li>
+</ul>
+</li>
+<li data-nav-id=/hdpacks.html title="HD Packs" class=dd-item>
+<a href=../hdpacks.html>
+HD Packs
+</a>
+</li>
+<li data-nav-id=/apireference.html title="Lua API reference" class="dd-item
+parent">
+<a href=../apireference.html>
+Lua API reference
+</a>
+<ul>
+<li data-nav-id=/apireference/changelog.html title=Changelog class=dd-item>
+<a href=../apireference/changelog.html>
+Changelog
+</a>
+</li>
+<li data-nav-id=/apireference/callbacks.html title=Callbacks class=dd-item>
+<a href=../apireference/callbacks.html>
+Callbacks
+</a>
+</li>
+<li data-nav-id=/apireference/drawing.html title=Drawing class=dd-item>
+<a href=../apireference/drawing.html>
+Drawing
+</a>
+</li>
+<li data-nav-id=/apireference/emulation.html title=Emulation class=dd-item>
+<a href=../apireference/emulation.html>
+Emulation
+</a>
+</li>
+<li data-nav-id=/apireference/input.html title=Input class=dd-item>
+<a href=../apireference/input.html>
+Input
+</a>
+</li>
+<li data-nav-id=/apireference/logging.html title=Logging class=dd-item>
+<a href=../apireference/logging.html>
+Logging
+</a>
+</li>
+<li data-nav-id=/apireference/memoryaccess.html title="Memory Access" class=dd-item>
+<a href=../apireference/memoryaccess.html>
+Memory Access
+</a>
+</li>
+<li data-nav-id=/apireference/misc.html title=Miscellaneous class="dd-item active">
+<a href=../apireference/misc.html>
+Miscellaneous
+</a>
+</li>
+<li data-nav-id=/apireference/enums.html title=Enums class=dd-item>
+<a href=../apireference/enums.html>
+Enums
+</a>
+</li>
+</ul>
+</li>
+</ul>
+<section id=shortcuts>
+<h3>More</h3>
+<ul>
+<li role>
+<a class=padding href=https://www.mesen.ca><img style=vertical-align:middle src=../images/favicon.png> <span style=display:inline;vertical-align:middle>Website</span></a>
+</li>
+<li role>
+<a class=padding href=https://github.com/SourMesen/Mesen><i class="fa fa-github"></i> GitHub</a>
+</li>
+</ul>
+</section>
+<div id=menuspacer></div>
+<section id=footer>
+<div class=menuFooter>
+<div class=donateButton><a href=https://www.mesen.ca/Donate.php><img src=../images/patreon.png alt="Become a Patron!" width=66% height=66%></a></div>
+<div class=donateButton><a class=bmc-button target=_blank href=https://www.mesen.ca/BuyCoffee.php><img src=../images/BMC-btn-logo.svg alt=Donate><span style=margin-left:5px>Donate</span></a></div>
+Version: <b>0.9.9</b><br>
+Last Updated: <b>2021-12-21</b>
+</div>
+</section>
+</div>
+</nav>
+<section id=body>
+<div id=overlay></div>
+<div class="padding highlightable sticky-parent">
+<div class=sticky-spacer>
+<div id=top-bar>
+<div id=breadcrumbs itemscope itemtype=http://data-vocabulary.org/Breadcrumb>
+<span id=sidebar-toggle-span>
+<a href=# id=sidebar-toggle data-sidebar-toggle>
+<i class="fa fa-bars"></i>
+</a>
+</span>
+<span id=toc-menu><i class="fa fa-list-alt"></i></span>
+<span class=links>
+<a href=../>Home</a> > <a href=../apireference.html>Lua API reference</a> > Miscellaneous
+</span>
+</div>
+<div class=progress>
+<div class=wrapper>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#save-states>Save States</a>
+<ul>
+<li><a href=#savesavestate>saveSavestate</a></li>
+<li><a href=#savesavestateasync>saveSavestateAsync</a></li>
+<li><a href=#loadsavestate>loadSavestate</a></li>
+<li><a href=#loadsavestateasync>loadSavestateAsync</a></li>
+<li><a href=#getsavestatedata>getSavestateData</a></li>
+<li><a href=#clearsavestatedata>clearSavestateData</a></li>
+</ul>
+</li>
+<li><a href=#cheats>Cheats</a>
+<ul>
+<li><a href=#addcheat>addCheat</a></li>
+<li><a href=#clearcheats>clearCheats</a></li>
+</ul>
+</li>
+<li><a href=#access-counters>Access Counters</a>
+<ul>
+<li><a href=#getaccesscounters>getAccessCounters</a></li>
+<li><a href=#resetaccesscounters>resetAccessCounters</a></li>
+</ul>
+</li>
+<li><a href=#misc>Misc</a>
+<ul>
+<li><a href=#getlogwindowlog>getLogWindowLog</a></li>
+<li><a href=#getrominfo>getRomInfo</a></li>
+<li><a href=#getscriptdatafolder>getScriptDataFolder</a></li>
+<li><a href=#takescreenshot>takeScreenshot</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+</div>
+<div id=body-inner>
+<h1>Miscellaneous</h1>
+<div class=toc>
+<div><nav id=TableOfContents>
+<ul>
+<li><a href=#save-states>Save States</a>
+<ul>
+<li><a href=#savesavestate>saveSavestate</a></li>
+<li><a href=#savesavestateasync>saveSavestateAsync</a></li>
+<li><a href=#loadsavestate>loadSavestate</a></li>
+<li><a href=#loadsavestateasync>loadSavestateAsync</a></li>
+<li><a href=#getsavestatedata>getSavestateData</a></li>
+<li><a href=#clearsavestatedata>clearSavestateData</a></li>
+</ul>
+</li>
+<li><a href=#cheats>Cheats</a>
+<ul>
+<li><a href=#addcheat>addCheat</a></li>
+<li><a href=#clearcheats>clearCheats</a></li>
+</ul>
+</li>
+<li><a href=#access-counters>Access Counters</a>
+<ul>
+<li><a href=#getaccesscounters>getAccessCounters</a></li>
+<li><a href=#resetaccesscounters>resetAccessCounters</a></li>
+</ul>
+</li>
+<li><a href=#misc>Misc</a>
+<ul>
+<li><a href=#getlogwindowlog>getLogWindowLog</a></li>
+<li><a href=#getrominfo>getRomInfo</a></li>
+<li><a href=#getscriptdatafolder>getScriptDataFolder</a></li>
+<li><a href=#takescreenshot>takeScreenshot</a></li>
+</ul>
+</li>
+</ul>
+</nav></div>
+</div>
+<h2 id=save-states>Save States</h2>
+<p>There are 2 separate save state APIs.<br>
+The first one is synchronous and uses the <a href=#savesavestate>saveSavestate</a> and <a href=#loadsavestate>loadSavestate</a> functions. Its main restriction is that it can only be used inside &ldquo;startFrame&rdquo; or &ldquo;cpuExec&rdquo; callback functions.<br>
+The second API is asynchronous and uses an internally-managed &ldquo;save slot&rdquo; system to hold states in memory. It uses the following functions: <a href=#savesavestateasync>saveSavestateAsync</a>, <a href=#loadsavestateasync>loadSavestateAsync</a>, <a href=#getsavestatedata>getSavestateData</a> and <a href=#clearsavestatedata>clearSavestateData</a>.</p>
+<h3 id=savesavestate>saveSavestate</h3>
+<p><strong>Syntax</strong></p>
+<pre><code>emu.saveSavestate()
+</code></pre>
+<p><strong>Return value</strong><br>
+<em>String</em> A string containing a binary blob representing the emulation&rsquo;s current state.</p>
+<p><strong>Description</strong><br>
+Creates a savestate and returns it as a binary string. (The savestate is not saved on disk)<br>
+<strong>Note:</strong> this can only be called from within a &ldquo;startFrame&rdquo; event callback or &ldquo;cpuExec&rdquo; memory callback.</p>
+<h3 id=savesavestateasync>saveSavestateAsync</h3>
+<p><strong>Syntax</strong></p>
+<pre><code>emu.saveSavestateAsync(slotNumber)
+</code></pre>
+<p><strong>Parameters</strong><br>
+slotNumber - <em>Integer</em> A slot number to which the savestate data will be stored (slotNumber must be >= 0)</p>
+<p><strong>Return value</strong><br>
+<em>None</em></p>
+<p><strong>Description</strong><br>
+Queues a save savestate request. As soon at the emulator is able to process the request, it will be saved into the specified slot.<br>
+This API is asynchronous because save states can only be taken in-between 2 CPU instructions, not in the middle of an instruction.
+When called while the CPU is in-between 2 instructions (e.g: inside the callback of an cpuExec or startFrame event), the save state will be taken immediately and its data will be available via <a href=#getsavestatedata>getSavestateData</a> right after the call to saveSavestateAsync.<br>
+The savestate can be loaded by calling the <a href=#loadsavestateasync>loadSavestateAsync</a> function.</p>
+<h3 id=loadsavestate>loadSavestate</h3>
+<p><strong>Syntax</strong></p>
+<pre><code>emu.loadSavestate(savestate)
+</code></pre>
+<p><strong>Parameters</strong><br>
+savestate - <em>String</em> A binary blob representing a savestate, as returned by <a href=#savesavestate>saveSavestate()</a></p>
+<p><strong>Return value</strong><br>
+<em>None</em></p>
+<p><strong>Description</strong><br>
+Loads the specified savestate.<br>
+<strong>Note:</strong> this can only be called from within a &ldquo;startFrame&rdquo; event callback or &ldquo;cpuExec&rdquo; memory callback.</p>
+<h3 id=loadsavestateasync>loadSavestateAsync</h3>
+<p><strong>Syntax</strong></p>
+<pre><code>emu.loadSavestateAsync(slotNumber)
+</code></pre>
+<p><strong>Parameters</strong><br>
+slotNumber - <em>Integer</em> The slot number to load the savestate data from (must be a slot number that was used in a preceding <a href=#savesavestateasync>saveSavestateAsync</a> call)</p>
+<p><strong>Return value</strong><br>
+<em>Boolean</em> Returns true if the slot number was valid.</p>
+<p><strong>Description</strong><br>
+Queues a load savestate request. As soon at the emulator is able to process the request, the savestate will be loaded from the specified slot.<br>
+This API is asynchronous because save states can only be loaded in-between 2 CPU instructions, not in the middle of an instruction.
+When called while the CPU is in-between 2 instructions (e.g: inside the callback of an cpuExec or startFrame event), the savestate will be loaded immediately.</p>
+<h3 id=getsavestatedata>getSavestateData</h3>
+<p><strong>Syntax</strong></p>
+<pre><code>emu.getSavestateData(slotNumber)
+</code></pre>
+<p><strong>Parameters</strong><br>
+slotNumber - <em>Integer</em> The slot number to get the savestate data from (must be a slot number that was used in a preceding <a href=#savesavestateasync>saveSavestateAsync</a> call)</p>
+<p><strong>Return value</strong><br>
+<em>String</em> A binary string containing the savestate</p>
+<p><strong>Description</strong><br>
+Returns the savestate stored in the specified savestate slot.</p>
+<h3 id=clearsavestatedata>clearSavestateData</h3>
+<p><strong>Syntax</strong></p>
+<pre><code>emu.clearSavestateData(slotNumber)
+</code></pre>
+<p><strong>Parameters</strong><br>
+slotNumber - <em>Integer</em> The slot number to get the savestate data from (must be a slot number that was used in a preceding <a href=#savesavestateasync>saveSavestateAsync</a> call)</p>
+<p><strong>Return value</strong><br>
+<em>None</em></p>
+<p><strong>Description</strong><br>
+Clears the specified savestate slot (any savestate data in that slot will be removed from memory).</p>
+<h2 id=cheats>Cheats</h2>
+<h3 id=addcheat>addCheat</h3>
+<p><strong>Syntax</strong></p>
+<pre><code>emu.addCheat(cheatCode)
+</code></pre>
+<p><strong>Parameters</strong><br>
+cheatCode - <em>String</em> A game genie format cheat code.</p>
+<p><strong>Return value</strong><br>
+<em>None</em></p>
+<p><strong>Description</strong><br>
+Activates a game genie cheat code (6 or 8 characters).<br>
+<strong>Note:</strong> cheat codes added via this function are not permanent and not visible in the UI.</p>
+<h3 id=clearcheats>clearCheats</h3>
+<p><strong>Syntax</strong></p>
+<pre><code>emu.clearCheats()
+</code></pre>
+<p><strong>Return value</strong><br>
+<em>None</em></p>
+<p><strong>Description</strong><br>
+Removes all active cheat codes (has no impact on cheat codes saved within the UI)</p>
+<h2 id=access-counters>Access Counters</h2>
+<h3 id=getaccesscounters>getAccessCounters</h3>
+<p><strong>Syntax</strong></p>
+<pre><code>emu.getAccessCounters(counterMemType, counterOpType)
+</code></pre>
+<p><strong>Parameters</strong><br>
+counterMemType - <em>Enum</em> A value from the <a href=../apireference/enums.html#countermemtype>emu.counterMemType</a> enum<br>
+counterOpType - <em>Enum</em> A value from the <a href=../apireference/enums.html#counteroptype>emu.counterOpType</a> enum</p>
+<p><strong>Return value</strong><br>
+<em>Array</em> 32-bit integers</p>
+<p><strong>Description</strong><br>
+Returns an array of access counters for the specified memory and operation types.</p>
+<h3 id=resetaccesscounters>resetAccessCounters</h3>
+<p><strong>Syntax</strong></p>
+<pre><code>emu.resetAccessCounters()
+</code></pre>
+<p><strong>Return value</strong><br>
+<em>None</em></p>
+<p><strong>Description</strong><br>
+Resets all access counters.</p>
+<h2 id=misc>Misc</h2>
+<h3 id=getlogwindowlog>getLogWindowLog</h3>
+<p><strong>Syntax</strong></p>
+<pre><code>emu.getLogWindowLog()
+</code></pre>
+<p><strong>Return value</strong><br>
+<em>String</em> A string containing the log shown in the log window</p>
+<p><strong>Description</strong><br>
+Returns the same text as what is shown in the emulator&rsquo;s Log Window.</p>
+<h3 id=getrominfo>getRomInfo</h3>
+<p><strong>Syntax</strong></p>
+<pre><code>emu.getRomInfo()
+</code></pre>
+<p><strong>Return value</strong><br>
+<em>Table</em> Information about the current ROM with the following structure:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text>name: string,            Filename of the current ROM
+path: string,            Full path to the current ROM (including parent compressed archive when needed)
+fileCrc32Hash: int,      The CRC32 value for the whole ROM file
+fileSha1Hash: string,    The SHA1 hash for the whole ROM file
+prgChrCrc32Hash: int,	 The CRC32 value for the file, excluding its 16-byte header
+prgChrMd5Hash: string,   The MD5 hash for the file, excluding its 16-byte header
+format: int,			 Value that represents the ROM format:  1 = iNES, 2 = UNIF, 3 = FDS, 4 = NSF
+isChrRam: bool           true when the game uses CHR RAM, false otherwise
+</code></pre></div><p><strong>Description</strong><br>
+Returns information about the ROM file that is currently running.</p>
+<h3 id=getscriptdatafolder>getScriptDataFolder</h3>
+<p><strong>Syntax</strong></p>
+<pre><code>emu.getScriptDataFolder()
+</code></pre>
+<p><strong>Return value</strong><br>
+<em>String</em> The script&rsquo;s data folder</p>
+<p><strong>Description</strong><br>
+This function returns the path to a unique folder (based on the script&rsquo;s filename) where the script should store its data (if any data needs to be saved).<br>
+The data will be saved in subfolders inside the LuaScriptData folder in Mesen&rsquo;s home folder.</p>
+<h3 id=takescreenshot>takeScreenshot</h3>
+<p><strong>Syntax</strong></p>
+<pre><code>emu.takeScreenshot()
+</code></pre>
+<p><strong>Return value</strong><br>
+<em>String</em> A binary string containing a PNG image.</p>
+<p><strong>Description</strong><br>
+Takes a screenshot and returns a PNG file as a string.<br>
+The screenshot is not saved to the disk.</p>
+<footer class=footline>
+</footer>
+</div>
+</div>
+<div id=navigation>
+<a class="nav nav-prev" href=../apireference/memoryaccess.html title="Memory Access"> <i class="fa fa-chevron-left"></i></a>
+<a class="nav nav-next" href=../apireference/enums.html title=Enums style=margin-right:0><i class="fa fa-chevron-right"></i></a>
+</div>
+</section>
+<div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px>
+<div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div>
+</div>
+<script src=../js/clipboard.min.js?1640054941></script>
+<script src=../js/perfect-scrollbar.min.js?1640054941></script>
+<script src=../js/perfect-scrollbar.jquery.min.js?1640054941></script>
+<script src=../js/jquery.sticky-kit.min.js?1640054941></script>
+<script src=../js/featherlight.min.js?1640054941></script>
+<script src=../js/html5shiv-printshiv.min.js?1640054941></script>
+<script src=../js/highlight.pack.js?1640054941></script>
+<script>hljs.initHighlightingOnLoad()</script>
+<script src=../js/modernizr.custom.71422.js?1640054941></script>
+<script src=../js/learn.js?1640054941></script>
+<script src=../js/hugo-learn.js?1640054941></script>
+<link href=../mermaid/mermaid.css?1640054941 type=text/css rel=stylesheet>
+<script src=../mermaid/mermaid.js?1640054941></script>
+<script>mermaid.initialize({startOnLoad:!0})</script>
+</body>
+</html>

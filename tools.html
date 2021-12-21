@@ -1,0 +1,405 @@
+<!doctype html><html lang=en class="js csstransforms3d">
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name=generator content="Hugo 0.91.0">
+<meta name=description content>
+<link rel="shortcut icon" href=./images/favicon.png type=image/x-icon>
+<link rel=icon href=./images/favicon.png type=image/x-icon>
+<title>Tools :: Mesen Documentation</title>
+<link href=./css/nucleus.css?1640054941 rel=stylesheet>
+<link href=./css/font-awesome.min.css?1640054941 rel=stylesheet>
+<link href=./css/hybrid.css?1640054941 rel=stylesheet>
+<link href=./css/featherlight.min.css?1640054941 rel=stylesheet>
+<link href=./css/perfect-scrollbar.min.css?1640054941 rel=stylesheet>
+<link href=./css/horsey.css?1640054941 rel=stylesheet>
+<link href=./css/theme.css?1640054941 rel=stylesheet>
+<link href=./css/hugo-theme.css?1640054941 rel=stylesheet>
+<link href=./css/custom.css?1640054941 rel=stylesheet>
+<link href=./css/theme-green.css?1640054941 rel=stylesheet>
+<script src=./js/jquery-2.x.min.js?1640054941></script>
+<style type=text/css>:root #header+#content>#left>#rlblock_left{display:none!important}</style>
+</head>
+<body data-url=./tools.html>
+<nav id=sidebar>
+<div id=header-wrapper>
+<div id=header>
+<a id=logo href=./index.html>
+<img src=./images/MesenIcon.png>
+</a>
+</div>
+<div class=searchbox>
+<label for=search-by><i class="fa fa-search"></i></label>
+<input data-search-input id=search-by type=text placeholder=Search...>
+<span data-search-clear><i class="fa fa-close"></i></span>
+</div>
+<script type=text/javascript src=./js/lunr.min.js?1640054941></script>
+<script type=text/javascript src=./js/horsey.js?1640054941></script>
+<script type=text/javascript>var baseurl=""</script>
+<script type=text/javascript src=./js/searchjson.js?1640054941></script>
+<script type=text/javascript src=./js/search.js?1640054941></script>
+</div>
+<div class=highlightable>
+<ul class=topics>
+<li data-nav-id=/gettingstarted.html title="Getting Started" class=dd-item>
+<a href=./gettingstarted.html>
+Getting Started
+</a>
+</li>
+<li data-nav-id=/configuration.html title=Configuration class=dd-item>
+<a href=./configuration.html>
+Configuration
+</a>
+<ul>
+<li data-nav-id=/configuration/audio.html title="Audio Options" class=dd-item>
+<a href=./configuration/audio.html>
+Audio Options
+</a>
+</li>
+<li data-nav-id=/configuration/input.html title="Input Options" class=dd-item>
+<a href=./configuration/input.html>
+Input Options
+</a>
+</li>
+<li data-nav-id=/configuration/video.html title="Video Options" class=dd-item>
+<a href=./configuration/video.html>
+Video Options
+</a>
+</li>
+<li data-nav-id=/configuration/emulation.html title="Emulation Options" class=dd-item>
+<a href=./configuration/emulation.html>
+Emulation Options
+</a>
+</li>
+<li data-nav-id=/configuration/preferences.html title=Preferences class=dd-item>
+<a href=./configuration/preferences.html>
+Preferences
+</a>
+</li>
+</ul>
+</li>
+<li data-nav-id=/tools.html title=Tools class="dd-item
+parent
+active">
+<a href=./tools.html>
+Tools
+</a>
+</li>
+<li data-nav-id=/debugging.html title="Debugging Tools" class=dd-item>
+<a href=./debugging.html>
+Debugging Tools
+</a>
+<ul>
+<li data-nav-id=/debugging/debugger.html title=Debugger class=dd-item>
+<a href=./debugging/debugger.html>
+Debugger
+</a>
+</li>
+<li data-nav-id=/debugging/apuviewer.html title="APU Viewer" class=dd-item>
+<a href=./debugging/apuviewer.html>
+APU Viewer
+</a>
+</li>
+<li data-nav-id=/debugging/assembler.html title=Assembler class=dd-item>
+<a href=./debugging/assembler.html>
+Assembler
+</a>
+</li>
+<li data-nav-id=/debugging/eventviewer.html title="Event Viewer" class=dd-item>
+<a href=./debugging/eventviewer.html>
+Event Viewer
+</a>
+</li>
+<li data-nav-id=/debugging/memorytools.html title="Memory Tools" class=dd-item>
+<a href=./debugging/memorytools.html>
+Memory Tools
+</a>
+</li>
+<li data-nav-id=/debugging/performanceprofiler.html title="Performance Profiler" class=dd-item>
+<a href=./debugging/performanceprofiler.html>
+Performance Profiler
+</a>
+</li>
+<li data-nav-id=/debugging/ppuviewer.html title="PPU Viewer" class=dd-item>
+<a href=./debugging/ppuviewer.html>
+PPU Viewer
+</a>
+</li>
+<li data-nav-id=/debugging/scriptwindow.html title="Script Window" class=dd-item>
+<a href=./debugging/scriptwindow.html>
+Script Window
+</a>
+</li>
+<li data-nav-id=/debugging/texthooker.html title="Text Hooker" class=dd-item>
+<a href=./debugging/texthooker.html>
+Text Hooker
+</a>
+</li>
+<li data-nav-id=/debugging/tracelogger.html title="Trace Logger" class=dd-item>
+<a href=./debugging/tracelogger.html>
+Trace Logger
+</a>
+</li>
+<li data-nav-id=/debugging/debuggerintegration.html title="Integration with compilers" class=dd-item>
+<a href=./debugging/debuggerintegration.html>
+Integration with compilers
+</a>
+</li>
+</ul>
+</li>
+<li data-nav-id=/hdpacks.html title="HD Packs" class=dd-item>
+<a href=./hdpacks.html>
+HD Packs
+</a>
+</li>
+<li data-nav-id=/apireference.html title="Lua API reference" class=dd-item>
+<a href=./apireference.html>
+Lua API reference
+</a>
+<ul>
+<li data-nav-id=/apireference/changelog.html title=Changelog class=dd-item>
+<a href=./apireference/changelog.html>
+Changelog
+</a>
+</li>
+<li data-nav-id=/apireference/callbacks.html title=Callbacks class=dd-item>
+<a href=./apireference/callbacks.html>
+Callbacks
+</a>
+</li>
+<li data-nav-id=/apireference/drawing.html title=Drawing class=dd-item>
+<a href=./apireference/drawing.html>
+Drawing
+</a>
+</li>
+<li data-nav-id=/apireference/emulation.html title=Emulation class=dd-item>
+<a href=./apireference/emulation.html>
+Emulation
+</a>
+</li>
+<li data-nav-id=/apireference/input.html title=Input class=dd-item>
+<a href=./apireference/input.html>
+Input
+</a>
+</li>
+<li data-nav-id=/apireference/logging.html title=Logging class=dd-item>
+<a href=./apireference/logging.html>
+Logging
+</a>
+</li>
+<li data-nav-id=/apireference/memoryaccess.html title="Memory Access" class=dd-item>
+<a href=./apireference/memoryaccess.html>
+Memory Access
+</a>
+</li>
+<li data-nav-id=/apireference/misc.html title=Miscellaneous class=dd-item>
+<a href=./apireference/misc.html>
+Miscellaneous
+</a>
+</li>
+<li data-nav-id=/apireference/enums.html title=Enums class=dd-item>
+<a href=./apireference/enums.html>
+Enums
+</a>
+</li>
+</ul>
+</li>
+</ul>
+<section id=shortcuts>
+<h3>More</h3>
+<ul>
+<li role>
+<a class=padding href=https://www.mesen.ca><img style=vertical-align:middle src=./images/favicon.png> <span style=display:inline;vertical-align:middle>Website</span></a>
+</li>
+<li role>
+<a class=padding href=https://github.com/SourMesen/Mesen><i class="fa fa-github"></i> GitHub</a>
+</li>
+</ul>
+</section>
+<div id=menuspacer></div>
+<section id=footer>
+<div class=menuFooter>
+<div class=donateButton><a href=https://www.mesen.ca/Donate.php><img src=./images/patreon.png alt="Become a Patron!" width=66% height=66%></a></div>
+<div class=donateButton><a class=bmc-button target=_blank href=https://www.mesen.ca/BuyCoffee.php><img src=./images/BMC-btn-logo.svg alt=Donate><span style=margin-left:5px>Donate</span></a></div>
+Version: <b>0.9.9</b><br>
+Last Updated: <b>2021-12-21</b>
+</div>
+</section>
+</div>
+</nav>
+<section id=body>
+<div id=overlay></div>
+<div class="padding highlightable sticky-parent">
+<div class=sticky-spacer>
+<div id=top-bar>
+<div id=breadcrumbs itemscope itemtype=http://data-vocabulary.org/Breadcrumb>
+<span id=sidebar-toggle-span>
+<a href=# id=sidebar-toggle data-sidebar-toggle>
+<i class="fa fa-bars"></i>
+</a>
+</span>
+<span id=toc-menu><i class="fa fa-list-alt"></i></span>
+<span class=links>
+<a href=./>Home</a> > Tools
+</span>
+</div>
+<div class=progress>
+<div class=wrapper>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#netplay>Netplay</a>
+<ul>
+<li><a href=#hosting-a-game>Hosting a game</a></li>
+<li><a href=#connecting-to-a-server>Connecting to a server</a></li>
+</ul>
+</li>
+<li><a href=#movies>Movies</a></li>
+<li><a href=#history-viewer>History Viewer</a></li>
+<li><a href=#cheats>Cheats</a>
+<ul>
+<li><a href=#addingediting-cheats>Adding/Editing Cheats</a></li>
+<li><a href=#importing-cheats>Importing Cheats</a></li>
+</ul>
+</li>
+<li><a href=#sound-recorder>Sound Recorder</a></li>
+<li><a href=#video-recorder>Video Recorder</a></li>
+<li><a href=#log-window>Log Window</a></li>
+<li><a href=#debugger>Debugger</a></li>
+<li><a href=#hd-pack-builder>HD Pack Builder</a></li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+</div>
+<div id=body-inner>
+<h1>Tools</h1>
+<div class=toc>
+<div><nav id=TableOfContents>
+<ul>
+<li><a href=#netplay>Netplay</a>
+<ul>
+<li><a href=#hosting-a-game>Hosting a game</a></li>
+<li><a href=#connecting-to-a-server>Connecting to a server</a></li>
+</ul>
+</li>
+<li><a href=#movies>Movies</a></li>
+<li><a href=#history-viewer>History Viewer</a></li>
+<li><a href=#cheats>Cheats</a>
+<ul>
+<li><a href=#addingediting-cheats>Adding/Editing Cheats</a></li>
+<li><a href=#importing-cheats>Importing Cheats</a></li>
+</ul>
+</li>
+<li><a href=#sound-recorder>Sound Recorder</a></li>
+<li><a href=#video-recorder>Video Recorder</a></li>
+<li><a href=#log-window>Log Window</a></li>
+<li><a href=#debugger>Debugger</a></li>
+<li><a href=#hd-pack-builder>HD Pack Builder</a></li>
+</ul>
+</nav></div>
+</div>
+<h2 id=netplay>Netplay</h2>
+<h3 id=hosting-a-game>Hosting a game</h3>
+<p><strong>Server name</strong>: This name will be shown to clients when they connect.</p>
+<p><strong>Port</strong>: The port used for the communication. Mesen will attempt to automatically port-forward this port on your router when you start the server &ndash; if this fails, you will have to manually forward the port on your router to allow people outside of your LAN to connect to your server.</p>
+<p>The other options on this screen have not been implemented yet and are disabled for now.</p>
+<h3 id=connecting-to-a-server>Connecting to a server</h3>
+<p><strong>Host</strong>: The host name of the server you want to connect to. This is usually an IP address but can also be a domain name.</p>
+<p><strong>Port</strong>: The port to connect to &ndash; this must match the <code>Port</code> value used by the server&rsquo;s host.</p>
+<p><strong>Join as a spectator</strong>: When enabled, you will join the server without taking control of a specific controller. An unlimited number of spectators can join a game, but only 4 people can take control of a controller.</p>
+<p>Once you are connected to a server, you can select your controller via the <strong>Tools→Netplay→Select Controller</strong> menu.</p>
+<h2 id=movies>Movies</h2>
+<p><code>Movies</code> are files that can be created by Mesen and played back within Mesen itself. They are essentially a recording of the events that occurred during recording. To record an actual video file, see <a href=#video-recorder>Video Recorder</a>.</p>
+<p>When you start recording, a configuration dialog is shown that allows you to select a number of options.</p>
+<ul>
+<li><strong>Save to</strong>: The location where the movie will be saved. Press the <strong>Browse</strong> button to change it.</li>
+<li><strong>Record from</strong>: Selects where the recording should start:
+<ul>
+<li><strong>Power on</strong>: This will reset the game and start recording from the start. Your save data (.sav files) will be excluded from the movie file - after the reset, you will start the game as if it had never been run yet.</li>
+<li><strong>Power on, with save data</strong>: This will reset the game and start recording from the start. Your save data (.sav files, etc.) will be included in the movie file.</li>
+<li><strong>Current state</strong>: This will start recording from the current state &ndash; in this case, the movie file will contain a save state.</li>
+</ul>
+</li>
+<li><strong>Author</strong>: The movie&rsquo;s author (optional) - this will be saved in the movie file.</li>
+<li><strong>Description</strong>: A description of the movie&rsquo;s content (optional) - this will be saved in the movie file.</li>
+</ul>
+<p>To play a movie file, select it via the <strong>Tools→Movies→Play</strong> command.</p>
+<h2 id=history-viewer>History Viewer</h2>
+<p>The history viewer allows you to replay (in a video player) any gameplay since the last time you power cycled or loaded a game.<br>
+You can start playback at any point in time, and instantly seek to any point in time, too.</p>
+<p>To resume gameplay from the history viewer&rsquo;s current position, select <strong>File→Resume Gameplay</strong><br>
+To create a save state for the current position, select <strong>File→Create Save State</strong></p>
+<p>To export a movie (<code>.mmo</code> file) of your gameplay, select <strong>File→Export Movie</strong><br>
+When exporting a movie, you can select the specific time range you want to export.</p>
+<h2 id=cheats>Cheats</h2>
+<p>Mesen supports cheats in a number of different formats, including Game Genie and Pro Action Rocky codes.</p>
+<p>It is also possible to import cheats from the built-in <a href=#from-the-cheat-database>Cheat Database</a> or from <a href=#from-xml-cht-files>XML or CHT files</a>.</p>
+<p>Select a game on the left to see all the cheats currently available for that game.</p>
+<p><strong>To add a new cheat code</strong>, click the <code>Add Cheat</code> button.<br>
+<strong>To edit a cheat code</strong>, double-click on it in the list.<br>
+<strong>To delete a cheat code</strong>, select it from the list and click the <code>Delete</code> button.</p>
+<p><strong>To import cheats</strong>, click the <code>Import</code> button.<br>
+<strong>To export cheats to an XML file</strong>, click the <code>Export</code> button.</p>
+<p><strong>To disable a specific cheat</strong>, uncheck it from the list.<br>
+<strong>To disable all cheats</strong>, check the <code>Disable all cheats</code> option.</p>
+<h3 id=addingediting-cheats>Adding/Editing Cheats</h3>
+<p>When adding a cheat, you must first select the game to which it should be applied. By default, the game that is currently loaded will be selected.</p>
+<p>You must give each cheat a name, which will be used to display it in the cheats list.</p>
+<p>The <code>Code</code> section lets you enter the actual cheat &ndash; select <code>Game Genie</code> for Game Genie codes.<br>
+If you want to create a custom code, select the <code>Custom</code> action.</p>
+<p>When creating custom codes, the <code>Memory</code> / <code>Game Code</code> options select whether the code should be applied to a specific CPU address (<code>Memory</code>) or a specific offset in the PRG ROM (<code>Game Code</code>).</p>
+<h3 id=importing-cheats>Importing Cheats</h3>
+<h4 id=from-the-cheat-database>From the Cheat Database</h4>
+<p>To import from the cheats database, click <code>Import</code> and select <code>From Cheat Database</code>.</p>
+<p>In the next dialog, select the game for which you want to import cheats. You can type in the <code>Search</code> bar at the top to filter the game list. Once you&rsquo;ve selected a game, press OK &ndash; this will import all cheats for that game into the cheats list. You can then manually enable any cheat you want to use.</p>
+<p>By default, the game that is currently loaded will be selected for you. Having no game selected when the dialog opens indicates that there are no built-in cheats available for the game that is currently running.</p>
+<h4 id=from-xmlcht-files>From XML/CHT files</h4>
+<p>To import cheats from external files (FCEUX&rsquo;s <code>.cht</code> files or Nestopia&rsquo;s <code>.xml</code> files), click <code>Import</code>, and select <code>From File (XML, CHT)</code>.<br>
+In the next dialog, select the file you want to import.<br>
+For FCEUX&rsquo;s <code>.cht</code> files, you will also need to select the game for which you are importing cheats for.<br>
+Once you&rsquo;re done, click <code>OK</code> &ndash; the cheats will be imported and added to the cheats list.</p>
+<h2 id=sound-recorder>Sound Recorder</h2>
+<p>The sound recorder allows you to record uncompressed <code>.wav</code> files. The <code>.wav</code> file will use the exact same output settings as Mesen&rsquo;s <a href=./configuration/audio.html>audio options</a> &ndash; this means the sample rate will match Mesen&rsquo;s current sample rate, and that any sound modification (volume, panning, equalizer or effects) will also be applied to the <code>.wav</code> files.</p>
+<p>To start recording, use the <strong>Tools→Sound Recorder→Record</strong> command.<br>
+To stop an on-going recording, use the <strong>Tools→Sound Recorder→Stop Recording</strong> command.</p>
+<h2 id=video-recorder>Video Recorder</h2>
+<p>Much like the sound recorder, the video recorder allows you to record <code>.avi</code> files.</p>
+<p>Before you start a recording, you can select where to save the <code>.avi</code> file and which video codec to use. All video codecs are lossless codecs &ndash; the only reason to reduce the compression level to a lower level is to improve performance in the event your computer is having a hard time recording the video and running the emulation at its normal speed at the same time.</p>
+<p>To start recording, use the <strong>Tools→Video Recorder→Record</strong> command.<br>
+To stop an on-going recording, use the <strong>Tools→Video Recorder→Stop Recording</strong> command.</p>
+<h2 id=log-window>Log Window</h2>
+<p>The Log Window displays a number of useful information &ndash; mostly about the roms you load.<br>
+It is also sometimes used as a way to log errors or warnings.</p>
+<h2 id=debugger>Debugger</h2>
+<p>See <a href=./debugging.html>Debugging Tools</a></p>
+<h2 id=hd-pack-builder>HD Pack Builder</h2>
+<p>See <a href=./hdpacks.html>HD Packs</a></p>
+<footer class=footline>
+</footer>
+</div>
+</div>
+<div id=navigation>
+<a class="nav nav-prev" href=./configuration/preferences.html title=Preferences> <i class="fa fa-chevron-left"></i></a>
+<a class="nav nav-next" href=./debugging.html title="Debugging Tools" style=margin-right:0><i class="fa fa-chevron-right"></i></a>
+</div>
+</section>
+<div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px>
+<div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div>
+</div>
+<script src=./js/clipboard.min.js?1640054942></script>
+<script src=./js/perfect-scrollbar.min.js?1640054942></script>
+<script src=./js/perfect-scrollbar.jquery.min.js?1640054942></script>
+<script src=./js/jquery.sticky-kit.min.js?1640054942></script>
+<script src=./js/featherlight.min.js?1640054942></script>
+<script src=./js/html5shiv-printshiv.min.js?1640054942></script>
+<script src=./js/highlight.pack.js?1640054942></script>
+<script>hljs.initHighlightingOnLoad()</script>
+<script src=./js/modernizr.custom.71422.js?1640054942></script>
+<script src=./js/learn.js?1640054942></script>
+<script src=./js/hugo-learn.js?1640054942></script>
+<link href=./mermaid/mermaid.css?1640054942 type=text/css rel=stylesheet>
+<script src=./mermaid/mermaid.js?1640054942></script>
+<script>mermaid.initialize({startOnLoad:!0})</script>
+</body>
+</html>
