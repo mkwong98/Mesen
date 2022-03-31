@@ -13,7 +13,7 @@ chapter: false
 
 **Console Type**: Selects which console to emulate for all input ports. The `NES` and `Famicom` have different accessories and some of the identical accessories (e.g the Zapper) have different behavior on a hardware level.  If you want to connect Famicom-only accessories that plug into the Famicom's expansion port, select `Famicom`.
 
-**Automatically configure controllers when loading a game**: When enabled, when loading any game recognized by Mesen's internal game database, the appropriate controllers will automatically be setup.  For example, loading up a game like Duck Hunt will connect a Zapper to the second port.
+**Automatically configure controllers when loading a game**: When enabled, when loading any game recognized by Mesen's internal game database or the ROM file has a NES 2.0 header, the appropriate controllers will automatically be setup.  For example, loading up a game like Duck Hunt will connect a Zapper to the second port.
 
 ## Setting up controllers ##
 

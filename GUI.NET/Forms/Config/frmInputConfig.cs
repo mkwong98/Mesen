@@ -210,13 +210,6 @@ namespace Mesen.GUI.Forms.Config
 			UpdatePlayer3And4Visibility();
 			UpdateAvailableControllerTypes();
 			UpdateSetupButtons();
-				
-			if(ConfigManager.Config.PreferenceInfo.DisableGameDatabase) {
-				//This option requires the game DB to be active
-				chkAutoConfigureInput.Enabled = false;
-				chkAutoConfigureInput.Checked = false;
-			}
-
 			UpdateConflictWarning();
 		}
 
