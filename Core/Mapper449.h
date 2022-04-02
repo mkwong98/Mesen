@@ -1,7 +1,7 @@
 #pragma once
 #include "BaseMapper.h"
 
-class Mapper227 : public BaseMapper
+class Mapper449 : public BaseMapper
 {
 protected:
 	uint32_t GetDipSwitchCount() override { return 4; }
@@ -37,11 +37,12 @@ protected:
 
 	void WriteRegister(uint16_t addr, uint8_t value) override
 	{
-		uint16_t prgBank = ((addr >> 2) & 0x1F) | ((addr & 0x100) >> 3);
+		uint16_t prgBank = ((addr >> 2) & 0x1F) | ((addr >> 3) & 0x20);
 		bool sFlag = (addr & 0x01) == 0x01;
 		bool lFlag = ((addr >> 9) & 0x01) == 0x01;
 		bool prgMode = ((addr >> 7) & 0x01) == 0x01;
-		_mFlag = ((addr >> 10) & 0x01) == 0x01;
+
+		_mFlag = ((addr >> 9) & 0x01) == 0x01;
 
 		if(prgMode) {
 			if(sFlag) {
@@ -51,27 +52,14 @@ protected:
 				SelectPRGPage(1, prgBank);
 			}
 		} else {
-			if(sFlag){
-				if(lFlag) {
-					SelectPRGPage(0, prgBank & 0x3E);
-					SelectPRGPage(1, prgBank | 0x07);
-				} else {
-					SelectPRGPage(0, prgBank & 0x3E);
-					SelectPRGPage(1, prgBank & 0x38);
-				}
-			} else {
-				if(lFlag) {
-					SelectPRGPage(0, prgBank);
-					SelectPRGPage(1, prgBank | 0x07);
-				} else {
-					SelectPRGPage(0, prgBank);
-					SelectPRGPage(1, prgBank & 0x38);
-				}
-			}
+			SelectPRGPage(0, prgBank);
+			SelectPRGPage(1, prgBank | 0x07);
 		}
 
 		// protect CHR-RAM on nrom modes
 		SetPpuMemoryMapping(0, 0x1FFF, 0, ChrMemoryType::Default, (!HasBattery() && prgMode) ? MemoryAccessType::Read : MemoryAccessType::ReadWrite);
+
+		SelectCHRPage(0, value);
 
 		SetMirroringType((addr & 0x02) == 0x02 ? MirroringType::Horizontal : MirroringType::Vertical);
 	}

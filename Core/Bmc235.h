@@ -4,11 +4,11 @@
 
 class Bmc235 : public BaseMapper
 {
-private:
-	bool _openBus = false;
 protected:
 	virtual uint16_t GetPRGPageSize() override { return 0x4000; }
 	virtual uint16_t GetCHRPageSize() override { return 0x2000; }
+
+	uint8_t _unrom;
 
 	void InitMapper() override
 	{
@@ -19,45 +19,34 @@ protected:
 	void Reset(bool softReset) override
 	{
 		SelectPrgPage2x(0, 0);
-		_openBus = false;
-	}
-
-	void StreamState(bool saving) override
-	{
-		BaseMapper::StreamState(saving);
-		Stream(_openBus);
-		if(!saving && _openBus) {
-			RemoveCpuMemoryMapping(0x8000, 0xFFFF);
+		if(_prgSize & 0x20000) {
+			if(softReset) {
+				_unrom = !_unrom;
+			} else {
+				_unrom = false;
+			}
 		}
 	}
 
 	void WriteRegister(uint16_t addr, uint8_t value) override
 	{
-		SetMirroringType((addr & 0x0400) ? MirroringType::ScreenAOnly : (addr & 0x2000) ? MirroringType::Horizontal : MirroringType::Vertical);
+		uint8_t bank = (addr >> 3) & 0x60 | (addr & 0x1F);
 
-		const uint8_t config[4][4][2] = {
-			{ { 0x00, 0 }, { 0x00, 1 }, { 0x00, 1 }, { 0x00, 1 } },
-			{ { 0x00, 0 }, { 0x00, 1 }, { 0x20, 0 }, { 0x00, 1 } },
-			{ { 0x00, 0 }, { 0x00, 1 }, { 0x20, 0 }, { 0x40, 0 } },
-			{ { 0x00, 0 }, { 0x20, 0 }, { 0x40, 0 }, { 0x60, 0 } }
-		};
+		if(_unrom) {
+			SetMirroringType(MirroringType::Vertical);
+			SelectPRGPage(0, GetPRGPageCount() & 0xC0 | value & 0x07);
+			SelectPRGPage(1, GetPRGPageCount() & 0xC0 | 0x07);
+			return;
+		}
 
-		uint8_t mode;
-		switch(GetPRGPageCount()) {
-			case 64: mode = 0; break;
-			case 128: mode = 1; break;
-			case 256: mode = 2; break;
-			default: mode = 3; break;
-		};		
-
-		uint8_t bank = config[mode][addr >> 8 & 0x03][0] | (addr & 0x1F);
-		
-		_openBus = false;
-		if(config[mode][addr >> 8 & 0x03][1]) {
-			//Open bus
-			_openBus = true;
+		if(bank >= (GetPRGPageCount() >> 1)) {
 			RemoveCpuMemoryMapping(0x8000, 0xFFFF);
-		} else if(addr & 0x800) {
+			return;
+		}
+
+		SetMirroringType((addr & 0x0400) ? MirroringType::ScreenAOnly : (addr & 0x2000) ? MirroringType::Horizontal : MirroringType::Vertical);
+		
+		if(addr & 0x800) {
 			bank = (bank << 1) | (addr >> 12 & 0x01);
 			SelectPRGPage(0, bank);
 			SelectPRGPage(1, bank);

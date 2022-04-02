@@ -73,7 +73,7 @@ std::unordered_map<string, int> UnifLoader::_boardMappings = std::unordered_map<
 	{ "LH51", 309 },
 	{ "LH53", UnifBoards::UnknownBoard },
 	{ "MALISB", 325 },
-	{ "MARIO1-MALEE2", UnifBoards::Malee },
+	{ "MARIO1-MALEE2", 55 },
 	{ "MHROM", 66 },
 	{ "N625092", 221 },
 	{ "NROM", 0 },
@@ -154,7 +154,7 @@ std::unordered_map<string, int> UnifLoader::_boardMappings = std::unordered_map<
 	{ "158B", 258 },
 	{ "DRAGONFIGHTER", 292 },
 	{ "EH8813A", 519 },
-	{ "HP898F", 319 },
+	{ "HP898F", UnifBoards::Hp898f },
 	{ "F-15", 259 },
 	{ "RT-01", 328 },
 	{ "81-01-31-C", UnifBoards::UnknownBoard },
@@ -196,4 +196,5 @@ std::unordered_map<string, int> UnifLoader::_boardMappings = std::unordered_map<
 	{ "BS-5652", 134 },
 	{ "891227", 350 },
 	{ "CTC-12IN1", 337 },
+	{ "BS-110", 444 },
 };

@@ -20,5 +20,6 @@ namespace UnifBoards {
 		SssNrom256,
 		Ks106C,
 		ResetNromX1n1,
+		Hp898f,
 	};
 }
