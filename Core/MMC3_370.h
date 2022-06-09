@@ -17,7 +17,7 @@ protected:
 		RemoveRegisterRange(0x8000, 0xFFFF, MemoryOperation::Read);
 	}
 
-	void Reset(bool softreset)
+	void Reset(bool softreset) override
 	{
 		_exReg = 0;
 		MMC3::UpdateState();

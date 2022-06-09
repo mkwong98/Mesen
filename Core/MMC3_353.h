@@ -15,7 +15,7 @@ protected:
 		MMC3::InitMapper();
 	}
 
-	void Reset(bool softreset)
+	void Reset(bool softreset) override
 	{
 		_exReg = 0;
 		MMC3::UpdateState();

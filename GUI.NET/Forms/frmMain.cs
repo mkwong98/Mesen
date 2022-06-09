@@ -1363,9 +1363,6 @@ namespace Mesen.GUI.Forms
 					mnuNtscBisqwitQuarterFilter.Enabled = !isHdPackLoader;
 					mnuNtscBisqwitHalfFilter.Enabled = !isHdPackLoader;
 					mnuNtscBisqwitFullFilter.Enabled = !isHdPackLoader;
-					mnuNtscSMPTECBisqwitQuarterFilter.Enabled = !isHdPackLoader;
-					mnuNtscSMPTECBisqwitHalfFilter.Enabled = !isHdPackLoader;
-					mnuNtscSMPTECBisqwitFullFilter.Enabled = !isHdPackLoader;
 				}
 			} catch { }
 		}

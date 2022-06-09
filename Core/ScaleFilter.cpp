@@ -107,9 +107,6 @@ shared_ptr<ScaleFilter> ScaleFilter::GetScaleFilter(VideoFilterType filter)
 		case VideoFilterType::BisqwitNtsc:
 		case VideoFilterType::BisqwitNtscHalfRes:
 		case VideoFilterType::BisqwitNtscQuarterRes:
-		case VideoFilterType::BisqwitNtscSMPTEC:
-		case VideoFilterType::BisqwitNtscSMPTECHalfRes:
-		case VideoFilterType::BisqwitNtscSMPTECQuarterRes:
 		case VideoFilterType::NTSC:
 		case VideoFilterType::HdPack:
 		case VideoFilterType::Raw:

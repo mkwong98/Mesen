@@ -31,8 +31,6 @@ protected:
 	}
 
 	void UpdateState() {
-		uint8_t prgPage = _reg & 0x1F;
-
 		SetCpuMemoryMapping(0x6000, 0x7FFF, PrgMemoryType::PrgRom, 0x2000, MemoryAccessType::Read);
 		SetPpuMemoryMapping(0, 0x1FFF, 0, ChrMemoryType::Default, (_reg & 0x80) ? MemoryAccessType::ReadWrite : MemoryAccessType::Read);
 

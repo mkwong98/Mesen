@@ -70,12 +70,9 @@ void VideoDecoder::UpdateVideoFilter()
 		switch(_videoFilterType) {
 			case VideoFilterType::None: break;
 			case VideoFilterType::NTSC: _videoFilter.reset(new NtscFilter(_console)); break;
-			case VideoFilterType::BisqwitNtsc: _videoFilter.reset(new BisqwitNtscFilter(_console, 1, false)); break;
-			case VideoFilterType::BisqwitNtscHalfRes: _videoFilter.reset(new BisqwitNtscFilter(_console, 2, false)); break;
-			case VideoFilterType::BisqwitNtscQuarterRes: _videoFilter.reset(new BisqwitNtscFilter(_console, 4, false)); break;
-			case VideoFilterType::BisqwitNtscSMPTEC: _videoFilter.reset(new BisqwitNtscFilter(_console, 1, true)); break;
-			case VideoFilterType::BisqwitNtscSMPTECHalfRes: _videoFilter.reset(new BisqwitNtscFilter(_console, 2, true)); break;
-			case VideoFilterType::BisqwitNtscSMPTECQuarterRes: _videoFilter.reset(new BisqwitNtscFilter(_console, 4, true)); break;
+			case VideoFilterType::BisqwitNtsc: _videoFilter.reset(new BisqwitNtscFilter(_console, 1)); break;
+			case VideoFilterType::BisqwitNtscHalfRes: _videoFilter.reset(new BisqwitNtscFilter(_console, 2)); break;
+			case VideoFilterType::BisqwitNtscQuarterRes: _videoFilter.reset(new BisqwitNtscFilter(_console, 4)); break;
 			case VideoFilterType::Raw: _videoFilter.reset(new RawVideoFilter(_console)); break;
 			default: _scaleFilter = ScaleFilter::GetScaleFilter(_videoFilterType); break;
 		}

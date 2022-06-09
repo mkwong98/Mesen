@@ -30,11 +30,11 @@ protected:
         if(_regs[1] & 0x40) {
             SelectPrgPage2x(0, (_regs[1] >> 2) & 0xE);
         } else {
-			uint8_t bank = (_regs[1] >> 2) & 0x06 | (_regs[1] >> 5) & 0x01;
+			uint8_t bank = ((_regs[1] >> 2) & 0x06) | ((_regs[1] >> 5) & 0x01);
             SelectPRGPage(0, bank);
 		    SelectPRGPage(1, bank);
         }
-		SelectCHRPage(0, (_regs[0] >> 4) & ~((_regs[0] << 2) & 0x04) | (_regs[2] << 2) & ((_regs[0] << 2) & 0x04));
+		SelectCHRPage(0, ((_regs[0] >> 4) & ~((_regs[0] << 2) & 0x04)) | ((_regs[2] << 2) & ((_regs[0] << 2) & 0x04)));
 		SetMirroringType(_regs[1] & 0x80 ? MirroringType::Vertical : MirroringType::Horizontal);
 	}
 

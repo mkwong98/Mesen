@@ -106,9 +106,6 @@ namespace Mesen.GUI.Forms
 			this.mnuNtscBisqwitQuarterFilter = new System.Windows.Forms.ToolStripMenuItem();
 			this.mnuNtscBisqwitHalfFilter = new System.Windows.Forms.ToolStripMenuItem();
 			this.mnuNtscBisqwitFullFilter = new System.Windows.Forms.ToolStripMenuItem();
-			this.mnuNtscSMPTECBisqwitQuarterFilter = new System.Windows.Forms.ToolStripMenuItem();
-			this.mnuNtscSMPTECBisqwitHalfFilter = new System.Windows.Forms.ToolStripMenuItem();
-			this.mnuNtscSMPTECBisqwitFullFilter = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenuItem15 = new System.Windows.Forms.ToolStripSeparator();
 			this.mnuXBRZ2xFilter = new System.Windows.Forms.ToolStripMenuItem();
 			this.mnuXBRZ3xFilter = new System.Windows.Forms.ToolStripMenuItem();
@@ -834,9 +831,6 @@ namespace Mesen.GUI.Forms
             this.mnuNtscBisqwitQuarterFilter,
             this.mnuNtscBisqwitHalfFilter,
             this.mnuNtscBisqwitFullFilter,
-            this.mnuNtscSMPTECBisqwitQuarterFilter,
-            this.mnuNtscSMPTECBisqwitHalfFilter,
-            this.mnuNtscSMPTECBisqwitFullFilter,
             this.toolStripMenuItem15,
             this.mnuXBRZ2xFilter,
             this.mnuXBRZ3xFilter,
@@ -908,27 +902,6 @@ namespace Mesen.GUI.Forms
 			this.mnuNtscBisqwitFullFilter.Size = new System.Drawing.Size(206, 22);
 			this.mnuNtscBisqwitFullFilter.Text = "NTSC 8x (Bisqwit)";
 			this.mnuNtscBisqwitFullFilter.Click += new System.EventHandler(this.mnuNtscBisqwitFullFilter_Click);
-			// 
-			// mnuNtscSMPTECBisqwitQuarterFilter
-			// 
-			this.mnuNtscSMPTECBisqwitQuarterFilter.Name = "mnuNtscSMPTECBisqwitQuarterFilter";
-			this.mnuNtscSMPTECBisqwitQuarterFilter.Size = new System.Drawing.Size(206, 22);
-			this.mnuNtscSMPTECBisqwitQuarterFilter.Text = "NTSC SMPTE C 2x (Bisqwit)";
-			this.mnuNtscSMPTECBisqwitQuarterFilter.Click += new System.EventHandler(this.mnuNtscSMPTECBisqwitQuarterFilter_Click);
-			// 
-			// mnuNtscSMPTECBisqwitHalfFilter
-			// 
-			this.mnuNtscSMPTECBisqwitHalfFilter.Name = "mnuNtscSMPTECBisqwitHalfFilter";
-			this.mnuNtscSMPTECBisqwitHalfFilter.Size = new System.Drawing.Size(206, 22);
-			this.mnuNtscSMPTECBisqwitHalfFilter.Text = "NTSC SMPTE C 4x (Bisqwit)";
-			this.mnuNtscSMPTECBisqwitHalfFilter.Click += new System.EventHandler(this.mnuNtscSMPTECBisqwitHalfFilter_Click);
-			// 
-			// mnuNtscSMPTECBisqwitFullFilter
-			// 
-			this.mnuNtscSMPTECBisqwitFullFilter.Name = "mnuNtscSMPTECBisqwitFullFilter";
-			this.mnuNtscSMPTECBisqwitFullFilter.Size = new System.Drawing.Size(206, 22);
-			this.mnuNtscSMPTECBisqwitFullFilter.Text = "NTSC SMPTE C 8x (Bisqwit)";
-			this.mnuNtscSMPTECBisqwitFullFilter.Click += new System.EventHandler(this.mnuNtscSMPTECBisqwitFullFilter_Click);
 			// 
 			// toolStripMenuItem15
 			// 
@@ -2004,9 +1977,6 @@ namespace Mesen.GUI.Forms
 		private System.Windows.Forms.ToolStripMenuItem mnuNtscBisqwitHalfFilter;
 		private System.Windows.Forms.ToolStripMenuItem mnuNtscBisqwitFullFilter;
 		private System.Windows.Forms.ToolStripMenuItem mnuNtscBisqwitQuarterFilter;
-		private System.Windows.Forms.ToolStripMenuItem mnuNtscSMPTECBisqwitHalfFilter;
-		private System.Windows.Forms.ToolStripMenuItem mnuNtscSMPTECBisqwitFullFilter;
-		private System.Windows.Forms.ToolStripMenuItem mnuNtscSMPTECBisqwitQuarterFilter;
 		private System.Windows.Forms.ToolStripSeparator toolStripMenuItem22;
 		private System.Windows.Forms.ToolStripMenuItem mnuVideoRecorder;
 		private System.Windows.Forms.ToolStripMenuItem mnuAviRecord;

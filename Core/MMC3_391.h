@@ -33,7 +33,7 @@ protected:
 	{
 		uint8_t mask = (_reg[0] & 0x40) ? 0x7F : 0xFF;
 		page &= mask;
-		page |= ((_reg[1] << 8) & 0x100 | ((_reg[0] << 3) & 0x80)) & ~mask;
+		page |= (((_reg[1] << 8) & 0x100) | ((_reg[0] << 3) & 0x80)) & ~mask;
 		MMC3::SelectCHRPage(slot, page, memoryType);
 	}
 

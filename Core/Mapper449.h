@@ -39,7 +39,6 @@ protected:
 	{
 		uint16_t prgBank = ((addr >> 2) & 0x1F) | ((addr >> 3) & 0x20);
 		bool sFlag = (addr & 0x01) == 0x01;
-		bool lFlag = ((addr >> 9) & 0x01) == 0x01;
 		bool prgMode = ((addr >> 7) & 0x01) == 0x01;
 
 		_mFlag = ((addr >> 9) & 0x01) == 0x01;

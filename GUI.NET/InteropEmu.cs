@@ -232,7 +232,7 @@ namespace Mesen.GUI
 		[DllImport(DLLPath)] public static extern void SetVideoResizeFilter(VideoResizeFilter filter);
 		[DllImport(DLLPath)] public static extern void SetRgbPalette(byte[] palette, UInt32 paletteSize);
 		[DllImport(DLLPath)] public static extern void SetPictureSettings(double brightness, double contrast, double saturation, double hue, double scanlineIntensity);
-		[DllImport(DLLPath)] public static extern void SetNtscFilterSettings(double artifacts, double bleed, double fringing, double gamma, double resolution, double sharpness, [MarshalAs(UnmanagedType.I1)]bool mergeFields, double yFilterLength, double iFilterLength, double qFilterLength, [MarshalAs(UnmanagedType.I1)]bool verticalBlend);
+		[DllImport(DLLPath)] public static extern void SetNtscFilterSettings(double artifacts, double bleed, double fringing, double gamma, double resolution, double sharpness, [MarshalAs(UnmanagedType.I1)]bool mergeFields, double yFilterLength, double iFilterLength, double qFilterLength, [MarshalAs(UnmanagedType.I1)]bool verticalBlend, [MarshalAs(UnmanagedType.I1)] bool colorimetryCorrection);
 		[DllImport(DLLPath)] public static extern void SetInputDisplaySettings(byte visiblePorts, InputDisplayPosition displayPosition, [MarshalAs(UnmanagedType.I1)]bool displayHorizontally);
 		[DllImport(DLLPath)] public static extern void SetAutoSaveOptions(UInt32 delayInMinutes, [MarshalAs(UnmanagedType.I1)]bool showMessage);
 		[DllImport(DLLPath)] public static extern void SetPauseScreenMessage([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(UTF8Marshaler))]string message);
@@ -2360,9 +2360,6 @@ namespace Mesen.GUI
 		Prescale6x = 22,
 		Prescale8x = 23,
 		Prescale10x = 24,
-		BisqwitNtscSMPTECQuarterRes = 26,
-		BisqwitNtscSMPTECHalfRes = 27,
-		BisqwitNtscSMPTEC = 28,
 	}
 
 	public enum HDPackOuputTileType

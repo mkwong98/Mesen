@@ -10,7 +10,7 @@ private:
 	void SelectPRGPage(uint16_t slot, uint16_t page, PrgMemoryType memoryType = PrgMemoryType::PrgRom) override
 	{
 		page &= 0x1F ^ (_reg[3] & 0x1F); // mask
-		page |= (_reg[2] & 0x80) | _reg[1] & 0x1F; // outerbank
+		page |= (_reg[2] & 0x80) | (_reg[1] & 0x1F); // outerbank
 		page |= (GetDipSwitches() & 0x02) ? (_reg[2] & 0x20): ((_reg[1] >> 1) & 0x20); // A18
 		page |= (GetDipSwitches() & 0x04) ? (_reg[2] & 0x40): ((_reg[1] << 1) & 0x40); // A19
 

@@ -60,7 +60,7 @@ protected:
 	uint8_t ReadRegister(uint16_t addr) override
 	{
 		if(_A17A18 == 0x00) {
-			_A16 = MMC3::_registers[6 | (addr >> 13) & 0x01] & 0x08;
+			_A16 = MMC3::_registers[6 | ((addr >> 13) & 0x01)] & 0x08;
 			MMC3::UpdatePrgMapping();
 		}
 		return InternalReadRam(addr);

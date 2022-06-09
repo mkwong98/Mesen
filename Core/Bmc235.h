@@ -30,12 +30,12 @@ protected:
 
 	void WriteRegister(uint16_t addr, uint8_t value) override
 	{
-		uint8_t bank = (addr >> 3) & 0x60 | (addr & 0x1F);
+		uint8_t bank = ((addr >> 3) & 0x60) | (addr & 0x1F);
 
 		if(_unrom) {
 			SetMirroringType(MirroringType::Vertical);
-			SelectPRGPage(0, GetPRGPageCount() & 0xC0 | value & 0x07);
-			SelectPRGPage(1, GetPRGPageCount() & 0xC0 | 0x07);
+			SelectPRGPage(0, (GetPRGPageCount() & 0xC0) | (value & 0x07));
+			SelectPRGPage(1, (GetPRGPageCount() & 0xC0) | 0x07);
 			return;
 		}
 

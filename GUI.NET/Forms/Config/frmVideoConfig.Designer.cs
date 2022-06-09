@@ -77,6 +77,7 @@ namespace Mesen.GUI.Forms.Config
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.chkMergeFields = new System.Windows.Forms.CheckBox();
             this.chkVerticalBlend = new System.Windows.Forms.CheckBox();
+            this.chkColorimetryCorrection = new System.Windows.Forms.CheckBox();
             this.grpCommon = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.chkBilinearInterpolation = new System.Windows.Forms.CheckBox();
@@ -878,6 +879,7 @@ namespace Mesen.GUI.Forms.Config
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel6.Controls.Add(this.chkMergeFields, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.chkVerticalBlend, 0, 1);
+            this.tableLayoutPanel6.Controls.Add(this.chkColorimetryCorrection, 1, 1);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel6.Location = new System.Drawing.Point(0, 300);
             this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(0);
@@ -907,6 +909,16 @@ namespace Mesen.GUI.Forms.Config
             this.chkVerticalBlend.TabIndex = 31;
             this.chkVerticalBlend.Text = "Apply Vertical Blending";
             this.chkVerticalBlend.UseVisualStyleBackColor = true;
+            // 
+            // chkColorimetryCorrection
+            // 
+            this.chkColorimetryCorrection.AutoSize = true;
+            this.chkColorimetryCorrection.Location = new System.Drawing.Point(143, 28);
+            this.chkColorimetryCorrection.Name = "chkColorimetryCorrection";
+            this.chkColorimetryCorrection.Size = new System.Drawing.Size(101, 17);
+            this.chkColorimetryCorrection.TabIndex = 32;
+            this.chkColorimetryCorrection.Text = "Color Correction";
+            this.chkColorimetryCorrection.UseVisualStyleBackColor = true;
             // 
             // grpCommon
             // 
@@ -1976,33 +1988,33 @@ namespace Mesen.GUI.Forms.Config
             this.mnuPresetRgb,
             this.mnuPresetMonochrome});
             this.contextPicturePresets.Name = "contextPicturePresets";
-            this.contextPicturePresets.Size = new System.Drawing.Size(153, 92);
+            this.contextPicturePresets.Size = new System.Drawing.Size(148, 92);
             // 
             // mnuPresetComposite
             // 
             this.mnuPresetComposite.Name = "mnuPresetComposite";
-            this.mnuPresetComposite.Size = new System.Drawing.Size(152, 22);
+            this.mnuPresetComposite.Size = new System.Drawing.Size(147, 22);
             this.mnuPresetComposite.Text = "Composite";
             this.mnuPresetComposite.Click += new System.EventHandler(this.mnuPresetComposite_Click);
             // 
             // mnuPresetSVideo
             // 
             this.mnuPresetSVideo.Name = "mnuPresetSVideo";
-            this.mnuPresetSVideo.Size = new System.Drawing.Size(152, 22);
+            this.mnuPresetSVideo.Size = new System.Drawing.Size(147, 22);
             this.mnuPresetSVideo.Text = "S-Video";
             this.mnuPresetSVideo.Click += new System.EventHandler(this.mnuPresetSVideo_Click);
             // 
             // mnuPresetRgb
             // 
             this.mnuPresetRgb.Name = "mnuPresetRgb";
-            this.mnuPresetRgb.Size = new System.Drawing.Size(152, 22);
+            this.mnuPresetRgb.Size = new System.Drawing.Size(147, 22);
             this.mnuPresetRgb.Text = "RGB";
             this.mnuPresetRgb.Click += new System.EventHandler(this.mnuPresetRgb_Click);
             // 
             // mnuPresetMonochrome
             // 
             this.mnuPresetMonochrome.Name = "mnuPresetMonochrome";
-            this.mnuPresetMonochrome.Size = new System.Drawing.Size(152, 22);
+            this.mnuPresetMonochrome.Size = new System.Drawing.Size(147, 22);
             this.mnuPresetMonochrome.Text = "Monochrome";
             this.mnuPresetMonochrome.Click += new System.EventHandler(this.mnuPresetMonochrome_Click);
             // 
@@ -2020,74 +2032,74 @@ namespace Mesen.GUI.Forms.Config
             this.mnuPaletteUnsaturated,
             this.mnuPaletteYuv});
             this.contextPaletteList.Name = "contextPicturePresets";
-            this.contextPaletteList.Size = new System.Drawing.Size(268, 208);
+            this.contextPaletteList.Size = new System.Drawing.Size(255, 208);
             this.contextPaletteList.Opening += new System.ComponentModel.CancelEventHandler(this.contextPaletteList_Opening);
             // 
             // mnuDefaultPalette
             // 
             this.mnuDefaultPalette.Name = "mnuDefaultPalette";
-            this.mnuDefaultPalette.Size = new System.Drawing.Size(267, 22);
+            this.mnuDefaultPalette.Size = new System.Drawing.Size(254, 22);
             this.mnuDefaultPalette.Text = "Default (NTSC)";
             this.mnuDefaultPalette.Click += new System.EventHandler(this.mnuDefaultPalette_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(264, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(251, 6);
             // 
             // mnuPaletteCompositeDirect
             // 
             this.mnuPaletteCompositeDirect.Name = "mnuPaletteCompositeDirect";
-            this.mnuPaletteCompositeDirect.Size = new System.Drawing.Size(267, 22);
+            this.mnuPaletteCompositeDirect.Size = new System.Drawing.Size(254, 22);
             this.mnuPaletteCompositeDirect.Text = "Composite Direct (by FirebrandX)";
             this.mnuPaletteCompositeDirect.Click += new System.EventHandler(this.mnuPaletteCompositeDirect_Click);
             // 
             // mnuPaletteNesClassic
             // 
             this.mnuPaletteNesClassic.Name = "mnuPaletteNesClassic";
-            this.mnuPaletteNesClassic.Size = new System.Drawing.Size(267, 22);
+            this.mnuPaletteNesClassic.Size = new System.Drawing.Size(254, 22);
             this.mnuPaletteNesClassic.Text = "NES Classic (by FirebrandX)";
             this.mnuPaletteNesClassic.Click += new System.EventHandler(this.mnuPaletteNesClassic_Click);
             // 
             // mnuPaletteNestopiaRgb
             // 
             this.mnuPaletteNestopiaRgb.Name = "mnuPaletteNestopiaRgb";
-            this.mnuPaletteNestopiaRgb.Size = new System.Drawing.Size(267, 22);
+            this.mnuPaletteNestopiaRgb.Size = new System.Drawing.Size(254, 22);
             this.mnuPaletteNestopiaRgb.Text = "Nestopia (RGB)";
             this.mnuPaletteNestopiaRgb.Click += new System.EventHandler(this.mnuPaletteNestopiaRgb_Click);
             // 
             // mnuPaletteOriginalHardware
             // 
             this.mnuPaletteOriginalHardware.Name = "mnuPaletteOriginalHardware";
-            this.mnuPaletteOriginalHardware.Size = new System.Drawing.Size(267, 22);
+            this.mnuPaletteOriginalHardware.Size = new System.Drawing.Size(254, 22);
             this.mnuPaletteOriginalHardware.Text = "Original Hardware (by FirebrandX)";
             this.mnuPaletteOriginalHardware.Click += new System.EventHandler(this.mnuPaletteOriginalHardware_Click);
             // 
             // mnuPalettePvmStyle
             // 
             this.mnuPalettePvmStyle.Name = "mnuPalettePvmStyle";
-            this.mnuPalettePvmStyle.Size = new System.Drawing.Size(267, 22);
+            this.mnuPalettePvmStyle.Size = new System.Drawing.Size(254, 22);
             this.mnuPalettePvmStyle.Text = "PVM Style (by FirebrandX)";
             this.mnuPalettePvmStyle.Click += new System.EventHandler(this.mnuPalettePvmStyle_Click);
             // 
             // mnuPaletteSonyCxa2025As
             // 
             this.mnuPaletteSonyCxa2025As.Name = "mnuPaletteSonyCxa2025As";
-            this.mnuPaletteSonyCxa2025As.Size = new System.Drawing.Size(267, 22);
+            this.mnuPaletteSonyCxa2025As.Size = new System.Drawing.Size(254, 22);
             this.mnuPaletteSonyCxa2025As.Text = "Sony CXA2025AS";
             this.mnuPaletteSonyCxa2025As.Click += new System.EventHandler(this.mnuPaletteSonyCxa2025As_Click);
             // 
             // mnuPaletteUnsaturated
             // 
             this.mnuPaletteUnsaturated.Name = "mnuPaletteUnsaturated";
-            this.mnuPaletteUnsaturated.Size = new System.Drawing.Size(267, 22);
+            this.mnuPaletteUnsaturated.Size = new System.Drawing.Size(254, 22);
             this.mnuPaletteUnsaturated.Text = "Unsaturated v6 (by FirebrandX)";
             this.mnuPaletteUnsaturated.Click += new System.EventHandler(this.mnuPaletteUnsaturated_Click);
             // 
             // mnuPaletteYuv
             // 
             this.mnuPaletteYuv.Name = "mnuPaletteYuv";
-            this.mnuPaletteYuv.Size = new System.Drawing.Size(267, 22);
+            this.mnuPaletteYuv.Size = new System.Drawing.Size(254, 22);
             this.mnuPaletteYuv.Text = "YUV v3 (by FirebrandX)";
             this.mnuPaletteYuv.Click += new System.EventHandler(this.mnuPaletteYuv_Click);
             // 
@@ -2305,5 +2317,6 @@ namespace Mesen.GUI.Forms.Config
 	  private System.Windows.Forms.ComboBox cboFullscreenResolution;
 	  private System.Windows.Forms.Label lblRequestedRefreshRate2;
 	  private System.Windows.Forms.ComboBox cboRefreshRate2;
+	  private System.Windows.Forms.CheckBox chkColorimetryCorrection;
    }
 }

@@ -23,7 +23,7 @@ protected:
 		UpdateState();
 	}
 
-	void UpdateState()
+	void UpdateState() override
 	{
 		SelectPRGPage(0, ((_outerBank << 3) & 0x30) | (_prgBanks[0] & 0x0F));
 		SelectPRGPage(1, ((_outerBank << 3) & 0x30) | (_prgBanks[1] & 0x0F));

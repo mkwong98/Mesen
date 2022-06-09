@@ -168,9 +168,6 @@ enum class VideoFilterType
 	Prescale8x = 23,
 	Prescale10x = 24,
 	Raw = 25,
-	BisqwitNtscSMPTECQuarterRes = 26,
-	BisqwitNtscSMPTECHalfRes = 27,
-	BisqwitNtscSMPTEC = 28,
 	HdPack = 999
 };
 
@@ -234,6 +231,7 @@ struct NtscFilterSettings
 	bool MergeFields = false;
 	bool VerticalBlend = false;
 	bool KeepVerticalResolution = false;
+	bool ColorimetryCorrection = true;
 
 	double YFilterLength = 0;
 	double IFilterLength = 0;
@@ -1226,7 +1224,7 @@ public:
 		return _pictureSettings;
 	}
 
-	void SetNtscFilterSettings(double artifacts, double bleed, double fringing, double gamma, double resolution, double sharpness, bool mergeFields, double yFilterLength, double iFilterLength, double qFilterLength, bool verticalBlend, bool keepVerticalResolution)
+	void SetNtscFilterSettings(double artifacts, double bleed, double fringing, double gamma, double resolution, double sharpness, bool mergeFields, double yFilterLength, double iFilterLength, double qFilterLength, bool verticalBlend, bool keepVerticalResolution, bool colorimetryCorrection)
 	{
 		_ntscFilterSettings.Artifacts = artifacts;
 		_ntscFilterSettings.Bleed = bleed;
@@ -1243,6 +1241,7 @@ public:
 
 		_ntscFilterSettings.VerticalBlend = verticalBlend;
 		_ntscFilterSettings.KeepVerticalResolution = keepVerticalResolution;
+		_ntscFilterSettings.ColorimetryCorrection = colorimetryCorrection;
 	}
 
 	NtscFilterSettings GetNtscFilterSettings()

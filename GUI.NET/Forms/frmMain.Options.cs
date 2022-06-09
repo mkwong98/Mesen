@@ -52,9 +52,6 @@ namespace Mesen.GUI.Forms
 			mnuNtscBisqwitFullFilter.Checked = (filterType == VideoFilterType.BisqwitNtsc);
 			mnuNtscBisqwitHalfFilter.Checked = (filterType == VideoFilterType.BisqwitNtscHalfRes);
 			mnuNtscBisqwitQuarterFilter.Checked = (filterType == VideoFilterType.BisqwitNtscQuarterRes);
-			mnuNtscSMPTECBisqwitFullFilter.Checked = (filterType == VideoFilterType.BisqwitNtscSMPTEC);
-			mnuNtscSMPTECBisqwitHalfFilter.Checked = (filterType == VideoFilterType.BisqwitNtscSMPTECHalfRes);
-			mnuNtscSMPTECBisqwitQuarterFilter.Checked = (filterType == VideoFilterType.BisqwitNtscSMPTECQuarterRes);
 
 			mnuXBRZ2xFilter.Checked = (filterType == VideoFilterType.xBRZ2x);
 			mnuXBRZ3xFilter.Checked = (filterType == VideoFilterType.xBRZ3x);
@@ -372,21 +369,6 @@ namespace Mesen.GUI.Forms
 		private void mnuNtscBisqwitQuarterFilter_Click(object sender, EventArgs e)
 		{
 			SetVideoFilter(VideoFilterType.BisqwitNtscQuarterRes);
-		}
-
-		private void mnuNtscSMPTECBisqwitFullFilter_Click(object sender, EventArgs e)
-		{
-			SetVideoFilter(VideoFilterType.BisqwitNtscSMPTEC);
-		}
-
-		private void mnuNtscSMPTECBisqwitHalfFilter_Click(object sender, EventArgs e)
-		{
-			SetVideoFilter(VideoFilterType.BisqwitNtscSMPTECHalfRes);
-		}
-
-		private void mnuNtscSMPTECBisqwitQuarterFilter_Click(object sender, EventArgs e)
-		{
-			SetVideoFilter(VideoFilterType.BisqwitNtscSMPTECQuarterRes);
 		}
 	}
 }
