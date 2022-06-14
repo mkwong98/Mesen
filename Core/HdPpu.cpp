@@ -16,8 +16,8 @@ void HdPpu::DrawPixel()
 	uint16_t &pixel = _currentOutputBuffer[bufferOffset];
 	_lastSprite = nullptr;
 
-	//init sprite frame ranges at screen start
 	if (bufferOffset == 0) {
+		//init sprite frame ranges at screen start
 		uint8_t spriteCnt = (_flags.LargeSprites ? 128 : 64);
 		for (int i = 0; i < spriteCnt; i++) {
 			_spriteFrameRanges[i].lastUpdated = _spriteFrameRanges[i].updated;
@@ -27,6 +27,11 @@ void HdPpu::DrawPixel()
 				_spriteFrameRanges[i].updated = false;
 				_spriteFrameRanges[i].lastStartFrameNumber = _spriteFrameRanges[i].startFrameNumber;
 			}
+		}
+
+		//init sprite addition counter
+		if (_hdData->Additions.size() > 0) {
+			memset(_info->AdditionCount, 0, PPU::PixelCount);
 		}
 	}
 	
@@ -119,6 +124,42 @@ void HdPpu::DrawPixel()
 						_spriteFrameRanges[tileInfo.Sprite[j].OAMIndex].updated = true;
 					}
 					
+					//check for valid addition
+					for (uint8_t k = 0; k < _hdData->Additions.size(); k++) {
+						if (*(_hdData->Additions[k]) == tileInfo.Sprite[j]) {
+							int16_t addX = _cycle + (tileInfo.Sprite[j].HorizontalMirroring ? -_hdData->Additions[k]->OffsetX : _hdData->Additions[k]->OffsetX) - 1;
+							int16_t addY = _scanline + (tileInfo.Sprite[j].VerticalMirroring ? -_hdData->Additions[k]->OffsetY : _hdData->Additions[k]->OffsetY);
+							if (addX >= 0 && addX < 256 && addY >= 0 && addY < 240) {
+								uint16_t addBufferOffset = (addY << 8) + addX;
+								HdPpuPixelInfo& addTileInfo = _info->ScreenTiles[addBufferOffset];
+								uint8_t insertIdx = _info->AdditionCount[addBufferOffset];
+								for (int8_t l = _info->AdditionCount[addBufferOffset] - 1; l >=0; l--) {
+									if (addTileInfo.SprAddition[l].OAMIndex >= sprite.OAMIndex) {
+										if (l < 3) {
+											//shift back item
+											addTileInfo.SprAddition[l + 1] = addTileInfo.SprAddition[l];
+										}
+										insertIdx = l;
+									}
+								}
+								if (insertIdx < 4) {
+									addTileInfo.SprAddition[insertIdx] = tileInfo.Sprite[j];
+									addTileInfo.SprAddition[insertIdx].PaletteColors = _hdData->Additions[k]->additionSpr.PaletteColors;
+									if (isChrRam) {
+										memcpy(addTileInfo.SprAddition[insertIdx].TileData, _hdData->Additions[k]->additionSpr.TileData, 16);
+									}
+									else {
+										addTileInfo.SprAddition[insertIdx].TileIndex = _hdData->Additions[k]->additionSpr.TileIndex;
+									}
+									addTileInfo.SprAddition[insertIdx].OAMIndex = sprite.OAMIndex;
+									if (_info->AdditionCount[addBufferOffset] < 4) {
+										_info->AdditionCount[addBufferOffset]++;
+									}
+								}
+							}
+						}
+					}
+
 					j++;
 					if(j >= 4) {
 						break;

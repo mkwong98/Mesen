@@ -379,6 +379,7 @@ void HdNesPack::GetPixels(uint32_t x, uint32_t y, HdPpuPixelInfo &pixelInfo, uin
 	HdPackTileInfo *hdPackSpriteInfo = nullptr;
 
 	bool hasSprite = pixelInfo.SpriteCount > 0;
+	uint8_t additionCount = (_hdData->Additions.size() > 0 ? _hdScreenInfo->AdditionCount[y * 256 + x] : 0);
 	bool renderOriginalTiles = ((_hdData->OptionFlags & (int)HdPackOptions::DontRenderOriginalTiles) == 0);
 	if(pixelInfo.Tile.TileIndex != HdPpuTileInfo::NoTile) {
 		hdPackTileInfo = GetCachedMatchingTile(x, y, &pixelInfo.Tile);
@@ -392,6 +393,17 @@ void HdNesPack::GetPixels(uint32_t x, uint32_t y, HdPpuPixelInfo &pixelInfo, uin
 
 	for(int i = 0; i < _activeBgCount[0]; i++) {
 		DrawBackgroundLayer(HdNesPack::BehindBgSpritesPriority+i, x, y, outputBuffer, screenWidth);
+	}
+
+	if (additionCount > 0) {
+		for (int k = additionCount - 1; k >= 0; k--) {
+			if (pixelInfo.SprAddition[k].BackgroundPriority) {
+				hdPackSpriteInfo = GetMatchingTile(x, y, &pixelInfo.SprAddition[k]);
+				if (hdPackSpriteInfo) {
+					DrawSpriteTile(pixelInfo.SprAddition[k], *hdPackSpriteInfo, outputBuffer, screenWidth, k);
+				}
+			}
+		}
 	}
 
 	if(hasSprite) {
@@ -423,6 +435,19 @@ void HdNesPack::GetPixels(uint32_t x, uint32_t y, HdPpuPixelInfo &pixelInfo, uin
 	for(int i = 0; i < _activeBgCount[2]; i++) {
 		DrawBackgroundLayer(HdNesPack::BehindFgSpritesPriority+i, x, y, outputBuffer, screenWidth);
 	}
+
+
+	if (additionCount > 0) {
+		for (int k = additionCount - 1; k >= 0; k--) {
+			if (!pixelInfo.SprAddition[k].BackgroundPriority) {
+				hdPackSpriteInfo = GetMatchingTile(x, y, &pixelInfo.SprAddition[k]);
+				if (hdPackSpriteInfo) {
+					DrawSpriteTile(pixelInfo.SprAddition[k], *hdPackSpriteInfo, outputBuffer, screenWidth, k);
+				}
+			}
+		}
+	}
+
 
 	if(hasSprite) {
 		for(int k = pixelInfo.SpriteCount - 1; k >= 0; k--) {

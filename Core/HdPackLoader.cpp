@@ -215,7 +215,7 @@ bool HdPackLoader::LoadPack()
 			} else if (lineContent.substr(0, 10) == "<addition>") {
 				tokens = StringUtilities::Split(lineContent.substr(10), ',');
 				convertPathToNativeVector(tokens, 2);
-				ProcessSfxTag(tokens);
+				ProcessAdditionTag(tokens);
 			}
 		}
 		MessageManager::DisplayMessage("Pack Loader", std::to_string(lineCnt) + " lines processed in total");
@@ -494,7 +494,7 @@ void HdPackLoader::ProcessAdditionTag(vector<string>& tokens)
 	else {
 		additionInfo->additionSpr.TileIndex = HexUtilities::FromHex(addTileData);
 	}
-	additionInfo->PaletteColors = HexUtilities::FromHex(tokens[index++]);
+	additionInfo->additionSpr.PaletteColors = HexUtilities::FromHex(tokens[index++]);
 
 	_data->Additions.push_back(unique_ptr<HdPackAdditionInfo>(additionInfo));
 }

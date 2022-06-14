@@ -101,7 +101,7 @@ struct HdPpuPixelInfo
 	vector<HdPpuTileInfo> Sprite;
 	vector<HdPpuTileInfo> SprAddition;
 	int SpriteCount;
-	
+
 	uint16_t TmpVideoRamAddr;
 	uint8_t XScroll;
 	uint8_t EmphasisBits;
@@ -111,7 +111,8 @@ struct HdPpuPixelInfo
 	{
 		for(int i = 0; i < 4; i++) {
 			Sprite.push_back(HdPpuTileInfo());
-		}		
+			SprAddition.push_back(HdPpuTileInfo());
+		}
 	}
 };
 
@@ -142,6 +143,7 @@ struct HdSpriteFrameRangeInfo
 struct HdScreenInfo
 {
 	HdPpuPixelInfo* ScreenTiles;
+	uint8_t AdditionCount[PPU::PixelCount];
 	std::unordered_map<uint32_t, uint8_t> WatchedAddressValues;
 	uint32_t FrameNumber;
 	HdSpriteFrameRangeInfo* spriteFrameRanges;
@@ -321,8 +323,8 @@ struct HdPackTileInfo : public HdTileKey
 
 struct HdPackAdditionInfo : public HdTileKey
 {
-	uint8_t OffsetX;
-	uint8_t OffsetY;
+	int16_t OffsetX;
+	int16_t OffsetY;
 	HdTileKey additionSpr;
 
 	string ToString(int pngIndex)
