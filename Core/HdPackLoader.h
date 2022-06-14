@@ -39,6 +39,7 @@ private:
 	void ProcessTileTag(vector<string> &tokens, vector<HdPackCondition*> conditions);
 	void ProcessBackgroundTag(vector<string> &tokens, vector<HdPackCondition*> conditions);
 	void ProcessOptionTag(vector<string>& tokens);
+	void ProcessAdditionTag(vector<string>& tokens);
 
 	//Audio
 	int ProcessSoundTrack(string albumString, string trackString, string filename);

@@ -212,6 +212,10 @@ bool HdPackLoader::LoadPack()
 				tokens = StringUtilities::Split(lineContent.substr(5), ',');
 				convertPathToNativeVector(tokens, 2);
 				ProcessSfxTag(tokens);
+			} else if (lineContent.substr(0, 10) == "<addition>") {
+				tokens = StringUtilities::Split(lineContent.substr(10), ',');
+				convertPathToNativeVector(tokens, 2);
+				ProcessSfxTag(tokens);
 			}
 		}
 		MessageManager::DisplayMessage("Pack Loader", std::to_string(lineCnt) + " lines processed in total");
@@ -456,6 +460,43 @@ void HdPackLoader::ProcessOptionTag(vector<string> &tokens)
 			MessageManager::Log("[HDPack] Invalid option: " + token);
 		}
 	}
+}
+
+void HdPackLoader::ProcessAdditionTag(vector<string>& tokens)
+{
+	HdPackAdditionInfo* additionInfo = new HdPackAdditionInfo();
+	size_t index = 0;
+	string tileData = tokens[index++];
+	if (tileData.size() >= 32) {
+		//CHR RAM tile, read the tile data
+		for (int i = 0; i < 16; i++) {
+			additionInfo->TileData[i] = HexUtilities::FromHex(tileData.substr(i * 2, 2));
+		}
+		additionInfo->IsChrRamTile = true;
+		additionInfo->TileIndex = -1;
+	}
+	else {
+		additionInfo->TileIndex = HexUtilities::FromHex(tileData);
+		additionInfo->IsChrRamTile = false;
+	}
+	additionInfo->PaletteColors = HexUtilities::FromHex(tokens[index++]);
+
+	additionInfo->OffsetX = std::stoi(tokens[index++]);
+	additionInfo->OffsetY = std::stoi(tokens[index++]);
+	
+	string addTileData = tokens[index++];
+	if (addTileData.size() >= 32) {
+		//CHR RAM tile, read the tile data
+		for (int i = 0; i < 16; i++) {
+			additionInfo->additionSpr.TileData[i] = HexUtilities::FromHex(addTileData.substr(i * 2, 2));
+		}
+	}
+	else {
+		additionInfo->additionSpr.TileIndex = HexUtilities::FromHex(addTileData);
+	}
+	additionInfo->PaletteColors = HexUtilities::FromHex(tokens[index++]);
+
+	_data->Additions.push_back(unique_ptr<HdPackAdditionInfo>(additionInfo));
 }
 
 void HdPackLoader::ProcessConditionTag(vector<string> &tokens, bool createInvertedCondition)
