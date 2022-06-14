@@ -198,6 +198,20 @@ The `tile data` and `palette data` are used to identify the original tile, while
 `brightness` can be used to reuse the same HD tile for multiple original tiles -- this can be useful when a game has fade in and out effects (the brightness can be set to values above 1.0 to increase the PNG's normal brightness level).  
 When `default tile` is enabled (with `Y`), the tile is marked as the `default tile` for all palettes.  Whenever a tile appears on the screen that matches the tile data, but has no rules matching its palette data, the default tile will be used instead.
 
+
+### &lt;addition&gt; tag ###
+
+**Syntax**: `<addition>[tile data], [palette data], [distance x - integer], [distance y - integer], [additional tile data], [additional palette data]`  
+**Example (CHR ROM)**: `<addition>2E,FF16360F,12,-10,FF,FF000000`  
+**Example (CHR RAM)**: `<addition>0E0E079C1E3EA7076101586121010000,0F100017,0,30,00000000000000000000000000000000,FF123456`
+
+For CHR ROM games, `tile data` is an integer (in hexadecimal) representing the position of the original tile in CHR ROM.  
+For CHR RAM games, `tile data` is a 32-character hexadecimal string representing all 16 bytes of the tile.  
+`palette data` is always an 8-character hexadecimal string representing all 4 bytes of the palette used for the tile.  For sprites, the first byte is always "FF".
+
+`<addition>` define one additional tile to be shown when a matching sprite tile is found. The `distance x` and `distance y` parameters define where it will be shown. The `additional tile data` and `additional palette data` parameters define how the additional tile is identified. The tile can only be shown by using `<tile>` tag to specify the replacement.  
+
+
 ### &lt;background&gt; tag ###
 
 **Syntax**: `<background>[name - text], [brightness level - float (default: 1.0)], [horizontal scroll ratio (optional) - float], [vertical scroll ratio (optional) - float], [priority level (optional) - int, 0 to 39 (default 10)], [image left offset (optional) - int], [image top offset (optional) - int]`  
