@@ -409,7 +409,7 @@ void HdNesPack::GetPixels(uint32_t x, uint32_t y, HdPpuPixelInfo &pixelInfo, uin
 			renderAdd = true;
 		}
 		else{
-			renderAdd = (pixelInfo.Sprite[sprIdx].OAMIndex <= pixelInfo.SprAddition[addIdx].OAMIndex);
+			renderAdd = (pixelInfo.Sprite[sprIdx].OAMIndex % 64 <= pixelInfo.SprAddition[addIdx].OAMIndex % 64);
 		}
 		if (renderAdd) {
 			if (pixelInfo.SprAddition[addIdx].BackgroundPriority) {
@@ -462,7 +462,7 @@ void HdNesPack::GetPixels(uint32_t x, uint32_t y, HdPpuPixelInfo &pixelInfo, uin
 			renderAdd = true;
 		}
 		else {
-			renderAdd = (pixelInfo.Sprite[sprIdx].OAMIndex <= pixelInfo.SprAddition[addIdx].OAMIndex);
+			renderAdd = (pixelInfo.Sprite[sprIdx].OAMIndex % 64 <= pixelInfo.SprAddition[addIdx].OAMIndex % 64);
 		}
 		if (renderAdd) {
 			if (!pixelInfo.SprAddition[addIdx].BackgroundPriority) {
