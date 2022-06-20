@@ -380,6 +380,10 @@ void HdNesPack::GetPixels(uint32_t x, uint32_t y, HdPpuPixelInfo &pixelInfo, uin
 
 	bool hasSprite = pixelInfo.SpriteCount > 0;
 	uint8_t additionCount = (_hdData->Additions.size() > 0 ? _hdScreenInfo->AdditionCount[y * 256 + x] : 0);
+	int8_t sprIdx;
+	int8_t addIdx;
+	bool renderAdd;
+
 	bool renderOriginalTiles = ((_hdData->OptionFlags & (int)HdPackOptions::DontRenderOriginalTiles) == 0);
 	if(pixelInfo.Tile.TileIndex != HdPpuTileInfo::NoTile) {
 		hdPackTileInfo = GetCachedMatchingTile(x, y, &pixelInfo.Tile);
@@ -395,27 +399,38 @@ void HdNesPack::GetPixels(uint32_t x, uint32_t y, HdPpuPixelInfo &pixelInfo, uin
 		DrawBackgroundLayer(HdNesPack::BehindBgSpritesPriority+i, x, y, outputBuffer, screenWidth);
 	}
 
-	if (additionCount > 0) {
-		for (int k = additionCount - 1; k >= 0; k--) {
-			if (pixelInfo.SprAddition[k].BackgroundPriority) {
-				hdPackSpriteInfo = GetMatchingTile(x, y, &pixelInfo.SprAddition[k]);
-				if (hdPackSpriteInfo) {
-					DrawSpriteTile(pixelInfo.SprAddition[k], *hdPackSpriteInfo, outputBuffer, screenWidth, k);
-				}
-			}
+	sprIdx = pixelInfo.SpriteCount - 1;
+	addIdx = additionCount - 1;
+	while (sprIdx >= 0 || addIdx >= 0) {
+		if (addIdx < 0) {
+			renderAdd = false;
 		}
-	}
-
-	if(hasSprite) {
-		for(int k = pixelInfo.SpriteCount - 1; k >= 0; k--) {
-			if(pixelInfo.Sprite[k].BackgroundPriority) {
-				hdPackSpriteInfo = GetMatchingTile(x, y, &pixelInfo.Sprite[k]);
-				if(hdPackSpriteInfo) {
-					DrawSpriteTile(pixelInfo.Sprite[k], *hdPackSpriteInfo, outputBuffer, screenWidth, k);
-				} else if(pixelInfo.Sprite[k].SpriteColorIndex != 0) {
-					DrawSpriteColor(_palette[pixelInfo.Sprite[k].SpriteColor], outputBuffer, _hdData->Scale, screenWidth, k);
+		else if (sprIdx < 0) {
+			renderAdd = true;
+		}
+		else{
+			renderAdd = (pixelInfo.Sprite[sprIdx].OAMIndex <= pixelInfo.SprAddition[addIdx].OAMIndex);
+		}
+		if (renderAdd) {
+			if (pixelInfo.SprAddition[addIdx].BackgroundPriority) {
+				hdPackSpriteInfo = GetMatchingTile(x, y, &pixelInfo.SprAddition[addIdx]);
+				if (hdPackSpriteInfo) {
+					DrawSpriteTile(pixelInfo.SprAddition[addIdx], *hdPackSpriteInfo, outputBuffer, screenWidth, addIdx);
 				}
 			}
+			addIdx--;
+		}
+		else {
+			if (pixelInfo.Sprite[sprIdx].BackgroundPriority) {
+				hdPackSpriteInfo = GetMatchingTile(x, y, &pixelInfo.Sprite[sprIdx]);
+				if (hdPackSpriteInfo) {
+					DrawSpriteTile(pixelInfo.Sprite[sprIdx], *hdPackSpriteInfo, outputBuffer, screenWidth, sprIdx);
+				}
+				else if (pixelInfo.Sprite[sprIdx].SpriteColorIndex != 0) {
+					DrawSpriteColor(_palette[pixelInfo.Sprite[sprIdx].SpriteColor], outputBuffer, _hdData->Scale, screenWidth, sprIdx);
+				}
+			}
+			sprIdx--;
 		}
 	}
 	
@@ -437,28 +452,38 @@ void HdNesPack::GetPixels(uint32_t x, uint32_t y, HdPpuPixelInfo &pixelInfo, uin
 	}
 
 
-	if (additionCount > 0) {
-		for (int k = additionCount - 1; k >= 0; k--) {
-			if (!pixelInfo.SprAddition[k].BackgroundPriority) {
-				hdPackSpriteInfo = GetMatchingTile(x, y, &pixelInfo.SprAddition[k]);
-				if (hdPackSpriteInfo) {
-					DrawSpriteTile(pixelInfo.SprAddition[k], *hdPackSpriteInfo, outputBuffer, screenWidth, k);
-				}
-			}
+	sprIdx = pixelInfo.SpriteCount - 1;
+	addIdx = additionCount - 1;
+	while (sprIdx >= 0 || addIdx >= 0) {
+		if (addIdx < 0) {
+			renderAdd = false;
 		}
-	}
-
-
-	if(hasSprite) {
-		for(int k = pixelInfo.SpriteCount - 1; k >= 0; k--) {
-			if(!pixelInfo.Sprite[k].BackgroundPriority) {
-				hdPackSpriteInfo = GetMatchingTile(x, y, &pixelInfo.Sprite[k]);
-				if(hdPackSpriteInfo) {
-					DrawSpriteTile(pixelInfo.Sprite[k], *hdPackSpriteInfo, outputBuffer, screenWidth, k);
-				} else if(pixelInfo.Sprite[k].SpriteColorIndex != 0) {
-					DrawSpriteColor(_palette[pixelInfo.Sprite[k].SpriteColor], outputBuffer, _hdData->Scale, screenWidth, k);
+		else if (sprIdx < 0) {
+			renderAdd = true;
+		}
+		else {
+			renderAdd = (pixelInfo.Sprite[sprIdx].OAMIndex <= pixelInfo.SprAddition[addIdx].OAMIndex);
+		}
+		if (renderAdd) {
+			if (!pixelInfo.SprAddition[addIdx].BackgroundPriority) {
+				hdPackSpriteInfo = GetMatchingTile(x, y, &pixelInfo.SprAddition[addIdx]);
+				if (hdPackSpriteInfo) {
+					DrawSpriteTile(pixelInfo.SprAddition[addIdx], *hdPackSpriteInfo, outputBuffer, screenWidth, addIdx);
 				}
 			}
+			addIdx--;
+		}
+		else {
+			if (!pixelInfo.Sprite[sprIdx].BackgroundPriority) {
+				hdPackSpriteInfo = GetMatchingTile(x, y, &pixelInfo.Sprite[sprIdx]);
+				if (hdPackSpriteInfo) {
+					DrawSpriteTile(pixelInfo.Sprite[sprIdx], *hdPackSpriteInfo, outputBuffer, screenWidth, sprIdx);
+				}
+				else if (pixelInfo.Sprite[sprIdx].SpriteColorIndex != 0) {
+					DrawSpriteColor(_palette[pixelInfo.Sprite[sprIdx].SpriteColor], outputBuffer, _hdData->Scale, screenWidth, sprIdx);
+				}
+			}
+			sprIdx--;
 		}
 	}
 
