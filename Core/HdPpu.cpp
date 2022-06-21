@@ -109,12 +109,8 @@ void HdPpu::DrawPixel()
 					
 					if (!_spriteFrameRanges[tileInfo.Sprite[j].OAMIndex].updated) {
 						//fill the current frame sprite
-						if (isChrRam) {
-							memcpy(_spriteFrameRanges[tileInfo.Sprite[j].OAMIndex].current.TileData, tileInfo.Sprite[j].TileData, 16);
-						}
-						else {
-							_spriteFrameRanges[tileInfo.Sprite[j].OAMIndex].current.TileIndex = tileInfo.Sprite[j].TileIndex;
-						}
+						memcpy(_spriteFrameRanges[tileInfo.Sprite[j].OAMIndex].current.TileData, tileInfo.Sprite[j].TileData, 16);
+						_spriteFrameRanges[tileInfo.Sprite[j].OAMIndex].current.TileIndex = tileInfo.Sprite[j].TileIndex;
 						_spriteFrameRanges[tileInfo.Sprite[j].OAMIndex].current.PaletteColors = tileInfo.Sprite[j].PaletteColors;
 						_spriteFrameRanges[tileInfo.Sprite[j].OAMIndex].current.HorizontalMirroring = tileInfo.Sprite[j].HorizontalMirroring;
 						_spriteFrameRanges[tileInfo.Sprite[j].OAMIndex].current.VerticalMirroring = tileInfo.Sprite[j].VerticalMirroring;
@@ -122,42 +118,6 @@ void HdPpu::DrawPixel()
 						_spriteFrameRanges[tileInfo.Sprite[j].OAMIndex].current.ScreenX = sprite.SpriteX;
 						_spriteFrameRanges[tileInfo.Sprite[j].OAMIndex].current.ScreenY = _scanline - tileInfo.Sprite[j].OffsetY;
 						_spriteFrameRanges[tileInfo.Sprite[j].OAMIndex].updated = true;
-					}
-					
-					//check for valid addition
-					for (uint8_t k = 0; k < _hdData->Additions.size(); k++) {
-						if (*(_hdData->Additions[k]) == tileInfo.Sprite[j]) {
-							int16_t addX = _cycle + (tileInfo.Sprite[j].HorizontalMirroring ? -_hdData->Additions[k]->OffsetX : _hdData->Additions[k]->OffsetX) - 1;
-							int16_t addY = _scanline + (tileInfo.Sprite[j].VerticalMirroring ? -_hdData->Additions[k]->OffsetY : _hdData->Additions[k]->OffsetY);
-							if (addX >= 0 && addX < 256 && addY >= 0 && addY < 240) {
-								uint16_t addBufferOffset = (addY << 8) + addX;
-								HdPpuPixelInfo& addTileInfo = _info->ScreenTiles[addBufferOffset];
-								uint8_t insertIdx = _info->AdditionCount[addBufferOffset];
-								for (int8_t l = _info->AdditionCount[addBufferOffset] - 1; l >=0; l--) {
-									if (addTileInfo.SprAddition[l].OAMIndex >= sprite.OAMIndex) {
-										if (l < 3) {
-											//shift back item
-											addTileInfo.SprAddition[l + 1] = addTileInfo.SprAddition[l];
-										}
-										insertIdx = l;
-									}
-								}
-								if (insertIdx < 4) {
-									addTileInfo.SprAddition[insertIdx] = tileInfo.Sprite[j];
-									addTileInfo.SprAddition[insertIdx].PaletteColors = _hdData->Additions[k]->additionSpr.PaletteColors;
-									if (isChrRam) {
-										memcpy(addTileInfo.SprAddition[insertIdx].TileData, _hdData->Additions[k]->additionSpr.TileData, 16);
-									}
-									else {
-										addTileInfo.SprAddition[insertIdx].TileIndex = _hdData->Additions[k]->additionSpr.TileIndex;
-									}
-									addTileInfo.SprAddition[insertIdx].OAMIndex = sprite.OAMIndex;
-									if (_info->AdditionCount[addBufferOffset] < 4) {
-										_info->AdditionCount[addBufferOffset]++;
-									}
-								}
-							}
-						}
 					}
 
 					j++;
@@ -187,8 +147,8 @@ void HdPpu::DrawPixel()
 			tileInfo.Tile.TileIndex = HdPpuTileInfo::NoTile;
 		}
 		
-		//match sprite frame range at screen end
 		if (bufferOffset == PixelCount - 1) {
+			//match sprite frame range at screen end
 			uint16_t distance;
 			uint16_t newDistance;
 			uint16_t newDistanceX;
@@ -224,6 +184,46 @@ void HdPpu::DrawPixel()
 								}
 								distance = newDistance;
 							}							
+						}
+					}
+				}
+			}
+
+			//check for valid addition
+			for (uint8_t j = 0; j < spriteCnt; j++) {
+				uint8_t i = (_flags.LargeSprites ? (j / 2) + ((j % 2) ? 64 : 0) : j);
+				if (_spriteFrameRanges[i].updated) {
+					for (uint8_t k = 0; k < _hdData->Additions.size(); k++) {
+						if (*(_hdData->Additions[k]) == _spriteFrameRanges[i].current) {
+							int16_t addX = _spriteFrameRanges[i].current.ScreenX + (_spriteFrameRanges[i].current.HorizontalMirroring ? -_hdData->Additions[k]->OffsetX : _hdData->Additions[k]->OffsetX);
+							int16_t addY = _spriteFrameRanges[i].current.ScreenY + (_spriteFrameRanges[i].current.VerticalMirroring ? -_hdData->Additions[k]->OffsetY : _hdData->Additions[k]->OffsetY);
+
+							HdPpuTileInfo addSp;
+							addSp.HorizontalMirroring = _spriteFrameRanges[i].current.HorizontalMirroring;
+							addSp.VerticalMirroring = _spriteFrameRanges[i].current.VerticalMirroring;
+							addSp.BackgroundPriority = _spriteFrameRanges[i].current.BackgroundPriority;
+							addSp.PaletteColors = _hdData->Additions[k]->additionSpr.PaletteColors;
+							addSp.IsChrRamTile = isChrRam;
+							memcpy(addSp.TileData, _hdData->Additions[k]->additionSpr.TileData, 16);
+							addSp.TileIndex = _hdData->Additions[k]->additionSpr.TileIndex;
+							addSp.OAMIndex = i;
+
+							for (uint8_t px = 0; px < 8; px++) {
+								for (uint8_t py = 0; py < 8; py++) {
+									int16_t rx = addX + px;
+									int16_t ry = addY + py;
+									if (rx >= 0 && rx < 256 && ry >= 0 && ry < 240) {
+										uint16_t addBufferOffset = (ry << 8) + rx;
+										if (_info->AdditionCount[addBufferOffset] < 4) {
+											HdPpuPixelInfo& addTileInfo = _info->ScreenTiles[addBufferOffset];
+											addTileInfo.SprAddition[_info->AdditionCount[addBufferOffset]] = addSp;
+											addTileInfo.SprAddition[_info->AdditionCount[addBufferOffset]].OffsetX = px;
+											addTileInfo.SprAddition[_info->AdditionCount[addBufferOffset]].OffsetY = py;
+											_info->AdditionCount[addBufferOffset]++;
+										}
+									}
+								}
+							}
 						}
 					}
 				}

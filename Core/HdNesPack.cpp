@@ -185,7 +185,6 @@ void HdNesPack::DrawSpriteTile(HdPpuTileInfo& tileInfo, HdPackTileInfo& hdPackTi
 			for (uint32_t x = 0; x < scale; x++) {
 				if (spriteID <= *it) {
 					
-
 					if (hdPackTileInfo.Brightness == 255) {
 						rgbValue = *(bitmapData + bitmapOffset);
 					}
@@ -450,7 +449,6 @@ void HdNesPack::GetPixels(uint32_t x, uint32_t y, HdPpuPixelInfo &pixelInfo, uin
 	for(int i = 0; i < _activeBgCount[2]; i++) {
 		DrawBackgroundLayer(HdNesPack::BehindFgSpritesPriority+i, x, y, outputBuffer, screenWidth);
 	}
-
 
 	sprIdx = pixelInfo.SpriteCount - 1;
 	addIdx = additionCount - 1;
