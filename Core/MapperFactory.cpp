@@ -74,6 +74,7 @@
 #include "FaridUnrom.h"
 #include "FDS.h"
 #include "Fk23C.h"
+#include "Mapper523.h"
 #include "FrontFareast.h"
 #include "Ghostbusters63in1.h"
 #include "Gkcx1.h"
@@ -193,8 +194,12 @@
 #include "Mapper403.h"
 #include "Mapper402.h"
 #include "Mapper452.h"
+#include "Mapper533.h"
+#include "Mapper535.h"
 #include "Mapper538.h"
+#include "Mapper539.h"
 #include "Mapper540.h"
+#include "Mapper549.h"
 #include "Mapper556.h"
 #include "McAcc.h"
 #include "MMC1.h"
@@ -285,6 +290,7 @@
 #include "Namco108_88.h"
 #include "Namco108_95.h"
 #include "Namco108_154.h"
+#include "Namco108_418.h"
 #include "Namco108_557.h"
 #include "Namco163.h"
 #include "Nanjing.h"
@@ -803,7 +809,8 @@ BaseMapper* MapperFactory::GetMapperFromID(RomData &romData)
 		case 415: return new Mapper415();
 		case 416: return new Mapper416();
 		case 417: return new Mapper417();
-		//418-21
+		case 418: return new Namco108_418();
+		//419-21
 		case 422: return new MMC3_422();
 		//423-428
 		case 429: return new Mapper429();
@@ -837,7 +844,7 @@ BaseMapper* MapperFactory::GetMapperFromID(RomData &romData)
 		//520
 		case 521: return new DreamTech01();
 		case 522: return new Lh10();
-		//523
+		case 523: return new Mapper523();
 		case 524: return new VRC2_4();
 		case 525: return new VRC2_4();
 		case 526: return new UnlBj56();
@@ -845,12 +852,15 @@ BaseMapper* MapperFactory::GetMapperFromID(RomData &romData)
 		case 528: return new Unl831128C();
 		case 529: return new T230();
 		case 530: return new Ax5705();
+		case 533: return new Mapper533();
 		case 534: return new MMC3_534();
+		case 535: return new Mapper535();
 		case 538: return new Mapper538();
-
+		case 539: return new Mapper539();
 		case 540: return new Mapper540();
 		case 541: return new Mapper541();
 		case 548: return new Ctc15();
+		case 549: return new Mapper549();
 		case 550: return new MMC1_550();
 		case 551: return new Waixing178();
 		case 552: return new TaitoX1017();

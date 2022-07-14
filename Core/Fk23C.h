@@ -1,6 +1,8 @@
 #pragma once
 #include "stdafx.h"
 #include "BaseMapper.h"
+#include "CPU.h"
+#include "A12Watcher.h"
 
 class Fk23C : public BaseMapper
 {
@@ -11,17 +13,17 @@ private:
 	bool _mmc3ChrMode;
 	bool _cnromChrMode;
 	uint16_t _prgBaseBits;
-	uint8_t _chrBaseBits;
+	uint16_t _chrBaseBits;
 	bool _extendedMmc3Mode;
 	uint8_t _wramBankSelect;
 	bool _ramInFirstChrBank;
 	bool _allowSingleScreenMirroring;
 	bool _fk23RegistersEnabled;
 	bool _wramConfigEnabled;
-	
+
 	bool _wramEnabled;
 	bool _wramWriteProtected;
-	
+
 	bool _invertPrgA14;
 	bool _invertChrA12;
 
@@ -34,24 +36,52 @@ private:
 
 	uint8_t _mirroringReg;
 
-	uint8_t _cnromChrReg;
+	uint8_t _latch;
 	uint8_t _mmc3Registers[12];
-	
+
 	uint8_t _irqDelay;
 	A12Watcher _a12Watcher;
 
 protected:
-	uint16_t GetPRGPageSize() override { return 0x2000; }
-	uint16_t GetCHRPageSize() override { return 0x0400; }
-	
-	uint32_t GetChrRamSize() override { return 0x40000; } //Some games have up to 256kb of CHR RAM (only used for iNES 1.0 files w/ no DB entry)
-	uint16_t GetChrRamPageSize() override { return 0x400; }
+	virtual uint16_t GetPRGPageSize() override { return 0x2000; }
+	virtual uint16_t GetCHRPageSize() override { return 0x0400; }
 
-	uint32_t GetWorkRamSize() override { return 0x8000; } //Somes games have up to 32kb of Work RAM (only used for iNES 1.0 files w/ no DB entry)
-	uint32_t GetWorkRamPageSize() override { return 0x2000; }
+	virtual uint32_t GetChrRamSize() override {
+		if(!_romInfo.IsNes20Header && !_romInfo.IsInDatabase) {
+			if(HasChrRom()) {
+				// Rockman I-VI uses mixed chr rom/ram
+				if((_prgSize == 2048 * 1024) && (_chrRomSize == 512 * 1024)) {
+					return 0x2000;
+				} else {
+					return 0;
+				}
+			}
+		}
+		
+		return 0x40000; // Some games have up to 256kb of CHR RAM (only used for iNES 1.0 files w/ no DB entry)
+	}
 
-	void InitMapper() override
+	virtual uint16_t GetChrRamPageSize() override { return 0x400; }
+
+	virtual uint32_t GetWorkRamSize() override { return 0x8000; } //Somes games have up to 32kb of Work RAM (only used for iNES 1.0 files w/ no DB entry)
+	virtual uint32_t GetWorkRamPageSize() override { return 0x2000; }
+
+	virtual void InitMapper() override
 	{
+		if(!_romInfo.IsNes20Header && !_romInfo.IsInDatabase) {
+			if(!HasChrRom()) {
+				if(_prgSize >= 8192 * 1024) { // 120-in-1 (Unl)[U].unif
+					_romInfo.SubMapperID = 2;
+				}
+			} else {
+				if((_prgSize == 1024 *1024) && (_chrRomSize == _prgSize)) { // 4-in-1 (FK23C8078) (Ch) [p1][U][!].unf
+					_romInfo.SubMapperID = 1;
+				} else if((_prgSize >= 128 * 1024) && (_chrRomSize == 64 * 1024)) { // 126-in-1 (5-in-1, 16-in-1, 22-in-1, 42-in-1, 56-in-1, 62-in-1) [p1][U][!].unf
+					_romInfo.SubMapperID = 1;
+				}
+			}
+		}
+
 		//$5000
 		_prgBankingMode = 0;
 		_outerChrBankSize = 0;
@@ -72,15 +102,15 @@ protected:
 		//$A001
 		_wramBankSelect = 0;
 		_ramInFirstChrBank = false;
-		_allowSingleScreenMirroring = false;
+		_allowSingleScreenMirroring = (_romInfo.SubMapperID == 2);
 		_wramConfigEnabled = false;
 		_fk23RegistersEnabled = false;
-		_wramEnabled = false;
+		_wramEnabled = true;
 		_wramWriteProtected = false;
 
 		_currentRegister = 0;
 
-		_cnromChrReg = 0;
+		_latch = 0;
 
 		constexpr uint8_t initValues[12] = { 0,2,4,5,6,7,0,1,0xFE, 0xFF, 0xFF, 0xFF };
 		for(int i = 0; i < 12; i++) {
@@ -99,10 +129,15 @@ protected:
 		_irqDelay = 0;
 
 		AddRegisterRange(0x5000, 0x5FFF, MemoryOperation::Write);
+
+		if(_romInfo.SubMapperID == 5) {
+			AddRegisterRange(0x4800, 0x4FFF, MemoryOperation::Write);
+		}
+
 		UpdateState();
 	}
 
-	void Reset(bool softReset) override
+	virtual void Reset(bool softReset) override
 	{
 		if(softReset) {
 			if(_wramConfigEnabled && _selectChrRam && HasBattery()) {
@@ -112,7 +147,7 @@ protected:
 		}
 	}
 
-	void StreamState(bool saving) override 
+	virtual void StreamState(bool saving) override
 	{
 		SnapshotInfo a12Watcher { &_a12Watcher };
 		ArrayInfo<uint8_t> regs { _mmc3Registers, 12 };
@@ -120,7 +155,7 @@ protected:
 		Stream(
 			_prgBankingMode, _outerChrBankSize, _selectChrRam, _mmc3ChrMode, _cnromChrMode, _prgBaseBits, _chrBaseBits, _extendedMmc3Mode,
 			_wramBankSelect, _ramInFirstChrBank, _allowSingleScreenMirroring, _fk23RegistersEnabled, _wramConfigEnabled, _wramEnabled, _wramWriteProtected,
-			_invertPrgA14, _invertChrA12, _currentRegister, _irqReloadValue,_irqCounter, _irqReload, _irqEnabled, _mirroringReg, _cnromChrReg,
+			_invertPrgA14, _invertChrA12, _currentRegister, _irqReloadValue,_irqCounter, _irqReload, _irqEnabled, _mirroringReg, _latch,
 			_irqDelay, regs, a12Watcher
 		);
 
@@ -129,35 +164,43 @@ protected:
 		}
 	}
 
-	void SelectCHRPage(uint16_t slot, uint16_t page, ChrMemoryType memoryType = ChrMemoryType::Default) override
+	virtual void SelectCHRPage(uint16_t slot, uint16_t page, ChrMemoryType memoryType = ChrMemoryType::Default) override
 	{
 		bool useChrRam = !HasChrRom() || (_selectChrRam && _chrRamSize > 0) || (_wramConfigEnabled && _ramInFirstChrBank && page <= 7);
 		BaseMapper::SelectCHRPage(slot, page, useChrRam ? ChrMemoryType::ChrRam : ChrMemoryType::ChrRom);
 	}
 
-	void UpdatePrg()
+	virtual void UpdatePrg()
 	{
 		switch(_prgBankingMode) {
 			case 0:
 			case 1:
-			case 2:
+			case 2: {
+				uint8_t innerMask = 0x3F >> _prgBankingMode;
+
+				if((_romInfo.SubMapperID == 1 || _romInfo.SubMapperID == 3)) {
+					if(_prgBankingMode == 0) {
+						innerMask = 0xFF;
+					}
+				}
+
 				if(_extendedMmc3Mode) {
 					uint8_t swap = _invertPrgA14 ? 2 : 0;
-					uint16_t outer = (_prgBaseBits << 1);
-					SelectPRGPage(0 ^ swap, _mmc3Registers[6] | outer);
-					SelectPRGPage(1, _mmc3Registers[7] | outer);
-					SelectPRGPage(2 ^ swap, _mmc3Registers[8] | outer);
-					SelectPRGPage(3, _mmc3Registers[9] | outer);
-				} else {
-					uint8_t swap = _invertPrgA14 ? 2 : 0;
-					uint8_t innerMask = 0x3F >> _prgBankingMode;
 					uint16_t outer = (_prgBaseBits << 1) & ~innerMask;
 					SelectPRGPage(0 ^ swap, (_mmc3Registers[6] & innerMask) | outer);
-					SelectPRGPage(1, (_mmc3Registers[7] & innerMask) | outer);
-					SelectPRGPage(2 ^ swap, (0xFE & innerMask) | outer);
-					SelectPRGPage(3, (0xFF & innerMask) | outer);
+					SelectPRGPage(1,        (_mmc3Registers[7] & innerMask) | outer);
+					SelectPRGPage(2 ^ swap, (_mmc3Registers[8] & innerMask) | outer);
+					SelectPRGPage(3,        (_mmc3Registers[9] & innerMask) | outer);
+				} else {
+					uint8_t swap = _invertPrgA14 ? 2 : 0;
+					uint16_t outer = (_prgBaseBits << 1) & ~innerMask;
+					SelectPRGPage(0 ^ swap, (_mmc3Registers[6] & innerMask) | outer);
+					SelectPRGPage(1,        (_mmc3Registers[7] & innerMask) | outer);
+					SelectPRGPage(2 ^ swap, (0xFE              & innerMask) | outer);
+					SelectPRGPage(3,        (0xFF              & innerMask) | outer);
 				}
 				break;
+			}
 
 			case 3:
 				SelectPrgPage2x(0, _prgBaseBits << 1);
@@ -167,18 +210,23 @@ protected:
 			case 4:
 				SelectPrgPage4x(0, (_prgBaseBits & 0xFFE) << 1);
 				break;
+			
+			case 5:
+				SelectPrgPage2x(0, ((_latch & 0x07) | (_prgBaseBits & ~0x07)) << 1);
+				SelectPrgPage2x(1, (0x07 | _prgBaseBits) << 1);
+				break;
 
 			default:
 				break;
 		}
 	}
 
-	void UpdateChr()
+	virtual void UpdateChr()
 	{
 		if(!_mmc3ChrMode) {
 			uint16_t innerMask = _cnromChrMode ? (_outerChrBankSize ? 1 : 3) : 0;
 			for(int i = 0; i < 8; i++) {
-				SelectCHRPage(i, (((_cnromChrReg & innerMask) | _chrBaseBits) << 3) + i);
+				SelectCHRPage(i, (((_latch & innerMask) | _chrBaseBits) << 3) + i);
 			}
 		} else {
 			uint8_t swap = _invertChrA12 ? 0x04 : 0;
@@ -208,7 +256,7 @@ protected:
 		}
 	}
 
-	void UpdateState()
+	virtual void UpdateMirroring()
 	{
 		switch(_mirroringReg & (_allowSingleScreenMirroring ? 0x03 : 0x01)) {
 			case 0: SetMirroringType(MirroringType::Vertical); break;
@@ -216,7 +264,11 @@ protected:
 			case 2: SetMirroringType(MirroringType::ScreenAOnly); break;
 			case 3: SetMirroringType(MirroringType::ScreenBOnly); break;
 		}
+	}
 
+	virtual void UpdateState()
+	{
+		UpdateMirroring();
 		UpdatePrg();
 		UpdateChr();
 
@@ -234,49 +286,81 @@ protected:
 		};
 	}
 
-	void WriteRegister(uint16_t addr, uint8_t value) override
+	virtual void WriteRegister(uint16_t addr, uint8_t value) override
 	{
 		if(addr < 0x8000) {
-			if(_fk23RegistersEnabled || !_wramConfigEnabled) {
+			if(((addr >= 0x5000) && (addr <= 0x5FFF)) &&
+				(_fk23RegistersEnabled || !_wramConfigEnabled)) {
 				uint16_t mask = 0x5010;
 				if((addr & mask) != mask) {
 					//not a register
 					return;
 				}
 
-				switch(addr & 0x03) {
+				switch(addr & ((_romInfo.SubMapperID == 3) ? 0x07 : 0x03)) {
 					case 0:
 						_prgBankingMode = value & 0x07;
 						_outerChrBankSize = (value & 0x10) >> 4;
 						_selectChrRam = (value & 0x20) != 0;
+						if(_romInfo.SubMapperID == 1 || _romInfo.SubMapperID == 5) {
+							_cnromChrMode = (value & 0x20) == 0; // Only submapper 1/5 have CNROM latch
+						}
 						_mmc3ChrMode = (value & 0x40) == 0;
-						_prgBaseBits = (_prgBaseBits & ~0x180) | ((value & 0x80) << 1) | ((value & 0x08) << 4);
+						if(_romInfo.SubMapperID == 2) {
+							_prgBaseBits = (_prgBaseBits & ~0x180) | ((value & 0x80) << 1) | ((value & 0x08) << 4);
+						}
 						break;
 
 					case 1:
-						_prgBaseBits = (_prgBaseBits & ~0x7F) | (value & 0x7F);
+						if(_romInfo.SubMapperID == 5) {
+							_prgBaseBits = (_prgBaseBits & ~0x1F) | (value & 0x1F);
+						} else {
+							_prgBaseBits = (_prgBaseBits & ~0x7F) | (value & 0x7F);
+						}
 						break;
 
 					case 2:
-						_prgBaseBits = (_prgBaseBits & ~0x200) | ((value & 0x40) << 3);
 						_chrBaseBits = value;
-						_cnromChrReg = 0;
+						if(_romInfo.SubMapperID == 2) {
+							_prgBaseBits = (_prgBaseBits & ~0xE00) | ((value & 0xC0) << 3) | ((value & 0x20) << 6);
+						} else if(_romInfo.SubMapperID == 4) {
+							_prgBaseBits = (_prgBaseBits & ~0x80) | (value & 0x80);
+						}
 						break;
 
 					case 3:
 						_extendedMmc3Mode = (value & 0x02) != 0;
-						_cnromChrMode = (value & 0x44) != 0;
+						break;
+
+					// Submapper 3 has 8 registers, providing PRG/CHR A21
+					case 5:
+						_prgBaseBits = (_prgBaseBits & 0x7F) | ((value & 0x0F) << 7);
+						break;
+
+					case 6:
+						_chrBaseBits |= value << 8;
 						break;
 				}
 				UpdateState();
 			} else {
-				//FK23C Registers disabled, $5000-$5FFF maps to the second 4 KiB of the 8 KiB WRAM bank 2
-				WritePrgRam(addr, value);
+				if(addr <= 0x4FFF) {
+					// address $4800 - $4FFF is only enabled in submapper 5
+					_prgBaseBits = (_prgBaseBits & 0x1F) | (value << 5);
+					UpdatePrg();
+				} else {
+					//FK23C Registers disabled, $5000-$5FFF maps to the second 4 KiB of the 8 KiB WRAM bank 2
+					WritePrgRam(addr, value);
+				}
 			}
 		} else {
-			if(_cnromChrMode && (addr <= 0x9FFF || addr >= 0xC000)) {
-				_cnromChrReg = value & 0x03;
-				UpdateState();
+			_latch = value;
+
+			if(_prgBankingMode == 5) {
+				UpdatePrg(); // Update UNROM latch
+			}
+
+			if(!_mmc3ChrMode && _cnromChrMode) {
+				UpdateChr(); //Update CNROM latch
 			}
 
 			switch(addr & 0xE001) {
@@ -307,6 +391,7 @@ protected:
 					break;
 
 				case 0xA001:
+					// NOTE: bit 3 is unknown
 					if((value & 0x20) == 0) {
 						//Ignore extra bits if bit 5 is not set
 						value &= 0xC0;
@@ -314,10 +399,9 @@ protected:
 
 					_wramBankSelect = (value & 0x03);
 					_ramInFirstChrBank = (value & 0x04) != 0;
-					_allowSingleScreenMirroring = (value & 0x08) != 0;
 					_wramConfigEnabled = (value & 0x20) != 0;
 					_fk23RegistersEnabled = (value & 0x40) != 0;
-					
+
 					_wramWriteProtected = (value & 0x40) != 0;
 					_wramEnabled = (value & 0x80) != 0;
 

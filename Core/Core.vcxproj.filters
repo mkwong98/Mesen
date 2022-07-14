@@ -475,6 +475,9 @@
     <ClInclude Include="Namco108_154.h">
       <Filter>Nes\Mappers\Namco</Filter>
     </ClInclude>
+    <ClInclude Include="Namco108_418.h">
+      <Filter>Nes\Mappers\Namco</Filter>
+    </ClInclude>
     <ClInclude Include="Namco108_557.h">
       <Filter>Nes\Mappers\Namco</Filter>
     </ClInclude>
@@ -1561,10 +1564,25 @@
     <ClInclude Include="Mapper452.h">
       <Filter>Nes\Mappers\Unnamed</Filter>
     </ClInclude>
+    <ClInclude Include="Mapper523.h">
+      <Filter>Nes\Mappers\Unnamed</Filter>
+    </ClInclude>
+    <ClInclude Include="Mapper533.h">
+      <Filter>Nes\Mappers\Unnamed</Filter>
+    </ClInclude>
+    <ClInclude Include="Mapper535.h">
+      <Filter>Nes\Mappers\Unnamed</Filter>
+    </ClInclude>
     <ClInclude Include="Mapper538.h">
       <Filter>Nes\Mappers\Unnamed</Filter>
     </ClInclude>
+    <ClInclude Include="Mapper539.h">
+      <Filter>Nes\Mappers\Unnamed</Filter>
+    </ClInclude>
     <ClInclude Include="Mapper540.h">
+      <Filter>Nes\Mappers\Unnamed</Filter>
+    </ClInclude>
+    <ClInclude Include="Mapper549.h">
       <Filter>Nes\Mappers\Unnamed</Filter>
     </ClInclude>
     <ClInclude Include="Mapper556.h">
@@ -1721,6 +1739,9 @@
       <Filter>Rewinder</Filter>
     </ClInclude>
     <ClInclude Include="Fk23C.h">
+      <Filter>Nes\Mappers\Unif</Filter>
+    </ClInclude>
+    <ClInclude Include="WaixingFS005.h">
       <Filter>Nes\Mappers\Unif</Filter>
     </ClInclude>
     <ClInclude Include="StereoCombFilter.h">
