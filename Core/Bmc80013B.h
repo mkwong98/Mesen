@@ -33,11 +33,11 @@ protected:
 		if(_mode & 0x02) {
 			SelectPRGPage(0, (_regs[0] & 0x0F) | (_regs[1] & 0x70));
 		} else {
-			SelectPRGPage(0, _regs[0] & 0x03);
+			SelectPRGPage(0, (_regs[0] & ((GetPRGPageCount() - 1) & 0x0F)) | 0x80);
 		}
 		
 		SelectPRGPage(1, _regs[1] & 0x7F);
-		SetMirroringType(_regs[0] & 0x10 ? MirroringType::Vertical : MirroringType::Horizontal);
+		SetMirroringType((_regs[0] & 0x10) ? MirroringType::Horizontal : MirroringType::Vertical);
 	}
 
 	void WriteRegister(uint16_t addr, uint8_t value) override
@@ -49,6 +49,6 @@ protected:
 			_regs[1] = value;
 			_mode = reg;
 		}
-		UpdateState();		
+		UpdateState();
 	}
 };

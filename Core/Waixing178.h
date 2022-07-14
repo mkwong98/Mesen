@@ -33,6 +33,17 @@ protected:
 	{
 		uint16_t sbank = _regs[1] & 0x07;
 		uint16_t bbank = _regs[2];
+
+		if (_romInfo.MapperID == 551) {
+			SelectCHRPage(0, _regs[3]);
+			SetCpuMemoryMapping(0x6000, 0x7FFF, 0, PrgMemoryType::WorkRam, MemoryAccessType::ReadWrite);
+			SetMirroringType(_romInfo.Mirroring);
+		} else { // Mapper 178
+			SelectCHRPage(0, 0);
+			SetCpuMemoryMapping(0x6000, 0x7FFF, _regs[3], PrgMemoryType::WorkRam, MemoryAccessType::ReadWrite);
+			SetMirroringType(_regs[0] & 0x01 ? MirroringType::Horizontal : MirroringType::Vertical);
+		}
+		
 		if(_regs[0] & 0x02) {
 			SelectPRGPage(0, (bbank << 3) | sbank);
 			if(_regs[0] & 0x04) {
@@ -46,12 +57,9 @@ protected:
 				SelectPRGPage(0, bank);
 				SelectPRGPage(1, bank);
 			} else {
-				SelectPrgPage2x(0, bank);
+				SelectPrgPage2x(0, bank & 0xFE);
 			}
 		}
-
-		SetCpuMemoryMapping(0x6000, 0x7FFF, _regs[3] & 0x03, PrgMemoryType::WorkRam, MemoryAccessType::ReadWrite);
-		SetMirroringType(_regs[0] & 0x01 ? MirroringType::Horizontal : MirroringType::Vertical);
 	}
 
 	void WriteRegister(uint16_t addr, uint8_t value) override

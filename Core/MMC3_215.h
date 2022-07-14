@@ -31,16 +31,15 @@ protected:
 
 	uint8_t _exRegs[3];
 
-	uint16_t RegisterStartAddress() override { return 0x5000; }
-	uint16_t RegisterEndAddress() override { return 0xFFFF; }
-
 	void InitMapper() override
 	{
 		_exRegs[0] = 0;
 		_exRegs[1] = 3;
-		_exRegs[2] = 0;
+		_exRegs[2] = 4;
 
 		MMC3::InitMapper();
+
+		AddRegisterRange(0x5000, 0x5FFF, MemoryOperation::Write);
 	}
 
 	void StreamState(bool saving) override

@@ -397,6 +397,9 @@
     <ClInclude Include="Mapper62.h">
       <Filter>Nes\Mappers\Unnamed</Filter>
     </ClInclude>
+    <ClInclude Include="Mapper81.h">
+      <Filter>Nes\Mappers\Unnamed</Filter>
+    </ClInclude>
     <ClInclude Include="Mapper91.h">
       <Filter>Nes\Mappers\Unnamed</Filter>
     </ClInclude>
@@ -427,6 +430,9 @@
     <ClInclude Include="Mapper231.h">
       <Filter>Nes\Mappers\Unnamed</Filter>
     </ClInclude>
+    <ClInclude Include="Mapper237.h">
+      <Filter>Nes\Mappers\Unnamed</Filter>
+    </ClInclude>
     <ClInclude Include="Mapper240.h">
       <Filter>Nes\Mappers\Unnamed</Filter>
     </ClInclude>
@@ -437,6 +443,12 @@
       <Filter>Nes\Mappers\Unnamed</Filter>
     </ClInclude>
     <ClInclude Include="Mapper319.h">
+      <Filter>Nes\Mappers\Unnamed</Filter>
+    </ClInclude>
+    <ClInclude Include="Mapper541.h">
+      <Filter>Nes\Mappers\Unnamed</Filter>
+    </ClInclude>
+    <ClInclude Include="Mapper396.h">
       <Filter>Nes\Mappers\Unnamed</Filter>
     </ClInclude>
     <ClInclude Include="Sunsoft89.h">
@@ -461,6 +473,9 @@
       <Filter>Nes\Mappers\Namco</Filter>
     </ClInclude>
     <ClInclude Include="Namco108_154.h">
+      <Filter>Nes\Mappers\Namco</Filter>
+    </ClInclude>
+    <ClInclude Include="Namco108_557.h">
       <Filter>Nes\Mappers\Namco</Filter>
     </ClInclude>
     <ClInclude Include="IremG101.h">
@@ -742,6 +757,9 @@
     <ClInclude Include="Kaiser202.h">
       <Filter>Nes\Mappers\Kaiser</Filter>
     </ClInclude>
+    <ClInclude Include="Kaiser7010.h">
+      <Filter>Nes\Mappers\Kaiser</Filter>
+    </ClInclude>
     <ClInclude Include="Henggedianzi177.h">
       <Filter>Nes\Mappers</Filter>
     </ClInclude>
@@ -796,6 +814,9 @@
     <ClInclude Include="MMC3_534.h">
       <Filter>Nes\Mappers\MMC</Filter>
     </ClInclude>
+    <ClInclude Include="MMC3_516.h">
+      <Filter>Nes\Mappers\MMC</Filter>
+    </ClInclude>
     <ClInclude Include="Waixing178.h">
       <Filter>Nes\Mappers\Waixing</Filter>
     </ClInclude>
@@ -821,6 +842,39 @@
       <Filter>Nes\Mappers\Txc</Filter>
     </ClInclude>
     <ClInclude Include="Mapper234.h">
+      <Filter>Nes\Mappers\Unnamed</Filter>
+    </ClInclude>
+    <ClInclude Include="Mapper453.h">
+      <Filter>Nes\Mappers\Unnamed</Filter>
+    </ClInclude>
+    <ClInclude Include="Mapper438.h">
+      <Filter>Nes\Mappers\Unnamed</Filter>
+    </ClInclude>
+    <ClInclude Include="Mapper437.h">
+      <Filter>Nes\Mappers\Unnamed</Filter>
+    </ClInclude>
+    <ClInclude Include="Mapper433.h">
+      <Filter>Nes\Mappers\Unnamed</Filter>
+    </ClInclude>
+    <ClInclude Include="Mapper431.h">
+      <Filter>Nes\Mappers\Unnamed</Filter>
+    </ClInclude>
+    <ClInclude Include="Mapper429.h">
+      <Filter>Nes\Mappers\Unnamed</Filter>
+    </ClInclude>
+    <ClInclude Include="Mapper417.h">
+      <Filter>Nes\Mappers\Unnamed</Filter>
+    </ClInclude>
+    <ClInclude Include="Mapper416.h">
+      <Filter>Nes\Mappers\Unnamed</Filter>
+    </ClInclude>
+    <ClInclude Include="Mapper415.h">
+      <Filter>Nes\Mappers\Unnamed</Filter>
+    </ClInclude>
+    <ClInclude Include="Mapper414.h">
+      <Filter>Nes\Mappers\Unnamed</Filter>
+    </ClInclude>
+    <ClInclude Include="Mapper409.h">
       <Filter>Nes\Mappers\Unnamed</Filter>
     </ClInclude>
     <ClInclude Include="MMC3_197.h">
@@ -868,6 +922,12 @@
     <ClInclude Include="Mapper120.h">
       <Filter>Nes\Mappers\Unnamed</Filter>
     </ClInclude>
+    <ClInclude Include="Mapper127.h">
+      <Filter>Nes\Mappers\Unnamed</Filter>
+    </ClInclude>
+    <ClInclude Include="Mapper128.h">
+      <Filter>Nes\Mappers\Unnamed</Filter>
+    </ClInclude>
     <ClInclude Include="Mapper244.h">
       <Filter>Nes\Mappers\Unnamed</Filter>
     </ClInclude>
@@ -904,7 +964,13 @@
     <ClInclude Include="Mapper253.h">
       <Filter>Nes\Mappers\Unnamed</Filter>
     </ClInclude>
+    <ClInclude Include="Mapper271.h">
+      <Filter>Nes\Mappers\Unnamed</Filter>
+    </ClInclude>
     <ClInclude Include="Sachen_136.h">
+      <Filter>Nes\Mappers\Sachen</Filter>
+    </ClInclude>
+    <ClInclude Include="Sachen3013.h">
       <Filter>Nes\Mappers\Sachen</Filter>
     </ClInclude>
     <ClInclude Include="UnifLoader.h">
@@ -919,13 +985,34 @@
     <ClInclude Include="Mapper117.h">
       <Filter>Nes\Mappers\Unnamed</Filter>
     </ClInclude>
+    <ClInclude Include="Mapper403.h">
+      <Filter>Nes\Mappers\Unnamed</Filter>
+    </ClInclude>
+    <ClInclude Include="Mapper402.h">
+      <Filter>Nes\Mappers\Unnamed</Filter>
+    </ClInclude>
     <ClInclude Include="A12Watcher.h">
+      <Filter>Nes\Mappers</Filter>
+    </ClInclude>
+    <ClInclude Include="Ctc15.h">
       <Filter>Nes\Mappers</Filter>
     </ClInclude>
     <ClInclude Include="StudyBox.h">
       <Filter>Nes\Mappers</Filter>
     </ClInclude>
     <ClInclude Include="MMC1_105.h">
+      <Filter>Nes\Mappers\MMC</Filter>
+    </ClInclude>
+    <ClInclude Include="MMC1_111.h">
+      <Filter>Nes\Mappers\MMC</Filter>
+    </ClInclude>
+    <ClInclude Include="MMC1_297.h">
+      <Filter>Nes\Mappers\MMC</Filter>
+    </ClInclude>
+    <ClInclude Include="MMC1_404.h">
+      <Filter>Nes\Mappers\MMC</Filter>
+    </ClInclude>
+    <ClInclude Include="MMC1_550.h">
       <Filter>Nes\Mappers\MMC</Filter>
     </ClInclude>
     <ClInclude Include="Waixing162.h">
@@ -935,6 +1022,9 @@
       <Filter>Nes\Mappers\MMC</Filter>
     </ClInclude>
     <ClInclude Include="MMC3_219.h">
+      <Filter>Nes\Mappers\MMC</Filter>
+    </ClInclude>
+    <ClInclude Include="MMC3_291.h">
       <Filter>Nes\Mappers\MMC</Filter>
     </ClInclude>
     <ClInclude Include="AutoSaveManager.h">
@@ -1432,13 +1522,52 @@
     <ClInclude Include="Mapper116.h">
       <Filter>Nes\Mappers\Unnamed</Filter>
     </ClInclude>
+    <ClInclude Include="Mapper326.h">
+      <Filter>Nes\Mappers\Unnamed</Filter>
+    </ClInclude>
+    <ClInclude Include="Mapper330.h">
+      <Filter>Nes\Mappers\Unnamed</Filter>
+    </ClInclude>
+    <ClInclude Include="Mapper357.h">
+      <Filter>Nes\Mappers\Unnamed</Filter>
+    </ClInclude>
+    <ClInclude Include="Mapper359.h">
+      <Filter>Nes\Mappers\Unnamed</Filter>
+    </ClInclude>
+    <ClInclude Include="Mapper360.h">
+      <Filter>Nes\Mappers\Unnamed</Filter>
+    </ClInclude>
     <ClInclude Include="Mapper375.h">
       <Filter>Nes\Mappers\Unnamed</Filter>
     </ClInclude>
     <ClInclude Include="Mapper380.h">
       <Filter>Nes\Mappers\Unnamed</Filter>
     </ClInclude>
+    <ClInclude Include="Mapper382.h">
+      <Filter>Nes\Mappers\Unnamed</Filter>
+    </ClInclude>
+    <ClInclude Include="Mapper385.h">
+      <Filter>Nes\Mappers\Unnamed</Filter>
+    </ClInclude>
+    <ClInclude Include="Mapper389.h">
+      <Filter>Nes\Mappers\Unnamed</Filter>
+    </ClInclude>
+    <ClInclude Include="Mapper400.h">
+      <Filter>Nes\Mappers\Unnamed</Filter>
+    </ClInclude>
     <ClInclude Include="Mapper449.h">
+      <Filter>Nes\Mappers\Unnamed</Filter>
+    </ClInclude>
+    <ClInclude Include="Mapper452.h">
+      <Filter>Nes\Mappers\Unnamed</Filter>
+    </ClInclude>
+    <ClInclude Include="Mapper538.h">
+      <Filter>Nes\Mappers\Unnamed</Filter>
+    </ClInclude>
+    <ClInclude Include="Mapper540.h">
+      <Filter>Nes\Mappers\Unnamed</Filter>
+    </ClInclude>
+    <ClInclude Include="Mapper556.h">
       <Filter>Nes\Mappers\Unnamed</Filter>
     </ClInclude>
     <ClInclude Include="MMC3_208.h">
@@ -1477,7 +1606,13 @@
     <ClInclude Include="MMC3_353.h">
       <Filter>Nes\Mappers\MMC</Filter>
     </ClInclude>
+    <ClInclude Include="MMC3_361.h">
+      <Filter>Nes\Mappers\MMC</Filter>
+    </ClInclude>
     <ClInclude Include="MMC3_364.h">
+      <Filter>Nes\Mappers\MMC</Filter>
+    </ClInclude>
+    <ClInclude Include="MMC3_369.h">
       <Filter>Nes\Mappers\MMC</Filter>
     </ClInclude>
     <ClInclude Include="MMC3_370.h">
@@ -1498,6 +1633,9 @@
     <ClInclude Include="MMC3_395.h">
       <Filter>Nes\Mappers\MMC</Filter>
     </ClInclude>
+    <ClInclude Include="MMC3_399.h">
+      <Filter>Nes\Mappers\MMC</Filter>
+    </ClInclude>
     <ClInclude Include="MMC3_401.h">
       <Filter>Nes\Mappers\MMC</Filter>
     </ClInclude>
@@ -1511,6 +1649,9 @@
       <Filter>Nes\Mappers\MMC</Filter>
     </ClInclude>
     <ClInclude Include="MMC3_267.h">
+      <Filter>Nes\Mappers\MMC</Filter>
+    </ClInclude>
+    <ClInclude Include="MMC3_269.h">
       <Filter>Nes\Mappers\MMC</Filter>
     </ClInclude>
     <ClInclude Include="MMC3_430.h">

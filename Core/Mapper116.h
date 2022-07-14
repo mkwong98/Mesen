@@ -9,6 +9,7 @@ class Mapper116 : public BaseMapper
 private:
 	A12Watcher _a12Watcher;
 	uint8_t _mode;
+	uint8_t _game;
 
 	uint8_t _vrc2Chr[8];
 	uint8_t _vrc2Prg[2];
@@ -28,14 +29,12 @@ private:
 	bool _irqEnabled;
 
 protected:
-	virtual uint16_t RegisterStartAddress() override { return 0x4100; }
-	virtual uint16_t RegisterEndAddress() override { return 0xFFFF; }
 	virtual uint16_t GetPRGPageSize() override { return 0x2000; }
 	virtual uint16_t GetCHRPageSize() override { return 0x400; }
 
 	void InitMapper() override
 	{
-		_mode = 0;
+		_mode = 1;
 
 		_vrc2Chr[0] = -1;
 		_vrc2Chr[1] = -1;
@@ -72,6 +71,23 @@ protected:
 		_mmc1Regs[3] = 0;
 		_mmc1Buffer = 0;
 		_mmc1Shift = 0;
+
+		// 5-in-1 multicart
+		_game = (_romInfo.SubMapperID == 3) ? 4 : 0;
+
+		UpdateState();
+
+		AddRegisterRange(0x4100, 0x5FFF, MemoryOperation::Write);
+	}
+
+	void Reset(bool softReset) override
+	{
+		if(_romInfo.SubMapperID == 3) {
+			_game++;
+			if(_game > 4) {
+				_game = 0;
+			}
+		}
 
 		UpdateState();
 	}
@@ -119,20 +135,22 @@ protected:
 
 	void UpdatePrg()
 	{
+		uint8_t prgMask = (_romInfo.SubMapperID != 3) ? 0x3F : (_game ? 0x0F : 0x1F);
+		uint32_t outerBank = _game ? (_game + 1) * 0x10 : 0;
 		switch(_mode & 0x03) {
 			case 0:
-				SelectPRGPage(0, _vrc2Prg[0]);
-				SelectPRGPage(1, _vrc2Prg[1]);
-				SelectPRGPage(2, -2);
-				SelectPRGPage(3, -1);
+				SelectPRGPage(0, outerBank | (_vrc2Prg[0] & prgMask));
+				SelectPRGPage(1, outerBank | (_vrc2Prg[1] & prgMask));
+				SelectPRGPage(2, outerBank | ((-2) & prgMask));
+				SelectPRGPage(3, outerBank | ((-1) & prgMask));
 				break;
 
 			case 1: {
 				uint32_t prgMode = (_mmc3Ctrl >> 5) & 0x02;
-				SelectPRGPage(0, _mmc3Regs[6 + prgMode]);
-				SelectPRGPage(1, _mmc3Regs[7]);
-				SelectPRGPage(2, _mmc3Regs[6 + (prgMode ^ 0x02)]);
-				SelectPRGPage(3, _mmc3Regs[9]);
+				SelectPRGPage(0, outerBank | (_mmc3Regs[6 + prgMode] & prgMask));
+				SelectPRGPage(1, outerBank | (_mmc3Regs[7] & prgMask));
+				SelectPRGPage(2, outerBank | (_mmc3Regs[6 + (prgMode ^ 0x02)] & prgMask));
+				SelectPRGPage(3, outerBank | (_mmc3Regs[9] & prgMask));
 				break;
 			}
 
@@ -140,6 +158,9 @@ protected:
 			case 3: {
 				uint8_t bank = _mmc1Regs[3] & 0x0F;
 				if(_mmc1Regs[0] & 0x08) {
+					if(_romInfo.SubMapperID == 2) { // Huang 2
+						bank >>= 1;
+					}
 					if(_mmc1Regs[0] & 0x04) {
 						SelectPrgPage2x(0, bank << 1);
 						SelectPrgPage2x(1, 0x0F << 1);
@@ -148,7 +169,7 @@ protected:
 						SelectPrgPage2x(1, bank << 1);
 					}
 				} else {
-					SelectPrgPage4x(0, (bank & 0xFE) << 1);
+					SelectPrgPage4x(0, (outerBank | (bank & 0xFE)) << 1);
 				}
 				break;
 			}
@@ -157,34 +178,39 @@ protected:
 
 	void UpdateChr()
 	{
-		uint32_t outerBank = (_mode & 0x04) << 6;
+		uint32_t chrMask = _game ? 0x7F : 0xFF;
+		uint32_t chrA18 = (_mode & 0x04) << 6;
+		uint32_t outerBank = 0;
+		if(_romInfo.SubMapperID == 3) {
+			outerBank |= _game ? (_game + 1) * 0x80 : 0;
+		}
 		switch(_mode & 0x03) {
 			case 0:
 				for(int i = 0; i < 8; i++) {
-					SelectCHRPage(i, outerBank | _vrc2Chr[i]);
+					SelectCHRPage(i, outerBank | chrA18 | (_vrc2Chr[i] & chrMask));
 				}
 				break;
 
 			case 1: {
 				uint32_t slotSwap = (_mmc3Ctrl & 0x80) ? 4 : 0;
-				SelectCHRPage(0 ^ slotSwap, outerBank | ((_mmc3Regs[0]) & 0xFE));
-				SelectCHRPage(1 ^ slotSwap, outerBank | (_mmc3Regs[0] | 1));
-				SelectCHRPage(2 ^ slotSwap, outerBank | ((_mmc3Regs[1]) & 0xFE));
-				SelectCHRPage(3 ^ slotSwap, outerBank | (_mmc3Regs[1] | 1));
-				SelectCHRPage(4 ^ slotSwap, outerBank | _mmc3Regs[2]);
-				SelectCHRPage(5 ^ slotSwap, outerBank | _mmc3Regs[3]);
-				SelectCHRPage(6 ^ slotSwap, outerBank | _mmc3Regs[4]);
-				SelectCHRPage(7 ^ slotSwap, outerBank | _mmc3Regs[5]);
+				SelectCHRPage(0 ^ slotSwap, outerBank | chrA18 | (((_mmc3Regs[0]) & 0xFE) & chrMask));
+				SelectCHRPage(1 ^ slotSwap, outerBank | chrA18 | ((_mmc3Regs[0] | 1) & chrMask));
+				SelectCHRPage(2 ^ slotSwap, outerBank | chrA18 | (((_mmc3Regs[1]) & 0xFE) & chrMask));
+				SelectCHRPage(3 ^ slotSwap, outerBank | chrA18 | ((_mmc3Regs[1] | 1) & chrMask));
+				SelectCHRPage(4 ^ slotSwap, outerBank | chrA18 | (_mmc3Regs[2] & chrMask));
+				SelectCHRPage(5 ^ slotSwap, outerBank | chrA18 | (_mmc3Regs[3] & chrMask));
+				SelectCHRPage(6 ^ slotSwap, outerBank | chrA18 | (_mmc3Regs[4] & chrMask));
+				SelectCHRPage(7 ^ slotSwap, outerBank | chrA18 | (_mmc3Regs[5] & chrMask));
 				break;
 			}
 
 			case 2:
 			case 3: {
 				if(_mmc1Regs[0] & 0x10) {
-					SelectChrPage4x(0, _mmc1Regs[1] << 2);
-					SelectChrPage4x(1, _mmc1Regs[2] << 2);
+					SelectChrPage4x(0, (outerBank | (_mmc1Regs[1] & chrMask)) << 2);
+					SelectChrPage4x(1, (outerBank | (_mmc1Regs[2] & chrMask)) << 2);
 				} else {
-					SelectChrPage8x(0, (_mmc1Regs[1] & 0xFE) << 2);
+					SelectChrPage8x(0, (outerBank | ((_mmc1Regs[1] & 0xFE) & chrMask)) << 2);
 				}
 				break;
 			}
@@ -282,13 +308,17 @@ protected:
 	void WriteRegister(uint16_t addr, uint8_t value) override
 	{
 		if(addr < 0x8000) {
-			if((addr & 0x4100) == 0x4100) {
+			if(addr & 0x100) {
 				_mode = value;
 				if(addr & 0x01) {
 					_mmc1Regs[0] = 0xc;
 					_mmc1Regs[3] = 0;
 					_mmc1Buffer = 0;
 					_mmc1Shift = 0;
+				}
+				if((value & 0x03) != 1) {
+					_irqEnabled = false;
+					_console->GetCpu()->ClearIrqSource(IRQSource::External);
 				}
 				UpdateState();
 			}

@@ -2,6 +2,9 @@
 #include "stdafx.h"
 #include "BaseMapper.h"
 
+// Mapper 82
+// Mapper 552
+
 class TaitoX1017 : public BaseMapper
 {
 private:
@@ -18,6 +21,16 @@ private:
 		SetCpuMemoryMapping(0x6C00, 0x6FFF, 3, PrgMemoryType::SaveRam, _ramPermission[1] == 0x69 ? MemoryAccessType::ReadWrite : MemoryAccessType::NoAccess);
 		
 		SetCpuMemoryMapping(0x7000, 0x73FF, 4, PrgMemoryType::SaveRam, _ramPermission[2] == 0x84 ? MemoryAccessType::ReadWrite : MemoryAccessType::NoAccess);
+	}
+
+	uint8_t prgBits(uint8_t value) {
+		if (_romInfo.MapperID == 552) {
+			return ((value << 5) & 0x20) | ((value << 3) & 0x10) |
+					((value << 1) &0x08) | ((value >> 1) & 0x04) |
+					((value >> 3) & 0x02) | ((value >> 5) & 0x01);
+		}
+		// Mapper 82
+		return value >>2;
 	}
 
 protected:
@@ -90,15 +103,15 @@ protected:
 				break;
 
 			case 0x7EFA:
-				SelectPRGPage(0, value >> 2);
+				SelectPRGPage(0, prgBits(value));
 				break;
 
 			case 0x7EFB:
-				SelectPRGPage(1, value >> 2);
+				SelectPRGPage(1, prgBits(value));
 				break;
 
 			case 0x7EFC:
-				SelectPRGPage(2, value >> 2);
+				SelectPRGPage(2, prgBits(value));
 				break;
 		}
 	}
