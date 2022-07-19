@@ -116,7 +116,7 @@ void HdPpu::DrawPixel()
 						_spriteFrameRanges[tileInfo.Sprite[j].OAMIndex].current.VerticalMirroring = tileInfo.Sprite[j].VerticalMirroring;
 						_spriteFrameRanges[tileInfo.Sprite[j].OAMIndex].current.BackgroundPriority = tileInfo.Sprite[j].BackgroundPriority;
 						_spriteFrameRanges[tileInfo.Sprite[j].OAMIndex].current.ScreenX = sprite.SpriteX;
-						_spriteFrameRanges[tileInfo.Sprite[j].OAMIndex].current.ScreenY = _scanline - tileInfo.Sprite[j].OffsetY;
+						_spriteFrameRanges[tileInfo.Sprite[j].OAMIndex].current.ScreenY = _scanline - (tileInfo.Sprite[j].VerticalMirroring ? 7 - tileInfo.Sprite[j].OffsetY : tileInfo.Sprite[j].OffsetY);
 						_spriteFrameRanges[tileInfo.Sprite[j].OAMIndex].updated = true;
 					}
 
@@ -218,7 +218,7 @@ void HdPpu::DrawPixel()
 											HdPpuPixelInfo& addTileInfo = _info->ScreenTiles[addBufferOffset];
 											addTileInfo.SprAddition[_info->AdditionCount[addBufferOffset]] = addSp;
 											addTileInfo.SprAddition[_info->AdditionCount[addBufferOffset]].OffsetX = px;
-											addTileInfo.SprAddition[_info->AdditionCount[addBufferOffset]].OffsetY = py;
+											addTileInfo.SprAddition[_info->AdditionCount[addBufferOffset]].OffsetY = (_spriteFrameRanges[i].current.VerticalMirroring ? 7-py : py);
 											_info->AdditionCount[addBufferOffset]++;
 										}
 									}
