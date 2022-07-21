@@ -18,7 +18,7 @@ protected:
 
 		_regs[0] = 0x80;
 		
-		AddRegisterRange(0x7800, 0x7FFFF, MemoryOperation::Write);
+		AddRegisterRange(0x7800, 0x7FFF, MemoryOperation::Write);
 
 		WriteRegister(0xC000, 0);
 	}

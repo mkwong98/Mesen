@@ -557,6 +557,7 @@
     <ClInclude Include="BmcTj03.h" />
     <ClInclude Include="BmcCtc09.h" />
     <ClInclude Include="BmcCtc12in1.h" />
+    <ClInclude Include="BmcDs07.h" />
     <ClInclude Include="Bmc891227.h" />
     <ClInclude Include="Ctc15.h" />
     <ClInclude Include="CityFighter.h" />
@@ -851,6 +852,8 @@
     <ClInclude Include="MMC3_410.h" />
     <ClInclude Include="MMC3_411.h" />
     <ClInclude Include="MMC3_412.h" />
+    <ClInclude Include="MMC3_420.h" />
+    <ClInclude Include="MMC3_428.h" />
     <ClInclude Include="MMC3_422.h" />
     <ClInclude Include="MMC3_430.h" />
     <ClInclude Include="MMC3_432.h" />
@@ -859,6 +862,7 @@
     <ClInclude Include="MMC3_445.h" />
     <ClInclude Include="MMC3_534.h" />
     <ClInclude Include="MMC3_516.h" />
+    <ClInclude Include="MMC3_512.h" />
     <ClInclude Include="Mapper57.h" />
     <ClInclude Include="Mapper61.h" />
     <ClInclude Include="Mapper62.h" />

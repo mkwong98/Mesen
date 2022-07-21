@@ -802,6 +802,9 @@
     <ClInclude Include="BmcCtc09.h">
       <Filter>Nes\Mappers</Filter>
     </ClInclude>
+    <ClInclude Include="BmcDs07.h">
+      <Filter>Nes\Mappers</Filter>
+    </ClInclude>
     <ClInclude Include="BmcK3036.h">
       <Filter>Nes\Mappers</Filter>
     </ClInclude>
@@ -811,13 +814,22 @@
     <ClInclude Include="MMC3_245.h">
       <Filter>Nes\Mappers\MMC</Filter>
     </ClInclude>
+    <ClInclude Include="MMC3_420.h">
+      <Filter>Nes\Mappers\MMC</Filter>
+    </ClInclude>
     <ClInclude Include="MMC3_422.h">
+      <Filter>Nes\Mappers\MMC</Filter>
+    </ClInclude>
+    <ClInclude Include="MMC3_428.h">
       <Filter>Nes\Mappers\MMC</Filter>
     </ClInclude>
     <ClInclude Include="MMC3_534.h">
       <Filter>Nes\Mappers\MMC</Filter>
     </ClInclude>
     <ClInclude Include="MMC3_516.h">
+      <Filter>Nes\Mappers\MMC</Filter>
+    </ClInclude>
+    <ClInclude Include="MMC3_512.h">
       <Filter>Nes\Mappers\MMC</Filter>
     </ClInclude>
     <ClInclude Include="Waixing178.h">

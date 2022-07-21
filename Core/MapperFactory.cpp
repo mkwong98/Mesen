@@ -38,6 +38,7 @@
 #include "Bmc830425C4391T.h"
 #include "Bmc891227.h"
 #include "Bmc8in1.h"
+#include "BmcDs07.h"
 #include "BmcK3036.h"
 #include "BmcG146.h"
 #include "BmcGn45.h"
@@ -185,6 +186,7 @@
 #include "Mapper541.h"
 #include "Mapper433.h"
 #include "Mapper431.h"
+#include "Mapper428.h"
 #include "Mapper429.h"
 #include "Mapper417.h"
 #include "Mapper416.h"
@@ -264,12 +266,14 @@
 #include "MMC3_410.h"
 #include "MMC3_411.h"
 #include "MMC3_412.h"
+#include "MMC3_420.h"
 #include "MMC3_422.h"
 #include "MMC3_430.h"
 #include "MMC3_432.h"
 #include "MMC3_441.h"
 #include "MMC3_444.h"
 #include "MMC3_445.h"
+#include "MMC3_512.h"
 #include "MMC3_516.h"
 #include "MMC3_534.h"
 #include "MMC3_Bmc411120C.h"
@@ -810,9 +814,11 @@ BaseMapper* MapperFactory::GetMapperFromID(RomData &romData)
 		case 416: return new Mapper416();
 		case 417: return new Mapper417();
 		case 418: return new Namco108_418();
+		case 420: return new MMC3_420();
 		//419-21
 		case 422: return new MMC3_422();
 		//423-428
+		case 428: return new Mapper428();
 		case 429: return new Mapper429();
 		case 430: return new MMC3_430();
 		case 431: return new Mapper431();
@@ -822,6 +828,7 @@ BaseMapper* MapperFactory::GetMapperFromID(RomData &romData)
 		//435-436
 		case 437: return new Mapper437();
 		case 438: return new Mapper438();
+		case 439: return new BmcDs07();
 		//439-440
 		case 441: return new MMC3_441();
 		//442-443
@@ -836,6 +843,7 @@ BaseMapper* MapperFactory::GetMapperFromID(RomData &romData)
 		case 453: return new Mapper453();
 		//484-512
 
+		case 512: return new MMC3_512();
 		case 513: return new Sachen9602();
 		//514-517
 		case 516: return new MMC3_516();

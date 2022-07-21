@@ -271,14 +271,14 @@ protected:
 
 					case 2:
 						_chrMask = 0xFF >> (~value & 0xF);
-						_outerChr = _outerChr & ~0x0F00 | ((value & 0xF0) << 4);
+						_outerChr = (_outerChr & ~0x0F00) | ((value & 0xF0) << 4);
 						_Vrc4Mode = (value & 0x80) == 0x80;
 						break;
 
 					case 3:
 						_prgMask = ~value & 0x3F;
-						_outerPrg = _outerPrg & ~0x0100 | ((value & 0x40) << 2);
-						_outerChr = _outerChr & ~0x1000 | ((value & 0x40) << 6);
+						_outerPrg = (_outerPrg & ~0x0100) | ((value & 0x40) << 2);
+						_outerChr = (_outerChr & ~0x1000) | ((value & 0x40) << 6);
 						_locked = (value & 0x80) == 0x80;
 						break;
 				}

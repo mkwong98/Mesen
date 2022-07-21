@@ -24,7 +24,7 @@ protected:
 
 	void SelectPRGPage(uint16_t slot, uint16_t page, PrgMemoryType memoryType = PrgMemoryType::PrgRom) override
 	{
-		BaseMapper::SelectPRGPage(slot, (_mode << 3) & 0x08 | (page & 0x07));
+		BaseMapper::SelectPRGPage(slot, ((_mode << 3) & 0x08) | (page & 0x07));
 	}
 
 	void SelectCHRPage(uint16_t slot, uint16_t page, ChrMemoryType memoryType = ChrMemoryType::Default) override

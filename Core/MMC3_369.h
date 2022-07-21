@@ -43,7 +43,7 @@ protected:
 		Stream(_outerBankReg, _smb2jBank, _m2Counter);
 	}
 
-	void SelectCHRPage(uint16_t slot, uint16_t page, ChrMemoryType memoryType = ChrMemoryType::Default)
+	void SelectCHRPage(uint16_t slot, uint16_t page, ChrMemoryType memoryType = ChrMemoryType::Default) override
 	{
 		switch (_outerBankReg) {
 			case 0x00:
@@ -68,7 +68,7 @@ protected:
 		}
 	}
 
-	void SelectPRGPage(uint16_t slot, uint16_t page, PrgMemoryType memoryType = PrgMemoryType::PrgRom)
+	void SelectPRGPage(uint16_t slot, uint16_t page, PrgMemoryType memoryType = PrgMemoryType::PrgRom) override
 	{
 		switch (_outerBankReg) {
 			case 0x00:
