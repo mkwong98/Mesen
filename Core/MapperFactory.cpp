@@ -196,6 +196,9 @@
 #include "Mapper403.h"
 #include "Mapper402.h"
 #include "Mapper452.h"
+#include "Mapper500.h"
+#include "Mapper501.h"
+#include "Mapper502.h"
 #include "Mapper533.h"
 #include "Mapper535.h"
 #include "Mapper538.h"
@@ -203,6 +206,7 @@
 #include "Mapper540.h"
 #include "Mapper549.h"
 #include "Mapper556.h"
+#include "Mapper559.h"
 #include "McAcc.h"
 #include "MMC1.h"
 #include "MMC1_105.h"
@@ -841,8 +845,11 @@ BaseMapper* MapperFactory::GetMapperFromID(RomData &romData)
 		// 451
 		case 452: return new Mapper452();
 		case 453: return new Mapper453();
-		//484-512
-
+		//484-499
+		case 500: return new Mapper500();
+		case 501: return new Mapper501();
+		case 502: return new Mapper502();
+		//503-511
 		case 512: return new MMC3_512();
 		case 513: return new Sachen9602();
 		//514-517
@@ -876,6 +883,7 @@ BaseMapper* MapperFactory::GetMapperFromID(RomData &romData)
 		case 554: return new Kaiser7010();
 		case 556: return new Mapper556();
 		case 557: return new Namco108_557();
+		case 559: return new Mapper559();
 
 		case UnifBoards::Ac08: return new Ac08(); //mapper 42?
 		case UnifBoards::Cc21: return new Cc21();

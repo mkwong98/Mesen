@@ -807,6 +807,9 @@
     <ClInclude Include="Mapper400.h" />
     <ClInclude Include="Mapper449.h" />
     <ClInclude Include="Mapper452.h" />
+    <ClInclude Include="Mapper500.h" />
+    <ClInclude Include="Mapper501.h" />
+    <ClInclude Include="Mapper502.h" />
     <ClInclude Include="Mapper523.h" />
     <ClInclude Include="Mapper533.h" />
     <ClInclude Include="Mapper535.h" />
@@ -815,6 +818,7 @@
     <ClInclude Include="Mapper540.h" />
     <ClInclude Include="Mapper549.h" />
     <ClInclude Include="Mapper556.h" />
+    <ClInclude Include="Mapper559.h" />
     <ClInclude Include="MMC1_155.h" />
     <ClInclude Include="MMC1_297.h" />
     <ClInclude Include="MMC3_114.h" />

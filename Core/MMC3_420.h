@@ -48,7 +48,7 @@ protected:
 		uint16_t mask;
 		uint16_t base;
 		if(_exRegs[0] & 0x80) {
-			base = ((_exRegs[0] >> 1) & 0x07 | ((_exRegs[3] >> 2) & 0x08)) << 2;
+			base = (((_exRegs[0] >> 1) & 0x07) | ((_exRegs[3] >> 2) & 0x08)) << 2;
 			page = slot;
 			mask = 0x03;
 		} else {
