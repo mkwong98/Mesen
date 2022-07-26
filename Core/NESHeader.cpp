@@ -239,3 +239,12 @@ PpuModel NESHeader::GetVsSystemPpuModel()
 	}
 	return PpuModel::Ppu2C03;
 }
+
+uint8_t NESHeader::GetMiscRoms()
+{
+	if(GetRomHeaderVersion() == RomHeaderVersion::Nes2_0) {
+		return (Byte14 & 0x03);
+	} else {
+		return 0;
+	}
+}

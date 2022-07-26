@@ -34,6 +34,8 @@ void iNesLoader::LoadRom(RomData& romData, vector<uint8_t>& romFile, NESHeader *
 	romData.Info.VsPpuModel = header.GetVsSystemPpuModel();
 	romData.Info.InputType = header.GetInputType();
 	romData.Info.HasTrainer = header.HasTrainer();
+	romData.Info.MiscRoms = header.GetMiscRoms();
+
 	romData.Info.NesHeader = header;
 
 	romData.ChrRamSize = header.GetChrRamSize();
@@ -81,6 +83,12 @@ void iNesLoader::LoadRom(RomData& romData, vector<uint8_t>& romFile, NESHeader *
 	romData.PrgRom.insert(romData.PrgRom.end(), buffer, buffer + prgSize);
 	buffer += prgSize;
 	romData.ChrRom.insert(romData.ChrRom.end(), buffer, buffer + chrSize);
+	buffer += chrSize;
+
+	if(romData.Info.MiscRoms) {
+		// Misc roms occupies the remaining bytes
+		romData.MiscRomsData.insert(romData.MiscRomsData.end(), buffer, buffer + (dataSize - (prgSize + chrSize)));
+	}
 
 	romData.Info.Hash.PrgCrc32 = CRC32::GetCRC(romData.PrgRom.data(), romData.PrgRom.size());
 
@@ -124,6 +132,9 @@ void iNesLoader::LoadRom(RomData& romData, vector<uint8_t>& romFile, NESHeader *
 	Log("[iNes] Battery: " + string(romData.Info.HasBattery ? "Yes" : "No"));
 	if(romData.Info.HasTrainer) {
 		Log("[iNes] Trainer: Yes");
+	}
+	if(romData.MiscRomsData.size() > 0) {
+		Log("[iNes] Misc ROMS: " + std::to_string((romData.MiscRomsData.size() / 1024)) + " KB");
 	}
 
 	if(!_checkOnly) {

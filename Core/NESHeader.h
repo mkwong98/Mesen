@@ -48,4 +48,5 @@ struct NESHeader
 	GameInputType GetInputType();
 	VsSystemType GetVsSystemType();
 	PpuModel GetVsSystemPpuModel();
+	uint8_t GetMiscRoms();
 };

@@ -83,6 +83,7 @@ struct RomInfo
 	bool HasChrRam = false;
 	bool HasBattery = false;
 	bool HasTrainer = false;
+	uint8_t MiscRoms = 0;
 	MirroringType Mirroring = MirroringType::Horizontal;
 	BusConflictType BusConflicts = BusConflictType::Default;
 
@@ -119,6 +120,7 @@ struct RomData
 	vector<uint8_t> PrgRom;
 	vector<uint8_t> ChrRom;
 	vector<uint8_t> TrainerData;
+	vector<uint8_t> MiscRomsData;
 	vector<vector<uint8_t>> FdsDiskData;
 	vector<vector<uint8_t>> FdsDiskHeaders;
 	StudyBoxData StudyBox;
