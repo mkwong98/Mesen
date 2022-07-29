@@ -61,6 +61,7 @@ protected:
 				_regIndex = (_regIndex + 1) & 0x03;
 				MMC3::UpdatePrgMapping();
 				MMC3::UpdateChrMapping();
+				MMC3::UpdateMirroring();
 			}
 		} else {
 			MMC3::WriteRegister(addr, value);

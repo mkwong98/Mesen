@@ -19,7 +19,7 @@ protected:
 	void StreamState(bool saving) override
 	{
 		MMC1::StreamState(saving);
-		Stream(_selectedBlock, _latch);;
+		Stream(_selectedBlock, _latch);
 	}
 
 	void SelectPRGPage(uint16_t slot, uint16_t page, PrgMemoryType memoryType = PrgMemoryType::PrgRom) override

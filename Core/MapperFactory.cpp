@@ -216,6 +216,7 @@
 #include "MMC1_111.h"
 #include "MMC1_155.h"
 #include "MMC1_297.h"
+#include "MMC1_374.h"
 #include "MMC1_404.h"
 #include "MMC1_550.h"
 #include "MMC2.h"
@@ -257,6 +258,7 @@
 #include "MMC3_291.h"
 #include "MMC3_334.h"
 #include "MMC3_353.h"
+#include "MMC3_356.h"
 #include "MMC3_361.h"
 #include "MMC3_364.h"
 #include "MMC3_369.h"
@@ -713,6 +715,8 @@ BaseMapper* MapperFactory::GetMapperFromID(RomData &romData)
 		//272-273
 		case 274: return new Bmc80013B();
 		//275-282
+		case 281: return new JyCompany();
+		case 282: return new JyCompany();
 		case 283: return new Gs2004_Gs2013();
 		case 284: return new UnlDripGame();
 		case 285: return new A65AS();
@@ -724,7 +728,7 @@ BaseMapper* MapperFactory::GetMapperFromID(RomData &romData)
 		case 291: return new MMC3_291();
 		case 292: return new DragonFighter();
 		//293-294
-		case 295: break; //13IN1JY110
+		case 295: return new JyCompany();
 		//296-296
 		case 297: return new MMC1_297();
 		case 298: return new Tf1201();
@@ -779,7 +783,9 @@ BaseMapper* MapperFactory::GetMapperFromID(RomData &romData)
 		case 350: return new Bmc891227();
 		// 351-352:
 		case 353: return new MMC3_353();
+		case 356: return new MMC3_356();
 		case 357: return new Mapper357();
+		case 358: return new JyCompany();
 		case 359: return new Mapper359();
 		case 360: return new Mapper360();
 		case 361: return new MMC3_361();
@@ -789,6 +795,7 @@ BaseMapper* MapperFactory::GetMapperFromID(RomData &romData)
 		case 369: return new MMC3_369();
 		case 370: return new MMC3_370();
 		case 372: return new MMC3_372();
+		case 374: return new MMC1_374();
 		case 375: return new Mapper375();
 		case 376: return new MMC3_376();
 		case 377: return new MMC3_377();
@@ -799,7 +806,9 @@ BaseMapper* MapperFactory::GetMapperFromID(RomData &romData)
 		case 383: return new MMC3_383();
 		//384
 		case 385: return new Mapper385();
-		//386-388
+		case 386: return new JyCompany();
+		case 387: return new JyCompany();
+		case 388: return new JyCompany();
 		case 389: return new Mapper389();
 		//390 - is but m236
 		case 391: return new MMC3_391();
@@ -808,7 +817,8 @@ BaseMapper* MapperFactory::GetMapperFromID(RomData &romData)
 		//394
 		case 395: return new MMC3_395();
 		case 396: return new Bmc830752C();
-		//397-398
+		case 397: return new JyCompany();
+		//398
 		case 398: return new Mapper398();
 		case 399: return new MMC3_399();
 		case 400: return new Mapper400();
@@ -828,7 +838,7 @@ BaseMapper* MapperFactory::GetMapperFromID(RomData &romData)
 		case 417: return new Mapper417();
 		case 418: return new Namco108_418();
 		case 420: return new MMC3_420();
-		//419-21
+		case 421: return new JyCompany();
 		case 422: return new MMC3_422();
 		//423-428
 		case 428: return new Mapper428();
