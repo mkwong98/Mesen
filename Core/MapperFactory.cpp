@@ -167,6 +167,8 @@
 #include "Mapper246.h"
 #include "Mapper253.h"
 #include "Mapper271.h"
+#include "Mapper272.h"
+#include "Mapper277.h"
 #include "Mapper319.h"
 #include "Mapper326.h"
 #include "Mapper330.h"
@@ -174,6 +176,7 @@
 #include "Mapper357.h"
 #include "Mapper360.h"
 #include "Mapper362.h"
+#include "Mapper368.h"
 #include "Mapper375.h"
 #include "Mapper380.h"
 #include "Mapper382.h"
@@ -712,9 +715,11 @@ BaseMapper* MapperFactory::GetMapperFromID(RomData &romData)
 			return new MMC3_269();
 		//269-270
 		case 271: return new Mapper271();
-		//272-273
+		case 272: return new Mapper272();
+		//273
 		case 274: return new Bmc80013B();
 		//275-282
+		case 277: return new Mapper277();
 		case 281: return new JyCompany();
 		case 282: return new JyCompany();
 		case 283: return new Gs2004_Gs2013();
@@ -792,6 +797,7 @@ BaseMapper* MapperFactory::GetMapperFromID(RomData &romData)
 		case 362: return new Mapper362();
 		case 364: return new MMC3_364();
 		case 366: return new BmcGn45();
+		case 368: return new Mapper368();
 		case 369: return new MMC3_369();
 		case 370: return new MMC3_370();
 		case 372: return new MMC3_372();
