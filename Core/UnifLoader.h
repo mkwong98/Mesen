@@ -188,6 +188,7 @@ public:
 			romData.Info.Hash.PrgChrCrc32 = CRC32::GetCRC(fullRom.data(), fullRom.size());
 			romData.Info.Hash.PrgChrMd5 = GetMd5Sum(fullRom.data(), fullRom.size());
 
+			Log("PRG CRC32: 0x" + HexUtilities::ToHex(romData.Info.Hash.PrgCrc32, true));
 			Log("PRG+CHR CRC32: 0x" + HexUtilities::ToHex(romData.Info.Hash.PrgChrCrc32));
 			Log("[UNIF] Board Name: " + _mapperName);
 			Log("[UNIF] PRG ROM: " + std::to_string(romData.PrgRom.size() / 1024) + " KB");

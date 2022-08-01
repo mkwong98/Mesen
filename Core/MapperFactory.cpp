@@ -77,14 +77,12 @@
 #include "Fk23C.h"
 #include "Mapper523.h"
 #include "FrontFareast.h"
-#include "Ghostbusters63in1.h"
 #include "Gkcx1.h"
 #include "GoldenFive.h"
 #include "Gs2004_Gs2013.h"
 #include "GxRom.h"
 #include "Henggedianzi177.h"
 #include "Henggedianzi179.h"
-#include "Hp898f.h"
 #include "IremG101.h"
 #include "IremH3001.h"
 #include "IremLrog017.h"
@@ -103,6 +101,7 @@
 #include "Kaiser7016.h"
 #include "Kaiser7017.h"
 #include "Kaiser7022.h"
+#include "Kaiser7030.h"
 #include "Kaiser7031.h"
 #include "Kaiser7037.h"
 #include "Kaiser7057.h"
@@ -782,7 +781,7 @@ BaseMapper* MapperFactory::GetMapperFromID(RomData &romData)
 		case 344: return new MMC3_BmcGn26();
 		case 345: return new MMC3_BmcL6in1();
 		case 346: return new Kaiser7012();
-		//347
+		case 347: return new Kaiser7030();
 		case 348: return new Bmc830118C();
 		case 349: return new BmcG146();
 		case 350: return new Bmc891227();
@@ -917,14 +916,12 @@ BaseMapper* MapperFactory::GetMapperFromID(RomData &romData)
 
 		case UnifBoards::Ac08: return new Ac08(); //mapper 42?
 		case UnifBoards::Cc21: return new Cc21();
-		case UnifBoards::Ghostbusters63in1: return new Ghostbusters63in1(); //mapper 226?
 		case UnifBoards::SssNrom256: return new FamicomBox();
 		case UnifBoards::Unl255in1: return new Unl255in1();
 		case UnifBoards::Unl8237A: return new Unl8237A(); //mapper 215.1
 		case UnifBoards::UnlPuzzle: return new UnlPuzzle();
 		case UnifBoards::Ks106C: return new UnlKs106C(); //mapper 352, sub 1
 		case UnifBoards::ResetNromX1n1: return new BmcResetNromX1n1(); //352
-		case UnifBoards::Hp898f: return new Hp898f(); // Mapper 319 with the differentt bank order, specific for UNIF dump of Prima Soft 9999999-in-1
 
 		case MapperFactory::StudyBoxMapperID: return new StudyBox();
 		case MapperFactory::NsfMapperID: return new NsfMapper();

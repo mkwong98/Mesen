@@ -7,7 +7,6 @@ namespace UnifBoards {
 		UnknownBoard = 32768,
 		Malee,
 		Gs2013,
-		Ghostbusters63in1,
 		Super24in1Sc03,
 		Cc21,
 		Ac08,
@@ -20,6 +19,5 @@ namespace UnifBoards {
 		SssNrom256,
 		Ks106C,
 		ResetNromX1n1,
-		Hp898f,
 	};
 }
