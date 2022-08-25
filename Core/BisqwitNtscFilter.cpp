@@ -14,24 +14,26 @@ BisqwitNtscFilter::BisqwitNtscFilter(shared_ptr<Console> console, int resDivider
 	_stopThread = false;
 	_workDone = false;
 
-	const int8_t signalLumaLow[4] = { -29, -15, 22, 71 };
-	const int8_t signalLumaHigh[4] = { 32, 66, 105, 105 };
+	const int8_t signalLumaLow[2][4] = { { -29, -15, 22, 71 }, { -38, -28, -1, 34 } };
+	const int8_t signalLumaHigh[2][4] = { { 32, 66, 105, 105 }, { 6, 31, 58, 58 } };
 
 	//Precalculate the low and high signal chosen for each 64 base colors
-	for(int i = 0; i <= 0x3F; i++) {
-		int r = (i & 0x0F) >= 0x0E ? 0x1D : i;
+	//with their respective attenuated values
+	for (int h = 0; h <= 1; h++) {
+		for(int i = 0; i <= 0x3F; i++) {
+			int r = (i & 0x0F) >= 0x0E ? 0x1D : i;
 
-		int m = signalLumaLow[r / 0x10];
-		int q = signalLumaHigh[r / 0x10];
-		if((r & 0x0F) == 13) {
-			q = m;
-		} else if((r & 0x0F) == 0) { 
-			m = q;
+			int m = signalLumaLow[h][r / 0x10];
+			int q = signalLumaHigh[h][r / 0x10];
+			if((r & 0x0F) == 13) {
+				q = m;
+			} else if((r & 0x0F) == 0) { 
+				m = q;
+			}
+			_signalLow[h][i] = m;
+			_signalHigh[h][i] = q;
 		}
-		_signalLow[i] = m;
-		_signalHigh[i] = q;
 	}
-
 	_extraThread = std::thread([=]() {
 		//Worker thread to improve decode speed
 		while(!_stopThread) {
@@ -165,33 +167,53 @@ void BisqwitNtscFilter::RecursiveBlend(int iterationCount, uint64_t *output, uin
 void BisqwitNtscFilter::GenerateNtscSignal(int8_t *ntscSignal, int &phase, int rowNumber)
 {
 	for(int x = -_paddingSize; x < 256 + _paddingSize; x++) {
-		uint16_t color = _ppuOutputBuffer[(rowNumber << 8) | (x < 0 ? 0 : (x >= 256 ? 255 : x))];
+		// pixel_color = Pixel color (9-bit) given as input. Bitmask format: "eeellcccc".
+		uint16_t pixel_color = _ppuOutputBuffer[(rowNumber << 8) | (x < 0 ? 0 : (x >= 256 ? 255 : x))];
 
-		int8_t low = _signalLow[color & 0x3F];
-		int8_t high = _signalHigh[color & 0x3F];
-		int8_t emphasis = color >> 6;
+		int8_t emphasis = pixel_color >> 6;
+		int8_t color = pixel_color & 0x3F;
+
+		auto phase_shift_up = [=](uint16_t value, uint16_t amt) {
+			amt = amt % 12;
+			uint16_t uint12_value = value & 0xFFF;
+			uint32_t result = (((uint12_value << 12) | uint12_value) & 0xFFFFFFFF);
+			return uint16_t((result >> (amt % 12)) & 0xFFFF);
+		};
+
+		uint16_t emphasis_wave = 0;
+		if (emphasis & 0b001)		// tint R; color phase C
+			emphasis_wave |= 0b000000111111;
+		if (emphasis & 0b010)		// tint G; color phase 4
+			emphasis_wave |= 0b001111110000;
+		if (emphasis & 0b100)		// tint B; color phase 8
+			emphasis_wave |= 0b111100000011;
+		if (emphasis)
+			emphasis_wave = phase_shift_up(emphasis_wave, (color & 0x0F));
 
 		uint16_t phaseBitmask = _bitmaskLut[std::abs(phase - (color & 0x0F)) % 12];
+		bool attenuate = 0;
 
-		uint8_t voltage;
-		for(int j = 0; j < 8; j++) {
+		int8_t voltage;
+		for(int j = 0; j < _signalsPerPixel; j++) {
+			// colors $xE and $xF are not affected by emphasis
+			// https://forums.nesdev.org/viewtopic.php?p=160669#p160669
+			if ((color & 0x0F) <= 0x0D)
+				attenuate = (phaseBitmask & emphasis_wave);
+
+			voltage = _signalHigh[attenuate][color];
+			
+			// 12 phases done, wrap back to beginning
+			if(phaseBitmask >= (1 << 12)) {
+				phaseBitmask = 1;
+			}
+			else {
+				// 6 out of 12 cycles
+				if (phaseBitmask >= (1 << 6))
+					voltage = _signalLow[attenuate][color];
+			}
 			phaseBitmask <<= 1;
-			voltage = high;
-			if(phaseBitmask >= 0x40) {
-				if(phaseBitmask == 0x1000) {
-					phaseBitmask = 1;
-				} else {
-					voltage = low;
-				}
-			}
-
-			if(phaseBitmask & emphasis) {
-				voltage -= voltage / 4;
-			}
-
 			ntscSignal[((x + _paddingSize) << 3) | j] = voltage;
 		}
-
 		phase += _signalsPerPixel;
 	}
 	phase += (341 - 256 - _paddingSize * 2) * _signalsPerPixel;
@@ -217,7 +239,7 @@ void BisqwitNtscFilter::DecodeFrame(int startRow, int endRow, uint16_t *ppuOutpu
 		GenerateNtscSignal(rowSignal, phase, y);
 
 		//Convert the NTSC signal to RGB
-		NtscDecodeLine(lineWidth * _signalsPerPixel, rowSignal, outputBuffer, (startCycle + 7) % 12);
+		NtscDecodeLine(lineWidth * _signalsPerPixel, rowSignal, outputBuffer, (startCycle + 6) % 12);
 
 		outputBuffer += rowPixelGap;
 	}
