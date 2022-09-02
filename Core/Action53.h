@@ -17,11 +17,11 @@ protected:
 	{
 		_selectedReg = 0;
 		_mirroringBit = 0;
-		memset(_regs, 0, sizeof(_regs));
+		memset(_regs, 0xFF, sizeof(_regs));
 
 		AddRegisterRange(0x5000, 0x5FFF, MemoryOperation::Write);
 
-		SelectPRGPage(1, -1);
+		UpdateState();
 	}
 
 	void StreamState(bool saving) override
