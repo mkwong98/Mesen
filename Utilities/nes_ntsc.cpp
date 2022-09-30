@@ -235,7 +235,7 @@ void nes_ntsc_init( nes_ntsc_t* ntsc, nes_ntsc_setup_t const* setup )
 
 #ifndef NES_NTSC_NO_BLITTERS
 
-void nes_ntsc_blit( nes_ntsc_t const* ntsc, NES_NTSC_IN_T const* input, long in_row_width,
+void nes_ntsc_blit( nes_ntsc_t const* ntsc, NES_NTSC_IN_T const* input, NES_NTSC_IN_T ntsc_border, long in_row_width,
 		int burst_phase, int in_width, int in_height, void* rgb_out, long out_pitch )
 {
 	int chunk_count = (in_width - 1) / nes_ntsc_in_chunk;
@@ -243,7 +243,7 @@ void nes_ntsc_blit( nes_ntsc_t const* ntsc, NES_NTSC_IN_T const* input, long in_
 	{
 		NES_NTSC_IN_T const* line_in = input;
 		NES_NTSC_BEGIN_ROW( ntsc, burst_phase,
-				nes_ntsc_black, nes_ntsc_black, NES_NTSC_ADJ_IN( *line_in ) );
+			ntsc_border, ntsc_border, NES_NTSC_ADJ_IN( *line_in ) );
 		nes_ntsc_out_t* restrict line_out = (nes_ntsc_out_t*) rgb_out;
 		int n;
 		++line_in;
@@ -269,15 +269,15 @@ void nes_ntsc_blit( nes_ntsc_t const* ntsc, NES_NTSC_IN_T const* input, long in_
 		}
 		
 		/* finish final pixels */
-		NES_NTSC_COLOR_IN( 0, nes_ntsc_black );
+		NES_NTSC_COLOR_IN( 0, ntsc_border);
 		NES_NTSC_RGB_OUT( 0, line_out [0], NES_NTSC_OUT_DEPTH );
 		NES_NTSC_RGB_OUT( 1, line_out [1], NES_NTSC_OUT_DEPTH );
 		
-		NES_NTSC_COLOR_IN( 1, nes_ntsc_black );
+		NES_NTSC_COLOR_IN( 1, ntsc_border);
 		NES_NTSC_RGB_OUT( 2, line_out [2], NES_NTSC_OUT_DEPTH );
 		NES_NTSC_RGB_OUT( 3, line_out [3], NES_NTSC_OUT_DEPTH );
 		
-		NES_NTSC_COLOR_IN( 2, nes_ntsc_black );
+		NES_NTSC_COLOR_IN( 2, ntsc_border);
 		NES_NTSC_RGB_OUT( 4, line_out [4], NES_NTSC_OUT_DEPTH );
 		NES_NTSC_RGB_OUT( 5, line_out [5], NES_NTSC_OUT_DEPTH );
 		NES_NTSC_RGB_OUT( 6, line_out [6], NES_NTSC_OUT_DEPTH );

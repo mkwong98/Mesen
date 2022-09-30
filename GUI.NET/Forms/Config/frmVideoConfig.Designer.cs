@@ -78,6 +78,7 @@ namespace Mesen.GUI.Forms.Config
             this.chkMergeFields = new System.Windows.Forms.CheckBox();
             this.chkVerticalBlend = new System.Windows.Forms.CheckBox();
             this.chkColorimetryCorrection = new System.Windows.Forms.CheckBox();
+            this.chkUseExternalPalette = new System.Windows.Forms.CheckBox();
             this.grpCommon = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.chkBilinearInterpolation = new System.Windows.Forms.CheckBox();
@@ -880,6 +881,7 @@ namespace Mesen.GUI.Forms.Config
             this.tableLayoutPanel6.Controls.Add(this.chkMergeFields, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.chkVerticalBlend, 0, 1);
             this.tableLayoutPanel6.Controls.Add(this.chkColorimetryCorrection, 1, 1);
+            this.tableLayoutPanel6.Controls.Add(this.chkUseExternalPalette, 1, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel6.Location = new System.Drawing.Point(0, 300);
             this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(0);
@@ -919,6 +921,16 @@ namespace Mesen.GUI.Forms.Config
             this.chkColorimetryCorrection.TabIndex = 32;
             this.chkColorimetryCorrection.Text = "Color Correction";
             this.chkColorimetryCorrection.UseVisualStyleBackColor = true;
+            // 
+            // chkUseExternalPalette
+            // 
+            this.chkUseExternalPalette.AutoSize = true;
+            this.chkUseExternalPalette.Location = new System.Drawing.Point(143, 3);
+            this.chkUseExternalPalette.Name = "chkUseExternalPalette";
+            this.chkUseExternalPalette.Size = new System.Drawing.Size(100, 17);
+            this.chkUseExternalPalette.TabIndex = 33;
+            this.chkUseExternalPalette.Text = "External Palette";
+            this.chkUseExternalPalette.UseVisualStyleBackColor = true;
             // 
             // grpCommon
             // 
@@ -2262,10 +2274,6 @@ namespace Mesen.GUI.Forms.Config
 		private ctrlRiskyOption chkForceBackgroundFirstColumn;
 		private ctrlRiskyOption chkForceSpritesFirstColumn;
 		private System.Windows.Forms.ToolStripMenuItem mnuPaletteNesClassic;
-		private System.Windows.Forms.TableLayoutPanel tlpNtscFilter2;
-		private Controls.ctrlHorizontalTrackbar trkYFilterLength;
-		private Controls.ctrlHorizontalTrackbar trkIFilterLength;
-		private Controls.ctrlHorizontalTrackbar trkQFilterLength;
 		private System.Windows.Forms.ToolStripMenuItem mnuPaletteSonyCxa2025As;
 		private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel6;
 		private System.Windows.Forms.Label lblCustomRatio;
@@ -2318,5 +2326,10 @@ namespace Mesen.GUI.Forms.Config
 	  private System.Windows.Forms.Label lblRequestedRefreshRate2;
 	  private System.Windows.Forms.ComboBox cboRefreshRate2;
 	  private System.Windows.Forms.CheckBox chkColorimetryCorrection;
+	  private System.Windows.Forms.TableLayoutPanel tlpNtscFilter2;
+	  private ctrlHorizontalTrackbar trkYFilterLength;
+	  private ctrlHorizontalTrackbar trkIFilterLength;
+	  private ctrlHorizontalTrackbar trkQFilterLength;
+	  private System.Windows.Forms.CheckBox chkUseExternalPalette;
    }
 }

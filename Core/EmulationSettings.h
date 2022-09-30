@@ -232,10 +232,18 @@ struct NtscFilterSettings
 	bool VerticalBlend = false;
 	bool KeepVerticalResolution = false;
 	bool ColorimetryCorrection = true;
+	bool UseExternalPalette = true;
 
 	double YFilterLength = 0;
 	double IFilterLength = 0;
 	double QFilterLength = 0;
+
+	double DecodeMatrixIR = 0.956f;
+	double DecodeMatrixQR = 0.621f;
+	double DecodeMatrixIG = -0.272f;
+	double DecodeMatrixQG = -0.647f;
+	double DecodeMatrixIB = -1.105f;
+	double DecodeMatrixQB = 1.702f;
 };
 
 enum class RamPowerOnState
@@ -1224,7 +1232,27 @@ public:
 		return _pictureSettings;
 	}
 
-	void SetNtscFilterSettings(double artifacts, double bleed, double fringing, double gamma, double resolution, double sharpness, bool mergeFields, double yFilterLength, double iFilterLength, double qFilterLength, bool verticalBlend, bool keepVerticalResolution, bool colorimetryCorrection)
+	void SetNtscFilterSettings(
+		double artifacts,
+		double bleed, 
+		double fringing,
+		double gamma,
+		double resolution,
+		double sharpness,
+		bool mergeFields,
+		double yFilterLength,
+		double iFilterLength,
+		double qFilterLength,
+		double decodeMatrixIR,
+		double decodeMatrixQR,
+		double decodeMatrixIG,
+		double decodeMatrixQG,
+		double decodeMatrixIB,
+		double decodeMatrixQB,
+		bool verticalBlend,
+		bool keepVerticalResolution,
+		bool colorimetryCorrection,
+		bool useExternalPalette)
 	{
 		_ntscFilterSettings.Artifacts = artifacts;
 		_ntscFilterSettings.Bleed = bleed;
@@ -1238,6 +1266,15 @@ public:
 		_ntscFilterSettings.YFilterLength = yFilterLength;
 		_ntscFilterSettings.IFilterLength = iFilterLength;
 		_ntscFilterSettings.QFilterLength = qFilterLength;
+
+		_ntscFilterSettings.DecodeMatrixIR = decodeMatrixIR;
+		_ntscFilterSettings.DecodeMatrixQR = decodeMatrixQR;
+		_ntscFilterSettings.DecodeMatrixIG = decodeMatrixIG;
+		_ntscFilterSettings.DecodeMatrixQG = decodeMatrixQG;
+		_ntscFilterSettings.DecodeMatrixIB = decodeMatrixIB;
+		_ntscFilterSettings.DecodeMatrixQB = decodeMatrixQB;
+
+		_ntscFilterSettings.UseExternalPalette = useExternalPalette;
 
 		_ntscFilterSettings.VerticalBlend = verticalBlend;
 		_ntscFilterSettings.KeepVerticalResolution = keepVerticalResolution;

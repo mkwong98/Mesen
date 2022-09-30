@@ -42,10 +42,18 @@ namespace Mesen.GUI.Config
 		public bool NtscMergeFields = false;
 		public bool NtscVerticalBlend = true;
 		public bool NtscColorimetryCorrection = true;
+		public bool NtscUseExternalPalette = true;
 
 		[MinMax(-50, 400)] public Int32 NtscYFilterLength = 0;
 		[MinMax(0, 400)] public Int32 NtscIFilterLength = 50;
 		[MinMax(0, 400)] public Int32 NtscQFilterLength = 50;
+
+		public double NtscDecodeMatrixIR = 0.956;
+		public double NtscDecodeMatrixQR = 0.621;
+		public double NtscDecodeMatrixIG = -0.272;
+		public double NtscDecodeMatrixQG = -0.647;
+		public double NtscDecodeMatrixIB = -1.105;
+		public double NtscDecodeMatrixQB = 1.702;
 
 		public bool RemoveSpriteLimit = false;
 		public bool AdaptiveSpriteLimit = true;
@@ -110,7 +118,7 @@ namespace Mesen.GUI.Config
 			InteropEmu.SetVideoAspectRatio(videoInfo.AspectRatio, videoInfo.CustomAspectRatio);
 
 			InteropEmu.SetPictureSettings(videoInfo.Brightness / 100.0, videoInfo.Contrast / 100.0, videoInfo.Saturation / 100.0, videoInfo.Hue / 100.0, videoInfo.ScanlineIntensity / 100.0);
-			InteropEmu.SetNtscFilterSettings(videoInfo.NtscArtifacts / 100.0, videoInfo.NtscBleed / 100.0, videoInfo.NtscFringing / 100.0, videoInfo.NtscGamma / 100.0, videoInfo.NtscResolution / 100.0, videoInfo.NtscSharpness / 100.0, videoInfo.NtscMergeFields, videoInfo.NtscYFilterLength / 100.0, videoInfo.NtscIFilterLength / 100.0, videoInfo.NtscQFilterLength / 100.0, videoInfo.NtscVerticalBlend, videoInfo.NtscColorimetryCorrection);
+			InteropEmu.SetNtscFilterSettings(videoInfo.NtscArtifacts / 100.0, videoInfo.NtscBleed / 100.0, videoInfo.NtscFringing / 100.0, videoInfo.NtscGamma / 100.0, videoInfo.NtscResolution / 100.0, videoInfo.NtscSharpness / 100.0, videoInfo.NtscMergeFields, videoInfo.NtscYFilterLength / 100.0, videoInfo.NtscIFilterLength / 100.0, videoInfo.NtscQFilterLength / 100.0, videoInfo.NtscDecodeMatrixIR, videoInfo.NtscDecodeMatrixQR, videoInfo.NtscDecodeMatrixIG, videoInfo.NtscDecodeMatrixQG, videoInfo.NtscDecodeMatrixIB, videoInfo.NtscDecodeMatrixQB, videoInfo.NtscVerticalBlend, videoInfo.NtscColorimetryCorrection, videoInfo.NtscUseExternalPalette);
 
 			if(!string.IsNullOrWhiteSpace(videoInfo.PaletteData)) {
 				try {

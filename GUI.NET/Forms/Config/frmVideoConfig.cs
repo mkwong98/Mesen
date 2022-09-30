@@ -65,6 +65,7 @@ namespace Mesen.GUI.Forms.Config
 			AddBinding("NtscMergeFields", chkMergeFields);
 			AddBinding("NtscVerticalBlend", chkVerticalBlend);
 			AddBinding("NtscColorimetryCorrection", chkColorimetryCorrection);
+			AddBinding("NtscUseExternalPalette", chkUseExternalPalette);
 
 			AddBinding("NtscYFilterLength", trkYFilterLength);
 			AddBinding("NtscIFilterLength", trkIFilterLength);
@@ -166,12 +167,14 @@ namespace Mesen.GUI.Forms.Config
 				tlpNtscFilter2.Visible = false;
 				chkMergeFields.Visible = true;
 				chkColorimetryCorrection.Visible = false;
+				chkUseExternalPalette.Visible = true;
 				grpNtscFilter.Visible = true;
 			} else if(filter == VideoFilterType.BisqwitNtsc || filter == VideoFilterType.BisqwitNtscHalfRes || filter == VideoFilterType.BisqwitNtscQuarterRes) {
 				tlpNtscFilter1.Visible = true;
 				tlpNtscFilter2.Visible = true;
 				chkMergeFields.Visible = false;
 				chkColorimetryCorrection.Visible = true;
+				chkUseExternalPalette.Visible = false;
 				grpNtscFilter.Visible = true;
 			} else {
 				grpNtscFilter.Visible = false;
@@ -300,6 +303,7 @@ namespace Mesen.GUI.Forms.Config
 			chkMergeFields.Checked = false;
 			chkVerticalBlend.Checked = true;
 			chkColorimetryCorrection.Checked = true;
+			chkUseExternalPalette.Checked = true;
 
 			trkYFilterLength.Value = 0;
 			trkIFilterLength.Value = 50;
