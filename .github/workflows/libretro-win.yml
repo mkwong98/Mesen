@@ -1,0 +1,25 @@
+name: "Libretro Windows build"
+on: push
+
+jobs:
+  libretro-win-build:
+    runs-on: windows-2019
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up dependencies
+        shell: bash
+        run: |
+          mkdir -p "bin/Any CPU/Release"
+          cp -v -r GUI.NET/Dependencies "bin/Any CPU/Release"
+          git describe --tags --dirty --always >"bin\Any CPU\Release\Dependencies\DevBuild.txt"
+      - name: Build core
+        working-directory: bin
+        shell: cmd
+        run: |
+          call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
+          msbuild ..\Mesen.sln /t:Build /p:Configuration=Libretro /p:Platform=x64
+      - name: Upload binary
+        uses: actions/upload-artifact@v1
+        with:
+          name: Mesen-Libretro-win
+          path: bin/x64/Libretro/mesen_libretro.dll

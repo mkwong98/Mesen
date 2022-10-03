@@ -1,0 +1,24 @@
+name: "Libretro Linux build"
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  libretro-linux-build:
+    runs-on: ubuntu-latest
+    container: ubuntu:bionic
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up dependencies
+        run: |
+          apt-get update
+          apt-get install -yq --no-install-recommends zip unzip clang make
+          apt-get clean && rm -rf /var/cache/apt/lists/*
+      - name: Build
+        run: |
+          make libretro -j$(nproc)
+      - name: Upload binary
+        uses: actions/upload-artifact@v1
+        with:
+          name: Mesen-Libretro-Linux
+          path: bin/mesen_libretro.x64.so
