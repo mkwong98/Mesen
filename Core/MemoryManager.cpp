@@ -10,6 +10,7 @@ MemoryManager::MemoryManager(shared_ptr<Console> console)
 	_console = console;
 	_internalRAM = new uint8_t[InternalRAMSize];
 	_internalRamHandler.SetInternalRam(_internalRAM);
+	_out1_latch = false;
 
 	_ramReadHandlers = new IMemoryHandler*[RAMSize];
 	_ramWriteHandlers = new IMemoryHandler*[RAMSize];
@@ -125,7 +126,10 @@ uint8_t MemoryManager::Read(uint16_t addr, MemoryOperationType operationType)
 	_console->DebugProcessRamOperation(operationType, addr, value);
 
 	_openBusHandler.SetOpenBus(value);
-
+	if (_out1_latch && operationType == MemoryOperationType::ExecOpCode) {
+		_out1_latch = false;
+		_ramWriteHandlers[0xE000]->WriteRAM(0x4016, (value & 0xF8) + (_out_delay & 0x7));
+	}
 	return value;
 }
 
@@ -134,7 +138,13 @@ void MemoryManager::Write(uint16_t addr, uint8_t value, MemoryOperationType oper
 	if(_console->DebugProcessRamOperation(operationType, addr, value)) {
 		_ramWriteHandlers[addr]->WriteRAM(addr, value);
 		if (addr == 0x4016) {
-			_ramWriteHandlers[0xE000]->WriteRAM(addr, value);
+			if ((_console->GetCpu()->GetCycleCount() % 2 == 1)) { 
+				_ramWriteHandlers[0xE000]->WriteRAM(addr, value); 
+			}
+			else { 
+				_out1_latch = true;
+				_out_delay = value;
+			}
 		}
 	}
 }

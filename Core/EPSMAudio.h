@@ -264,12 +264,12 @@ public:
 		if (!custom) {
 			switch (addr) {
 			case 0x4016:
-				if ((value & 0x0F) == 0x02) {writeAddr = 0x0;} //A0 = 0, A1 = 0
-				if ((value & 0x0F) == 0x0A) {writeAddr = 0x1;} //A0 = 1, A1 = 0
-				if ((value & 0x0F) == 0x06) {writeAddr = 0x2;} //A0 = 0, A1 = 1
-				if ((value & 0x0F) == 0x0E) {writeAddr = 0x3;} //A0 = 1, A1 = 1
+				if ((value & 0x0E) == 0x02) {writeAddr = 0x0;} //A0 = 0, A1 = 0
+				if ((value & 0x0E) == 0x0A) {writeAddr = 0x1;} //A0 = 1, A1 = 0
+				if ((value & 0x0E) == 0x06) {writeAddr = 0x2;} //A0 = 0, A1 = 1
+				if ((value & 0x0E) == 0x0E) {writeAddr = 0x3;} //A0 = 1, A1 = 1
 				if (value & 0x0E) {writeValue = value;}
-				if ((value & 0x0F) == 0x00) {
+				if ((value & 0x02) == 0x00) {
 					writeValue = (writeValue & 0xF0) | (value >> 4);
 
 					const uint8_t a0 = !!(writeAddr & 0x1);

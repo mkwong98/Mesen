@@ -24,6 +24,8 @@ class MemoryManager : public Snapshotable
 		InternalRamHandler<0x7FF> _internalRamHandler;
 		IMemoryHandler** _ramReadHandlers;
 		IMemoryHandler** _ramWriteHandlers;
+		bool _out1_latch;
+		uint8_t _out_delay;
 
 		void InitializeMemoryHandlers(IMemoryHandler** memoryHandlers, IMemoryHandler* handler, vector<uint16_t> *addresses, bool allowOverride);
 

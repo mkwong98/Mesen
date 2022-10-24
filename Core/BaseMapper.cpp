@@ -789,7 +789,7 @@ uint8_t BaseMapper::DebugReadRAM(uint16_t addr)
 
 void BaseMapper::WriteRAM(uint16_t addr, uint8_t value)
 {
-	if((addr == 0x4016) & (_console->GetCpu()->GetCycleCount() % 2 == 1)){ WriteEPSM(addr, value); }
+	if(addr == 0x4016){ WriteEPSM(addr, value); }
 	if ((addr >= 0x401c && addr <= 0x401f)) {WriteEPSM(addr, value); }
 	if(_isWriteRegisterAddr[addr]) {
 		if(_hasBusConflicts) {
