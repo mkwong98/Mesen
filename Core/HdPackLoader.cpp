@@ -501,7 +501,7 @@ void HdPackLoader::ProcessAdditionTag(vector<string>& tokens)
 
 void HdPackLoader::ProcessConditionTag(vector<string> &tokens, bool createInvertedCondition)
 {
-	checkConstraint(tokens.size() >= 4, "[HDPack] Condition tag should contain at least 4 parameters");
+	checkConstraint(tokens.size() >= 3, "[HDPack] Condition tag should contain at least 3 parameters");
 	checkConstraint(tokens[0].size() > 0, "[HDPack] Condition name may not be empty");
 	checkConstraint(tokens[0].find_last_of('!') == string::npos, "[HDPack] Condition name may not contain '!' characters");
 
@@ -523,6 +523,10 @@ void HdPackLoader::ProcessConditionTag(vector<string> &tokens, bool createInvert
 		condition.reset(new HdPackFrameRangeCondition());
 	} else if(tokens[1] == "spriteFrameRange") {
 		condition.reset(new HdPackSpriteFrameRangeCondition());
+	} else if(tokens[1] == "spriteFrameRange") {
+		condition.reset(new HdPackSpriteFrameRangeCondition());
+	} else if (tokens[1] == "randomBackground") {
+		condition.reset(new HdPackRandomBackgroundCondition());
 	} else {
 		MessageManager::Log("[HDPack] Invalid condition type: " + tokens[1]);
 		return;
@@ -649,6 +653,15 @@ void HdPackLoader::ProcessConditionTag(vector<string> &tokens, bool createInvert
 		checkConstraint(operandB >= 0 && operandB <= 0xFFFF, "[HDPack] Out of range spriteFrameRange operand");
 
 		((HdPackSpriteFrameRangeCondition*)condition.get())->Initialize(operandA, operandB);
+	}
+	else if (dynamic_cast<HdPackRandomBackgroundCondition*>(condition.get())) {
+		checkConstraint(_data->Version >= 106, "[HDPack] This feature requires version 106+ of HD Packs");
+		checkConstraint(tokens.size() >= 3, "[HDPack] Condition tag should contain at least 3 parameters");
+
+		int32_t operandA;
+		operandA = std::stof(tokens[index++]);
+
+		((HdPackRandomBackgroundCondition*)condition.get())->Initialize(operandA);
 	}
 	
 	HdPackCondition *cond = condition.get();

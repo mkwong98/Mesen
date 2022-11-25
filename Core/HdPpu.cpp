@@ -1,4 +1,5 @@
 #include "stdafx.h"
+#include <random>
 #include "HdPpu.h"
 #include "CPU.h"
 #include "Console.h"
@@ -9,6 +10,19 @@
 #include "NotificationManager.h"
 #include "BaseMapper.h"
 #include "MemoryManager.h"
+
+void HdPpu::WriteRAM(uint16_t addr, uint8_t value)
+{
+	if (addr >= 0x2000 && addr < 0x3000)
+	{
+		std::random_device rd;
+		std::mt19937 mt(rd());
+		std::uniform_real_distribution<> dist(0, 1);
+		_nameTableRandVal[addr & 0xFFF] = dist(mt);
+	}
+	PPU::WriteRAM(addr, value);
+}
+
 
 void HdPpu::DrawPixel()
 {
@@ -54,12 +68,13 @@ void HdPpu::DrawPixel()
 		tileInfo.EmphasisBits = _intensifyColorBits >> 6;
 		tileInfo.Tile.PpuBackgroundColor = ReadPaletteRAM(0);
 		tileInfo.Tile.BgColorIndex = backgroundColor;
+		tileInfo.Tile.nameTableIdx = _state.VideoRamAddr;
+
 		if(backgroundColor == 0) {
 			tileInfo.Tile.BgColor = tileInfo.Tile.PpuBackgroundColor;
 		} else {
 			tileInfo.Tile.BgColor = ReadPaletteRAM(lastTile->PaletteOffset + backgroundColor);
 		}
-
 		tileInfo.XScroll = _state.XScroll;
 		tileInfo.TmpVideoRamAddr = _state.TmpVideoRamAddr;
 
@@ -265,6 +280,7 @@ void HdPpu::SendFrame()
 
 	_info->FrameNumber = _frameCount;
 	_info->spriteFrameRanges = _spriteFrameRanges;
+	_info->nameTableRandVal = _nameTableRandVal;
 	_info->WatchedAddressValues.clear();
 	for(uint32_t address : _hdData->WatchedMemoryAddresses) {
 		if(address & HdPackBaseMemoryCondition::PpuMemoryMarker) {

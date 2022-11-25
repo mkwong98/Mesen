@@ -93,6 +93,7 @@ struct HdPpuTileInfo : public HdTileKey
 	uint32_t PaletteOffset;
 
 	uint8_t OAMIndex;
+	uint16_t nameTableIdx;
 };
 
 struct HdPpuPixelInfo
@@ -147,6 +148,7 @@ struct HdScreenInfo
 	std::unordered_map<uint32_t, uint8_t> WatchedAddressValues;
 	uint32_t FrameNumber;
 	HdSpriteFrameRangeInfo* spriteFrameRanges;
+	float* nameTableRandVal;
 
 	HdScreenInfo(const HdScreenInfo& that) = delete;
 

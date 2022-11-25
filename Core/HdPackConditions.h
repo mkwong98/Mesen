@@ -376,3 +376,29 @@ struct HdPackSpriteFrameRangeCondition : public HdPackCondition
 		return (screenInfo->FrameNumber - screenInfo->spriteFrameRanges[tile->OAMIndex].startFrameNumber) % OperandA >= OperandB;
 	}
 };
+
+struct HdPackRandomBackgroundCondition : public HdPackCondition
+{
+	float OperandA;
+
+	string GetConditionName() override { return "randomBackground"; }
+
+	void Initialize(float operandA)
+	{
+		OperandA = operandA;
+	}
+
+	string ToString() override
+	{
+		stringstream out;
+		out << "<condition>" << Name << "," << GetConditionName() << ",";
+		out << OperandA;
+
+		return out.str();
+	}
+
+	bool InternalCheckCondition(HdScreenInfo* screenInfo, int x, int y, HdPpuTileInfo* tile) override
+	{
+		return screenInfo->nameTableRandVal[tile->nameTableIdx] >= OperandA;
+	}
+};
