@@ -164,6 +164,7 @@ struct PPUState
 	uint16_t TmpVideoRamAddr;
 	bool WriteToggle;
 
+	uint16_t bgTileAddr; //used by HD ppu
 	uint16_t HighBitShift;
 	uint16_t LowBitShift;
 };
@@ -177,6 +178,7 @@ struct TileInfo
 	
 	int32_t AbsoluteTileAddr; //used by HD ppu
 	uint8_t OffsetY; //used by HD ppu
+	uint16_t bgTileAddr; //used by HD ppu
 };
 
 struct SpriteInfo : TileInfo

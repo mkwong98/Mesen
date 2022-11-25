@@ -658,7 +658,7 @@ void HdPackLoader::ProcessConditionTag(vector<string> &tokens, bool createInvert
 		checkConstraint(_data->Version >= 106, "[HDPack] This feature requires version 106+ of HD Packs");
 		checkConstraint(tokens.size() >= 3, "[HDPack] Condition tag should contain at least 3 parameters");
 
-		int32_t operandA;
+		float operandA;
 		operandA = std::stof(tokens[index++]);
 
 		((HdPackRandomBackgroundCondition*)condition.get())->Initialize(operandA);

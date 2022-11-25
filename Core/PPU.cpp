@@ -666,10 +666,12 @@ void PPU::LoadTileInfo()
 
 				_state.LowBitShift |= _nextTile.LowByte;
 				_state.HighBitShift |= _nextTile.HighByte;
+				_state.bgTileAddr = _nextTile.bgTileAddr;
 
 				uint8_t tileIndex = ReadVram(GetNameTableAddr());
 				_nextTile.TileAddr = (tileIndex << 4) | (_state.VideoRamAddr >> 12) | _flags.BackgroundPatternAddr;
 				_nextTile.OffsetY = _state.VideoRamAddr >> 12;
+				_nextTile.bgTileAddr = _state.VideoRamAddr & 0x0FFF;
 				break;
 			}
 

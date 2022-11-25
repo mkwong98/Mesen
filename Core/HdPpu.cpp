@@ -68,7 +68,7 @@ void HdPpu::DrawPixel()
 		tileInfo.EmphasisBits = _intensifyColorBits >> 6;
 		tileInfo.Tile.PpuBackgroundColor = ReadPaletteRAM(0);
 		tileInfo.Tile.BgColorIndex = backgroundColor;
-		tileInfo.Tile.nameTableIdx = _state.VideoRamAddr;
+		tileInfo.Tile.nameTableIdx = _state.bgTileAddr;
 
 		if(backgroundColor == 0) {
 			tileInfo.Tile.BgColor = tileInfo.Tile.PpuBackgroundColor;
@@ -263,6 +263,13 @@ HdPpu::HdPpu(shared_ptr<Console> console, HdPackData * hdData) : PPU(console)
 		_screenInfo[0] = new HdScreenInfo(isChrRamGame);
 		_screenInfo[1] = new HdScreenInfo(isChrRamGame);
 		_info = _screenInfo[0];
+
+		std::random_device rd;
+		std::mt19937 mt(rd());
+		std::uniform_real_distribution<> dist(0, 1);
+		for (uint16_t i = 0; i < 0x1000; i++) {
+			_nameTableRandVal[i] = dist(mt);
+		}
 	}
 }
 
