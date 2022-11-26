@@ -399,6 +399,6 @@ struct HdPackRandomBackgroundCondition : public HdPackCondition
 
 	bool InternalCheckCondition(HdScreenInfo* screenInfo, int x, int y, HdPpuTileInfo* tile) override
 	{
-		return screenInfo->nameTableRandVal[tile->nameTableIdx] >= OperandA;
+		return screenInfo->nameTableRandVal[tile->nameTableIdx] <= OperandA;
 	}
 };

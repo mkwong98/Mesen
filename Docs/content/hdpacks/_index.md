@@ -181,6 +181,23 @@ The condition is true when the following expression is true:
 **Syntax**: `<condition>[name - text], frameRange, [divisorValue - integer], [compareValue - integer]`  
 **Example**: `<condition>myCondition,frameRange,8,10` (This condition will be true for the last 2 frames out of every 10 frames)
 
+#### spriteFrameRange ####
+
+The spriteFrameRange conditions can be used to conditionally replace sprite tiles based on the number of frames have passed since the sprite is visible on screen.
+The condition is true when the following expression is true:  
+`[number of frames have passed] % [divisorValue] >= [compareValue]`
+
+**Syntax**: `<condition>[name - text], spriteFrameRange, [divisorValue - integer], [compareValue - integer]`  
+**Example**: `<condition>myCondition,spriteFrameRange,8,10` (This condition will be true for the last 2 frames out of every 10 frames since the sprite is visible)
+
+#### randomBackground ####
+
+The randomBackground conditions can be used to randomly replace background tiles with a given probability.
+The condition is true when the following expression is true:  
+`[random number between 0 and 1 assigned to the tile] <= [compareValue]`
+
+**Syntax**: `<condition>[name - text], randomBackground, [compareValue]`  
+**Example**: `<condition>myCondition,randomBackground,0.1` (This condition will be true for 10% of the background tiles)
 
 ### &lt;tile&gt; tag ###
 
