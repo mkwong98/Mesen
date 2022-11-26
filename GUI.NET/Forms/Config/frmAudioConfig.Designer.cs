@@ -186,20 +186,17 @@ namespace Mesen.GUI.Forms.Config
             // baseConfigPanel
             // 
             this.baseConfigPanel.Controls.Add(this.btnReset);
-            this.baseConfigPanel.Location = new System.Drawing.Point(0, 550);
-            this.baseConfigPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.baseConfigPanel.Size = new System.Drawing.Size(703, 38);
+            this.baseConfigPanel.Location = new System.Drawing.Point(0, 421);
+            this.baseConfigPanel.Size = new System.Drawing.Size(477, 29);
             this.baseConfigPanel.Controls.SetChildIndex(this.btnReset, 0);
             // 
             // grpVolume
             // 
             this.grpVolume.Controls.Add(this.tableLayoutPanel1);
             this.grpVolume.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grpVolume.Location = new System.Drawing.Point(4, 4);
-            this.grpVolume.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpVolume.Location = new System.Drawing.Point(3, 3);
             this.grpVolume.Name = "grpVolume";
-            this.grpVolume.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.grpVolume.Size = new System.Drawing.Size(687, 512);
+            this.grpVolume.Size = new System.Drawing.Size(463, 389);
             this.grpVolume.TabIndex = 2;
             this.grpVolume.TabStop = false;
             this.grpVolume.Text = "Volume";
@@ -229,27 +226,27 @@ namespace Mesen.GUI.Forms.Config
             this.tableLayoutPanel1.Controls.Add(this.trkEPSMVol_L, 5, 1);
             this.tableLayoutPanel1.Controls.Add(this.trkEPSMVol_R, 6, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(4, 20);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 16);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(679, 488);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(457, 370);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // trkDmcVol
             // 
             this.trkDmcVol.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.trkDmcVol.Location = new System.Drawing.Point(420, 0);
+            this.trkDmcVol.AutoSize = true;
+            this.trkDmcVol.Location = new System.Drawing.Point(315, 0);
             this.trkDmcVol.Margin = new System.Windows.Forms.Padding(0);
             this.trkDmcVol.Maximum = 100;
-            this.trkDmcVol.MaximumSize = new System.Drawing.Size(84, 209);
+            this.trkDmcVol.MaximumSize = new System.Drawing.Size(63, 160);
             this.trkDmcVol.Minimum = 0;
-            this.trkDmcVol.MinimumSize = new System.Drawing.Size(84, 209);
+            this.trkDmcVol.MinimumSize = new System.Drawing.Size(63, 160);
             this.trkDmcVol.Name = "trkDmcVol";
-            this.trkDmcVol.Size = new System.Drawing.Size(84, 209);
+            this.trkDmcVol.Size = new System.Drawing.Size(63, 160);
             this.trkDmcVol.TabIndex = 16;
             this.trkDmcVol.Text = "DMC";
             this.trkDmcVol.Value = 50;
@@ -257,14 +254,15 @@ namespace Mesen.GUI.Forms.Config
             // trkNoiseVol
             // 
             this.trkNoiseVol.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.trkNoiseVol.Location = new System.Drawing.Point(336, 0);
+            this.trkNoiseVol.AutoSize = true;
+            this.trkNoiseVol.Location = new System.Drawing.Point(252, 0);
             this.trkNoiseVol.Margin = new System.Windows.Forms.Padding(0);
             this.trkNoiseVol.Maximum = 100;
-            this.trkNoiseVol.MaximumSize = new System.Drawing.Size(84, 209);
+            this.trkNoiseVol.MaximumSize = new System.Drawing.Size(63, 160);
             this.trkNoiseVol.Minimum = 0;
-            this.trkNoiseVol.MinimumSize = new System.Drawing.Size(84, 209);
+            this.trkNoiseVol.MinimumSize = new System.Drawing.Size(63, 160);
             this.trkNoiseVol.Name = "trkNoiseVol";
-            this.trkNoiseVol.Size = new System.Drawing.Size(84, 209);
+            this.trkNoiseVol.Size = new System.Drawing.Size(63, 160);
             this.trkNoiseVol.TabIndex = 15;
             this.trkNoiseVol.Text = "Noise";
             this.trkNoiseVol.Value = 50;
@@ -272,14 +270,15 @@ namespace Mesen.GUI.Forms.Config
             // trkTriangleVol
             // 
             this.trkTriangleVol.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.trkTriangleVol.Location = new System.Drawing.Point(252, 0);
+            this.trkTriangleVol.AutoSize = true;
+            this.trkTriangleVol.Location = new System.Drawing.Point(189, 0);
             this.trkTriangleVol.Margin = new System.Windows.Forms.Padding(0);
             this.trkTriangleVol.Maximum = 100;
-            this.trkTriangleVol.MaximumSize = new System.Drawing.Size(84, 209);
+            this.trkTriangleVol.MaximumSize = new System.Drawing.Size(63, 160);
             this.trkTriangleVol.Minimum = 0;
-            this.trkTriangleVol.MinimumSize = new System.Drawing.Size(84, 209);
+            this.trkTriangleVol.MinimumSize = new System.Drawing.Size(63, 160);
             this.trkTriangleVol.Name = "trkTriangleVol";
-            this.trkTriangleVol.Size = new System.Drawing.Size(84, 209);
+            this.trkTriangleVol.Size = new System.Drawing.Size(63, 160);
             this.trkTriangleVol.TabIndex = 14;
             this.trkTriangleVol.Text = "Triangle";
             this.trkTriangleVol.Value = 50;
@@ -287,14 +286,15 @@ namespace Mesen.GUI.Forms.Config
             // trkSquare2Vol
             // 
             this.trkSquare2Vol.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.trkSquare2Vol.Location = new System.Drawing.Point(168, 0);
+            this.trkSquare2Vol.AutoSize = true;
+            this.trkSquare2Vol.Location = new System.Drawing.Point(126, 0);
             this.trkSquare2Vol.Margin = new System.Windows.Forms.Padding(0);
             this.trkSquare2Vol.Maximum = 100;
-            this.trkSquare2Vol.MaximumSize = new System.Drawing.Size(84, 209);
+            this.trkSquare2Vol.MaximumSize = new System.Drawing.Size(63, 160);
             this.trkSquare2Vol.Minimum = 0;
-            this.trkSquare2Vol.MinimumSize = new System.Drawing.Size(84, 209);
+            this.trkSquare2Vol.MinimumSize = new System.Drawing.Size(63, 160);
             this.trkSquare2Vol.Name = "trkSquare2Vol";
-            this.trkSquare2Vol.Size = new System.Drawing.Size(84, 209);
+            this.trkSquare2Vol.Size = new System.Drawing.Size(63, 160);
             this.trkSquare2Vol.TabIndex = 13;
             this.trkSquare2Vol.Text = "Square 2";
             this.trkSquare2Vol.Value = 50;
@@ -302,14 +302,15 @@ namespace Mesen.GUI.Forms.Config
             // trkSquare1Vol
             // 
             this.trkSquare1Vol.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.trkSquare1Vol.Location = new System.Drawing.Point(84, 0);
+            this.trkSquare1Vol.AutoSize = true;
+            this.trkSquare1Vol.Location = new System.Drawing.Point(63, 0);
             this.trkSquare1Vol.Margin = new System.Windows.Forms.Padding(0);
             this.trkSquare1Vol.Maximum = 100;
-            this.trkSquare1Vol.MaximumSize = new System.Drawing.Size(84, 209);
+            this.trkSquare1Vol.MaximumSize = new System.Drawing.Size(63, 160);
             this.trkSquare1Vol.Minimum = 0;
-            this.trkSquare1Vol.MinimumSize = new System.Drawing.Size(84, 209);
+            this.trkSquare1Vol.MinimumSize = new System.Drawing.Size(63, 160);
             this.trkSquare1Vol.Name = "trkSquare1Vol";
-            this.trkSquare1Vol.Size = new System.Drawing.Size(84, 209);
+            this.trkSquare1Vol.Size = new System.Drawing.Size(63, 160);
             this.trkSquare1Vol.TabIndex = 12;
             this.trkSquare1Vol.Text = "Square 1";
             this.trkSquare1Vol.Value = 50;
@@ -317,14 +318,15 @@ namespace Mesen.GUI.Forms.Config
             // trkMaster
             // 
             this.trkMaster.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.trkMaster.AutoSize = true;
             this.trkMaster.Location = new System.Drawing.Point(0, 0);
             this.trkMaster.Margin = new System.Windows.Forms.Padding(0);
             this.trkMaster.Maximum = 100;
-            this.trkMaster.MaximumSize = new System.Drawing.Size(84, 209);
+            this.trkMaster.MaximumSize = new System.Drawing.Size(63, 160);
             this.trkMaster.Minimum = 0;
-            this.trkMaster.MinimumSize = new System.Drawing.Size(84, 209);
+            this.trkMaster.MinimumSize = new System.Drawing.Size(63, 160);
             this.trkMaster.Name = "trkMaster";
-            this.trkMaster.Size = new System.Drawing.Size(84, 209);
+            this.trkMaster.Size = new System.Drawing.Size(63, 160);
             this.trkMaster.TabIndex = 11;
             this.trkMaster.Text = "Master";
             this.trkMaster.Value = 50;
@@ -332,14 +334,15 @@ namespace Mesen.GUI.Forms.Config
             // trkFdsVol
             // 
             this.trkFdsVol.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.trkFdsVol.Location = new System.Drawing.Point(0, 209);
+            this.trkFdsVol.AutoSize = true;
+            this.trkFdsVol.Location = new System.Drawing.Point(0, 160);
             this.trkFdsVol.Margin = new System.Windows.Forms.Padding(0);
             this.trkFdsVol.Maximum = 100;
-            this.trkFdsVol.MaximumSize = new System.Drawing.Size(84, 209);
+            this.trkFdsVol.MaximumSize = new System.Drawing.Size(63, 160);
             this.trkFdsVol.Minimum = 0;
-            this.trkFdsVol.MinimumSize = new System.Drawing.Size(84, 209);
+            this.trkFdsVol.MinimumSize = new System.Drawing.Size(63, 160);
             this.trkFdsVol.Name = "trkFdsVol";
-            this.trkFdsVol.Size = new System.Drawing.Size(84, 209);
+            this.trkFdsVol.Size = new System.Drawing.Size(63, 160);
             this.trkFdsVol.TabIndex = 17;
             this.trkFdsVol.Text = "FDS";
             this.trkFdsVol.Value = 50;
@@ -347,14 +350,15 @@ namespace Mesen.GUI.Forms.Config
             // trkMmc5Vol
             // 
             this.trkMmc5Vol.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.trkMmc5Vol.Location = new System.Drawing.Point(84, 209);
+            this.trkMmc5Vol.AutoSize = true;
+            this.trkMmc5Vol.Location = new System.Drawing.Point(63, 160);
             this.trkMmc5Vol.Margin = new System.Windows.Forms.Padding(0);
             this.trkMmc5Vol.Maximum = 100;
-            this.trkMmc5Vol.MaximumSize = new System.Drawing.Size(84, 209);
+            this.trkMmc5Vol.MaximumSize = new System.Drawing.Size(63, 160);
             this.trkMmc5Vol.Minimum = 0;
-            this.trkMmc5Vol.MinimumSize = new System.Drawing.Size(84, 209);
+            this.trkMmc5Vol.MinimumSize = new System.Drawing.Size(63, 160);
             this.trkMmc5Vol.Name = "trkMmc5Vol";
-            this.trkMmc5Vol.Size = new System.Drawing.Size(84, 209);
+            this.trkMmc5Vol.Size = new System.Drawing.Size(63, 160);
             this.trkMmc5Vol.TabIndex = 18;
             this.trkMmc5Vol.Text = "MMC5";
             this.trkMmc5Vol.Value = 50;
@@ -362,14 +366,15 @@ namespace Mesen.GUI.Forms.Config
             // trkVrc6Vol
             // 
             this.trkVrc6Vol.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.trkVrc6Vol.Location = new System.Drawing.Point(168, 209);
+            this.trkVrc6Vol.AutoScroll = true;
+            this.trkVrc6Vol.Location = new System.Drawing.Point(126, 160);
             this.trkVrc6Vol.Margin = new System.Windows.Forms.Padding(0);
             this.trkVrc6Vol.Maximum = 100;
-            this.trkVrc6Vol.MaximumSize = new System.Drawing.Size(84, 209);
+            this.trkVrc6Vol.MaximumSize = new System.Drawing.Size(63, 160);
             this.trkVrc6Vol.Minimum = 0;
-            this.trkVrc6Vol.MinimumSize = new System.Drawing.Size(84, 209);
+            this.trkVrc6Vol.MinimumSize = new System.Drawing.Size(63, 160);
             this.trkVrc6Vol.Name = "trkVrc6Vol";
-            this.trkVrc6Vol.Size = new System.Drawing.Size(84, 209);
+            this.trkVrc6Vol.Size = new System.Drawing.Size(63, 160);
             this.trkVrc6Vol.TabIndex = 19;
             this.trkVrc6Vol.Text = "VRC6";
             this.trkVrc6Vol.Value = 50;
@@ -377,14 +382,15 @@ namespace Mesen.GUI.Forms.Config
             // trkVrc7Vol
             // 
             this.trkVrc7Vol.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.trkVrc7Vol.Location = new System.Drawing.Point(252, 209);
+            this.trkVrc7Vol.AutoScroll = true;
+            this.trkVrc7Vol.Location = new System.Drawing.Point(189, 160);
             this.trkVrc7Vol.Margin = new System.Windows.Forms.Padding(0);
             this.trkVrc7Vol.Maximum = 100;
-            this.trkVrc7Vol.MaximumSize = new System.Drawing.Size(84, 209);
+            this.trkVrc7Vol.MaximumSize = new System.Drawing.Size(63, 160);
             this.trkVrc7Vol.Minimum = 0;
-            this.trkVrc7Vol.MinimumSize = new System.Drawing.Size(84, 209);
+            this.trkVrc7Vol.MinimumSize = new System.Drawing.Size(63, 160);
             this.trkVrc7Vol.Name = "trkVrc7Vol";
-            this.trkVrc7Vol.Size = new System.Drawing.Size(84, 209);
+            this.trkVrc7Vol.Size = new System.Drawing.Size(63, 160);
             this.trkVrc7Vol.TabIndex = 20;
             this.trkVrc7Vol.Text = "VRC7";
             this.trkVrc7Vol.Value = 50;
@@ -392,14 +398,15 @@ namespace Mesen.GUI.Forms.Config
             // trkNamco163Vol
             // 
             this.trkNamco163Vol.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.trkNamco163Vol.Location = new System.Drawing.Point(336, 209);
+            this.trkNamco163Vol.AutoScroll = true;
+            this.trkNamco163Vol.Location = new System.Drawing.Point(252, 160);
             this.trkNamco163Vol.Margin = new System.Windows.Forms.Padding(0);
             this.trkNamco163Vol.Maximum = 100;
-            this.trkNamco163Vol.MaximumSize = new System.Drawing.Size(84, 209);
+            this.trkNamco163Vol.MaximumSize = new System.Drawing.Size(63, 160);
             this.trkNamco163Vol.Minimum = 0;
-            this.trkNamco163Vol.MinimumSize = new System.Drawing.Size(84, 209);
+            this.trkNamco163Vol.MinimumSize = new System.Drawing.Size(63, 160);
             this.trkNamco163Vol.Name = "trkNamco163Vol";
-            this.trkNamco163Vol.Size = new System.Drawing.Size(84, 209);
+            this.trkNamco163Vol.Size = new System.Drawing.Size(63, 160);
             this.trkNamco163Vol.TabIndex = 21;
             this.trkNamco163Vol.Text = "Namco";
             this.trkNamco163Vol.Value = 50;
@@ -407,14 +414,15 @@ namespace Mesen.GUI.Forms.Config
             // trkSunsoft5b
             // 
             this.trkSunsoft5b.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.trkSunsoft5b.Location = new System.Drawing.Point(549, 0);
+            this.trkSunsoft5b.AutoSize = true;
+            this.trkSunsoft5b.Location = new System.Drawing.Point(386, 0);
             this.trkSunsoft5b.Margin = new System.Windows.Forms.Padding(0);
             this.trkSunsoft5b.Maximum = 100;
-            this.trkSunsoft5b.MaximumSize = new System.Drawing.Size(84, 209);
+            this.trkSunsoft5b.MaximumSize = new System.Drawing.Size(63, 160);
             this.trkSunsoft5b.Minimum = 0;
-            this.trkSunsoft5b.MinimumSize = new System.Drawing.Size(84, 209);
+            this.trkSunsoft5b.MinimumSize = new System.Drawing.Size(63, 160);
             this.trkSunsoft5b.Name = "trkSunsoft5b";
-            this.trkSunsoft5b.Size = new System.Drawing.Size(84, 209);
+            this.trkSunsoft5b.Size = new System.Drawing.Size(63, 160);
             this.trkSunsoft5b.TabIndex = 22;
             this.trkSunsoft5b.Text = "Sunsoft";
             this.trkSunsoft5b.Value = 50;
@@ -422,14 +430,15 @@ namespace Mesen.GUI.Forms.Config
             // trkEPSMVol_L
             // 
             this.trkEPSMVol_L.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.trkEPSMVol_L.Location = new System.Drawing.Point(420, 209);
+            this.trkEPSMVol_L.AutoScroll = true;
+            this.trkEPSMVol_L.Location = new System.Drawing.Point(315, 160);
             this.trkEPSMVol_L.Margin = new System.Windows.Forms.Padding(0);
             this.trkEPSMVol_L.Maximum = 100;
-            this.trkEPSMVol_L.MaximumSize = new System.Drawing.Size(84, 209);
+            this.trkEPSMVol_L.MaximumSize = new System.Drawing.Size(63, 160);
             this.trkEPSMVol_L.Minimum = 0;
-            this.trkEPSMVol_L.MinimumSize = new System.Drawing.Size(84, 209);
+            this.trkEPSMVol_L.MinimumSize = new System.Drawing.Size(63, 160);
             this.trkEPSMVol_L.Name = "trkEPSMVol_L";
-            this.trkEPSMVol_L.Size = new System.Drawing.Size(84, 209);
+            this.trkEPSMVol_L.Size = new System.Drawing.Size(63, 160);
             this.trkEPSMVol_L.TabIndex = 22;
             this.trkEPSMVol_L.Text = "EPSM Left";
             this.trkEPSMVol_L.Value = 100;
@@ -437,14 +446,15 @@ namespace Mesen.GUI.Forms.Config
             // trkEPSMVol_R
             // 
             this.trkEPSMVol_R.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.trkEPSMVol_R.Location = new System.Drawing.Point(549, 209);
+            this.trkEPSMVol_R.AutoScroll = true;
+            this.trkEPSMVol_R.Location = new System.Drawing.Point(386, 160);
             this.trkEPSMVol_R.Margin = new System.Windows.Forms.Padding(0);
             this.trkEPSMVol_R.Maximum = 100;
-            this.trkEPSMVol_R.MaximumSize = new System.Drawing.Size(84, 209);
+            this.trkEPSMVol_R.MaximumSize = new System.Drawing.Size(63, 160);
             this.trkEPSMVol_R.Minimum = 0;
-            this.trkEPSMVol_R.MinimumSize = new System.Drawing.Size(84, 209);
+            this.trkEPSMVol_R.MinimumSize = new System.Drawing.Size(63, 160);
             this.trkEPSMVol_R.Name = "trkEPSMVol_R";
-            this.trkEPSMVol_R.Size = new System.Drawing.Size(84, 209);
+            this.trkEPSMVol_R.Size = new System.Drawing.Size(63, 160);
             this.trkEPSMVol_R.TabIndex = 22;
             this.trkEPSMVol_R.Text = "EPSM Right";
             this.trkEPSMVol_R.Value = 100;
@@ -465,7 +475,7 @@ namespace Mesen.GUI.Forms.Config
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel8, 0, 5);
             this.tableLayoutPanel2.Controls.Add(this.lblVolumeReductionSettings, 0, 5);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(4, 4);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 9;
@@ -478,17 +488,17 @@ namespace Mesen.GUI.Forms.Config
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(773, 513);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(463, 389);
             this.tableLayoutPanel2.TabIndex = 3;
             // 
             // chkEnableAudio
             // 
             this.chkEnableAudio.AutoSize = true;
             this.tableLayoutPanel2.SetColumnSpan(this.chkEnableAudio, 2);
-            this.chkEnableAudio.Location = new System.Drawing.Point(8, 41);
-            this.chkEnableAudio.Margin = new System.Windows.Forms.Padding(8, 8, 8, 4);
+            this.chkEnableAudio.Location = new System.Drawing.Point(6, 32);
+            this.chkEnableAudio.Margin = new System.Windows.Forms.Padding(6, 6, 6, 3);
             this.chkEnableAudio.Name = "chkEnableAudio";
-            this.chkEnableAudio.Size = new System.Drawing.Size(114, 21);
+            this.chkEnableAudio.Size = new System.Drawing.Size(89, 17);
             this.chkEnableAudio.TabIndex = 3;
             this.chkEnableAudio.Text = "Enable Audio";
             this.chkEnableAudio.UseVisualStyleBackColor = true;
@@ -497,10 +507,10 @@ namespace Mesen.GUI.Forms.Config
             // 
             this.chkEnableEPSM.AutoSize = true;
             this.tableLayoutPanel2.SetColumnSpan(this.chkEnableEPSM, 2);
-            this.chkEnableEPSM.Location = new System.Drawing.Point(8, 8);
-            this.chkEnableEPSM.Margin = new System.Windows.Forms.Padding(8, 8, 8, 4);
+            this.chkEnableEPSM.Location = new System.Drawing.Point(6, 6);
+            this.chkEnableEPSM.Margin = new System.Windows.Forms.Padding(6, 6, 6, 3);
             this.chkEnableEPSM.Name = "chkEnableEPSM";
-            this.chkEnableEPSM.Size = new System.Drawing.Size(116, 21);
+            this.chkEnableEPSM.Size = new System.Drawing.Size(92, 17);
             this.chkEnableEPSM.TabIndex = 3;
             this.chkEnableEPSM.Text = "Enable EPSM";
             this.chkEnableEPSM.UseVisualStyleBackColor = true;
@@ -509,10 +519,9 @@ namespace Mesen.GUI.Forms.Config
             // 
             this.lblSampleRate.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblSampleRate.AutoSize = true;
-            this.lblSampleRate.Location = new System.Drawing.Point(4, 107);
-            this.lblSampleRate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblSampleRate.Location = new System.Drawing.Point(3, 86);
             this.lblSampleRate.Name = "lblSampleRate";
-            this.lblSampleRate.Size = new System.Drawing.Size(93, 17);
+            this.lblSampleRate.Size = new System.Drawing.Size(71, 13);
             this.lblSampleRate.TabIndex = 0;
             this.lblSampleRate.Text = "Sample Rate:";
             // 
@@ -520,10 +529,9 @@ namespace Mesen.GUI.Forms.Config
             // 
             this.lblAudioLatency.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblAudioLatency.AutoSize = true;
-            this.lblAudioLatency.Location = new System.Drawing.Point(4, 141);
-            this.lblAudioLatency.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAudioLatency.Location = new System.Drawing.Point(3, 113);
             this.lblAudioLatency.Name = "lblAudioLatency";
-            this.lblAudioLatency.Size = new System.Drawing.Size(62, 17);
+            this.lblAudioLatency.Size = new System.Drawing.Size(48, 13);
             this.lblAudioLatency.TabIndex = 0;
             this.lblAudioLatency.Text = "Latency:";
             // 
@@ -537,20 +545,18 @@ namespace Mesen.GUI.Forms.Config
             "44,100 Hz",
             "48,000 Hz",
             "96,000 Hz"});
-            this.cboSampleRate.Location = new System.Drawing.Point(105, 103);
-            this.cboSampleRate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboSampleRate.Location = new System.Drawing.Point(80, 82);
             this.cboSampleRate.Name = "cboSampleRate";
-            this.cboSampleRate.Size = new System.Drawing.Size(99, 25);
+            this.cboSampleRate.Size = new System.Drawing.Size(75, 21);
             this.cboSampleRate.TabIndex = 5;
             // 
             // lblAudioDevice
             // 
             this.lblAudioDevice.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblAudioDevice.AutoSize = true;
-            this.lblAudioDevice.Location = new System.Drawing.Point(4, 74);
-            this.lblAudioDevice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAudioDevice.Location = new System.Drawing.Point(3, 59);
             this.lblAudioDevice.Name = "lblAudioDevice";
-            this.lblAudioDevice.Size = new System.Drawing.Size(55, 17);
+            this.lblAudioDevice.Size = new System.Drawing.Size(44, 13);
             this.lblAudioDevice.TabIndex = 6;
             this.lblAudioDevice.Text = "Device:";
             // 
@@ -558,10 +564,9 @@ namespace Mesen.GUI.Forms.Config
             // 
             this.cboAudioDevice.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboAudioDevice.FormattingEnabled = true;
-            this.cboAudioDevice.Location = new System.Drawing.Point(105, 70);
-            this.cboAudioDevice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboAudioDevice.Location = new System.Drawing.Point(80, 55);
             this.cboAudioDevice.Name = "cboAudioDevice";
-            this.cboAudioDevice.Size = new System.Drawing.Size(277, 25);
+            this.cboAudioDevice.Size = new System.Drawing.Size(209, 21);
             this.cboAudioDevice.TabIndex = 7;
             // 
             // tableLayoutPanel7
@@ -578,22 +583,22 @@ namespace Mesen.GUI.Forms.Config
             this.tableLayoutPanel7.Controls.Add(this.lblLatencyMs, 1, 0);
             this.tableLayoutPanel7.Controls.Add(this.nudLatency, 0, 0);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(101, 132);
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(77, 106);
             this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 1;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(672, 35);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(386, 27);
             this.tableLayoutPanel7.TabIndex = 15;
             // 
             // lblLatencyWarning
             // 
             this.lblLatencyWarning.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblLatencyWarning.AutoSize = true;
-            this.lblLatencyWarning.Location = new System.Drawing.Point(130, 9);
-            this.lblLatencyWarning.Margin = new System.Windows.Forms.Padding(0, 0, 4, 0);
+            this.lblLatencyWarning.Location = new System.Drawing.Point(98, 7);
+            this.lblLatencyWarning.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.lblLatencyWarning.Name = "lblLatencyWarning";
-            this.lblLatencyWarning.Size = new System.Drawing.Size(255, 17);
+            this.lblLatencyWarning.Size = new System.Drawing.Size(192, 13);
             this.lblLatencyWarning.TabIndex = 4;
             this.lblLatencyWarning.Text = "Low values may cause sound problems";
             // 
@@ -602,10 +607,10 @@ namespace Mesen.GUI.Forms.Config
             this.picLatencyWarning.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.picLatencyWarning.BackgroundImage = global::Mesen.GUI.Properties.Resources.Warning;
             this.picLatencyWarning.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.picLatencyWarning.Location = new System.Drawing.Point(109, 7);
-            this.picLatencyWarning.Margin = new System.Windows.Forms.Padding(7, 4, 0, 4);
+            this.picLatencyWarning.Location = new System.Drawing.Point(82, 5);
+            this.picLatencyWarning.Margin = new System.Windows.Forms.Padding(5, 3, 0, 3);
             this.picLatencyWarning.Name = "picLatencyWarning";
-            this.picLatencyWarning.Size = new System.Drawing.Size(21, 21);
+            this.picLatencyWarning.Size = new System.Drawing.Size(16, 16);
             this.picLatencyWarning.TabIndex = 3;
             this.picLatencyWarning.TabStop = false;
             // 
@@ -613,16 +618,16 @@ namespace Mesen.GUI.Forms.Config
             // 
             this.lblLatencyMs.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblLatencyMs.AutoSize = true;
-            this.lblLatencyMs.Location = new System.Drawing.Point(72, 9);
-            this.lblLatencyMs.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblLatencyMs.Location = new System.Drawing.Point(54, 7);
             this.lblLatencyMs.Name = "lblLatencyMs";
-            this.lblLatencyMs.Size = new System.Drawing.Size(26, 17);
+            this.lblLatencyMs.Size = new System.Drawing.Size(20, 13);
             this.lblLatencyMs.TabIndex = 2;
             this.lblLatencyMs.Text = "ms";
             // 
             // nudLatency
             // 
             this.nudLatency.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.nudLatency.AutoSize = true;
             this.nudLatency.DecimalPlaces = 0;
             this.nudLatency.Increment = new decimal(new int[] {
             1,
@@ -630,22 +635,21 @@ namespace Mesen.GUI.Forms.Config
             0,
             0});
             this.nudLatency.IsHex = false;
-            this.nudLatency.Location = new System.Drawing.Point(4, 4);
-            this.nudLatency.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nudLatency.Location = new System.Drawing.Point(3, 3);
             this.nudLatency.Maximum = new decimal(new int[] {
             300,
             0,
             0,
             0});
-            this.nudLatency.MaximumSize = new System.Drawing.Size(13333, 26);
+            this.nudLatency.MaximumSize = new System.Drawing.Size(10000, 20);
             this.nudLatency.Minimum = new decimal(new int[] {
             15,
             0,
             0,
             0});
-            this.nudLatency.MinimumSize = new System.Drawing.Size(0, 27);
+            this.nudLatency.MinimumSize = new System.Drawing.Size(0, 21);
             this.nudLatency.Name = "nudLatency";
-            this.nudLatency.Size = new System.Drawing.Size(60, 27);
+            this.nudLatency.Size = new System.Drawing.Size(45, 21);
             this.nudLatency.TabIndex = 1;
             this.nudLatency.Value = new decimal(new int[] {
             100,
@@ -664,24 +668,23 @@ namespace Mesen.GUI.Forms.Config
             this.tableLayoutPanel8.Controls.Add(this.chkReduceSoundInFastForward, 0, 2);
             this.tableLayoutPanel8.Controls.Add(this.trkVolumeReduction, 1, 1);
             this.tableLayoutPanel8.Controls.Add(this.chkMuteSoundInBackground, 0, 0);
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(13, 192);
-            this.tableLayoutPanel8.Margin = new System.Windows.Forms.Padding(13, 4, 0, 0);
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(10, 152);
+            this.tableLayoutPanel8.Margin = new System.Windows.Forms.Padding(10, 3, 0, 0);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 4;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(604, 106);
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(453, 81);
             this.tableLayoutPanel8.TabIndex = 25;
             // 
             // chkReduceSoundInBackground
             // 
             this.chkReduceSoundInBackground.AutoSize = true;
-            this.chkReduceSoundInBackground.Location = new System.Drawing.Point(4, 33);
-            this.chkReduceSoundInBackground.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkReduceSoundInBackground.Location = new System.Drawing.Point(3, 26);
             this.chkReduceSoundInBackground.Name = "chkReduceSoundInBackground";
-            this.chkReduceSoundInBackground.Size = new System.Drawing.Size(210, 21);
+            this.chkReduceSoundInBackground.Size = new System.Drawing.Size(164, 17);
             this.chkReduceSoundInBackground.TabIndex = 13;
             this.chkReduceSoundInBackground.Text = "Reduce when in background";
             this.chkReduceSoundInBackground.UseVisualStyleBackColor = true;
@@ -690,10 +693,9 @@ namespace Mesen.GUI.Forms.Config
             // chkReduceSoundInFastForward
             // 
             this.chkReduceSoundInFastForward.AutoSize = true;
-            this.chkReduceSoundInFastForward.Location = new System.Drawing.Point(4, 62);
-            this.chkReduceSoundInFastForward.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkReduceSoundInFastForward.Location = new System.Drawing.Point(3, 49);
             this.chkReduceSoundInFastForward.Name = "chkReduceSoundInFastForward";
-            this.chkReduceSoundInFastForward.Size = new System.Drawing.Size(294, 21);
+            this.chkReduceSoundInFastForward.Size = new System.Drawing.Size(225, 17);
             this.chkReduceSoundInFastForward.TabIndex = 16;
             this.chkReduceSoundInFastForward.Text = "Reduce when fast forwarding or rewinding";
             this.chkReduceSoundInFastForward.UseVisualStyleBackColor = true;
@@ -701,17 +703,18 @@ namespace Mesen.GUI.Forms.Config
             // 
             // trkVolumeReduction
             // 
+            this.trkVolumeReduction.AutoSize = true;
             this.trkVolumeReduction.Dock = System.Windows.Forms.DockStyle.Fill;
             this.trkVolumeReduction.Enabled = false;
-            this.trkVolumeReduction.Location = new System.Drawing.Point(302, 29);
+            this.trkVolumeReduction.Location = new System.Drawing.Point(231, 23);
             this.trkVolumeReduction.Margin = new System.Windows.Forms.Padding(0);
             this.trkVolumeReduction.Maximum = 100;
-            this.trkVolumeReduction.MaximumSize = new System.Drawing.Size(533, 72);
+            this.trkVolumeReduction.MaximumSize = new System.Drawing.Size(400, 55);
             this.trkVolumeReduction.Minimum = 0;
-            this.trkVolumeReduction.MinimumSize = new System.Drawing.Size(200, 72);
+            this.trkVolumeReduction.MinimumSize = new System.Drawing.Size(150, 55);
             this.trkVolumeReduction.Name = "trkVolumeReduction";
             this.tableLayoutPanel8.SetRowSpan(this.trkVolumeReduction, 2);
-            this.trkVolumeReduction.Size = new System.Drawing.Size(302, 72);
+            this.trkVolumeReduction.Size = new System.Drawing.Size(222, 55);
             this.trkVolumeReduction.TabIndex = 17;
             this.trkVolumeReduction.Text = "Volume Reduction";
             this.trkVolumeReduction.Value = 50;
@@ -719,10 +722,9 @@ namespace Mesen.GUI.Forms.Config
             // chkMuteSoundInBackground
             // 
             this.chkMuteSoundInBackground.AutoSize = true;
-            this.chkMuteSoundInBackground.Location = new System.Drawing.Point(4, 4);
-            this.chkMuteSoundInBackground.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkMuteSoundInBackground.Location = new System.Drawing.Point(3, 3);
             this.chkMuteSoundInBackground.Name = "chkMuteSoundInBackground";
-            this.chkMuteSoundInBackground.Size = new System.Drawing.Size(235, 21);
+            this.chkMuteSoundInBackground.Size = new System.Drawing.Size(182, 17);
             this.chkMuteSoundInBackground.TabIndex = 18;
             this.chkMuteSoundInBackground.Text = "Mute sound when in background";
             this.chkMuteSoundInBackground.UseVisualStyleBackColor = true;
@@ -734,20 +736,19 @@ namespace Mesen.GUI.Forms.Config
             this.lblVolumeReductionSettings.AutoSize = true;
             this.tableLayoutPanel2.SetColumnSpan(this.lblVolumeReductionSettings, 2);
             this.lblVolumeReductionSettings.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.lblVolumeReductionSettings.Location = new System.Drawing.Point(0, 171);
-            this.lblVolumeReductionSettings.Margin = new System.Windows.Forms.Padding(0, 4, 4, 0);
+            this.lblVolumeReductionSettings.Location = new System.Drawing.Point(0, 136);
+            this.lblVolumeReductionSettings.Margin = new System.Windows.Forms.Padding(0, 3, 3, 0);
             this.lblVolumeReductionSettings.Name = "lblVolumeReductionSettings";
-            this.lblVolumeReductionSettings.Size = new System.Drawing.Size(123, 17);
+            this.lblVolumeReductionSettings.Size = new System.Drawing.Size(94, 13);
             this.lblVolumeReductionSettings.TabIndex = 24;
             this.lblVolumeReductionSettings.Text = "Volume Reduction";
             // 
             // btnReset
             // 
             this.btnReset.AutoSize = true;
-            this.btnReset.Location = new System.Drawing.Point(8, 4);
-            this.btnReset.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnReset.Location = new System.Drawing.Point(6, 3);
             this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(169, 35);
+            this.btnReset.Size = new System.Drawing.Size(127, 27);
             this.btnReset.TabIndex = 3;
             this.btnReset.Text = "Reset to Defaults";
             this.btnReset.UseVisualStyleBackColor = true;
@@ -763,20 +764,18 @@ namespace Mesen.GUI.Forms.Config
             this.tabMain.Controls.Add(this.tpgAdvanced);
             this.tabMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabMain.Location = new System.Drawing.Point(0, 0);
-            this.tabMain.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabMain.Name = "tabMain";
             this.tabMain.SelectedIndex = 0;
-            this.tabMain.Size = new System.Drawing.Size(703, 550);
+            this.tabMain.Size = new System.Drawing.Size(477, 421);
             this.tabMain.TabIndex = 4;
             // 
             // tpgGeneral
             // 
             this.tpgGeneral.Controls.Add(this.tableLayoutPanel2);
-            this.tpgGeneral.Location = new System.Drawing.Point(4, 25);
-            this.tpgGeneral.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tpgGeneral.Location = new System.Drawing.Point(4, 22);
             this.tpgGeneral.Name = "tpgGeneral";
-            this.tpgGeneral.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tpgGeneral.Size = new System.Drawing.Size(781, 521);
+            this.tpgGeneral.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tpgGeneral.Size = new System.Drawing.Size(469, 395);
             this.tpgGeneral.TabIndex = 0;
             this.tpgGeneral.Text = "General";
             this.tpgGeneral.UseVisualStyleBackColor = true;
@@ -784,11 +783,10 @@ namespace Mesen.GUI.Forms.Config
             // tpgVolume
             // 
             this.tpgVolume.Controls.Add(this.grpVolume);
-            this.tpgVolume.Location = new System.Drawing.Point(4, 26);
-            this.tpgVolume.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tpgVolume.Location = new System.Drawing.Point(4, 22);
             this.tpgVolume.Name = "tpgVolume";
-            this.tpgVolume.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tpgVolume.Size = new System.Drawing.Size(695, 520);
+            this.tpgVolume.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tpgVolume.Size = new System.Drawing.Size(469, 395);
             this.tpgVolume.TabIndex = 1;
             this.tpgVolume.Text = "Volume";
             this.tpgVolume.UseVisualStyleBackColor = true;
@@ -796,11 +794,10 @@ namespace Mesen.GUI.Forms.Config
             // tpgPanning
             // 
             this.tpgPanning.Controls.Add(this.tableLayoutPanel6);
-            this.tpgPanning.Location = new System.Drawing.Point(4, 26);
-            this.tpgPanning.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tpgPanning.Location = new System.Drawing.Point(4, 22);
             this.tpgPanning.Name = "tpgPanning";
-            this.tpgPanning.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tpgPanning.Size = new System.Drawing.Size(628, 521);
+            this.tpgPanning.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tpgPanning.Size = new System.Drawing.Size(469, 395);
             this.tpgPanning.TabIndex = 4;
             this.tpgPanning.Text = "Panning";
             this.tpgPanning.UseVisualStyleBackColor = true;
@@ -824,8 +821,7 @@ namespace Mesen.GUI.Forms.Config
             this.tableLayoutPanel6.Controls.Add(this.trkEPSMPan_L, 0, 5);
             this.tableLayoutPanel6.Controls.Add(this.trkEPSMPan_R, 1, 5);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(4, 4);
-            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 8;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -835,21 +831,22 @@ namespace Mesen.GUI.Forms.Config
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(620, 513);
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(463, 389);
             this.tableLayoutPanel6.TabIndex = 3;
             // 
             // trkSquare1Pan
             // 
             this.trkSquare1Pan.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.trkSquare1Pan.Location = new System.Drawing.Point(17, 0);
+            this.trkSquare1Pan.AutoSize = true;
+            this.trkSquare1Pan.Location = new System.Drawing.Point(12, 0);
             this.trkSquare1Pan.Margin = new System.Windows.Forms.Padding(0);
             this.trkSquare1Pan.Maximum = 100;
-            this.trkSquare1Pan.MaximumSize = new System.Drawing.Size(84, 209);
+            this.trkSquare1Pan.MaximumSize = new System.Drawing.Size(63, 160);
             this.trkSquare1Pan.Minimum = -100;
-            this.trkSquare1Pan.MinimumSize = new System.Drawing.Size(275, 72);
+            this.trkSquare1Pan.MinimumSize = new System.Drawing.Size(206, 55);
             this.trkSquare1Pan.Name = "trkSquare1Pan";
-            this.trkSquare1Pan.Size = new System.Drawing.Size(275, 72);
+            this.trkSquare1Pan.Size = new System.Drawing.Size(206, 55);
             this.trkSquare1Pan.TabIndex = 12;
             this.trkSquare1Pan.Text = "Square 1";
             this.trkSquare1Pan.Value = 0;
@@ -857,14 +854,15 @@ namespace Mesen.GUI.Forms.Config
             // trkFdsPan
             // 
             this.trkFdsPan.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.trkFdsPan.Location = new System.Drawing.Point(327, 0);
+            this.trkFdsPan.AutoSize = true;
+            this.trkFdsPan.Location = new System.Drawing.Point(244, 0);
             this.trkFdsPan.Margin = new System.Windows.Forms.Padding(0);
             this.trkFdsPan.Maximum = 100;
-            this.trkFdsPan.MaximumSize = new System.Drawing.Size(84, 209);
+            this.trkFdsPan.MaximumSize = new System.Drawing.Size(63, 160);
             this.trkFdsPan.Minimum = -100;
-            this.trkFdsPan.MinimumSize = new System.Drawing.Size(275, 72);
+            this.trkFdsPan.MinimumSize = new System.Drawing.Size(206, 55);
             this.trkFdsPan.Name = "trkFdsPan";
-            this.trkFdsPan.Size = new System.Drawing.Size(275, 72);
+            this.trkFdsPan.Size = new System.Drawing.Size(206, 55);
             this.trkFdsPan.TabIndex = 17;
             this.trkFdsPan.Text = "FDS";
             this.trkFdsPan.Value = 0;
@@ -872,14 +870,15 @@ namespace Mesen.GUI.Forms.Config
             // trkSquare2Pan
             // 
             this.trkSquare2Pan.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.trkSquare2Pan.Location = new System.Drawing.Point(17, 72);
+            this.trkSquare2Pan.AutoSize = true;
+            this.trkSquare2Pan.Location = new System.Drawing.Point(12, 55);
             this.trkSquare2Pan.Margin = new System.Windows.Forms.Padding(0);
             this.trkSquare2Pan.Maximum = 100;
-            this.trkSquare2Pan.MaximumSize = new System.Drawing.Size(84, 209);
+            this.trkSquare2Pan.MaximumSize = new System.Drawing.Size(63, 160);
             this.trkSquare2Pan.Minimum = -100;
-            this.trkSquare2Pan.MinimumSize = new System.Drawing.Size(275, 72);
+            this.trkSquare2Pan.MinimumSize = new System.Drawing.Size(206, 55);
             this.trkSquare2Pan.Name = "trkSquare2Pan";
-            this.trkSquare2Pan.Size = new System.Drawing.Size(275, 72);
+            this.trkSquare2Pan.Size = new System.Drawing.Size(206, 55);
             this.trkSquare2Pan.TabIndex = 13;
             this.trkSquare2Pan.Text = "Square 2";
             this.trkSquare2Pan.Value = 0;
@@ -887,14 +886,15 @@ namespace Mesen.GUI.Forms.Config
             // trkMmc5Pan
             // 
             this.trkMmc5Pan.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.trkMmc5Pan.Location = new System.Drawing.Point(327, 72);
+            this.trkMmc5Pan.AutoSize = true;
+            this.trkMmc5Pan.Location = new System.Drawing.Point(244, 55);
             this.trkMmc5Pan.Margin = new System.Windows.Forms.Padding(0);
             this.trkMmc5Pan.Maximum = 100;
-            this.trkMmc5Pan.MaximumSize = new System.Drawing.Size(84, 209);
+            this.trkMmc5Pan.MaximumSize = new System.Drawing.Size(63, 160);
             this.trkMmc5Pan.Minimum = -100;
-            this.trkMmc5Pan.MinimumSize = new System.Drawing.Size(275, 72);
+            this.trkMmc5Pan.MinimumSize = new System.Drawing.Size(206, 55);
             this.trkMmc5Pan.Name = "trkMmc5Pan";
-            this.trkMmc5Pan.Size = new System.Drawing.Size(275, 72);
+            this.trkMmc5Pan.Size = new System.Drawing.Size(206, 55);
             this.trkMmc5Pan.TabIndex = 18;
             this.trkMmc5Pan.Text = "MMC5";
             this.trkMmc5Pan.Value = 0;
@@ -902,14 +902,15 @@ namespace Mesen.GUI.Forms.Config
             // trkTrianglePan
             // 
             this.trkTrianglePan.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.trkTrianglePan.Location = new System.Drawing.Point(17, 144);
+            this.trkTrianglePan.AutoSize = true;
+            this.trkTrianglePan.Location = new System.Drawing.Point(12, 110);
             this.trkTrianglePan.Margin = new System.Windows.Forms.Padding(0);
             this.trkTrianglePan.Maximum = 100;
-            this.trkTrianglePan.MaximumSize = new System.Drawing.Size(84, 209);
+            this.trkTrianglePan.MaximumSize = new System.Drawing.Size(63, 160);
             this.trkTrianglePan.Minimum = -100;
-            this.trkTrianglePan.MinimumSize = new System.Drawing.Size(275, 72);
+            this.trkTrianglePan.MinimumSize = new System.Drawing.Size(206, 55);
             this.trkTrianglePan.Name = "trkTrianglePan";
-            this.trkTrianglePan.Size = new System.Drawing.Size(275, 72);
+            this.trkTrianglePan.Size = new System.Drawing.Size(206, 55);
             this.trkTrianglePan.TabIndex = 14;
             this.trkTrianglePan.Text = "Triangle";
             this.trkTrianglePan.Value = 0;
@@ -917,14 +918,15 @@ namespace Mesen.GUI.Forms.Config
             // trkNoisePan
             // 
             this.trkNoisePan.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.trkNoisePan.Location = new System.Drawing.Point(17, 216);
+            this.trkNoisePan.AutoSize = true;
+            this.trkNoisePan.Location = new System.Drawing.Point(12, 165);
             this.trkNoisePan.Margin = new System.Windows.Forms.Padding(0);
             this.trkNoisePan.Maximum = 100;
-            this.trkNoisePan.MaximumSize = new System.Drawing.Size(84, 209);
+            this.trkNoisePan.MaximumSize = new System.Drawing.Size(63, 160);
             this.trkNoisePan.Minimum = -100;
-            this.trkNoisePan.MinimumSize = new System.Drawing.Size(275, 72);
+            this.trkNoisePan.MinimumSize = new System.Drawing.Size(206, 55);
             this.trkNoisePan.Name = "trkNoisePan";
-            this.trkNoisePan.Size = new System.Drawing.Size(275, 72);
+            this.trkNoisePan.Size = new System.Drawing.Size(206, 55);
             this.trkNoisePan.TabIndex = 15;
             this.trkNoisePan.Text = "Noise";
             this.trkNoisePan.Value = 0;
@@ -932,14 +934,15 @@ namespace Mesen.GUI.Forms.Config
             // trkDmcPan
             // 
             this.trkDmcPan.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.trkDmcPan.Location = new System.Drawing.Point(17, 288);
+            this.trkDmcPan.AutoSize = true;
+            this.trkDmcPan.Location = new System.Drawing.Point(12, 220);
             this.trkDmcPan.Margin = new System.Windows.Forms.Padding(0);
             this.trkDmcPan.Maximum = 100;
-            this.trkDmcPan.MaximumSize = new System.Drawing.Size(84, 209);
+            this.trkDmcPan.MaximumSize = new System.Drawing.Size(63, 160);
             this.trkDmcPan.Minimum = -100;
-            this.trkDmcPan.MinimumSize = new System.Drawing.Size(275, 72);
+            this.trkDmcPan.MinimumSize = new System.Drawing.Size(206, 55);
             this.trkDmcPan.Name = "trkDmcPan";
-            this.trkDmcPan.Size = new System.Drawing.Size(275, 72);
+            this.trkDmcPan.Size = new System.Drawing.Size(206, 55);
             this.trkDmcPan.TabIndex = 16;
             this.trkDmcPan.Text = "DMC";
             this.trkDmcPan.Value = 0;
@@ -947,14 +950,15 @@ namespace Mesen.GUI.Forms.Config
             // trkVrc6Pan
             // 
             this.trkVrc6Pan.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.trkVrc6Pan.Location = new System.Drawing.Point(327, 144);
+            this.trkVrc6Pan.AutoSize = true;
+            this.trkVrc6Pan.Location = new System.Drawing.Point(244, 110);
             this.trkVrc6Pan.Margin = new System.Windows.Forms.Padding(0);
             this.trkVrc6Pan.Maximum = 100;
-            this.trkVrc6Pan.MaximumSize = new System.Drawing.Size(84, 209);
+            this.trkVrc6Pan.MaximumSize = new System.Drawing.Size(63, 160);
             this.trkVrc6Pan.Minimum = -100;
-            this.trkVrc6Pan.MinimumSize = new System.Drawing.Size(275, 72);
+            this.trkVrc6Pan.MinimumSize = new System.Drawing.Size(206, 55);
             this.trkVrc6Pan.Name = "trkVrc6Pan";
-            this.trkVrc6Pan.Size = new System.Drawing.Size(275, 72);
+            this.trkVrc6Pan.Size = new System.Drawing.Size(206, 55);
             this.trkVrc6Pan.TabIndex = 19;
             this.trkVrc6Pan.Text = "VRC6";
             this.trkVrc6Pan.Value = 0;
@@ -962,14 +966,15 @@ namespace Mesen.GUI.Forms.Config
             // trkVrc7Pan
             // 
             this.trkVrc7Pan.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.trkVrc7Pan.Location = new System.Drawing.Point(327, 216);
+            this.trkVrc7Pan.AutoSize = true;
+            this.trkVrc7Pan.Location = new System.Drawing.Point(244, 165);
             this.trkVrc7Pan.Margin = new System.Windows.Forms.Padding(0);
             this.trkVrc7Pan.Maximum = 100;
-            this.trkVrc7Pan.MaximumSize = new System.Drawing.Size(84, 209);
+            this.trkVrc7Pan.MaximumSize = new System.Drawing.Size(63, 160);
             this.trkVrc7Pan.Minimum = -100;
-            this.trkVrc7Pan.MinimumSize = new System.Drawing.Size(275, 72);
+            this.trkVrc7Pan.MinimumSize = new System.Drawing.Size(206, 55);
             this.trkVrc7Pan.Name = "trkVrc7Pan";
-            this.trkVrc7Pan.Size = new System.Drawing.Size(275, 72);
+            this.trkVrc7Pan.Size = new System.Drawing.Size(206, 55);
             this.trkVrc7Pan.TabIndex = 20;
             this.trkVrc7Pan.Text = "VRC7";
             this.trkVrc7Pan.Value = 0;
@@ -977,14 +982,15 @@ namespace Mesen.GUI.Forms.Config
             // trkNamcoPan
             // 
             this.trkNamcoPan.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.trkNamcoPan.Location = new System.Drawing.Point(327, 288);
+            this.trkNamcoPan.AutoSize = true;
+            this.trkNamcoPan.Location = new System.Drawing.Point(244, 220);
             this.trkNamcoPan.Margin = new System.Windows.Forms.Padding(0);
             this.trkNamcoPan.Maximum = 100;
-            this.trkNamcoPan.MaximumSize = new System.Drawing.Size(84, 209);
+            this.trkNamcoPan.MaximumSize = new System.Drawing.Size(63, 160);
             this.trkNamcoPan.Minimum = -100;
-            this.trkNamcoPan.MinimumSize = new System.Drawing.Size(275, 72);
+            this.trkNamcoPan.MinimumSize = new System.Drawing.Size(206, 55);
             this.trkNamcoPan.Name = "trkNamcoPan";
-            this.trkNamcoPan.Size = new System.Drawing.Size(275, 72);
+            this.trkNamcoPan.Size = new System.Drawing.Size(206, 55);
             this.trkNamcoPan.TabIndex = 21;
             this.trkNamcoPan.Text = "Namco";
             this.trkNamcoPan.Value = 0;
@@ -992,14 +998,15 @@ namespace Mesen.GUI.Forms.Config
             // trkSunsoftPan
             // 
             this.trkSunsoftPan.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.trkSunsoftPan.Location = new System.Drawing.Point(17, 432);
+            this.trkSunsoftPan.AutoSize = true;
+            this.trkSunsoftPan.Location = new System.Drawing.Point(12, 330);
             this.trkSunsoftPan.Margin = new System.Windows.Forms.Padding(0);
             this.trkSunsoftPan.Maximum = 100;
-            this.trkSunsoftPan.MaximumSize = new System.Drawing.Size(84, 209);
+            this.trkSunsoftPan.MaximumSize = new System.Drawing.Size(63, 160);
             this.trkSunsoftPan.Minimum = -100;
-            this.trkSunsoftPan.MinimumSize = new System.Drawing.Size(275, 72);
+            this.trkSunsoftPan.MinimumSize = new System.Drawing.Size(206, 55);
             this.trkSunsoftPan.Name = "trkSunsoftPan";
-            this.trkSunsoftPan.Size = new System.Drawing.Size(275, 72);
+            this.trkSunsoftPan.Size = new System.Drawing.Size(206, 55);
             this.trkSunsoftPan.TabIndex = 22;
             this.trkSunsoftPan.Text = "Sunsoft";
             this.trkSunsoftPan.Value = 0;
@@ -1007,14 +1014,15 @@ namespace Mesen.GUI.Forms.Config
             // trkEPSMPan_L
             // 
             this.trkEPSMPan_L.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.trkEPSMPan_L.Location = new System.Drawing.Point(17, 360);
+            this.trkEPSMPan_L.AutoSize = true;
+            this.trkEPSMPan_L.Location = new System.Drawing.Point(12, 275);
             this.trkEPSMPan_L.Margin = new System.Windows.Forms.Padding(0);
             this.trkEPSMPan_L.Maximum = 100;
-            this.trkEPSMPan_L.MaximumSize = new System.Drawing.Size(84, 209);
+            this.trkEPSMPan_L.MaximumSize = new System.Drawing.Size(63, 160);
             this.trkEPSMPan_L.Minimum = -100;
-            this.trkEPSMPan_L.MinimumSize = new System.Drawing.Size(275, 72);
+            this.trkEPSMPan_L.MinimumSize = new System.Drawing.Size(206, 55);
             this.trkEPSMPan_L.Name = "trkEPSMPan_L";
-            this.trkEPSMPan_L.Size = new System.Drawing.Size(275, 72);
+            this.trkEPSMPan_L.Size = new System.Drawing.Size(206, 55);
             this.trkEPSMPan_L.TabIndex = 22;
             this.trkEPSMPan_L.Text = "EPSM Left";
             this.trkEPSMPan_L.Value = -100;
@@ -1022,14 +1030,15 @@ namespace Mesen.GUI.Forms.Config
             // trkEPSMPan_R
             // 
             this.trkEPSMPan_R.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.trkEPSMPan_R.Location = new System.Drawing.Point(327, 360);
+            this.trkEPSMPan_R.AutoSize = true;
+            this.trkEPSMPan_R.Location = new System.Drawing.Point(244, 275);
             this.trkEPSMPan_R.Margin = new System.Windows.Forms.Padding(0);
             this.trkEPSMPan_R.Maximum = 100;
-            this.trkEPSMPan_R.MaximumSize = new System.Drawing.Size(84, 209);
+            this.trkEPSMPan_R.MaximumSize = new System.Drawing.Size(63, 160);
             this.trkEPSMPan_R.Minimum = -100;
-            this.trkEPSMPan_R.MinimumSize = new System.Drawing.Size(275, 72);
+            this.trkEPSMPan_R.MinimumSize = new System.Drawing.Size(206, 55);
             this.trkEPSMPan_R.Name = "trkEPSMPan_R";
-            this.trkEPSMPan_R.Size = new System.Drawing.Size(275, 72);
+            this.trkEPSMPan_R.Size = new System.Drawing.Size(206, 55);
             this.trkEPSMPan_R.TabIndex = 22;
             this.trkEPSMPan_R.Text = "EPSM Right";
             this.trkEPSMPan_R.Value = 100;
@@ -1037,11 +1046,10 @@ namespace Mesen.GUI.Forms.Config
             // tpgEqualizer
             // 
             this.tpgEqualizer.Controls.Add(this.groupBox1);
-            this.tpgEqualizer.Location = new System.Drawing.Point(4, 26);
-            this.tpgEqualizer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tpgEqualizer.Location = new System.Drawing.Point(4, 22);
             this.tpgEqualizer.Name = "tpgEqualizer";
-            this.tpgEqualizer.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tpgEqualizer.Size = new System.Drawing.Size(628, 521);
+            this.tpgEqualizer.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tpgEqualizer.Size = new System.Drawing.Size(469, 395);
             this.tpgEqualizer.TabIndex = 5;
             this.tpgEqualizer.Text = "Equalizer";
             this.tpgEqualizer.UseVisualStyleBackColor = true;
@@ -1051,11 +1059,9 @@ namespace Mesen.GUI.Forms.Config
             this.groupBox1.Controls.Add(this.chkEnableEqualizer);
             this.groupBox1.Controls.Add(this.tlpEqualizer);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(4, 4);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox1.Size = new System.Drawing.Size(620, 513);
+            this.groupBox1.Size = new System.Drawing.Size(463, 389);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             // 
@@ -1063,11 +1069,10 @@ namespace Mesen.GUI.Forms.Config
             // 
             this.chkEnableEqualizer.AutoSize = true;
             this.chkEnableEqualizer.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.chkEnableEqualizer.Location = new System.Drawing.Point(9, 0);
-            this.chkEnableEqualizer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkEnableEqualizer.Location = new System.Drawing.Point(7, 0);
             this.chkEnableEqualizer.Name = "chkEnableEqualizer";
-            this.chkEnableEqualizer.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.chkEnableEqualizer.Size = new System.Drawing.Size(144, 21);
+            this.chkEnableEqualizer.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.chkEnableEqualizer.Size = new System.Drawing.Size(110, 17);
             this.chkEnableEqualizer.TabIndex = 5;
             this.chkEnableEqualizer.Text = "Enable Equalizer";
             this.chkEnableEqualizer.UseVisualStyleBackColor = false;
@@ -1109,28 +1114,28 @@ namespace Mesen.GUI.Forms.Config
             this.tlpEqualizer.Controls.Add(this.flowLayoutPanel6, 0, 0);
             this.tlpEqualizer.Controls.Add(this.flowLayoutPanel7, 6, 0);
             this.tlpEqualizer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpEqualizer.Location = new System.Drawing.Point(4, 20);
-            this.tlpEqualizer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tlpEqualizer.Location = new System.Drawing.Point(3, 16);
             this.tlpEqualizer.Name = "tlpEqualizer";
             this.tlpEqualizer.RowCount = 4;
             this.tlpEqualizer.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlpEqualizer.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlpEqualizer.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlpEqualizer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tlpEqualizer.Size = new System.Drawing.Size(612, 489);
+            this.tlpEqualizer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpEqualizer.Size = new System.Drawing.Size(457, 370);
             this.tlpEqualizer.TabIndex = 3;
             // 
             // trkBand6Gain
             // 
+            this.trkBand6Gain.AutoSize = true;
             this.trkBand6Gain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.trkBand6Gain.Location = new System.Drawing.Point(305, 28);
+            this.trkBand6Gain.Location = new System.Drawing.Point(225, 23);
             this.trkBand6Gain.Margin = new System.Windows.Forms.Padding(0);
             this.trkBand6Gain.Maximum = 200;
-            this.trkBand6Gain.MaximumSize = new System.Drawing.Size(84, 209);
+            this.trkBand6Gain.MaximumSize = new System.Drawing.Size(63, 160);
             this.trkBand6Gain.Minimum = -200;
-            this.trkBand6Gain.MinimumSize = new System.Drawing.Size(45, 209);
+            this.trkBand6Gain.MinimumSize = new System.Drawing.Size(34, 160);
             this.trkBand6Gain.Name = "trkBand6Gain";
-            this.trkBand6Gain.Size = new System.Drawing.Size(61, 209);
+            this.trkBand6Gain.Size = new System.Drawing.Size(45, 160);
             this.trkBand6Gain.TabIndex = 16;
             this.trkBand6Gain.Text = "225 Hz";
             this.trkBand6Gain.Value = 50;
@@ -1138,15 +1143,16 @@ namespace Mesen.GUI.Forms.Config
             // 
             // trkBand5Gain
             // 
+            this.trkBand5Gain.AutoSize = true;
             this.trkBand5Gain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.trkBand5Gain.Location = new System.Drawing.Point(244, 28);
+            this.trkBand5Gain.Location = new System.Drawing.Point(180, 23);
             this.trkBand5Gain.Margin = new System.Windows.Forms.Padding(0);
             this.trkBand5Gain.Maximum = 200;
-            this.trkBand5Gain.MaximumSize = new System.Drawing.Size(84, 209);
+            this.trkBand5Gain.MaximumSize = new System.Drawing.Size(63, 160);
             this.trkBand5Gain.Minimum = -200;
-            this.trkBand5Gain.MinimumSize = new System.Drawing.Size(45, 209);
+            this.trkBand5Gain.MinimumSize = new System.Drawing.Size(34, 160);
             this.trkBand5Gain.Name = "trkBand5Gain";
-            this.trkBand5Gain.Size = new System.Drawing.Size(61, 209);
+            this.trkBand5Gain.Size = new System.Drawing.Size(45, 160);
             this.trkBand5Gain.TabIndex = 15;
             this.trkBand5Gain.Text = "160 Hz";
             this.trkBand5Gain.Value = 50;
@@ -1154,15 +1160,16 @@ namespace Mesen.GUI.Forms.Config
             // 
             // trkBand4Gain
             // 
+            this.trkBand4Gain.AutoSize = true;
             this.trkBand4Gain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.trkBand4Gain.Location = new System.Drawing.Point(183, 28);
+            this.trkBand4Gain.Location = new System.Drawing.Point(135, 23);
             this.trkBand4Gain.Margin = new System.Windows.Forms.Padding(0);
             this.trkBand4Gain.Maximum = 200;
-            this.trkBand4Gain.MaximumSize = new System.Drawing.Size(84, 209);
+            this.trkBand4Gain.MaximumSize = new System.Drawing.Size(63, 160);
             this.trkBand4Gain.Minimum = -200;
-            this.trkBand4Gain.MinimumSize = new System.Drawing.Size(45, 209);
+            this.trkBand4Gain.MinimumSize = new System.Drawing.Size(34, 160);
             this.trkBand4Gain.Name = "trkBand4Gain";
-            this.trkBand4Gain.Size = new System.Drawing.Size(61, 209);
+            this.trkBand4Gain.Size = new System.Drawing.Size(45, 160);
             this.trkBand4Gain.TabIndex = 14;
             this.trkBand4Gain.Text = "113 Hz";
             this.trkBand4Gain.Value = 50;
@@ -1170,15 +1177,16 @@ namespace Mesen.GUI.Forms.Config
             // 
             // trkBand3Gain
             // 
+            this.trkBand3Gain.AutoSize = true;
             this.trkBand3Gain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.trkBand3Gain.Location = new System.Drawing.Point(122, 28);
+            this.trkBand3Gain.Location = new System.Drawing.Point(90, 23);
             this.trkBand3Gain.Margin = new System.Windows.Forms.Padding(0);
             this.trkBand3Gain.Maximum = 200;
-            this.trkBand3Gain.MaximumSize = new System.Drawing.Size(84, 209);
+            this.trkBand3Gain.MaximumSize = new System.Drawing.Size(63, 160);
             this.trkBand3Gain.Minimum = -200;
-            this.trkBand3Gain.MinimumSize = new System.Drawing.Size(45, 209);
+            this.trkBand3Gain.MinimumSize = new System.Drawing.Size(34, 160);
             this.trkBand3Gain.Name = "trkBand3Gain";
-            this.trkBand3Gain.Size = new System.Drawing.Size(61, 209);
+            this.trkBand3Gain.Size = new System.Drawing.Size(45, 160);
             this.trkBand3Gain.TabIndex = 13;
             this.trkBand3Gain.Text = "80 Hz";
             this.trkBand3Gain.Value = 50;
@@ -1186,15 +1194,16 @@ namespace Mesen.GUI.Forms.Config
             // 
             // trkBand2Gain
             // 
+            this.trkBand2Gain.AutoSize = true;
             this.trkBand2Gain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.trkBand2Gain.Location = new System.Drawing.Point(61, 28);
+            this.trkBand2Gain.Location = new System.Drawing.Point(45, 23);
             this.trkBand2Gain.Margin = new System.Windows.Forms.Padding(0);
             this.trkBand2Gain.Maximum = 200;
-            this.trkBand2Gain.MaximumSize = new System.Drawing.Size(84, 209);
+            this.trkBand2Gain.MaximumSize = new System.Drawing.Size(63, 160);
             this.trkBand2Gain.Minimum = -200;
-            this.trkBand2Gain.MinimumSize = new System.Drawing.Size(45, 209);
+            this.trkBand2Gain.MinimumSize = new System.Drawing.Size(34, 160);
             this.trkBand2Gain.Name = "trkBand2Gain";
-            this.trkBand2Gain.Size = new System.Drawing.Size(61, 209);
+            this.trkBand2Gain.Size = new System.Drawing.Size(45, 160);
             this.trkBand2Gain.TabIndex = 12;
             this.trkBand2Gain.Text = "56 Hz";
             this.trkBand2Gain.Value = 50;
@@ -1202,15 +1211,16 @@ namespace Mesen.GUI.Forms.Config
             // 
             // trkBand1Gain
             // 
+            this.trkBand1Gain.AutoSize = true;
             this.trkBand1Gain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.trkBand1Gain.Location = new System.Drawing.Point(0, 28);
+            this.trkBand1Gain.Location = new System.Drawing.Point(0, 23);
             this.trkBand1Gain.Margin = new System.Windows.Forms.Padding(0);
             this.trkBand1Gain.Maximum = 200;
-            this.trkBand1Gain.MaximumSize = new System.Drawing.Size(84, 209);
+            this.trkBand1Gain.MaximumSize = new System.Drawing.Size(63, 160);
             this.trkBand1Gain.Minimum = -200;
-            this.trkBand1Gain.MinimumSize = new System.Drawing.Size(45, 209);
+            this.trkBand1Gain.MinimumSize = new System.Drawing.Size(34, 160);
             this.trkBand1Gain.Name = "trkBand1Gain";
-            this.trkBand1Gain.Size = new System.Drawing.Size(61, 209);
+            this.trkBand1Gain.Size = new System.Drawing.Size(45, 160);
             this.trkBand1Gain.TabIndex = 11;
             this.trkBand1Gain.Text = "40 Hz";
             this.trkBand1Gain.Value = 50;
@@ -1218,15 +1228,16 @@ namespace Mesen.GUI.Forms.Config
             // 
             // trkBand11Gain
             // 
+            this.trkBand11Gain.AutoSize = true;
             this.trkBand11Gain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.trkBand11Gain.Location = new System.Drawing.Point(0, 237);
+            this.trkBand11Gain.Location = new System.Drawing.Point(0, 183);
             this.trkBand11Gain.Margin = new System.Windows.Forms.Padding(0);
             this.trkBand11Gain.Maximum = 200;
-            this.trkBand11Gain.MaximumSize = new System.Drawing.Size(84, 209);
+            this.trkBand11Gain.MaximumSize = new System.Drawing.Size(63, 160);
             this.trkBand11Gain.Minimum = -200;
-            this.trkBand11Gain.MinimumSize = new System.Drawing.Size(45, 209);
+            this.trkBand11Gain.MinimumSize = new System.Drawing.Size(34, 160);
             this.trkBand11Gain.Name = "trkBand11Gain";
-            this.trkBand11Gain.Size = new System.Drawing.Size(61, 209);
+            this.trkBand11Gain.Size = new System.Drawing.Size(45, 160);
             this.trkBand11Gain.TabIndex = 17;
             this.trkBand11Gain.Text = "1.0 kHz";
             this.trkBand11Gain.Value = 50;
@@ -1234,15 +1245,16 @@ namespace Mesen.GUI.Forms.Config
             // 
             // trkBand12Gain
             // 
+            this.trkBand12Gain.AutoSize = true;
             this.trkBand12Gain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.trkBand12Gain.Location = new System.Drawing.Point(61, 237);
+            this.trkBand12Gain.Location = new System.Drawing.Point(45, 183);
             this.trkBand12Gain.Margin = new System.Windows.Forms.Padding(0);
             this.trkBand12Gain.Maximum = 200;
-            this.trkBand12Gain.MaximumSize = new System.Drawing.Size(84, 209);
+            this.trkBand12Gain.MaximumSize = new System.Drawing.Size(63, 160);
             this.trkBand12Gain.Minimum = -200;
-            this.trkBand12Gain.MinimumSize = new System.Drawing.Size(45, 209);
+            this.trkBand12Gain.MinimumSize = new System.Drawing.Size(34, 160);
             this.trkBand12Gain.Name = "trkBand12Gain";
-            this.trkBand12Gain.Size = new System.Drawing.Size(61, 209);
+            this.trkBand12Gain.Size = new System.Drawing.Size(45, 160);
             this.trkBand12Gain.TabIndex = 18;
             this.trkBand12Gain.Text = "2.0 kHz";
             this.trkBand12Gain.Value = 50;
@@ -1250,15 +1262,16 @@ namespace Mesen.GUI.Forms.Config
             // 
             // trkBand13Gain
             // 
+            this.trkBand13Gain.AutoSize = true;
             this.trkBand13Gain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.trkBand13Gain.Location = new System.Drawing.Point(122, 237);
+            this.trkBand13Gain.Location = new System.Drawing.Point(90, 183);
             this.trkBand13Gain.Margin = new System.Windows.Forms.Padding(0);
             this.trkBand13Gain.Maximum = 200;
-            this.trkBand13Gain.MaximumSize = new System.Drawing.Size(84, 209);
+            this.trkBand13Gain.MaximumSize = new System.Drawing.Size(63, 160);
             this.trkBand13Gain.Minimum = -200;
-            this.trkBand13Gain.MinimumSize = new System.Drawing.Size(45, 209);
+            this.trkBand13Gain.MinimumSize = new System.Drawing.Size(34, 160);
             this.trkBand13Gain.Name = "trkBand13Gain";
-            this.trkBand13Gain.Size = new System.Drawing.Size(61, 209);
+            this.trkBand13Gain.Size = new System.Drawing.Size(45, 160);
             this.trkBand13Gain.TabIndex = 19;
             this.trkBand13Gain.Text = "3.0 kHz";
             this.trkBand13Gain.Value = 50;
@@ -1266,15 +1279,16 @@ namespace Mesen.GUI.Forms.Config
             // 
             // trkBand14Gain
             // 
+            this.trkBand14Gain.AutoSize = true;
             this.trkBand14Gain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.trkBand14Gain.Location = new System.Drawing.Point(183, 237);
+            this.trkBand14Gain.Location = new System.Drawing.Point(135, 183);
             this.trkBand14Gain.Margin = new System.Windows.Forms.Padding(0);
             this.trkBand14Gain.Maximum = 200;
-            this.trkBand14Gain.MaximumSize = new System.Drawing.Size(84, 209);
+            this.trkBand14Gain.MaximumSize = new System.Drawing.Size(63, 160);
             this.trkBand14Gain.Minimum = -200;
-            this.trkBand14Gain.MinimumSize = new System.Drawing.Size(45, 209);
+            this.trkBand14Gain.MinimumSize = new System.Drawing.Size(34, 160);
             this.trkBand14Gain.Name = "trkBand14Gain";
-            this.trkBand14Gain.Size = new System.Drawing.Size(61, 209);
+            this.trkBand14Gain.Size = new System.Drawing.Size(45, 160);
             this.trkBand14Gain.TabIndex = 20;
             this.trkBand14Gain.Text = "4.0 kHz";
             this.trkBand14Gain.Value = 50;
@@ -1282,15 +1296,16 @@ namespace Mesen.GUI.Forms.Config
             // 
             // trkBand15Gain
             // 
+            this.trkBand15Gain.AutoSize = true;
             this.trkBand15Gain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.trkBand15Gain.Location = new System.Drawing.Point(244, 237);
+            this.trkBand15Gain.Location = new System.Drawing.Point(180, 183);
             this.trkBand15Gain.Margin = new System.Windows.Forms.Padding(0);
             this.trkBand15Gain.Maximum = 200;
-            this.trkBand15Gain.MaximumSize = new System.Drawing.Size(84, 209);
+            this.trkBand15Gain.MaximumSize = new System.Drawing.Size(63, 160);
             this.trkBand15Gain.Minimum = -200;
-            this.trkBand15Gain.MinimumSize = new System.Drawing.Size(45, 209);
+            this.trkBand15Gain.MinimumSize = new System.Drawing.Size(34, 160);
             this.trkBand15Gain.Name = "trkBand15Gain";
-            this.trkBand15Gain.Size = new System.Drawing.Size(61, 209);
+            this.trkBand15Gain.Size = new System.Drawing.Size(45, 160);
             this.trkBand15Gain.TabIndex = 21;
             this.trkBand15Gain.Text = "5.0 kHz";
             this.trkBand15Gain.Value = 50;
@@ -1298,15 +1313,16 @@ namespace Mesen.GUI.Forms.Config
             // 
             // trkBand16Gain
             // 
+            this.trkBand16Gain.AutoSize = true;
             this.trkBand16Gain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.trkBand16Gain.Location = new System.Drawing.Point(305, 237);
+            this.trkBand16Gain.Location = new System.Drawing.Point(225, 183);
             this.trkBand16Gain.Margin = new System.Windows.Forms.Padding(0);
             this.trkBand16Gain.Maximum = 200;
-            this.trkBand16Gain.MaximumSize = new System.Drawing.Size(84, 209);
+            this.trkBand16Gain.MaximumSize = new System.Drawing.Size(63, 160);
             this.trkBand16Gain.Minimum = -200;
-            this.trkBand16Gain.MinimumSize = new System.Drawing.Size(45, 209);
+            this.trkBand16Gain.MinimumSize = new System.Drawing.Size(34, 160);
             this.trkBand16Gain.Name = "trkBand16Gain";
-            this.trkBand16Gain.Size = new System.Drawing.Size(61, 209);
+            this.trkBand16Gain.Size = new System.Drawing.Size(45, 160);
             this.trkBand16Gain.TabIndex = 22;
             this.trkBand16Gain.Text = "6.0 kHz";
             this.trkBand16Gain.Value = 50;
@@ -1314,15 +1330,16 @@ namespace Mesen.GUI.Forms.Config
             // 
             // trkBand7Gain
             // 
+            this.trkBand7Gain.AutoSize = true;
             this.trkBand7Gain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.trkBand7Gain.Location = new System.Drawing.Point(366, 28);
+            this.trkBand7Gain.Location = new System.Drawing.Point(270, 23);
             this.trkBand7Gain.Margin = new System.Windows.Forms.Padding(0);
             this.trkBand7Gain.Maximum = 200;
-            this.trkBand7Gain.MaximumSize = new System.Drawing.Size(84, 209);
+            this.trkBand7Gain.MaximumSize = new System.Drawing.Size(63, 160);
             this.trkBand7Gain.Minimum = -200;
-            this.trkBand7Gain.MinimumSize = new System.Drawing.Size(45, 209);
+            this.trkBand7Gain.MinimumSize = new System.Drawing.Size(34, 160);
             this.trkBand7Gain.Name = "trkBand7Gain";
-            this.trkBand7Gain.Size = new System.Drawing.Size(61, 209);
+            this.trkBand7Gain.Size = new System.Drawing.Size(45, 160);
             this.trkBand7Gain.TabIndex = 23;
             this.trkBand7Gain.Text = "320 Hz";
             this.trkBand7Gain.Value = 50;
@@ -1330,15 +1347,16 @@ namespace Mesen.GUI.Forms.Config
             // 
             // trkBand8Gain
             // 
+            this.trkBand8Gain.AutoSize = true;
             this.trkBand8Gain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.trkBand8Gain.Location = new System.Drawing.Point(427, 28);
+            this.trkBand8Gain.Location = new System.Drawing.Point(315, 23);
             this.trkBand8Gain.Margin = new System.Windows.Forms.Padding(0);
             this.trkBand8Gain.Maximum = 200;
-            this.trkBand8Gain.MaximumSize = new System.Drawing.Size(84, 209);
+            this.trkBand8Gain.MaximumSize = new System.Drawing.Size(63, 160);
             this.trkBand8Gain.Minimum = -200;
-            this.trkBand8Gain.MinimumSize = new System.Drawing.Size(45, 209);
+            this.trkBand8Gain.MinimumSize = new System.Drawing.Size(34, 160);
             this.trkBand8Gain.Name = "trkBand8Gain";
-            this.trkBand8Gain.Size = new System.Drawing.Size(61, 209);
+            this.trkBand8Gain.Size = new System.Drawing.Size(45, 160);
             this.trkBand8Gain.TabIndex = 24;
             this.trkBand8Gain.Text = "450 Hz";
             this.trkBand8Gain.Value = 50;
@@ -1346,15 +1364,16 @@ namespace Mesen.GUI.Forms.Config
             // 
             // trkBand9Gain
             // 
+            this.trkBand9Gain.AutoSize = true;
             this.trkBand9Gain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.trkBand9Gain.Location = new System.Drawing.Point(488, 28);
+            this.trkBand9Gain.Location = new System.Drawing.Point(360, 23);
             this.trkBand9Gain.Margin = new System.Windows.Forms.Padding(0);
             this.trkBand9Gain.Maximum = 200;
-            this.trkBand9Gain.MaximumSize = new System.Drawing.Size(84, 209);
+            this.trkBand9Gain.MaximumSize = new System.Drawing.Size(63, 160);
             this.trkBand9Gain.Minimum = -200;
-            this.trkBand9Gain.MinimumSize = new System.Drawing.Size(45, 209);
+            this.trkBand9Gain.MinimumSize = new System.Drawing.Size(34, 160);
             this.trkBand9Gain.Name = "trkBand9Gain";
-            this.trkBand9Gain.Size = new System.Drawing.Size(61, 209);
+            this.trkBand9Gain.Size = new System.Drawing.Size(45, 160);
             this.trkBand9Gain.TabIndex = 25;
             this.trkBand9Gain.Text = "600 Hz";
             this.trkBand9Gain.Value = 50;
@@ -1362,15 +1381,16 @@ namespace Mesen.GUI.Forms.Config
             // 
             // trkBand10Gain
             // 
+            this.trkBand10Gain.AutoSize = true;
             this.trkBand10Gain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.trkBand10Gain.Location = new System.Drawing.Point(549, 28);
+            this.trkBand10Gain.Location = new System.Drawing.Point(405, 23);
             this.trkBand10Gain.Margin = new System.Windows.Forms.Padding(0);
             this.trkBand10Gain.Maximum = 200;
-            this.trkBand10Gain.MaximumSize = new System.Drawing.Size(84, 209);
+            this.trkBand10Gain.MaximumSize = new System.Drawing.Size(63, 160);
             this.trkBand10Gain.Minimum = -200;
-            this.trkBand10Gain.MinimumSize = new System.Drawing.Size(45, 209);
+            this.trkBand10Gain.MinimumSize = new System.Drawing.Size(34, 160);
             this.trkBand10Gain.Name = "trkBand10Gain";
-            this.trkBand10Gain.Size = new System.Drawing.Size(63, 209);
+            this.trkBand10Gain.Size = new System.Drawing.Size(52, 160);
             this.trkBand10Gain.TabIndex = 26;
             this.trkBand10Gain.Text = "750 Hz";
             this.trkBand10Gain.Value = 50;
@@ -1378,15 +1398,16 @@ namespace Mesen.GUI.Forms.Config
             // 
             // trkBand17Gain
             // 
+            this.trkBand17Gain.AutoSize = true;
             this.trkBand17Gain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.trkBand17Gain.Location = new System.Drawing.Point(366, 237);
+            this.trkBand17Gain.Location = new System.Drawing.Point(270, 183);
             this.trkBand17Gain.Margin = new System.Windows.Forms.Padding(0);
             this.trkBand17Gain.Maximum = 200;
-            this.trkBand17Gain.MaximumSize = new System.Drawing.Size(84, 209);
+            this.trkBand17Gain.MaximumSize = new System.Drawing.Size(63, 160);
             this.trkBand17Gain.Minimum = -200;
-            this.trkBand17Gain.MinimumSize = new System.Drawing.Size(45, 209);
+            this.trkBand17Gain.MinimumSize = new System.Drawing.Size(34, 160);
             this.trkBand17Gain.Name = "trkBand17Gain";
-            this.trkBand17Gain.Size = new System.Drawing.Size(61, 209);
+            this.trkBand17Gain.Size = new System.Drawing.Size(45, 160);
             this.trkBand17Gain.TabIndex = 27;
             this.trkBand17Gain.Text = "7.0 kHz";
             this.trkBand17Gain.Value = 50;
@@ -1394,15 +1415,16 @@ namespace Mesen.GUI.Forms.Config
             // 
             // trkBand18Gain
             // 
+            this.trkBand18Gain.AutoSize = true;
             this.trkBand18Gain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.trkBand18Gain.Location = new System.Drawing.Point(427, 237);
+            this.trkBand18Gain.Location = new System.Drawing.Point(315, 183);
             this.trkBand18Gain.Margin = new System.Windows.Forms.Padding(0);
             this.trkBand18Gain.Maximum = 200;
-            this.trkBand18Gain.MaximumSize = new System.Drawing.Size(84, 209);
+            this.trkBand18Gain.MaximumSize = new System.Drawing.Size(63, 160);
             this.trkBand18Gain.Minimum = -200;
-            this.trkBand18Gain.MinimumSize = new System.Drawing.Size(45, 209);
+            this.trkBand18Gain.MinimumSize = new System.Drawing.Size(34, 160);
             this.trkBand18Gain.Name = "trkBand18Gain";
-            this.trkBand18Gain.Size = new System.Drawing.Size(61, 209);
+            this.trkBand18Gain.Size = new System.Drawing.Size(45, 160);
             this.trkBand18Gain.TabIndex = 28;
             this.trkBand18Gain.Text = "10.0 kHz";
             this.trkBand18Gain.Value = 50;
@@ -1410,15 +1432,16 @@ namespace Mesen.GUI.Forms.Config
             // 
             // trkBand19Gain
             // 
+            this.trkBand19Gain.AutoSize = true;
             this.trkBand19Gain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.trkBand19Gain.Location = new System.Drawing.Point(488, 237);
+            this.trkBand19Gain.Location = new System.Drawing.Point(360, 183);
             this.trkBand19Gain.Margin = new System.Windows.Forms.Padding(0);
             this.trkBand19Gain.Maximum = 200;
-            this.trkBand19Gain.MaximumSize = new System.Drawing.Size(84, 209);
+            this.trkBand19Gain.MaximumSize = new System.Drawing.Size(63, 160);
             this.trkBand19Gain.Minimum = -200;
-            this.trkBand19Gain.MinimumSize = new System.Drawing.Size(45, 209);
+            this.trkBand19Gain.MinimumSize = new System.Drawing.Size(34, 160);
             this.trkBand19Gain.Name = "trkBand19Gain";
-            this.trkBand19Gain.Size = new System.Drawing.Size(61, 209);
+            this.trkBand19Gain.Size = new System.Drawing.Size(45, 160);
             this.trkBand19Gain.TabIndex = 29;
             this.trkBand19Gain.Text = "12.5 kHz";
             this.trkBand19Gain.Value = 50;
@@ -1426,15 +1449,16 @@ namespace Mesen.GUI.Forms.Config
             // 
             // trkBand20Gain
             // 
+            this.trkBand20Gain.AutoSize = true;
             this.trkBand20Gain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.trkBand20Gain.Location = new System.Drawing.Point(549, 237);
+            this.trkBand20Gain.Location = new System.Drawing.Point(405, 183);
             this.trkBand20Gain.Margin = new System.Windows.Forms.Padding(0);
             this.trkBand20Gain.Maximum = 200;
-            this.trkBand20Gain.MaximumSize = new System.Drawing.Size(84, 209);
+            this.trkBand20Gain.MaximumSize = new System.Drawing.Size(63, 160);
             this.trkBand20Gain.Minimum = -200;
-            this.trkBand20Gain.MinimumSize = new System.Drawing.Size(45, 209);
+            this.trkBand20Gain.MinimumSize = new System.Drawing.Size(34, 160);
             this.trkBand20Gain.Name = "trkBand20Gain";
-            this.trkBand20Gain.Size = new System.Drawing.Size(63, 209);
+            this.trkBand20Gain.Size = new System.Drawing.Size(52, 160);
             this.trkBand20Gain.TabIndex = 30;
             this.trkBand20Gain.Text = "15 kHz";
             this.trkBand20Gain.Value = 50;
@@ -1446,10 +1470,10 @@ namespace Mesen.GUI.Forms.Config
             this.tlpEqualizer.SetColumnSpan(this.flowLayoutPanel6, 5);
             this.flowLayoutPanel6.Controls.Add(this.lblEqualizerPreset);
             this.flowLayoutPanel6.Controls.Add(this.cboEqualizerPreset);
-            this.flowLayoutPanel6.Location = new System.Drawing.Point(0, 3);
-            this.flowLayoutPanel6.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
+            this.flowLayoutPanel6.Location = new System.Drawing.Point(0, 2);
+            this.flowLayoutPanel6.Margin = new System.Windows.Forms.Padding(0, 2, 0, 0);
             this.flowLayoutPanel6.Name = "flowLayoutPanel6";
-            this.flowLayoutPanel6.Size = new System.Drawing.Size(221, 25);
+            this.flowLayoutPanel6.Size = new System.Drawing.Size(167, 21);
             this.flowLayoutPanel6.TabIndex = 33;
             this.flowLayoutPanel6.Visible = false;
             // 
@@ -1457,10 +1481,9 @@ namespace Mesen.GUI.Forms.Config
             // 
             this.lblEqualizerPreset.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblEqualizerPreset.AutoSize = true;
-            this.lblEqualizerPreset.Location = new System.Drawing.Point(4, 4);
-            this.lblEqualizerPreset.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEqualizerPreset.Location = new System.Drawing.Point(3, 4);
             this.lblEqualizerPreset.Name = "lblEqualizerPreset";
-            this.lblEqualizerPreset.Size = new System.Drawing.Size(53, 17);
+            this.lblEqualizerPreset.Size = new System.Drawing.Size(40, 13);
             this.lblEqualizerPreset.TabIndex = 32;
             this.lblEqualizerPreset.Text = "Preset:";
             // 
@@ -1469,10 +1492,10 @@ namespace Mesen.GUI.Forms.Config
             this.cboEqualizerPreset.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cboEqualizerPreset.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboEqualizerPreset.FormattingEnabled = true;
-            this.cboEqualizerPreset.Location = new System.Drawing.Point(61, 0);
+            this.cboEqualizerPreset.Location = new System.Drawing.Point(46, 0);
             this.cboEqualizerPreset.Margin = new System.Windows.Forms.Padding(0);
             this.cboEqualizerPreset.Name = "cboEqualizerPreset";
-            this.cboEqualizerPreset.Size = new System.Drawing.Size(160, 25);
+            this.cboEqualizerPreset.Size = new System.Drawing.Size(121, 21);
             this.cboEqualizerPreset.TabIndex = 33;
             this.cboEqualizerPreset.SelectedIndexChanged += new System.EventHandler(this.cboEqualizerPreset_SelectedIndexChanged);
             // 
@@ -1483,10 +1506,10 @@ namespace Mesen.GUI.Forms.Config
             this.tlpEqualizer.SetColumnSpan(this.flowLayoutPanel7, 4);
             this.flowLayoutPanel7.Controls.Add(this.lblEqualizerFilterType);
             this.flowLayoutPanel7.Controls.Add(this.cboEqualizerFilterType);
-            this.flowLayoutPanel7.Location = new System.Drawing.Point(401, 3);
-            this.flowLayoutPanel7.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
+            this.flowLayoutPanel7.Location = new System.Drawing.Point(298, 2);
+            this.flowLayoutPanel7.Margin = new System.Windows.Forms.Padding(0, 2, 0, 0);
             this.flowLayoutPanel7.Name = "flowLayoutPanel7";
-            this.flowLayoutPanel7.Size = new System.Drawing.Size(211, 25);
+            this.flowLayoutPanel7.Size = new System.Drawing.Size(159, 21);
             this.flowLayoutPanel7.TabIndex = 34;
             this.flowLayoutPanel7.Visible = false;
             // 
@@ -1494,10 +1517,9 @@ namespace Mesen.GUI.Forms.Config
             // 
             this.lblEqualizerFilterType.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblEqualizerFilterType.AutoSize = true;
-            this.lblEqualizerFilterType.Location = new System.Drawing.Point(4, 4);
-            this.lblEqualizerFilterType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEqualizerFilterType.Location = new System.Drawing.Point(3, 4);
             this.lblEqualizerFilterType.Name = "lblEqualizerFilterType";
-            this.lblEqualizerFilterType.Size = new System.Drawing.Size(43, 17);
+            this.lblEqualizerFilterType.Size = new System.Drawing.Size(32, 13);
             this.lblEqualizerFilterType.TabIndex = 31;
             this.lblEqualizerFilterType.Text = "Filter:";
             // 
@@ -1506,20 +1528,19 @@ namespace Mesen.GUI.Forms.Config
             this.cboEqualizerFilterType.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cboEqualizerFilterType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboEqualizerFilterType.FormattingEnabled = true;
-            this.cboEqualizerFilterType.Location = new System.Drawing.Point(51, 0);
+            this.cboEqualizerFilterType.Location = new System.Drawing.Point(38, 0);
             this.cboEqualizerFilterType.Margin = new System.Windows.Forms.Padding(0);
             this.cboEqualizerFilterType.Name = "cboEqualizerFilterType";
-            this.cboEqualizerFilterType.Size = new System.Drawing.Size(160, 25);
+            this.cboEqualizerFilterType.Size = new System.Drawing.Size(121, 21);
             this.cboEqualizerFilterType.TabIndex = 32;
             // 
             // tpgEffects
             // 
             this.tpgEffects.Controls.Add(this.tableLayoutPanel4);
-            this.tpgEffects.Location = new System.Drawing.Point(4, 26);
-            this.tpgEffects.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tpgEffects.Location = new System.Drawing.Point(4, 22);
             this.tpgEffects.Name = "tpgEffects";
-            this.tpgEffects.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tpgEffects.Size = new System.Drawing.Size(628, 521);
+            this.tpgEffects.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tpgEffects.Size = new System.Drawing.Size(469, 395);
             this.tpgEffects.TabIndex = 3;
             this.tpgEffects.Text = "Effects";
             this.tpgEffects.UseVisualStyleBackColor = true;
@@ -1532,26 +1553,23 @@ namespace Mesen.GUI.Forms.Config
             this.tableLayoutPanel4.Controls.Add(this.grpReverb, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.flowLayoutPanel5, 0, 2);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(4, 4);
-            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 4;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(620, 513);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(463, 389);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
             // grpStereo
             // 
             this.grpStereo.Controls.Add(this.tlpStereoFilter);
             this.grpStereo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grpStereo.Location = new System.Drawing.Point(4, 4);
-            this.grpStereo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpStereo.Location = new System.Drawing.Point(3, 3);
             this.grpStereo.Name = "grpStereo";
-            this.grpStereo.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.grpStereo.Size = new System.Drawing.Size(612, 150);
+            this.grpStereo.Size = new System.Drawing.Size(457, 115);
             this.grpStereo.TabIndex = 0;
             this.grpStereo.TabStop = false;
             this.grpStereo.Text = "Stereo";
@@ -1572,8 +1590,7 @@ namespace Mesen.GUI.Forms.Config
             this.tlpStereoFilter.Controls.Add(this.nudStereoPanning, 1, 2);
             this.tlpStereoFilter.Controls.Add(this.tableLayoutPanel9, 1, 3);
             this.tlpStereoFilter.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpStereoFilter.Location = new System.Drawing.Point(4, 20);
-            this.tlpStereoFilter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tlpStereoFilter.Location = new System.Drawing.Point(3, 16);
             this.tlpStereoFilter.Name = "tlpStereoFilter";
             this.tlpStereoFilter.RowCount = 5;
             this.tlpStereoFilter.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -1581,16 +1598,15 @@ namespace Mesen.GUI.Forms.Config
             this.tlpStereoFilter.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlpStereoFilter.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlpStereoFilter.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpStereoFilter.Size = new System.Drawing.Size(604, 126);
+            this.tlpStereoFilter.Size = new System.Drawing.Size(451, 96);
             this.tlpStereoFilter.TabIndex = 0;
             // 
             // radStereoCombFilter
             // 
             this.radStereoCombFilter.AutoSize = true;
-            this.radStereoCombFilter.Location = new System.Drawing.Point(4, 91);
-            this.radStereoCombFilter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radStereoCombFilter.Location = new System.Drawing.Point(3, 72);
             this.radStereoCombFilter.Name = "radStereoCombFilter";
-            this.radStereoCombFilter.Size = new System.Drawing.Size(100, 21);
+            this.radStereoCombFilter.Size = new System.Drawing.Size(77, 17);
             this.radStereoCombFilter.TabIndex = 4;
             this.radStereoCombFilter.TabStop = true;
             this.radStereoCombFilter.Tag = "Panning";
@@ -1601,10 +1617,9 @@ namespace Mesen.GUI.Forms.Config
             // 
             this.lblStereoDelayMs.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblStereoDelayMs.AutoSize = true;
-            this.lblStereoDelayMs.Location = new System.Drawing.Point(172, 35);
-            this.lblStereoDelayMs.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblStereoDelayMs.Location = new System.Drawing.Point(131, 28);
             this.lblStereoDelayMs.Name = "lblStereoDelayMs";
-            this.lblStereoDelayMs.Size = new System.Drawing.Size(26, 17);
+            this.lblStereoDelayMs.Size = new System.Drawing.Size(20, 13);
             this.lblStereoDelayMs.TabIndex = 1;
             this.lblStereoDelayMs.Text = "ms";
             // 
@@ -1612,10 +1627,9 @@ namespace Mesen.GUI.Forms.Config
             // 
             this.lblStereoPanningAngle.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblStereoPanningAngle.AutoSize = true;
-            this.lblStereoPanningAngle.Location = new System.Drawing.Point(172, 64);
-            this.lblStereoPanningAngle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblStereoPanningAngle.Location = new System.Drawing.Point(131, 51);
             this.lblStereoPanningAngle.Name = "lblStereoPanningAngle";
-            this.lblStereoPanningAngle.Size = new System.Drawing.Size(125, 17);
+            this.lblStereoPanningAngle.Size = new System.Drawing.Size(92, 13);
             this.lblStereoPanningAngle.TabIndex = 1;
             this.lblStereoPanningAngle.Text = "(Angle in degrees)";
             // 
@@ -1623,10 +1637,9 @@ namespace Mesen.GUI.Forms.Config
             // 
             this.radStereoDisabled.AutoSize = true;
             this.radStereoDisabled.Checked = true;
-            this.radStereoDisabled.Location = new System.Drawing.Point(4, 4);
-            this.radStereoDisabled.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radStereoDisabled.Location = new System.Drawing.Point(3, 3);
             this.radStereoDisabled.Name = "radStereoDisabled";
-            this.radStereoDisabled.Size = new System.Drawing.Size(84, 21);
+            this.radStereoDisabled.Size = new System.Drawing.Size(66, 17);
             this.radStereoDisabled.TabIndex = 1;
             this.radStereoDisabled.TabStop = true;
             this.radStereoDisabled.Tag = "None";
@@ -1636,10 +1649,9 @@ namespace Mesen.GUI.Forms.Config
             // radStereoDelay
             // 
             this.radStereoDelay.AutoSize = true;
-            this.radStereoDelay.Location = new System.Drawing.Point(4, 33);
-            this.radStereoDelay.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radStereoDelay.Location = new System.Drawing.Point(3, 26);
             this.radStereoDelay.Name = "radStereoDelay";
-            this.radStereoDelay.Size = new System.Drawing.Size(65, 21);
+            this.radStereoDelay.Size = new System.Drawing.Size(52, 17);
             this.radStereoDelay.TabIndex = 2;
             this.radStereoDelay.TabStop = true;
             this.radStereoDelay.Tag = "Delay";
@@ -1649,10 +1661,9 @@ namespace Mesen.GUI.Forms.Config
             // radStereoPanning
             // 
             this.radStereoPanning.AutoSize = true;
-            this.radStereoPanning.Location = new System.Drawing.Point(4, 62);
-            this.radStereoPanning.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radStereoPanning.Location = new System.Drawing.Point(3, 49);
             this.radStereoPanning.Name = "radStereoPanning";
-            this.radStereoPanning.Size = new System.Drawing.Size(81, 21);
+            this.radStereoPanning.Size = new System.Drawing.Size(64, 17);
             this.radStereoPanning.TabIndex = 3;
             this.radStereoPanning.TabStop = true;
             this.radStereoPanning.Tag = "Panning";
@@ -1662,6 +1673,7 @@ namespace Mesen.GUI.Forms.Config
             // nudStereoDelay
             // 
             this.nudStereoDelay.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.nudStereoDelay.AutoSize = true;
             this.nudStereoDelay.DecimalPlaces = 0;
             this.nudStereoDelay.Increment = new decimal(new int[] {
             1,
@@ -1669,22 +1681,22 @@ namespace Mesen.GUI.Forms.Config
             0,
             0});
             this.nudStereoDelay.IsHex = false;
-            this.nudStereoDelay.Location = new System.Drawing.Point(108, 30);
+            this.nudStereoDelay.Location = new System.Drawing.Point(83, 24);
             this.nudStereoDelay.Margin = new System.Windows.Forms.Padding(0);
             this.nudStereoDelay.Maximum = new decimal(new int[] {
             100,
             0,
             0,
             0});
-            this.nudStereoDelay.MaximumSize = new System.Drawing.Size(13333, 26);
+            this.nudStereoDelay.MaximumSize = new System.Drawing.Size(10000, 20);
             this.nudStereoDelay.Minimum = new decimal(new int[] {
             0,
             0,
             0,
             0});
-            this.nudStereoDelay.MinimumSize = new System.Drawing.Size(0, 27);
+            this.nudStereoDelay.MinimumSize = new System.Drawing.Size(0, 21);
             this.nudStereoDelay.Name = "nudStereoDelay";
-            this.nudStereoDelay.Size = new System.Drawing.Size(60, 27);
+            this.nudStereoDelay.Size = new System.Drawing.Size(45, 21);
             this.nudStereoDelay.TabIndex = 1;
             this.nudStereoDelay.Value = new decimal(new int[] {
             0,
@@ -1695,6 +1707,7 @@ namespace Mesen.GUI.Forms.Config
             // nudStereoPanning
             // 
             this.nudStereoPanning.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.nudStereoPanning.AutoSize = true;
             this.nudStereoPanning.DecimalPlaces = 0;
             this.nudStereoPanning.Increment = new decimal(new int[] {
             1,
@@ -1702,22 +1715,22 @@ namespace Mesen.GUI.Forms.Config
             0,
             0});
             this.nudStereoPanning.IsHex = false;
-            this.nudStereoPanning.Location = new System.Drawing.Point(108, 59);
+            this.nudStereoPanning.Location = new System.Drawing.Point(83, 47);
             this.nudStereoPanning.Margin = new System.Windows.Forms.Padding(0);
             this.nudStereoPanning.Maximum = new decimal(new int[] {
             180,
             0,
             0,
             0});
-            this.nudStereoPanning.MaximumSize = new System.Drawing.Size(13333, 26);
+            this.nudStereoPanning.MaximumSize = new System.Drawing.Size(10000, 20);
             this.nudStereoPanning.Minimum = new decimal(new int[] {
             180,
             0,
             0,
             -2147483648});
-            this.nudStereoPanning.MinimumSize = new System.Drawing.Size(0, 27);
+            this.nudStereoPanning.MinimumSize = new System.Drawing.Size(0, 21);
             this.nudStereoPanning.Name = "nudStereoPanning";
-            this.nudStereoPanning.Size = new System.Drawing.Size(60, 27);
+            this.nudStereoPanning.Size = new System.Drawing.Size(45, 21);
             this.nudStereoPanning.TabIndex = 1;
             this.nudStereoPanning.Value = new decimal(new int[] {
             0,
@@ -1743,17 +1756,18 @@ namespace Mesen.GUI.Forms.Config
             this.tableLayoutPanel9.Controls.Add(this.lblStereoCombFilterStrength, 3, 0);
             this.tableLayoutPanel9.Controls.Add(this.lblCombFilterPercent, 5, 0);
             this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel9.Location = new System.Drawing.Point(108, 87);
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(83, 69);
             this.tableLayoutPanel9.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 1;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(496, 35);
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(368, 27);
             this.tableLayoutPanel9.TabIndex = 5;
             // 
             // nudStereoCombFilterStrength
             // 
             this.nudStereoCombFilterStrength.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.nudStereoCombFilterStrength.AutoSize = true;
             this.nudStereoCombFilterStrength.DecimalPlaces = 0;
             this.nudStereoCombFilterStrength.Increment = new decimal(new int[] {
             1,
@@ -1761,22 +1775,22 @@ namespace Mesen.GUI.Forms.Config
             0,
             0});
             this.nudStereoCombFilterStrength.IsHex = false;
-            this.nudStereoCombFilterStrength.Location = new System.Drawing.Point(247, 4);
+            this.nudStereoCombFilterStrength.Location = new System.Drawing.Point(187, 3);
             this.nudStereoCombFilterStrength.Margin = new System.Windows.Forms.Padding(0);
             this.nudStereoCombFilterStrength.Maximum = new decimal(new int[] {
             200,
             0,
             0,
             0});
-            this.nudStereoCombFilterStrength.MaximumSize = new System.Drawing.Size(13333, 26);
+            this.nudStereoCombFilterStrength.MaximumSize = new System.Drawing.Size(10000, 20);
             this.nudStereoCombFilterStrength.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.nudStereoCombFilterStrength.MinimumSize = new System.Drawing.Size(0, 27);
+            this.nudStereoCombFilterStrength.MinimumSize = new System.Drawing.Size(0, 21);
             this.nudStereoCombFilterStrength.Name = "nudStereoCombFilterStrength";
-            this.nudStereoCombFilterStrength.Size = new System.Drawing.Size(60, 27);
+            this.nudStereoCombFilterStrength.Size = new System.Drawing.Size(45, 21);
             this.nudStereoCombFilterStrength.TabIndex = 5;
             this.nudStereoCombFilterStrength.Value = new decimal(new int[] {
             1,
@@ -1788,16 +1802,16 @@ namespace Mesen.GUI.Forms.Config
             // 
             this.lblStereoCombFilterMs.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblStereoCombFilterMs.AutoSize = true;
-            this.lblStereoCombFilterMs.Location = new System.Drawing.Point(120, 9);
-            this.lblStereoCombFilterMs.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblStereoCombFilterMs.Location = new System.Drawing.Point(91, 7);
             this.lblStereoCombFilterMs.Name = "lblStereoCombFilterMs";
-            this.lblStereoCombFilterMs.Size = new System.Drawing.Size(26, 17);
+            this.lblStereoCombFilterMs.Size = new System.Drawing.Size(20, 13);
             this.lblStereoCombFilterMs.TabIndex = 3;
             this.lblStereoCombFilterMs.Text = "ms";
             // 
             // nudStereoCombFilterDelay
             // 
             this.nudStereoCombFilterDelay.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.nudStereoCombFilterDelay.AutoSize = true;
             this.nudStereoCombFilterDelay.DecimalPlaces = 0;
             this.nudStereoCombFilterDelay.Increment = new decimal(new int[] {
             1,
@@ -1805,22 +1819,22 @@ namespace Mesen.GUI.Forms.Config
             0,
             0});
             this.nudStereoCombFilterDelay.IsHex = false;
-            this.nudStereoCombFilterDelay.Location = new System.Drawing.Point(56, 4);
+            this.nudStereoCombFilterDelay.Location = new System.Drawing.Point(43, 3);
             this.nudStereoCombFilterDelay.Margin = new System.Windows.Forms.Padding(0);
             this.nudStereoCombFilterDelay.Maximum = new decimal(new int[] {
             100,
             0,
             0,
             0});
-            this.nudStereoCombFilterDelay.MaximumSize = new System.Drawing.Size(13333, 26);
+            this.nudStereoCombFilterDelay.MaximumSize = new System.Drawing.Size(10000, 20);
             this.nudStereoCombFilterDelay.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.nudStereoCombFilterDelay.MinimumSize = new System.Drawing.Size(0, 27);
+            this.nudStereoCombFilterDelay.MinimumSize = new System.Drawing.Size(0, 21);
             this.nudStereoCombFilterDelay.Name = "nudStereoCombFilterDelay";
-            this.nudStereoCombFilterDelay.Size = new System.Drawing.Size(60, 27);
+            this.nudStereoCombFilterDelay.Size = new System.Drawing.Size(45, 21);
             this.nudStereoCombFilterDelay.TabIndex = 2;
             this.nudStereoCombFilterDelay.Value = new decimal(new int[] {
             1,
@@ -1832,10 +1846,9 @@ namespace Mesen.GUI.Forms.Config
             // 
             this.lblStereoCombFilterDelay.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblStereoCombFilterDelay.AutoSize = true;
-            this.lblStereoCombFilterDelay.Location = new System.Drawing.Point(4, 9);
-            this.lblStereoCombFilterDelay.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblStereoCombFilterDelay.Location = new System.Drawing.Point(3, 7);
             this.lblStereoCombFilterDelay.Name = "lblStereoCombFilterDelay";
-            this.lblStereoCombFilterDelay.Size = new System.Drawing.Size(48, 17);
+            this.lblStereoCombFilterDelay.Size = new System.Drawing.Size(37, 13);
             this.lblStereoCombFilterDelay.TabIndex = 0;
             this.lblStereoCombFilterDelay.Text = "Delay:";
             // 
@@ -1843,10 +1856,10 @@ namespace Mesen.GUI.Forms.Config
             // 
             this.lblStereoCombFilterStrength.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblStereoCombFilterStrength.AutoSize = true;
-            this.lblStereoCombFilterStrength.Location = new System.Drawing.Point(177, 9);
-            this.lblStereoCombFilterStrength.Margin = new System.Windows.Forms.Padding(27, 0, 4, 0);
+            this.lblStereoCombFilterStrength.Location = new System.Drawing.Point(134, 7);
+            this.lblStereoCombFilterStrength.Margin = new System.Windows.Forms.Padding(20, 0, 3, 0);
             this.lblStereoCombFilterStrength.Name = "lblStereoCombFilterStrength";
-            this.lblStereoCombFilterStrength.Size = new System.Drawing.Size(66, 17);
+            this.lblStereoCombFilterStrength.Size = new System.Drawing.Size(50, 13);
             this.lblStereoCombFilterStrength.TabIndex = 4;
             this.lblStereoCombFilterStrength.Text = "Strength:";
             // 
@@ -1854,10 +1867,9 @@ namespace Mesen.GUI.Forms.Config
             // 
             this.lblCombFilterPercent.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblCombFilterPercent.AutoSize = true;
-            this.lblCombFilterPercent.Location = new System.Drawing.Point(311, 9);
-            this.lblCombFilterPercent.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCombFilterPercent.Location = new System.Drawing.Point(235, 7);
             this.lblCombFilterPercent.Name = "lblCombFilterPercent";
-            this.lblCombFilterPercent.Size = new System.Drawing.Size(20, 17);
+            this.lblCombFilterPercent.Size = new System.Drawing.Size(15, 13);
             this.lblCombFilterPercent.TabIndex = 6;
             this.lblCombFilterPercent.Text = "%";
             // 
@@ -1865,11 +1877,9 @@ namespace Mesen.GUI.Forms.Config
             // 
             this.grpReverb.Controls.Add(this.tableLayoutPanel5);
             this.grpReverb.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grpReverb.Location = new System.Drawing.Point(4, 162);
-            this.grpReverb.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpReverb.Location = new System.Drawing.Point(3, 124);
             this.grpReverb.Name = "grpReverb";
-            this.grpReverb.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.grpReverb.Size = new System.Drawing.Size(612, 139);
+            this.grpReverb.Size = new System.Drawing.Size(457, 106);
             this.grpReverb.TabIndex = 1;
             this.grpReverb.TabStop = false;
             this.grpReverb.Text = "Reverb";
@@ -1885,25 +1895,23 @@ namespace Mesen.GUI.Forms.Config
             this.tableLayoutPanel5.Controls.Add(this.trkReverbDelay, 1, 2);
             this.tableLayoutPanel5.Controls.Add(this.trkReverbStrength, 1, 1);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(4, 20);
-            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 16);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 4;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(604, 115);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(451, 87);
             this.tableLayoutPanel5.TabIndex = 0;
             // 
             // chkReverbEnabled
             // 
             this.chkReverbEnabled.AutoSize = true;
             this.tableLayoutPanel5.SetColumnSpan(this.chkReverbEnabled, 2);
-            this.chkReverbEnabled.Location = new System.Drawing.Point(4, 4);
-            this.chkReverbEnabled.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkReverbEnabled.Location = new System.Drawing.Point(3, 3);
             this.chkReverbEnabled.Name = "chkReverbEnabled";
-            this.chkReverbEnabled.Size = new System.Drawing.Size(124, 21);
+            this.chkReverbEnabled.Size = new System.Drawing.Size(97, 17);
             this.chkReverbEnabled.TabIndex = 0;
             this.chkReverbEnabled.Text = "Enable Reverb";
             this.chkReverbEnabled.UseVisualStyleBackColor = true;
@@ -1912,10 +1920,9 @@ namespace Mesen.GUI.Forms.Config
             // 
             this.lblReverbStrength.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblReverbStrength.AutoSize = true;
-            this.lblReverbStrength.Location = new System.Drawing.Point(4, 41);
-            this.lblReverbStrength.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblReverbStrength.Location = new System.Drawing.Point(3, 32);
             this.lblReverbStrength.Name = "lblReverbStrength";
-            this.lblReverbStrength.Size = new System.Drawing.Size(66, 17);
+            this.lblReverbStrength.Size = new System.Drawing.Size(50, 13);
             this.lblReverbStrength.TabIndex = 2;
             this.lblReverbStrength.Text = "Strength:";
             // 
@@ -1923,32 +1930,29 @@ namespace Mesen.GUI.Forms.Config
             // 
             this.lblReverbDelay.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblReverbDelay.AutoSize = true;
-            this.lblReverbDelay.Location = new System.Drawing.Point(4, 83);
-            this.lblReverbDelay.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblReverbDelay.Location = new System.Drawing.Point(3, 64);
             this.lblReverbDelay.Name = "lblReverbDelay";
-            this.lblReverbDelay.Size = new System.Drawing.Size(48, 17);
+            this.lblReverbDelay.Size = new System.Drawing.Size(37, 13);
             this.lblReverbDelay.TabIndex = 3;
             this.lblReverbDelay.Text = "Delay:";
             // 
             // trkReverbDelay
             // 
-            this.trkReverbDelay.Location = new System.Drawing.Point(78, 75);
-            this.trkReverbDelay.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.trkReverbDelay.Location = new System.Drawing.Point(59, 58);
             this.trkReverbDelay.Maximum = 30;
             this.trkReverbDelay.Minimum = 1;
             this.trkReverbDelay.Name = "trkReverbDelay";
-            this.trkReverbDelay.Size = new System.Drawing.Size(128, 34);
+            this.trkReverbDelay.Size = new System.Drawing.Size(96, 26);
             this.trkReverbDelay.TabIndex = 4;
             this.trkReverbDelay.TickFrequency = 3;
             this.trkReverbDelay.Value = 1;
             // 
             // trkReverbStrength
             // 
-            this.trkReverbStrength.Location = new System.Drawing.Point(78, 33);
-            this.trkReverbStrength.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.trkReverbStrength.Location = new System.Drawing.Point(59, 26);
             this.trkReverbStrength.Minimum = 1;
             this.trkReverbStrength.Name = "trkReverbStrength";
-            this.trkReverbStrength.Size = new System.Drawing.Size(128, 34);
+            this.trkReverbStrength.Size = new System.Drawing.Size(96, 26);
             this.trkReverbStrength.TabIndex = 1;
             this.trkReverbStrength.Value = 1;
             // 
@@ -1959,20 +1963,20 @@ namespace Mesen.GUI.Forms.Config
             this.flowLayoutPanel5.Controls.Add(this.nudCrossFeedRatio);
             this.flowLayoutPanel5.Controls.Add(this.lblCrossFeedRatio);
             this.flowLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel5.Location = new System.Drawing.Point(8, 305);
-            this.flowLayoutPanel5.Margin = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.flowLayoutPanel5.Location = new System.Drawing.Point(6, 233);
+            this.flowLayoutPanel5.Margin = new System.Windows.Forms.Padding(6, 0, 0, 0);
             this.flowLayoutPanel5.Name = "flowLayoutPanel5";
-            this.flowLayoutPanel5.Size = new System.Drawing.Size(612, 32);
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(457, 25);
             this.flowLayoutPanel5.TabIndex = 6;
             // 
             // chkCrossFeedEnabled
             // 
             this.chkCrossFeedEnabled.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.chkCrossFeedEnabled.AutoSize = true;
-            this.chkCrossFeedEnabled.Location = new System.Drawing.Point(4, 7);
-            this.chkCrossFeedEnabled.Margin = new System.Windows.Forms.Padding(4, 7, 4, 4);
+            this.chkCrossFeedEnabled.Location = new System.Drawing.Point(3, 5);
+            this.chkCrossFeedEnabled.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
             this.chkCrossFeedEnabled.Name = "chkCrossFeedEnabled";
-            this.chkCrossFeedEnabled.Size = new System.Drawing.Size(146, 21);
+            this.chkCrossFeedEnabled.Size = new System.Drawing.Size(112, 17);
             this.chkCrossFeedEnabled.TabIndex = 1;
             this.chkCrossFeedEnabled.Text = "Enable Crossfeed:";
             this.chkCrossFeedEnabled.UseVisualStyleBackColor = true;
@@ -1980,6 +1984,7 @@ namespace Mesen.GUI.Forms.Config
             // nudCrossFeedRatio
             // 
             this.nudCrossFeedRatio.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.nudCrossFeedRatio.AutoSize = true;
             this.nudCrossFeedRatio.DecimalPlaces = 0;
             this.nudCrossFeedRatio.Increment = new decimal(new int[] {
             1,
@@ -1987,22 +1992,22 @@ namespace Mesen.GUI.Forms.Config
             0,
             0});
             this.nudCrossFeedRatio.IsHex = false;
-            this.nudCrossFeedRatio.Location = new System.Drawing.Point(154, 2);
+            this.nudCrossFeedRatio.Location = new System.Drawing.Point(118, 2);
             this.nudCrossFeedRatio.Margin = new System.Windows.Forms.Padding(0);
             this.nudCrossFeedRatio.Maximum = new decimal(new int[] {
             100,
             0,
             0,
             0});
-            this.nudCrossFeedRatio.MaximumSize = new System.Drawing.Size(13333, 26);
+            this.nudCrossFeedRatio.MaximumSize = new System.Drawing.Size(10000, 20);
             this.nudCrossFeedRatio.Minimum = new decimal(new int[] {
             0,
             0,
             0,
             0});
-            this.nudCrossFeedRatio.MinimumSize = new System.Drawing.Size(0, 27);
+            this.nudCrossFeedRatio.MinimumSize = new System.Drawing.Size(0, 21);
             this.nudCrossFeedRatio.Name = "nudCrossFeedRatio";
-            this.nudCrossFeedRatio.Size = new System.Drawing.Size(56, 27);
+            this.nudCrossFeedRatio.Size = new System.Drawing.Size(42, 21);
             this.nudCrossFeedRatio.TabIndex = 2;
             this.nudCrossFeedRatio.Value = new decimal(new int[] {
             0,
@@ -2014,21 +2019,19 @@ namespace Mesen.GUI.Forms.Config
             // 
             this.lblCrossFeedRatio.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblCrossFeedRatio.AutoSize = true;
-            this.lblCrossFeedRatio.Location = new System.Drawing.Point(214, 7);
-            this.lblCrossFeedRatio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCrossFeedRatio.Location = new System.Drawing.Point(163, 6);
             this.lblCrossFeedRatio.Name = "lblCrossFeedRatio";
-            this.lblCrossFeedRatio.Size = new System.Drawing.Size(20, 17);
+            this.lblCrossFeedRatio.Size = new System.Drawing.Size(15, 13);
             this.lblCrossFeedRatio.TabIndex = 3;
             this.lblCrossFeedRatio.Text = "%";
             // 
             // tpgAdvanced
             // 
             this.tpgAdvanced.Controls.Add(this.tableLayoutPanel3);
-            this.tpgAdvanced.Location = new System.Drawing.Point(4, 26);
-            this.tpgAdvanced.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tpgAdvanced.Location = new System.Drawing.Point(4, 22);
             this.tpgAdvanced.Name = "tpgAdvanced";
-            this.tpgAdvanced.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tpgAdvanced.Size = new System.Drawing.Size(628, 521);
+            this.tpgAdvanced.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tpgAdvanced.Size = new System.Drawing.Size(469, 395);
             this.tpgAdvanced.TabIndex = 2;
             this.tpgAdvanced.Text = "Advanced";
             this.tpgAdvanced.UseVisualStyleBackColor = true;
@@ -2045,42 +2048,44 @@ namespace Mesen.GUI.Forms.Config
             this.tableLayoutPanel3.Controls.Add(this.chkSwapDutyCycles, 0, 3);
             this.tableLayoutPanel3.Controls.Add(this.chkReduceDmcPopping, 0, 1);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(4, 4);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 7;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(620, 513);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(463, 389);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
             // chkDisableDynamicSampleRate
             // 
+            this.chkDisableDynamicSampleRate.AutoSize = true;
             this.chkDisableDynamicSampleRate.Checked = false;
             this.chkDisableDynamicSampleRate.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.chkDisableDynamicSampleRate.Location = new System.Drawing.Point(0, 62);
+            this.chkDisableDynamicSampleRate.Location = new System.Drawing.Point(0, 48);
             this.chkDisableDynamicSampleRate.Name = "chkDisableDynamicSampleRate";
-            this.chkDisableDynamicSampleRate.Size = new System.Drawing.Size(620, 31);
+            this.chkDisableDynamicSampleRate.Size = new System.Drawing.Size(463, 24);
             this.chkDisableDynamicSampleRate.TabIndex = 4;
             this.chkDisableDynamicSampleRate.Text = "Disable dynamic sample rate";
             // 
             // chkDisableNoiseModeFlag
             // 
+            this.chkDisableNoiseModeFlag.AutoSize = true;
             this.chkDisableNoiseModeFlag.Checked = false;
             this.chkDisableNoiseModeFlag.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.chkDisableNoiseModeFlag.Location = new System.Drawing.Point(0, 124);
+            this.chkDisableNoiseModeFlag.Location = new System.Drawing.Point(0, 96);
             this.chkDisableNoiseModeFlag.Name = "chkDisableNoiseModeFlag";
-            this.chkDisableNoiseModeFlag.Size = new System.Drawing.Size(620, 31);
+            this.chkDisableNoiseModeFlag.Size = new System.Drawing.Size(463, 24);
             this.chkDisableNoiseModeFlag.TabIndex = 3;
             this.chkDisableNoiseModeFlag.Text = "Disable noise channel mode flag";
             // 
             // nudEPSMClockFrequency
             // 
+            this.nudEPSMClockFrequency.AutoSize = true;
             this.nudEPSMClockFrequency.DecimalPlaces = 0;
             this.nudEPSMClockFrequency.Dock = System.Windows.Forms.DockStyle.Fill;
             this.nudEPSMClockFrequency.Increment = new decimal(new int[] {
@@ -2089,22 +2094,21 @@ namespace Mesen.GUI.Forms.Config
             0,
             0});
             this.nudEPSMClockFrequency.IsHex = false;
-            this.nudEPSMClockFrequency.Location = new System.Drawing.Point(4, 190);
-            this.nudEPSMClockFrequency.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nudEPSMClockFrequency.Location = new System.Drawing.Point(3, 147);
             this.nudEPSMClockFrequency.Maximum = new decimal(new int[] {
             32000000,
             0,
             0,
             0});
-            this.nudEPSMClockFrequency.MaximumSize = new System.Drawing.Size(13333, 26);
+            this.nudEPSMClockFrequency.MaximumSize = new System.Drawing.Size(10000, 20);
             this.nudEPSMClockFrequency.Minimum = new decimal(new int[] {
             10000,
             0,
             0,
             0});
-            this.nudEPSMClockFrequency.MinimumSize = new System.Drawing.Size(267, 27);
+            this.nudEPSMClockFrequency.MinimumSize = new System.Drawing.Size(200, 21);
             this.nudEPSMClockFrequency.Name = "nudEPSMClockFrequency";
-            this.nudEPSMClockFrequency.Size = new System.Drawing.Size(612, 27);
+            this.nudEPSMClockFrequency.Size = new System.Drawing.Size(457, 21);
             this.nudEPSMClockFrequency.TabIndex = 3;
             this.nudEPSMClockFrequency.Value = new decimal(new int[] {
             10000,
@@ -2116,30 +2120,29 @@ namespace Mesen.GUI.Forms.Config
             // 
             this.lblEPSMClockFrequency.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblEPSMClockFrequency.AutoSize = true;
-            this.lblEPSMClockFrequency.Location = new System.Drawing.Point(4, 162);
-            this.lblEPSMClockFrequency.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEPSMClockFrequency.Location = new System.Drawing.Point(3, 125);
             this.lblEPSMClockFrequency.Name = "lblEPSMClockFrequency";
-            this.lblEPSMClockFrequency.Size = new System.Drawing.Size(303, 17);
+            this.lblEPSMClockFrequency.Size = new System.Drawing.Size(229, 13);
             this.lblEPSMClockFrequency.TabIndex = 3;
             this.lblEPSMClockFrequency.Text = "EPSM Clock Frequency (default is 8000000Hz)";
             // 
             // chkSilenceTriangleHighFreq
             // 
             this.chkSilenceTriangleHighFreq.AutoSize = true;
-            this.chkSilenceTriangleHighFreq.Location = new System.Drawing.Point(4, 4);
-            this.chkSilenceTriangleHighFreq.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkSilenceTriangleHighFreq.Location = new System.Drawing.Point(3, 3);
             this.chkSilenceTriangleHighFreq.Name = "chkSilenceTriangleHighFreq";
-            this.chkSilenceTriangleHighFreq.Size = new System.Drawing.Size(449, 21);
+            this.chkSilenceTriangleHighFreq.Size = new System.Drawing.Size(337, 17);
             this.chkSilenceTriangleHighFreq.TabIndex = 1;
             this.chkSilenceTriangleHighFreq.Text = "Mute ultrasonic frequencies on triangle channel (reduces popping)";
             // 
             // chkSwapDutyCycles
             // 
+            this.chkSwapDutyCycles.AutoSize = true;
             this.chkSwapDutyCycles.Checked = false;
             this.chkSwapDutyCycles.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.chkSwapDutyCycles.Location = new System.Drawing.Point(0, 93);
+            this.chkSwapDutyCycles.Location = new System.Drawing.Point(0, 72);
             this.chkSwapDutyCycles.Name = "chkSwapDutyCycles";
-            this.chkSwapDutyCycles.Size = new System.Drawing.Size(620, 31);
+            this.chkSwapDutyCycles.Size = new System.Drawing.Size(463, 24);
             this.chkSwapDutyCycles.TabIndex = 0;
             this.chkSwapDutyCycles.Text = "Swap square channels duty cycles (Mimics old clones)";
             // 
@@ -2147,10 +2150,9 @@ namespace Mesen.GUI.Forms.Config
             // 
             this.chkReduceDmcPopping.AutoSize = true;
             this.chkReduceDmcPopping.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.chkReduceDmcPopping.Location = new System.Drawing.Point(4, 35);
-            this.chkReduceDmcPopping.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkReduceDmcPopping.Location = new System.Drawing.Point(3, 27);
             this.chkReduceDmcPopping.Name = "chkReduceDmcPopping";
-            this.chkReduceDmcPopping.Size = new System.Drawing.Size(316, 21);
+            this.chkReduceDmcPopping.Size = new System.Drawing.Size(243, 17);
             this.chkReduceDmcPopping.TabIndex = 2;
             this.chkReduceDmcPopping.Text = "Reduce popping sounds on the DMC channel";
             this.chkReduceDmcPopping.TextAlign = System.Drawing.ContentAlignment.TopLeft;
@@ -2158,13 +2160,11 @@ namespace Mesen.GUI.Forms.Config
             // 
             // frmAudioConfig
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(636, 588);
+            this.ClientSize = new System.Drawing.Size(477, 450);
             this.Controls.Add(this.tabMain);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmAudioConfig";
@@ -2176,6 +2176,7 @@ namespace Mesen.GUI.Forms.Config
             this.baseConfigPanel.PerformLayout();
             this.grpVolume.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel7.ResumeLayout(false);
@@ -2188,6 +2189,7 @@ namespace Mesen.GUI.Forms.Config
             this.tpgVolume.ResumeLayout(false);
             this.tpgPanning.ResumeLayout(false);
             this.tableLayoutPanel6.ResumeLayout(false);
+            this.tableLayoutPanel6.PerformLayout();
             this.tpgEqualizer.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

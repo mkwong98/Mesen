@@ -515,5 +515,10 @@ namespace Mesen.GUI.Forms.Config
 		{
 			chkAdaptiveSpriteLimit.Enabled = chkRemoveSpriteLimit.Checked;
 		}
-	}
+
+	  private void flpResolution_Paint(object sender, PaintEventArgs e)
+	  {
+
+	  }
+   }
 }
