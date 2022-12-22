@@ -105,6 +105,8 @@ void PPU::Reset()
 	memset(_oamDecayCycles, 0, sizeof(_oamDecayCycles));
 	_enableOamDecay = _settings->CheckFlag(EmulationFlags::EnableOamDecay);
 
+	_startingPhase = 0;
+
 	UpdateMinimumDrawCycles();
 }
 
@@ -112,30 +114,37 @@ void PPU::SetNesModel(NesModel model)
 {
 	_nesModel = model;
 
+	// https://www.nesdev.org/wiki/Cycle_reference_chart
 	switch(_nesModel) {
 		case NesModel::Auto:
 			//Should never be Auto
 			break;
 
 		case NesModel::NTSC:
-			_nmiScanline = 241;
-			_vblankEnd = 260;
-			_standardNmiScanline = 241;
-			_standardVblankEnd = 260;
+			// picture height + postrender blanking lines
+			_nmiScanline = 240 + 1;
+			// picture height + (postrender blanking lines - 1) + vblank length
+			_vblankEnd = 240 + 20;
+			_standardNmiScanline = _nmiScanline;
+			_standardVblankEnd = _vblankEnd;
 			_masterClockDivider = 4;
 			break;
 		case NesModel::PAL:
-			_nmiScanline = 241;
-			_vblankEnd = 310;
-			_standardNmiScanline = 241;
-			_standardVblankEnd = 310;
+			// (picture height + border line) + postrender blanking lines
+			_nmiScanline = 240 + 1;
+			// (picture height + border line) + (postrender blanking lines - 1) + vblank length + 50
+			_vblankEnd = 240 + 20 + 50;
+			_standardNmiScanline = _nmiScanline;
+			_standardVblankEnd = _vblankEnd;
 			_masterClockDivider = 5;
 			break;
 		case NesModel::Dendy:
-			_nmiScanline = 291;
-			_vblankEnd = 310;
-			_standardNmiScanline = 291;
-			_standardVblankEnd = 310;
+			// (picture height + border line) + postrender blanking lines + 50
+			_nmiScanline = 240 + 1 + 50;
+			// (picture height + border line) + (postrender blanking lines - 1) + 50 + vblank length
+			_vblankEnd = 240 + 50 + 20;
+			_standardNmiScanline = _nmiScanline;
+			_standardVblankEnd = _vblankEnd;
 			_masterClockDivider = 5;
 			break;
 	}
@@ -999,10 +1008,9 @@ void PPU::ProcessScanline()
 			LoadTileInfo();
 		}
 	} else if(_cycle == 337 || _cycle == 339) {
-		if(IsRenderingEnabled()) {
+		if (IsRenderingEnabled()) {
 			ReadVram(GetNameTableAddr());
-
-			if(_scanline == -1 && _cycle == 339 && (_frameCount & 0x01) && _nesModel == NesModel::NTSC && _settings->GetPpuModel() == PpuModel::Ppu2C02) {
+			if (_scanline == -1 && _cycle == 339 && (_frameCount & 0x01) && _nesModel == NesModel::NTSC && _settings->GetPpuModel() == PpuModel::Ppu2C02) {
 				//This behavior is NTSC-specific - PAL frames are always the same number of cycles
 				//"With rendering enabled, each odd PPU frame is one PPU clock shorter than normal" (skip from 339 to 0, going over 340)
 				_cycle = 340;
@@ -1347,6 +1355,8 @@ void PPU::Exec()
 	if(_needStateUpdate) {
 		UpdateState();
 	}
+
+	_startingPhase = _cycle % 3;
 }
 
 void PPU::UpdateState()

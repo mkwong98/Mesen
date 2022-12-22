@@ -14,7 +14,7 @@ private:
 	bool _useExternalPalette = true;
 	uint8_t _palette[512 * 3];
 	uint32_t* _ntscBuffer;
-	uint16_t _ntsc_border;
+	bool _ntscBorder = true;
 
 	void GenerateArgbFrame(uint32_t *outputBuffer);
 

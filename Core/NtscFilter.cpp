@@ -9,7 +9,7 @@ NtscFilter::NtscFilter(shared_ptr<Console> console) : BaseVideoFilter(console)
 	memset(_palette, 0, sizeof(_palette));
 	memset(&_ntscData, 0, sizeof(_ntscData));
 	_ntscSetup = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-	_ntscBuffer = new uint32_t[NES_NTSC_OUT_WIDTH(256) * 240];
+	_ntscBuffer = new uint32_t[NES_NTSC_OUT_WIDTH(256) * 240]();
 }
 
 FrameInfo NtscFilter::GetFrameInfo()
@@ -55,14 +55,7 @@ void NtscFilter::OnBeforeApplyFilter()
 		}
 	}
 
-	if (_console->GetModel() == NesModel::NTSC) {
-		// BG color borders on NTSC machines
-		_ntsc_border = _console->GetPpu()->GetCurrentBgColor();
-	}
-	else {
-		// black borders on other machines
-		_ntsc_border = 15;
-	}
+	_ntscBorder = (_console->GetModel() == NesModel::NTSC);
 
 	PictureSettings pictureSettings = _console->GetSettings()->GetPictureSettings();
 	NtscFilterSettings ntscSettings = _console->GetSettings()->GetNtscFilterSettings();
@@ -132,7 +125,22 @@ void NtscFilter::OnBeforeApplyFilter()
 
 void NtscFilter::ApplyFilter(uint16_t *ppuOutputBuffer)
 {
-	nes_ntsc_blit(&_ntscData, ppuOutputBuffer, _ntsc_border, PPU::ScreenWidth, IsOddFrame() ? 0 : 1, PPU::ScreenWidth, 240, _ntscBuffer, NES_NTSC_OUT_WIDTH(PPU::ScreenWidth)*4);
+	uint8_t phase = _console->GetModel() == NesModel::NTSC ? _console->GetStartingPhase() : 0;
+	for (int i = 0; i < 240; i++) {
+		nes_ntsc_blit(&_ntscData,
+			// input += in_row_width;
+			ppuOutputBuffer + PPU::ScreenWidth * i,
+			_ntscBorder ? _console->GetPpu()->GetCurrentBgColor() : 0x0F,
+			PPU::ScreenWidth,
+			phase,
+			PPU::ScreenWidth,
+			1,
+			// rgb_out = (char*) rgb_out + out_pitch;
+			reinterpret_cast<char*>(_ntscBuffer) + (NES_NTSC_OUT_WIDTH(PPU::ScreenWidth) * 4 * i),
+			NES_NTSC_OUT_WIDTH(PPU::ScreenWidth) * 4);
+
+		phase = (phase + 1) % 3;
+	}
 	GenerateArgbFrame(_ntscBuffer);
 }
 

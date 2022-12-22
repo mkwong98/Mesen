@@ -204,6 +204,8 @@ public:
 	VirtualFile GetPatchFile();
 	RomInfo GetRomInfo();
 	uint32_t GetFrameCount();
+	// https://forums.nesdev.org/viewtopic.php?p=30625#p30625
+	uint8_t GetStartingPhase();
 	NesModel GetModel();
 
 	uint32_t GetLagCounter();

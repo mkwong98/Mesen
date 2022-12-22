@@ -109,6 +109,9 @@ class PPU : public IMemoryHandler, public Snapshotable
 		bool _enableOamDecay;
 		bool _corruptOamRow[32];
 
+		// https://forums.nesdev.org/viewtopic.php?p=30625#p30625
+		uint8_t _startingPhase;
+
 		void UpdateStatusFlag();
 
 		void SetControlRegister(uint8_t value);
@@ -215,6 +218,11 @@ class PPU : public IMemoryHandler, public Snapshotable
 		uint32_t GetFrameCount()
 		{
 			return _frameCount;
+		}
+
+		uint8_t GetStartingPhase()
+		{
+			return _startingPhase;
 		}
 
 		uint32_t GetFrameCycle()
