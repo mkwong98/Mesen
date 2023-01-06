@@ -112,5 +112,17 @@ namespace Mesen.GUI.Forms.Config
 			GetControllerControl(2).UpdateKeyMappings(((ControllerInfo)Entity).Keys[2]);
 			GetControllerControl(3).UpdateKeyMappings(((ControllerInfo)Entity).Keys[3]);
 		}
-	}
+
+	  private void InitializeComponent()
+	  {
+            this.SuspendLayout();
+            // 
+            // BaseInputConfigForm
+            // 
+            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Name = "BaseInputConfigForm";
+            this.ResumeLayout(false);
+
+	  }
+   }
 }

@@ -50,7 +50,7 @@ namespace Mesen.GUI.Forms
             this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancel.AutoSize = true;
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(128, 3);
+            this.btnCancel.Location = new System.Drawing.Point(84, 3);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 0;
@@ -63,7 +63,7 @@ namespace Mesen.GUI.Forms
             this.btnOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnOK.AutoSize = true;
             this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnOK.Location = new System.Drawing.Point(47, 3);
+            this.btnOK.Location = new System.Drawing.Point(3, 3);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
             this.btnOK.TabIndex = 1;
@@ -75,9 +75,9 @@ namespace Mesen.GUI.Forms
             // 
             this.baseConfigPanel.Controls.Add(this.flowLayoutPanel1);
             this.baseConfigPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.baseConfigPanel.Location = new System.Drawing.Point(0, 231);
+            this.baseConfigPanel.Location = new System.Drawing.Point(0, 233);
             this.baseConfigPanel.Name = "baseConfigPanel";
-            this.baseConfigPanel.Size = new System.Drawing.Size(284, 30);
+            this.baseConfigPanel.Size = new System.Drawing.Size(327, 29);
             this.baseConfigPanel.TabIndex = 1;
             // 
             // flowLayoutPanel1
@@ -86,19 +86,17 @@ namespace Mesen.GUI.Forms
             this.flowLayoutPanel1.Controls.Add(this.btnOK);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(78, 0);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(121, 0);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(206, 30);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(206, 29);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
             // BaseConfigForm
             // 
             this.AcceptButton = this.btnOK;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(284, 261);
             this.Controls.Add(this.baseConfigPanel);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.Name = "BaseConfigForm";
             this.baseConfigPanel.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
