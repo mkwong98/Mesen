@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "AutoResetEvent.h"
+#include <chrono>
 
 AutoResetEvent::AutoResetEvent()
 {
